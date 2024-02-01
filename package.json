@@ -1,0 +1,28 @@
+{
+  "name": "puppeter_admin_google",
+  "version": "1.0.0",
+  "description": "Turn off this",
+  "scripts": {
+    "start": "electron . --disable-gpu-sandbox",
+    "build-win" : "electron-builder build --win portable"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  
+    "puppeteer": "^21.10.0"
+  },
+  "devDependencies": {
+    "electron": "^28.2.1",
+    "electron-packager": "^17.1.2",
+    "electron-builder": "^24.9.1",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "appId": "com.hasanbasri93.turn_off_challange",
+    "win": {
+      "icon": "icons/win/icon.ico"
+    }
+  }
+}

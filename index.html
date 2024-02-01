@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Turn Off Challange</title>
+    <link rel="stylesheet" href="pico.min.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <form>
+            <label for="username">Username of Gmail</label>
+            <input type="text" id="username" name="username" value="" required>
+
+            <label for="password">Password of Gmail</label>
+            <input type="password" id="password" name="password" value="@1299" required>
+
+            <label for="ids_gmail">ID Users</label>
+            <textarea id="ids_gmail" name="ids_gmail"
+                rows="4"></textarea>
+            <!-- open new tab   -->
+            <small>To get userId account <a
+                    href="https://docs.google.com/spreadsheets/d/1uDSHYHJ6dFOz758tisbc764QefwzEIubLFaKLnTen-k/edit#gid=1075734556&range=A1"
+                    target="_blank">click here.</a></small>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <progress id="progress" value="0" max="100"></progress>
+        <small id="progressInfo"></small>
+    </main>
+
+    <script>
+        const { ipcRenderer } = require('electron');
+        let jumlah = 0;
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent default form submission
+
+                const formData = {
+                    username: document.getElementById('username').value,
+                    password: document.getElementById('password').value,
+                    ids_gmail: document.getElementById('ids_gmail').value
+                };
+
+
+                const numbersArray = formData['ids_gmail'].split(',').map(number => number.trim());
+                jumlah = numbersArray.length;
+                document.getElementById("progress").value = 0;
+                document.getElementById("progress").max = jumlah;
+
+                // Send form data to main process
+
+                ipcRenderer.send('form-submission', formData);
+            });
+        });
+
+        // Listen for IPC message to update button text
+        ipcRenderer.on('update-data', (event, data) => {
+            console.log(data);
+            switch (data['id']) {
+                case 'progress':
+                    document.getElementById(data['id']).value = data['content'];
+                    document.getElementById("progressInfo").innerHTML = `Progress: ` + (data['content'] / jumlah) * 100 + '%';
+                    break;
+                default:
+                    document.getElementById(data['id']).innerHTML = data['content'];
+                    break;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
