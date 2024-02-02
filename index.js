@@ -1,4 +1,5 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { shell, app, BrowserWindow, ipcMain } = require('electron');
+
 const puppeteer = require('puppeteer');
 let win; // Declare the window variable outside the createWindow function
 
@@ -13,8 +14,11 @@ function createWindow() {
         }
     });
 
-    win.webContents.openDevTools();
-
+    //win.webContents.openDevTools();
+    win.webContents.setWindowOpenHandler(({ url }) => {
+        shell.openExternal(url);
+        return { action: 'deny' };
+      });
     // Load your HTML file or any other setup here
     win.loadFile('index.html');
 }
