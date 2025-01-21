@@ -12,15 +12,9 @@
 
     <main class="container">
         <form>
-            <label for="username">Username of Gmail</label>
-            <input type="text" id="username" name="username" value="" required>
-
-            <label for="password">Password of Gmail</label>
-            <input type="password" id="password" name="password" value="@1299" required>
 
             <label for="ids_gmail">ID Users</label>
-            <textarea id="ids_gmail" name="ids_gmail"
-                rows="4"></textarea>
+            <textarea id="ids_gmail" name="ids_gmail" rows="4"></textarea>
             <!-- open new tab   -->
             <small>To get userId account <a
                     href="https://docs.google.com/spreadsheets/d/1uDSHYHJ6dFOz758tisbc764QefwzEIubLFaKLnTen-k/edit#gid=1075734556&range=A1"
@@ -42,8 +36,6 @@
                 e.preventDefault(); // Prevent default form submission
 
                 const formData = {
-                    username: document.getElementById('username').value,
-                    password: document.getElementById('password').value,
                     ids_gmail: document.getElementById('ids_gmail').value
                 };
 

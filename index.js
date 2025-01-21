@@ -7,7 +7,7 @@ function createWindow() {
     win = new BrowserWindow({
         title: 'Gmail Turn Off Challange',
         width: 500,
-        height: 580,
+        height: 390,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -25,13 +25,13 @@ function createWindow() {
 
 
 async function scrape(data) {
-    const browser = await puppeteer.launch({ headless: false }); // Set headless to false to see the browser
+    const browser = await puppeteer.launch({ headless: 'false' }); // Set headless to false to see the browser
     const page = await browser.newPage();
     const xPathLoginChallenge = "//div[contains(text(),'Turn off identity questions for 10 minutes after a')]";
     const xPathTurnOff = "//*[contains(text(), 'Turn off for 10 mins')]";
     const numbersArray = data['ids_gmail'].split(',').map(number => number.trim());
-    const username = data['username'];
-    const password = data['password'];
+    const username = 'webmaster@daarululuumlido.com';
+    const password = 'hjve6uly';
 
     try {
         // Navigate to admin.google.com
@@ -52,16 +52,16 @@ async function scrape(data) {
             await page.goto(`https://admin.google.com/ac/users/${number}/security`).then(async () => {
                 console.log(`Navigated to https://admin.google.com/ac/users/${number}/security`);
 
-                await page.waitForXPath(xPathLoginChallenge, { visible: true });
+                await page.waitForSelector(`xpath/${xPathLoginChallenge}`, { visible: true });
                 // Click on the element with the text 'Login Challenge'
-                const loginChallengeElements = await page.$x(xPathLoginChallenge);
+                const loginChallengeElements = await page.$$(`xpath/${xPathLoginChallenge}`);
                 if (loginChallengeElements.length > 0) {
                     await loginChallengeElements[0].click();
 
                     // Wait for the 'Turn off for 10 mins' span to be visible and clickable
-                    await page.waitForXPath(xPathTurnOff, { visible: true });
-                    const turnOffElements = await page.$x(xPathTurnOff);
-                    if (turnOffElements.length > 0) {
+                    await page.waitForSelector(`xpath/${xPathTurnOff}`, { visible: true });
+                    const turnOffElements = await page.$$(`xpath/${xPathTurnOff}`);
+                    if (turnOffElements.length > 0) { 
                         await turnOffElements[0].click();
                     } else {
                         throw new Error("'Turn off for 10 mins' span not found");
