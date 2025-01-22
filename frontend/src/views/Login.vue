@@ -22,8 +22,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import GoogleLogin from '../components/auth/GoogleLogin.vue'
-import store from '../store'
+import GoogleLogin from '@/components/auth/GoogleLogin.vue'
+import store from '@/store'
 
 const router = useRouter()
 const errorMessage = ref('') 

@@ -7,7 +7,7 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { watchEffect } from "vue";
-import store from "./store";
+import store from "@/store";
 
 const router = useRouter();
 

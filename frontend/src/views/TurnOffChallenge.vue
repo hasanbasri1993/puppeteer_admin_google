@@ -15,9 +15,9 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { usePusher } from "../composables/usePusher";
-import AdminLayout from "../components/layout/AdminLayout.vue";
-import FormTextarea from "../components/forms/FormTextarea.vue";
+import { usePusher } from "@/composables/usePusher";
+import AdminLayout from "@/components/layout/AdminLayout.vue";
+import FormTextarea from "@/components/forms/FormTextarea.vue";
 import { toast } from "vue3-toastify";
 
 const emails = ref("");

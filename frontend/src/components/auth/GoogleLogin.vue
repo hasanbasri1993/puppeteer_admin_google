@@ -1,7 +1,7 @@
 <script setup>
 import { decodeCredential } from "vue3-google-login";
 import { useRouter } from "vue-router";
-import store from "../../store";
+import store from "@/store";
 
 const router = useRouter();
 

@@ -17,9 +17,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import AdminLayout from '../components/layout/AdminLayout.vue'
-import FormTextarea from '../components/forms/FormTextarea.vue'
-import FormInput from '../components/forms/FormInput.vue'
+import AdminLayout from '@/components/layout/AdminLayout.vue'
+import FormTextarea from '@/components/forms/FormTextarea.vue'
+import FormInput from '@/components/forms/FormInput.vue'
 
 const emails = ref('')
 const password = ref('')

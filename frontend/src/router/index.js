@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../views/Login.vue'
-import store from '../store/index'; // Import the store
+import Login from '@/views/Login.vue'
+import store from '@/store/index'; // Import the store
 
 const routes = [
   { path: '/', redirect: '/turn-off-challenge' },
   { path: '/login', component: Login },
   {
     path: '/reset-password',
-    component: () => import('../views/ResetPassword.vue'),
+    component: () => import('@/views/ResetPassword.vue'),
     meta: { requiresAuth: true }
   },
   {
     path: '/turn-off-challenge',
-    component: () => import('../views/TurnOffChallenge.vue'),
+    component: () => import('@/views/TurnOffChallenge.vue'),
     meta: { requiresAuth: true }
   }
 ]
