@@ -1,6 +1,9 @@
 const puppeteer = require('puppeteer');
 const authService = require('./authService');
+const cron = require('node-cron');
 const { XPATH_LOGIN_CHALLENGE, XPATH_TURN_OFF } = require('../config/constants');
+
+const reloginTime = process.env.RELOGIN_TIME || '*/40 0 * * *';
 
 class BrowserService {
   constructor() {
@@ -25,6 +28,14 @@ class BrowserService {
       await this.close();
       throw error;
     }
+  }
+
+  async performRelogin(username, password) {
+    cron.schedule(process.env.RELOGIN_TIME, async () => {
+      const page = await this.browser.newPage();
+      await authService.performLogin(page, username, password, { logout: true });
+      await page.close();
+    });
   }
 
   async handleSecurityChallenge(id) {

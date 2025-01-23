@@ -34,6 +34,11 @@ const initializeApp = async () => {
       process.env.GOOGLE_ADMIN_USERNAME,
       process.env.GOOGLE_ADMIN_PASSWORD
     );
+    await instance.performRelogin(
+      process.env.GOOGLE_ADMIN_USERNAME,
+      process.env.GOOGLE_ADMIN_PASSWORD
+    );
+
     app.listen(port, () => console.log(`Server running on port ${port}`));
   } catch (error) {
     console.error('Failed to initialize:', error);
