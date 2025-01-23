@@ -2,11 +2,12 @@ const { instance } = require('../services/browserInstance');
 const Pusher = require('../config/pusher'); // Correct import
 const fs = require('fs');
 const path = require('path');
+const logger = require('pino')()
 
 exports.turnOffChallenge = async (req, res) => {
   const ids = req.body.idS?.split(',').map(id => id.trim()) || [];
   const uniqueIds = [...new Set(ids)];
-    // Read the JSON file
+  // Read the JSON file
   const filePath = path.join(process.cwd(), 'ids.json');
   const data = fs.readFileSync(filePath, 'utf8');
   const jsonData = JSON.parse(data);
@@ -24,14 +25,16 @@ exports.turnOffChallenge = async (req, res) => {
   const results = [];
   if (notFoundIds.length > 0) {
     Pusher.trigger("turn_off", "status-update", { id: 0, message: "Not found this NIS, " + notFoundIds.join(', ') });
-
+    logger.error('Not found this NIS, ' + notFoundIds.join(', '));
   }
   for (const id of filteredIds) {
     try {
       await instance.handleSecurityChallenge(id.ID_GOOGLE);
       results.push({ id, status: 'success' });
+      logger.info('Turn off for 10 mins success for: ' + id.NAMA);
       Pusher.trigger("turn_off", "status-update", { id: id.NAMA, message: "Succes email: " + id.NIS + "@daarululuumlido.com" });
     } catch (error) {
+      logger.error('Turn off for 10 mins failed for: ' + id.NAMA);
       Pusher.trigger("turn_off", "status-update", { id: id, message: error.message });
       results.push({ id, status: 'failed', error: error.message });
     }

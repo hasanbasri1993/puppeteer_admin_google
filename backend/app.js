@@ -1,12 +1,12 @@
 import express, { json } from 'express';
-const cors = require('cors');
-
 import userRoutes from './routers/index';
 import history from 'connect-history-api-fallback'
 import path from 'path'
-
+const logger = require('pino')()
+const cors = require('cors');
 const { instance, close } = require('./services/browserInstance');
 
+logger.info('Server is starting...')
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -30,10 +30,12 @@ app.use((req, res, next) => {
 // In the initializeApp function:
 const initializeApp = async () => {
   try {
+    logger.info('Initialize browser instance...')
     await instance.initialize(
       process.env.GOOGLE_ADMIN_USERNAME,
       process.env.GOOGLE_ADMIN_PASSWORD
     );
+    logger.info('Initialized browser instance successfully')
     await instance.performRelogin(
       process.env.GOOGLE_ADMIN_USERNAME,
       process.env.GOOGLE_ADMIN_PASSWORD
