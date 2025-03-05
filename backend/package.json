@@ -1,0 +1,23 @@
+{
+  "name": "turn_off_challange",
+  "version": "1.0.1",
+  "description": "Turn off this",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "main": "app.js",
+  "author": "Hasan Basri",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/local-auth": "2.1.0",
+    "connect-history-api-fallback": "^2.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "googleapis": "105",
+    "node-cron": "^3.0.3",
+    "pino": "^9.6.0",
+    "puppeteer": "24.1.0",
+    "pusher": "^5.2.0"
+  }
+}
