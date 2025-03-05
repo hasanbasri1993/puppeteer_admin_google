@@ -1,10 +1,9 @@
-import { Router } from 'express';
-const router = Router();
-import { turnOffChallenge } from '../controllers/turnOff';
-import { resetPassword } from '../controllers/resetPassword';
-import initializationMiddleware from '../middlewares/initializationMiddleware';
+const express = require('express');
+const router = express.Router();
+const { turnOffChallenge } = require('../controllers/turnOff.js'); // Ambil fungsi dari objek
+const { resetPassword } = require('../controllers/resetPassword.js'); // Ambil fungsi dari objek
 
-router.post('/turn_off', turnOffChallenge);
 router.post('/reset_password', resetPassword);
+router.post('/turn_off', turnOffChallenge);
 
-export default router;
+module.exports = router;

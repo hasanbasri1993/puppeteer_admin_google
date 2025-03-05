@@ -19,8 +19,9 @@ class BrowserService {
 
   async initialize(username, password) {
     try {
+
       logger.info('Initializing browser and logging in...');
-      this.browser = await puppeteer.launch();
+      this.browser = await puppeteer.launch({ headless: false });
       const page = await this.browser.newPage();
       await authService.performLogin(page, username, password);
       await page.close();

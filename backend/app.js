@@ -1,7 +1,8 @@
-import express, { json } from 'express';
-import userRoutes from './routers/index';
-import history from 'connect-history-api-fallback'
-import path from 'path'
+require('dotenv').config(); // Harus ada sebelum menggunakan process.env
+const express = require('express')
+const userRoutes = require('./routers/index.js')
+const history = require('connect-history-api-fallback')
+const path = require('path')
 const logger = require('pino')()
 const cors = require('cors');
 const { instance, close } = require('./services/browserInstance');
@@ -9,9 +10,9 @@ const { instance, close } = require('./services/browserInstance');
 logger.info('Server is starting...')
 const app = express();
 const port = process.env.PORT || 3000;
-
-// Middleware
-app.use(json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//app.use(json());
 app.use(history())
 // Enable CORS for all routes
 app.use(cors({
