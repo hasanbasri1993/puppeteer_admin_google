@@ -30,7 +30,7 @@ module.exports = {
     }
     try {
       // Execute all handleSecurityChallenge calls concurrently
-      const results = await Promise.all(filteredIds.map(async (id) => {
+      const results = await Promise.all(filteredIds.reverse().map(async (id) => {
         try {
           await instance.handleSecurityChallenge(id.ID_GOOGLE);
           logger.info('Turn off for 10 mins success for: ' + id.NAMA);
@@ -44,10 +44,10 @@ module.exports = {
       }));
 
       // Open a new tab with the count of filteredIds
-      res.json({ 
-        success: true, 
-        results, 
-        notFoundIds, 
+      res.json({
+        success: true,
+        results,
+        notFoundIds,
       });
 
     } catch (error) {
