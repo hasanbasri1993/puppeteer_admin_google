@@ -6,6 +6,7 @@ const logger = require('pino')()
 const { XPATH_LOGIN_CHALLENGE, XPATH_TURN_OFF } = require('../config/constants');
 
 const reloginTime = process.env.RELOGIN_TIME || '*/40 0 * * *';
+const rePerformTurnOffForSelfTime = process.env.RE_TURNOFF_FOR_SELFTIME || '*/30 0 * * *';
 
 class BrowserService {
   constructor() {
