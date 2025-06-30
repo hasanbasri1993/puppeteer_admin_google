@@ -21,7 +21,9 @@ class BrowserService {
     try {
 
       logger.info('Initializing browser and logging in...');
-      this.browser = await puppeteer.launch();
+      this.browser = await puppeteer.launch({
+          args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
       const page = await this.browser.newPage();
       await authService.performLogin(page, username, password);
       await page.close();
@@ -35,7 +37,7 @@ class BrowserService {
   }
 
   async performRelogin(username, password) {
-    cron.schedule(process.env.RELOGIN_TIME, async () => {
+    cron.schedule(reloginTime, async () => {
       const page = await this.browser.newPage();
       await authService.performLogin(page, username, password, { logout: true });
       await page.close();

@@ -41,6 +41,7 @@ const initializeApp = async () => {
       process.env.GOOGLE_ADMIN_USERNAME,
       process.env.GOOGLE_ADMIN_PASSWORD
     );
+    logger.info('Initialized relogin instance successfully')
 
     app.listen(port, () => console.log(`Server running on port ${port}`));
   } catch (error) {
