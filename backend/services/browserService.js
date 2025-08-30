@@ -26,7 +26,7 @@ class BrowserService {
           args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
       const page = await this.browser.newPage();
-      await authService.performLogin(page, username, password);
+      await authService.performLoginWithTOTP(page, username, password);
       await page.close();
       this._isInitialized = true;
       logger.info('Successfully initialized browser and logged in');
@@ -40,7 +40,7 @@ class BrowserService {
   async performRelogin(username, password) {
     cron.schedule(reloginTime, async () => {
       const page = await this.browser.newPage();
-      await authService.performLogin(page, username, password, { logout: true });
+      await authService.performLoginWithTOTP(page, username, password, { logout: true });
       await page.close();
     });
   }
