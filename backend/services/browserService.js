@@ -20,11 +20,12 @@ class BrowserService {
 
   async initialize(username, password) {
     try {
-
+      const isHeadeless = process.env.HEADLESS || true;
       logger.info('Initializing browser and logging in...');
       this.browser = await puppeteer.launch({
-          args: ['--no-sandbox', '--disable-setuid-sandbox']
-        });
+        headless: isHeadeless,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
       const page = await this.browser.newPage();
       await authService.performLoginWithTOTP(page, username, password);
       await page.close();
