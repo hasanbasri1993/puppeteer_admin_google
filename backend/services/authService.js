@@ -97,22 +97,33 @@ module.exports = {
                 await page.click('#passwordNext');
 
                 // Wait for page load
-                await new Promise(resolve => setTimeout(resolve, 3000));
+                await new Promise(resolve => setTimeout(resolve, 5000));
 
                 // Check if 2FA is required
                 const needs2FA = await page.evaluate(() => {
-                    const selectors = [
-                        'input[type="tel"]',           // Phone verification
-                        '#totpPin',                    // TOTP input
-                        '[data-challenge-type]',       // Challenge page
-                        'div[jsname="XIvz0b"]',       // Google's internal verification div
-                        '[aria-label*="verification"], [aria-label*="code"]'
-                    ];
+                    try {
+                        const selectors = [
+                            'input[type="tel"]',           // Phone verification
+                            '#totpPin',                    // TOTP input
+                            '[data-challenge-type]',       // Challenge page
+                            'div[jsname="XIvz0b"]',       // Google's internal verification div
+                            '[aria-label*="verification"], [aria-label*="code"]'
+                        ];
 
-                    return selectors.some(selector => {
-                        const element = document.querySelector(selector);
-                        return element && element.offsetParent !== null; // visible element
-                    });
+                        return selectors.some(selector => {
+                            try {
+                                const element = document.querySelector(selector);
+                                return element &&
+                                    element.offsetParent !== null &&
+                                    element.style.display !== 'none' &&
+                                    element.style.visibility !== 'hidden';
+                            } catch (e) {
+                                return false;
+                            }
+                        });
+                    } catch (error) {
+                        return false;
+                    }
                 });
 
                 if (needs2FA) {
