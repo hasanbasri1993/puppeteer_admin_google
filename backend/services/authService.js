@@ -227,7 +227,7 @@ module.exports = {
 
                 if (isLoggedIn) {
                     if (debug) console.log("✅ Login berhasil!");
-                    return true;
+                    await page.waitForNavigation({ waitUntil: 'networkidle2' });
                 } else {
                     throw new Error(`Login gagal - masih di halaman: ${currentUrl}`);
                 }

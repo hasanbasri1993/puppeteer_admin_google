@@ -98,4 +98,80 @@ async function listUserExport() {
     await listUsers(auth);
 }
 
-module.exports = { listUserExport };
+/**
+ * Resets password for a specific user by email address
+ * @param {string} email - User's email address
+ * @param {string} newPassword - New password to set
+ * @returns {Promise<Object>} - Result object with success status and details
+ */
+async function resetUserPassword(email, newPassword) {
+    try {
+        const auth = await authorize();
+        const service = google.admin({ version: 'directory_v1', auth });
+        
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            throw new Error('Invalid email format');
+        }
+        
+        // Validate password strength (basic validation)
+        if (!newPassword || newPassword.length < 8) {
+            throw new Error('Password must be at least 8 characters long');
+        }
+        
+        // Update user password
+        const result = await service.users.update({
+            userKey: email,
+            resource: {
+                password: newPassword,
+                changePasswordAtNextLogin: true // Force user to change password on next login
+            }
+        });
+        
+        return {
+            success: true,
+            message: `Password reset successfully for ${email}`,
+            user: {
+                email: result.data.primaryEmail,
+                name: result.data.name?.fullName || 'N/A'
+            }
+        };
+        
+    } catch (error) {
+        console.error('Error resetting password:', error.message);
+        return {
+            success: false,
+            error: error.message,
+            email: email
+        };
+    }
+}
+
+/**
+ * Resets password for multiple users
+ * @param {Array} users - Array of objects with email and password
+ * @returns {Promise<Array>} - Array of results for each user
+ */
+async function resetMultiplePasswords(users) {
+    const results = [];
+    
+    for (const user of users) {
+        const result = await resetUserPassword(user.email, user.password);
+        results.push({
+            email: user.email,
+            ...result
+        });
+        
+        // Add small delay to avoid rate limiting
+        await new Promise(resolve => setTimeout(resolve, 100));
+    }
+    
+    return results;
+}
+
+module.exports = { 
+    listUserExport, 
+    resetUserPassword, 
+    resetMultiplePasswords 
+};
