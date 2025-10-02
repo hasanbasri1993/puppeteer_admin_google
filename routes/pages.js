@@ -6,6 +6,7 @@ const {resetPassword} = require('../controllers/resetPassword.js'); // Ambil fun
 const {instance} = require('../services/browserInstance');
 const fs = require('fs');
 const path = require('path');
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // New routes for the web application
 // Load content for dashboard
@@ -33,7 +34,8 @@ router.get(
         const filePath = path.join(__dirname, '../views/partials', `${page}.ejs`);
 
         if (fs.existsSync(filePath)) {
-            res.render(`partials/${page}`, {user: req.user});
+            const canResetPassword = authMiddleware.isUserAuthorizedForReset(req.user);
+            res.render(`partials/${page}`, {user: req.user, canResetPassword});
         } else {
             res.status(404).send('Content not found');
         }

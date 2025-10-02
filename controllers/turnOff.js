@@ -10,7 +10,13 @@ const BATCH_DELAY = parseInt(process.env.BATCH_DELAY) || 2000; // 2 seconds betw
 
 module.exports = {
     turnOffChallenge: async (req, res) => {
-        const ids = req.body.idS?.split(',').map(id => id.trim()) || [];
+        // Accept new request body shape: { nis: ["234054", "234035", ...] }
+        // Backward compatibility: if idS (CSV string) is provided, still support it
+        const idsFromArray = Array.isArray(req.body.nis) ? req.body.nis.map(v => String(v).trim()) : [];
+        const idsFromCsv = typeof req.body.idS === 'string' && req.body.idS.length > 0
+            ? req.body.idS.split(',').map(id => id.trim())
+            : [];
+        const ids = (idsFromArray.length > 0 ? idsFromArray : idsFromCsv);
         const uniqueIds = [...new Set(ids)];
 
         logger.info(`Processing ${uniqueIds.length} unique IDs`);

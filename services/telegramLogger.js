@@ -16,6 +16,25 @@ class TelegramLogger {
         }
     }
 
+    // Safely extract user name/email from req or session
+    getUserInfo(req) {
+        const sessionUser = req?.session?.passport?.user || {};
+        const user = req?.user || sessionUser || {};
+
+        const emailsArray = Array.isArray(user.emails) ? user.emails : (Array.isArray(sessionUser.emails) ? sessionUser.emails : []);
+        const firstEmail = emailsArray && emailsArray.length > 0 && emailsArray[0]
+            ? (emailsArray[0].value || emailsArray[0].email || emailsArray[0])
+            : '';
+
+        const displayName = user.displayName || sessionUser.displayName || '';
+        const given = (user.name && user.name.givenName) || (sessionUser.name && sessionUser.name.givenName) || '';
+        const family = (user.name && user.name.familyName) || (sessionUser.name && sessionUser.name.familyName) || '';
+        const fallbackName = [given, family].filter(Boolean).join(' ').trim();
+        const name = displayName || fallbackName;
+
+        return { name, email: firstEmail };
+    }
+
     async sendLog(message) {
         if (!this.enabled) return;
 
@@ -25,7 +44,7 @@ class TelegramLogger {
                 disable_web_page_preview: true
             });
         } catch (error) {
-            logger.error('Failed to send Telegram message:', error.message);
+            logger.error({ err: error }, 'Failed to send Telegram message');
         }
     }
 
@@ -44,6 +63,12 @@ class TelegramLogger {
         const url = req.originalUrl;
         const statusCode = res.statusCode;
         const ip = req.ip || req.connection.remoteAddress;
+
+        // User info (from Passport or session fallback)
+        const { name, email } = this.getUserInfo(req);
+        const userLine = (name || email)
+            ? `\n👤 <b>User:</b> ${name || ''}${email ? ` &lt;${email}&gt;` : ''}`
+            : '';
 
         // Get emoji based on endpoint
         const endpointEmoji = this.getEndpointEmoji(url);
@@ -81,7 +106,7 @@ ${endpointEmoji} <b>API Request</b>
 📍 <b>URL:</b> ${url}
 ${statusEmoji} <b>Status:</b> ${statusCode}
 ⚡ <b>Response Time:</b> ${responseTime}ms
-🖥️ <b>IP:</b> ${ip}
+🖥️ <b>IP:</b> ${ip}${userLine}
 
 ${requestBody ? `📤 <b>Request Body:</b>\n<code>${requestBody}</code>\n` : ''}
 ${responseBody ? `📥 <b>Response:</b>\n<code>${responseBody}</code>` : ''}
@@ -94,6 +119,12 @@ ${responseBody ? `📥 <b>Response:</b>\n<code>${responseBody}</code>` : ''}
         // Extract request data
         const requestIds = req.body?.idS || '';
         const idCount = requestIds ? requestIds.split(',').length : 0;
+
+        // User info (from Passport or session fallback)
+        const { name, email } = this.getUserInfo(req);
+        const userLine = (name || email)
+            ? `\n👤 <b>User:</b> ${name || ''}${email ? ` &lt;${email}&gt;` : ''}`
+            : '';
 
         // Extract response data
         let summary = '';
@@ -143,7 +174,7 @@ ${endpointEmoji} <b>Turn Off Challenge</b>
 🕐 <b>Time:</b> ${timestamp}
 ${statusEmoji} <b>Status:</b> ${res.statusCode}
 ⚡ <b>Response Time:</b> ${responseTime}ms
-🖥️ <b>IP:</b> ${ip}
+🖥️ <b>IP:</b> ${ip}${userLine}
 
 📤 <b>Request:</b> ${idCount} IDs
 ${summary}

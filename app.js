@@ -41,8 +41,8 @@ app.use(passport.session());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// Add Telegram logging middleware for API routes
-app.use('/api', userRoutes, telegramLoggingMiddleware);
+// Add Telegram logging middleware for API routes (must come BEFORE routes)
+app.use('/api', telegramLoggingMiddleware, userRoutes);
 
 // Routes
 app.use('/pages', pagesRoutes);
@@ -78,23 +78,23 @@ const initializeApp = async () => {
     try {
         logger.info('Initialize browser instance...')
 
-        // // Start memory monitoring
-        // memoryMonitor.startMonitoring(30000); // Check every 30 seconds
+        // Start memory monitoring
+        memoryMonitor.startMonitoring(30000); // Check every 30 seconds
 
-        // // Log initial memory usage
-        // const initialMemory = memoryMonitor.getMemoryUsage();
-        // logger.info(`Initial memory usage: ${JSON.stringify(initialMemory)}`);
+        // Log initial memory usage
+        const initialMemory = memoryMonitor.getMemoryUsage();
+        logger.info(`Initial memory usage: ${JSON.stringify(initialMemory)}`);
 
-        // await instance.initialize(
-        //   process.env.GOOGLE_ADMIN_USERNAME,
-        //   process.env.GOOGLE_ADMIN_PASSWORD
-        // );
-        // logger.info('Initialized browser instance successfully')
-        // await instance.performRelogin(
-        //   process.env.GOOGLE_ADMIN_USERNAME,
-        //   process.env.GOOGLE_ADMIN_PASSWORD
-        // );
-        // logger.info('Initialized relogin instance successfully')
+        await instance.initialize(
+          process.env.GOOGLE_ADMIN_USERNAME,
+          process.env.GOOGLE_ADMIN_PASSWORD
+        );
+        logger.info('Initialized browser instance successfully')
+        await instance.performRelogin(
+          process.env.GOOGLE_ADMIN_USERNAME,
+          process.env.GOOGLE_ADMIN_PASSWORD
+        );
+        logger.info('Initialized relogin instance successfully')
 
         app.listen(port, () => {
             console.log(`Server running on port ${port}`);
