@@ -103,11 +103,6 @@ module.exports = {
             const successCount = results.filter(r => r.status === 'success').length;
             const failureCount = results.length - successCount;
 
-            await Pusher.trigger("turn_off", "status-update", {
-                id: "COMPLETED",
-                message: `Batch processing completed: ${successCount} successful, ${failureCount} failed`
-            });
-
             res.json({
                 success: true,
                 results,

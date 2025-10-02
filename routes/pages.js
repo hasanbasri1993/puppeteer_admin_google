@@ -34,8 +34,9 @@ router.get(
         const filePath = path.join(__dirname, '../views/partials', `${page}.ejs`);
 
         if (fs.existsSync(filePath)) {
+            const pusherId = process.env.KEY;
             const canResetPassword = authMiddleware.isUserAuthorizedForReset(req.user);
-            res.render(`partials/${page}`, {user: req.user, canResetPassword});
+            res.render(`partials/${page}`, {user: req.user, canResetPassword, pusherId});
         } else {
             res.status(404).send('Content not found');
         }

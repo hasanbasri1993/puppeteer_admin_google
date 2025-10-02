@@ -7,23 +7,45 @@
     <!-- Tab Navigation -->
     <div class="border-b border-gray-200 -mx-4 px-4 sm:mx-0 sm:px-0">
         <nav class="-mb-px flex space-x-6 overflow-x-auto">
+            <button onclick="switchTab('batch-nis')"
+                    id="tab-batch-nis"
+                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-primary text-primary whitespace-nowrap">
+                Batch NIS
+            </button>
             <% if (typeof canResetPassword !== 'undefined' && canResetPassword) { %>
                 <button onclick="switchTab('per-kelas')"
                         id="tab-per-kelas"
-                        class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-primary text-primary whitespace-nowrap">
+                        class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
                     Per Kelas
                 </button>
             <% } %>
-            <button onclick="switchTab('batch-nis')" 
-                    id="tab-batch-nis"
-                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
-                Batch NIS
-            </button>
+
         </nav>
     </div>
 
     <!-- Tab Content -->
     <div class="mt-6">
+        <!-- Tab Batch NIS -->
+        <div id="content-batch-nis" class="tab-content">
+            <div class="space-y-4">
+                <div>
+                    <label for="batch-nis-input" class="block text-sm font-medium text-gray-700 mb-2">
+                        Masukkan NIS (satu per baris)
+                    </label>
+                    <textarea id="batch-nis-input"
+                              rows="8"
+                              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                              placeholder="234054&#10;234035&#10;234060&#10;..."></textarea>
+                    <p class="mt-1 text-xs text-gray-500">Tempel beberapa NIS, satu per baris.</p>
+                </div>
+
+                <button onclick="processBatchNIS()"
+                        class="w-full bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out">
+                    Proses
+                </button>
+            </div>
+        </div>
+
         <% if (typeof canResetPassword !== 'undefined' && canResetPassword) { %>
             <!-- Tab Per Kelas -->
             <div id="content-per-kelas" class="tab-content hidden">
@@ -57,30 +79,20 @@
             </div>
         </div>
         <% } %>
-        <!-- Tab Batch NIS -->
-        <div id="content-batch-nis" class="tab-content">
-            <div class="space-y-4">
-                <div>
-                    <label for="batch-nis-input" class="block text-sm font-medium text-gray-700 mb-2">
-                        Masukkan NIS (satu per baris)
-                    </label>
-                    <textarea id="batch-nis-input" 
-                              rows="8" 
-                              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
-                              placeholder="234054&#10;234035&#10;234060&#10;..."></textarea>
-                    <p class="mt-1 text-xs text-gray-500">Tempel beberapa NIS, satu per baris.</p>
-                </div>
-
-                <button onclick="processBatchNIS()" 
-                        class="w-full bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out">
-                    Proses
-                </button>
-            </div>
-        </div>
     </div>
 </div>
+<script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
 
 <script>
+    const pusher = new Pusher('<%= pusherId %>', {
+        cluster: 'ap1'
+    });
+    const channel = pusher.subscribe('turn_off');
+    channel.bind('status-update', function(data) {
+      console.log(data);
+      showAlert(`ID: ${data.id}\nEmail: ${data.message}`, 'success');
+    });
+
     // Tab switching functionality
     function switchTab(tabName) {
         // Hide all tab contents
@@ -207,8 +219,11 @@
             
             const result = await response.json();
             
-            if (result.status === 'sukses') {
-                showAlert(result.message, 'success');
+            if (result.success) {
+                showAlert(
+                  `Total: ${result.summary.total}, Sukses: ${result.summary.successful}, Gagal: ${result.summary.failed}, Batch: ${result.summary.batches}`,
+                  'success'
+                )
             } else {
                 showAlert(result.message || 'Terjadi kesalahan', 'error');
             }
