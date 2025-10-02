@@ -17,6 +17,8 @@ TELEGRAM_BOT_TOKEN=
 # Google OAuth Configuration
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+PUBLIC_URL=
+GOOGLE_CALLBACK_URL=
 
 # Authorized emails for reset password access
 # Option A: Comma-separated list
