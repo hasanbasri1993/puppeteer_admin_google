@@ -1,7 +1,5 @@
 require('dotenv').config(); // Harus ada sebelum menggunakan process.env
 const express = require('express')
-const userRoutes = require('./routers/index.js')
-const pagesRoutes = require('./routers/pages.js')
 const path = require('path')
 const logger = require('pino')()
 const {instance, close} = require('./services/browserInstance');
@@ -9,6 +7,8 @@ const memoryMonitor = require('./utils/memoryMonitor');
 const telegramLoggingMiddleware = require('./middlewares/telegramLogging');
 const session = require('express-session');
 const passport = require('passport');
+const userRoutes = require('./routes/index.js')
+const pagesRoutes = require('./routes/pages.js')
 const authRoutes = require('./routes/auth');
 const authMiddleware = require('./middlewares/authMiddleware');
 
@@ -42,10 +42,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // Add Telegram logging middleware for API routes
-app.use('/api', telegramLoggingMiddleware);
+app.use('/api', userRoutes, telegramLoggingMiddleware);
 
 // Routes
-app.use('/api', userRoutes);
 app.use('/pages', pagesRoutes);
 
 // Auth routes
@@ -107,7 +106,7 @@ const initializeApp = async () => {
     }
 };
 
-initializeApp();
+initializeApp().then(r => logger.info('App initialized successfully'));
 
 // Graceful shutdown
 process.on('SIGINT', async () => {
