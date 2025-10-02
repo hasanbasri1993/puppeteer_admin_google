@@ -3,7 +3,14 @@
   "version": "1.0.1",
   "description": "Turn off this",
   "scripts": {
-    "dev": "node app.js"
+    "dev": "node app.js",
+    "start": "set NODE_OPTIONS=--expose-gc --max-old-space-size=4096 && nodemon app.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:delete": "pm2 delete ecosystem.config.js",
+    "pm2:logs": "pm2 logs",
+    "pm2:status": "pm2 status"
   },
   "main": "app.js",
   "author": "Hasan Basri",
@@ -21,5 +28,8 @@
     "pusher": "^5.2.0",
     "qrcode": "^1.5.4",
     "speakeasy": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }

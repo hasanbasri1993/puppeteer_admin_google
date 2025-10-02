@@ -6,6 +6,7 @@ const path = require('path')
 const logger = require('pino')()
 const cors = require('cors');
 const { instance, close } = require('./services/browserInstance');
+const memoryMonitor = require('./utils/memoryMonitor');
 
 logger.info('Server is starting...')
 const app = express();
@@ -39,6 +40,14 @@ app.use((req, res, next) => {
 const initializeApp = async () => {
   try {
     logger.info('Initialize browser instance...')
+    
+    // Start memory monitoring
+    memoryMonitor.startMonitoring(30000); // Check every 30 seconds
+    
+    // Log initial memory usage
+    const initialMemory = memoryMonitor.getMemoryUsage();
+    logger.info(`Initial memory usage: ${JSON.stringify(initialMemory)}`);
+    
     await instance.initialize(
       process.env.GOOGLE_ADMIN_USERNAME,
       process.env.GOOGLE_ADMIN_PASSWORD
@@ -50,9 +59,13 @@ const initializeApp = async () => {
     );
     logger.info('Initialized relogin instance successfully')
 
-    app.listen(port, () => console.log(`Server running on port ${port}`));
+    app.listen(port, () => {
+      console.log(`Server running on port ${port}`);
+      logger.info(`Server started successfully on port ${port}`);
+    });
   } catch (error) {
     console.error('Failed to initialize:', error);
+    logger.error('Failed to initialize:', error);
     process.exit(1);
   }
 };
@@ -61,6 +74,8 @@ initializeApp();
 
 // Graceful shutdown
 process.on('SIGINT', async () => {
+  logger.info('Received SIGINT, shutting down gracefully...');
+  memoryMonitor.stopMonitoring();
   await close();
   process.exit();
 });

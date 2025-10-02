@@ -4,43 +4,6 @@ const speakeasy = require('speakeasy');
 
 module.exports = {
     /**
-     * Perform login in Google Admin console.
-     * @param {puppeteer.Page} page - Puppeteer Page object.
-     * @param {string} username - Google Admin username.
-     * @param {string} password - Google Admin password.
-     * @param {Object} [options] - Options for login.
-     * @param {boolean} [options.logout=false] - If true, it will logout first before login.
-     */
-    performLogin: async (page, username, password, { logout = false } = {}) => {
-        if (logout) {
-            logger.info("goto: " + ADMIN_LOGOUT);
-            await page.goto(ADMIN_LOGOUT, { waitUntil: 'networkidle2' });
-            setTimeout(async () => {
-                logger.info("goto: " + ADMIN_LOGIN);
-                await page.goto(ADMIN_LOGIN, { waitUntil: 'networkidle2' });
-            }, 3000);
-        } else {
-            logger.info("goto: " + ADMIN_URL);
-            await page.goto(ADMIN_URL, { waitUntil: 'networkidle2' });
-        }
-        logger.info("waitForSelector: '#identifierId'");
-        await page.waitForSelector('#identifierId', { visible: true, timeout: 10000 });
-
-        if (!username || typeof username !== 'string') {
-            throw new Error("Invalid username: " + username);
-        }
-        logger.info("type: '#identifierId': ", username);
-        await page.type('#identifierId', username);
-        await page.click('#identifierNext');
-        logger.info("waitForSelector: 'input[type=password]'");
-        await page.waitForSelector('input[type="password"]', { visible: true, timeout: 10000 });
-        logger.info("type: input[type=password]: ", password);
-        await page.type('input[type="password"]', password);
-        await page.click('#passwordNext');
-        await page.waitForNavigation({ waitUntil: 'networkidle2' });
-    },
-
-    /**
      * Perform login in Google Admin console with TOTP verification.
      * @param {puppeteer.Page} page - Puppeteer Page object.
      * @param {string} username - Google Admin username.
@@ -227,7 +190,7 @@ module.exports = {
 
                 if (isLoggedIn) {
                     if (debug) console.log("✅ Login berhasil!");
-                    await page.waitForNavigation({ waitUntil: 'networkidle2' });
+                    return true; // Exit the function successfully
                 } else {
                     throw new Error(`Login gagal - masih di halaman: ${currentUrl}`);
                 }
@@ -244,5 +207,8 @@ module.exports = {
                 await new Promise(resolve => setTimeout(resolve, 2000));
             }
         }
+        
+        // If we reach here, all retries failed
+        throw new Error(`Login gagal setelah ${maxRetries} percobaan`);
     }
 }
