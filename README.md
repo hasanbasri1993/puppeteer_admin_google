@@ -3,6 +3,14 @@
 ## Overview
 This is a Node.js backend application that automates Google Admin Console operations using Puppeteer for web automation. The main purpose is to manage security challenges for Google Workspace users, specifically turning off identity questions for 10 minutes after login challenges.
 
+Recent updates:
+- Mobile-first dashboard UI with collapsible sidebar and responsive partials
+- Reset Password visibility and access restricted to authorized emails (from env)
+- API routes for password reset restricted to authorized emails
+- Telegram logger now includes authenticated user name and email
+- Turn-off endpoint request body standardized to `{ nis: string[] }`
+- Middleware ordering fixed so `/api` requests are logged to Telegram
+
 ## Project Structure
 
 ### Core Application Files
@@ -16,7 +24,7 @@ This is a Node.js backend application that automates Google Admin Console operat
 - **`ids.json`** - Large JSON file containing student data (NIS, Google IDs, names, classes)
 
 ### Routes & Controllers
-- **`routers/index.js`** - Express router defining API endpoints
+- **`routers/index.js`** - Express router defining API endpoints (with auth/authorization)
 - **`controllers/resetPassword.js`** - Handles password reset operations via Google API with email support
 - **`controllers/turnOff.js`** - Main controller for turning off security challenges
 
@@ -50,6 +58,7 @@ This is a Node.js backend application that automates Google Admin Console operat
 ### 3. Real-time Communication
 - **Pusher Integration**: Provides real-time status updates during operations
 - **Progress Tracking**: Notifies frontend about operation progress and results
+- **Telegram Logging**: Logs `/api` requests (method, URL, status, response time) and includes authenticated user name/email (HTML-safe)
 
 ### 4. Google API Integration
 - **Admin Directory API**: Lists and manages Google Workspace users
@@ -61,8 +70,10 @@ This is a Node.js backend application that automates Google Admin Console operat
 
 ### POST `/api/reset_password`
 - Resets Google Workspace user passwords via Admin API
-- Accepts single user or bulk password reset requests
-- Supports email validation and password strength requirements
+- Protected by authentication and authorized email check
+- Accepts bodies:
+  - Single: `{ "email": string, "password": string }`
+  - Bulk: `{ "users": string[] }` or `{ "batch_ids": string[] }`
 - Returns detailed success/failure status for each user
 
 ### GET `/api/hai`
@@ -71,9 +82,9 @@ This is a Node.js backend application that automates Google Admin Console operat
 
 ### POST `/api/turn_off`
 - Main endpoint for turning off security challenges
-- Accepts comma-separated NIS (student ID) list
-- Processes multiple users concurrently
-- Returns detailed results for each user
+- Accepts body: `{ "nis": ["234054", "234035", ...] }`
+- Processes multiple users concurrently in batches (env: `BATCH_SIZE`, `BATCH_DELAY`)
+- Returns detailed results and a summary object
 
 ## Technical Stack
 
@@ -96,6 +107,10 @@ This is a Node.js backend application that automates Google Admin Console operat
 - `RELOGIN_TIME` - Cron schedule for re-login
 - Pusher configuration (APP_ID, KEY, SECRET, CLUSTER)
 
+Authorization and UI control:
+- `AUTHORIZED_EMAILS` - Comma-separated list of emails allowed to access Reset Password UI and APIs
+- or `AUTHORIZED_EMAIL_1`, `AUTHORIZED_EMAIL_2` - Alternative individual slots
+
 ## Data Structure
 
 ### Student Data (`ids.json`)
@@ -113,22 +128,23 @@ Contains student information with fields:
 
 ## Current Status
 The application is in active development with recent modifications to:
-- `app.js` - Main server configuration (port changed to 7123, fixed route ordering)
-- `routers/index.js` - API routing (reset_password changed to POST)
-- `services/authService.js` - Authentication service
-- `services/googleApiService.js` - Added password reset functionality
-- `controllers/resetPassword.js` - Complete rewrite with email support
+- `app.js` - Main server configuration (port changed to 7123, fixed `/api` logging middleware ordering)
+- `routers/index.js` - API routing (reset password protected by authentication and authorization)
+- `middlewares/authMiddleware.js` - Authorization via env-based email list
+- `views/` - Mobile-first dashboard and partials, conditional Reset Password menu
+- `services/telegramLogger.js` - Logs include user name and email; safer HTML encoding
+- `controllers/turnOff.js` - Accepts `{ nis: string[] }` request body with backward compatibility for `idS`
 
 The browser initialization code is currently commented out in `app.js`, suggesting the application may be in a testing or development phase.
 
 ## File Details
 
 ### Main Application (`app.js`)
-- Express server setup with CORS configuration
-- Static file serving for frontend
-- Fixed middleware ordering to prevent API routes from being intercepted
-- Browser instance initialization (currently disabled)
-- Graceful shutdown handling
+- Express server setup with sessions and Passport
+- EJS views for dashboard and login
+- Telegram logging middleware placed before `/api` routes
+- Memory monitor started and graceful shutdown enabled
+- Google browser instance initialize + relogin on startup
 - Server runs on port 7123 by default
 
 ### Authentication Service (`services/authService.js`)
@@ -148,6 +164,7 @@ The browser initialization code is currently commented out in `app.js`, suggesti
 - Real-time progress updates via Pusher
 - Concurrent execution for better performance
 - Comprehensive error handling and logging
+- Accepts `{ nis: string[] }` request body (CSV `idS` still supported for compatibility)
 
 ### Google API Service (`services/googleApiService.js`)
 - OAuth2 authentication flow
@@ -180,8 +197,7 @@ The browser initialization code is currently commented out in `app.js`, suggesti
 2. Install dependencies with `npm install`
 3. Run the application with `npm run dev`
 4. The server will start on port 7123 (or specified PORT)
-5. Frontend is served from the `/public` directory
-6. API endpoints are available under `/api/` prefix
+5. API endpoints are available under `/api/` prefix
 
 ## API Usage Examples
 
