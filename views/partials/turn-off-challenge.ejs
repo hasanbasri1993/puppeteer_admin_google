@@ -1,0 +1,214 @@
+<div class="space-y-6">
+    <div class="border-b border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Turn Off Challenge</h2>
+        <p class="text-gray-600">Nonaktifkan tantangan login untuk siswa</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="border-b border-gray-200">
+        <nav class="-mb-px flex space-x-8">
+            <button onclick="switchTab('per-kelas')" 
+                    id="tab-per-kelas"
+                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-primary text-primary">
+                Per Kelas
+            </button>
+            <button onclick="switchTab('batch-nis')" 
+                    id="tab-batch-nis"
+                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                Batch NIS
+            </button>
+        </nav>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="mt-6">
+        <!-- Tab Per Kelas -->
+        <div id="content-per-kelas" class="tab-content">
+            <div class="space-y-4">
+                <div>
+                    <label for="kelas-select" class="block text-sm font-medium text-gray-700 mb-2">
+                        Pilih Kelas
+                    </label>
+                    <select id="kelas-select" 
+                            class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                        <option value="">-- Pilih Kelas --</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="nis-list" class="block text-sm font-medium text-gray-700 mb-2">
+                        Daftar NIS
+                    </label>
+                    <textarea id="nis-list" 
+                              rows="6" 
+                              readonly
+                              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-50 focus:outline-none focus:ring-primary focus:border-primary"
+                              placeholder="Pilih kelas terlebih dahulu..."></textarea>
+                </div>
+
+                <button onclick="processPerKelas()" 
+                        class="w-full bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out">
+                    Proses
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Batch NIS -->
+        <div id="content-batch-nis" class="tab-content hidden">
+            <div class="space-y-4">
+                <div>
+                    <label for="batch-nis-input" class="block text-sm font-medium text-gray-700 mb-2">
+                        Masukkan NIS (satu per baris)
+                    </label>
+                    <textarea id="batch-nis-input" 
+                              rows="8" 
+                              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                              placeholder="234054&#10;234035&#10;234060&#10;..."></textarea>
+                </div>
+
+                <button onclick="processBatchNIS()" 
+                        class="w-full bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out">
+                    Proses
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching functionality
+    function switchTab(tabName) {
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.add('hidden');
+        });
+        
+        // Remove active class from all tab buttons
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.classList.remove('border-primary', 'text-primary');
+            button.classList.add('border-transparent', 'text-gray-500');
+        });
+        
+        // Show selected tab content
+        document.getElementById(`content-${tabName}`).classList.remove('hidden');
+        
+        // Add active class to selected tab button
+        const activeButton = document.getElementById(`tab-${tabName}`);
+        activeButton.classList.add('border-primary', 'text-primary');
+        activeButton.classList.remove('border-transparent', 'text-gray-500');
+        
+        // Load classes if switching to per-kelas tab
+        if (tabName === 'per-kelas') {
+            loadClasses();
+        }
+    }
+    
+    // Load classes from API
+    async function loadClasses() {
+        try {
+            const response = await fetch('/pages/get-classes');
+            const classes = await response.json();
+            
+            const select = document.getElementById('kelas-select');
+            select.innerHTML = '<option value="">-- Pilih Kelas --</option>';
+            
+            classes.forEach(kelas => {
+                const option = document.createElement('option');
+                option.value = kelas;
+                option.textContent = kelas;
+                select.appendChild(option);
+            });
+            
+            // Add event listener for class selection
+            select.addEventListener('change', function() {
+                if (this.value) {
+                    loadNISForClass(this.value);
+                } else {
+                    document.getElementById('nis-list').value = '';
+                }
+            });
+            
+        } catch (error) {
+            console.error('Error loading classes:', error);
+            showAlert('Gagal memuat daftar kelas', 'error');
+        }
+    }
+    
+    // Load NIS for selected class
+    async function loadNISForClass(kelas) {
+        try {
+            const response = await fetch(`/pages/get-nis-by-class?kelas=${encodeURIComponent(kelas)}`);
+            const data = await response.json();
+            
+            const nisList = document.getElementById('nis-list');
+            nisList.value = data.nis_list.join('\n');
+            
+        } catch (error) {
+            console.error('Error loading NIS:', error);
+            showAlert('Gagal memuat daftar NIS', 'error');
+        }
+    }
+    
+    // Process per kelas
+    async function processPerKelas() {
+        const kelas = document.getElementById('kelas-select').value;
+        const nisList = document.getElementById('nis-list').value;
+        
+        if (!kelas || !nisList) {
+            showAlert('Pilih kelas dan pastikan daftar NIS tersedia', 'warning');
+            return;
+        }
+        
+        const nisArray = nisList.split('\n').filter(nis => nis.trim());
+        
+        await processTurnOff(nisArray);
+    }
+    
+    // Process batch NIS
+    async function processBatchNIS() {
+        const nisInput = document.getElementById('batch-nis-input').value;
+        
+        if (!nisInput.trim()) {
+            showAlert('Masukkan minimal satu NIS', 'warning');
+            return;
+        }
+        
+        const nisArray = nisInput.split('\n').filter(nis => nis.trim());
+        
+        await processTurnOff(nisArray);
+    }
+    
+    // Process turn off challenge
+    async function processTurnOff(nisArray) {
+        showLoading();
+        
+        try {
+            const response = await fetch('/api/turn-off-challenge', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nis: nisArray })
+            });
+            
+            const result = await response.json();
+            
+            if (result.status === 'sukses') {
+                showAlert(result.message, 'success');
+            } else {
+                showAlert(result.message || 'Terjadi kesalahan', 'error');
+            }
+            
+        } catch (error) {
+            console.error('Error processing turn off:', error);
+            showAlert('Gagal memproses permintaan', 'error');
+        } finally {
+            hideLoading();
+        }
+    }
+    
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        loadClasses();
+    });
+</script>
