@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const {isAuthenticated, isAuthorizedForReset} = require('../middlewares/authMiddleware');
 const {turnOffChallenge} = require('../controllers/turnOff.js'); // Ambil fungsi dari objek
 const {resetPassword} = require('../controllers/resetPassword.js'); // Ambil fungsi dari objek
 const {instance} = require('../services/browserInstance');
@@ -8,26 +9,36 @@ const path = require('path');
 
 // New routes for the web application
 // Load content for dashboard
-router.get('/load-content/:page', (req, res) => {
-    const rawPage = req.params.page;
-    // Map short aliases to actual partial filenames
-    const aliasMap = {
-        'turn-off': 'turn-off-challenge',
-        'turnoff': 'turn-off-challenge',
-        'reset': 'reset-password',
-        'reset-password': 'reset-password'
-    };
+router.get(
+    '/load-content/:page',
+    isAuthenticated,
+    (req, res, next) => {
+        const rawPage = req.params.page;
+        // Map short aliases to actual partial filenames
+        const aliasMap = {
+            'turn-off': 'turn-off-challenge',
+            'reset-password': 'reset-password'
+        };
 
-    const page = aliasMap[rawPage] || rawPage;
+        req.requestedPartial = aliasMap[rawPage] || rawPage;
 
-    const filePath = path.join(__dirname, '../views/partials', `${page}.ejs`);
+        if (req.requestedPartial === 'reset-password') {
+            return isAuthorizedForReset(req, res, next);
+        }
 
-    if (fs.existsSync(filePath)) {
-        res.render(`partials/${page}`, {user: req.user});
-    } else {
-        res.status(404).send('Content not found');
+        next();
+    },
+    (req, res) => {
+        const page = req.requestedPartial;
+        const filePath = path.join(__dirname, '../views/partials', `${page}.ejs`);
+
+        if (fs.existsSync(filePath)) {
+            res.render(`partials/${page}`, {user: req.user});
+        } else {
+            res.status(404).send('Content not found');
+        }
     }
-});
+);
 
 // Get classes from ids.json
 router.get('/get-classes', (req, res) => {

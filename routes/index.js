@@ -3,8 +3,9 @@ const router = express.Router();
 const {turnOffChallenge} = require('../controllers/turnOff.js'); // Ambil fungsi dari objek
 const {resetPassword} = require('../controllers/resetPassword.js'); // Ambil fungsi dari objek
 const {instance} = require('../services/browserInstance');
+const {isAuthenticated, isAuthorizedForReset} = require('../middlewares/authMiddleware');
 
-router.post('/reset_password', resetPassword);
+router.post('/reset_password', isAuthenticated, isAuthorizedForReset, resetPassword);
 router.get('/hai', (req, res) => {
     res.send('Hello World');
 });
@@ -57,7 +58,7 @@ router.post('/turn-off-challenge', (req, res) => {
 });
 
 // Reset password endpoint
-router.post('/reset-password', (req, res) => {
+router.post('/reset-password', isAuthenticated, isAuthorizedForReset, (req, res) => {
     try {
         const {nis, batch_ids} = req.body;
 

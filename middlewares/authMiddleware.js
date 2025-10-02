@@ -1,9 +1,16 @@
-// List of authorized emails for reset password functionality
-const AUTHORIZED_EMAILS = [
-    'admin1@email.com',
-    'admin2@email.com',
-    // Add more authorized emails here
-];
+// List of authorized emails for reset password functionality (loaded from env)
+const AUTHORIZED_EMAILS = process.env.AUTHORIZED_EMAILS
+    ? process.env.AUTHORIZED_EMAILS.split(',').map(e => e.trim()).filter(Boolean)
+    : [process.env.AUTHORIZED_EMAIL_1, process.env.AUTHORIZED_EMAIL_2].filter(Boolean);
+
+// Helper to check if a given user object is authorized for reset password
+const isUserAuthorizedForReset = (user) => {
+    if (!user || !user.emails || !Array.isArray(user.emails) || user.emails.length === 0) {
+        return false;
+    }
+    const userEmail = user.emails[0].value;
+    return AUTHORIZED_EMAILS.includes(userEmail);
+};
 
 // Middleware to check if user is authenticated
 const isAuthenticated = (req, res, next) => {
@@ -31,5 +38,6 @@ const isAuthorizedForReset = (req, res, next) => {
 
 module.exports = {
     isAuthenticated,
-    isAuthorizedForReset
+    isAuthorizedForReset,
+    isUserAuthorizedForReset
 };

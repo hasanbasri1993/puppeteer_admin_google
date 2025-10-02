@@ -60,7 +60,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dashboard', authMiddleware.isAuthenticated, (req, res) => {
-    res.render('dashboard', {user: req.user});
+    const canResetPassword = authMiddleware.isUserAuthorizedForReset(req.user);
+    res.render('dashboard', {user: req.user, canResetPassword});
 });
 
 app.get('/logout', (req, res) => {

@@ -18,3 +18,10 @@ TELEGRAM_BOT_TOKEN=
 # Google OAuth Configuration
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+
+# Authorized emails for reset password access
+# Option A: Comma-separated list
+# AUTHORIZED_EMAILS=admin1@email.com,admin2@email.com
+# Option B: Two explicit slots
+# AUTHORIZED_EMAIL_1=
+# AUTHORIZED_EMAIL_2=
