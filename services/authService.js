@@ -1,4 +1,4 @@
-const { ADMIN_URL, ADMIN_LOGIN, ADMIN_LOGOUT } = require('../config/constants');
+const {ADMIN_URL, ADMIN_LOGIN, ADMIN_LOGOUT} = require('../config/constants');
 const logger = require('pino')()
 const speakeasy = require('speakeasy');
 
@@ -34,29 +34,29 @@ module.exports = {
                 // Navigation
                 if (logout) {
                     if (debug) console.log("🔄 Logging out first...");
-                    await page.goto(ADMIN_LOGOUT, { waitUntil: 'networkidle2' });
+                    await page.goto(ADMIN_LOGOUT, {waitUntil: 'networkidle2'});
                     await new Promise(resolve => setTimeout(resolve, 3000));
-                    await page.goto(ADMIN_LOGIN, { waitUntil: 'networkidle2' });
+                    await page.goto(ADMIN_LOGIN, {waitUntil: 'networkidle2'});
                 } else {
                     if (debug) console.log("🌐 Navigating to admin URL...");
-                    await page.goto(ADMIN_URL, { waitUntil: 'networkidle2' });
+                    await page.goto(ADMIN_URL, {waitUntil: 'networkidle2'});
                 }
 
                 // Username input
                 if (debug) console.log("👤 Entering username...");
-                await page.waitForSelector('#identifierId', { visible: true, timeout: 15000 });
+                await page.waitForSelector('#identifierId', {visible: true, timeout: 15000});
                 await page.evaluate(() => document.querySelector('#identifierId').value = '');
-                await page.type('#identifierId', username, { delay: 50 });
+                await page.type('#identifierId', username, {delay: 50});
                 await page.click('#identifierNext');
 
                 // Password input
                 if (debug) console.log("🔐 Entering password...");
-                await page.waitForSelector('input[type="password"]', { visible: true, timeout: 15000 });
+                await page.waitForSelector('input[type="password"]', {visible: true, timeout: 15000});
                 await page.evaluate(() => {
                     const passwordInput = document.querySelector('input[type="password"]');
                     if (passwordInput) passwordInput.value = '';
                 });
-                await page.type('input[type="password"]', password, { delay: 50 });
+                await page.type('input[type="password"]', password, {delay: 50});
                 await page.click('#passwordNext');
 
                 // Wait for page load
@@ -124,13 +124,13 @@ module.exports = {
                                 if (isVisible) {
                                     if (debug) console.log(`📝 Filling TOTP in: ${selector}`);
                                     await page.evaluate(el => el.value = '', element);
-                                    await page.type(selector, token, { delay: 100 });
+                                    await page.type(selector, token, {delay: 100});
                                     totpFilled = true;
                                     break;
                                 }
                             }
                         } catch (e) {
-                            continue;
+
                         }
                     }
 
@@ -164,7 +164,7 @@ module.exports = {
                                 }
                             }
                         } catch (e) {
-                            continue;
+
                         }
                     }
 
@@ -207,7 +207,7 @@ module.exports = {
                 await new Promise(resolve => setTimeout(resolve, 2000));
             }
         }
-        
+
         // If we reach here, all retries failed
         throw new Error(`Login gagal setelah ${maxRetries} percobaan`);
     }

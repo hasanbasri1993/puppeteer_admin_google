@@ -1,8 +1,8 @@
 const fs = require('fs').promises;
 const path = require('path');
 const process = require('process');
-const { authenticate } = require('@google-cloud/local-auth');
-const { google } = require('googleapis');
+const {authenticate} = require('@google-cloud/local-auth');
+const {google} = require('googleapis');
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/admin.directory.user'];
@@ -11,7 +11,6 @@ const SCOPES = ['https://www.googleapis.com/auth/admin.directory.user'];
 // time.
 const TOKEN_PATH = path.join(process.cwd(), 'token.json');
 const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json');
-
 
 
 /**
@@ -75,7 +74,7 @@ async function authorize() {
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 async function listUsers(auth) {
-    const service = google.admin({ version: 'directory_v1', auth });
+    const service = google.admin({version: 'directory_v1', auth});
     const res = await service.users.list({
         maxResults: 10,
         orderBy: 'email',
@@ -107,19 +106,19 @@ async function listUserExport() {
 async function resetUserPassword(email, newPassword) {
     try {
         const auth = await authorize();
-        const service = google.admin({ version: 'directory_v1', auth });
-        
+        const service = google.admin({version: 'directory_v1', auth});
+
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             throw new Error('Invalid email format');
         }
-        
+
         // Validate password strength (basic validation)
         if (!newPassword || newPassword.length < 8) {
             throw new Error('Password must be at least 8 characters long');
         }
-        
+
         // Update user password
         const result = await service.users.update({
             userKey: email,
@@ -128,7 +127,7 @@ async function resetUserPassword(email, newPassword) {
                 changePasswordAtNextLogin: true // Force user to change password on next login
             }
         });
-        
+
         return {
             success: true,
             message: `Password reset successfully for ${email}`,
@@ -137,7 +136,7 @@ async function resetUserPassword(email, newPassword) {
                 name: result.data.name?.fullName || 'N/A'
             }
         };
-        
+
     } catch (error) {
         console.error('Error resetting password:', error.message);
         return {
@@ -155,23 +154,23 @@ async function resetUserPassword(email, newPassword) {
  */
 async function resetMultiplePasswords(users) {
     const results = [];
-    
+
     for (const user of users) {
         const result = await resetUserPassword(user.email, user.password);
         results.push({
             email: user.email,
             ...result
         });
-        
+
         // Add small delay to avoid rate limiting
         await new Promise(resolve => setTimeout(resolve, 100));
     }
-    
+
     return results;
 }
 
-module.exports = { 
-    listUserExport, 
-    resetUserPassword, 
-    resetMultiplePasswords 
+module.exports = {
+    listUserExport,
+    resetUserPassword,
+    resetMultiplePasswords
 };
