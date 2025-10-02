@@ -7,12 +7,17 @@ const logger = require('pino')()
 const cors = require('cors');
 const { instance, close } = require('./services/browserInstance');
 const memoryMonitor = require('./utils/memoryMonitor');
+const telegramLoggingMiddleware = require('./middlewares/telegramLogging');
 
 logger.info('Server is starting...')
 const app = express();
 const port = process.env.PORT || 7123;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Add Telegram logging middleware for API routes
+app.use('/api', telegramLoggingMiddleware);
+
 app.use(history({
   rewrites: [
     { from: /^\/api\/.*$/, to: function(context) {

@@ -1,7 +1,8 @@
 const puppeteer = require('puppeteer');
 const authService = require('./authService');
 const cron = require('node-cron');
-const logger = require('pino')()
+const logger = require('pino')();
+const telegramLogger = require('./telegramLogger');
 
 const { XPATH_LOGIN_CHALLENGE, XPATH_TURN_OFF } = require('../config/constants');
 
@@ -100,6 +101,9 @@ class BrowserService {
       this.startMemoryCleanup();
       this.startBrowserHealthCheck();
       logger.info('Successfully initialized browser and logged in');
+      
+      // Log to Telegram
+      await telegramLogger.logSystemEvent('Browser Initialized', 'Successfully logged in to Google Admin Console');
     } catch (error) {
       logger.error('Failed to initialize browser: ' + error);
       await this.close();
@@ -114,8 +118,15 @@ class BrowserService {
         logger.info('🔄 Scheduled relogin triggered');
         await this.relogin(username, password);
         logger.info('✅ Scheduled relogin completed successfully');
+        
+        // Log to Telegram
+        await telegramLogger.logSystemEvent('Scheduled Relogin Success', 'Browser session refreshed successfully');
       } catch (error) {
         logger.error('❌ Scheduled relogin failed:', error.message);
+        
+        // Log to Telegram
+        await telegramLogger.logSystemEvent('Scheduled Relogin Failed', `Error: ${error.message}`);
+        
         // Try to recover by reinitializing browser
         try {
           logger.info('🔄 Attempting browser recovery after failed relogin...');
