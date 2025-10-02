@@ -1,20 +1,20 @@
 <div class="space-y-6">
     <div class="border-b border-gray-200">
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">Turn Off Challenge</h2>
-        <p class="text-gray-600">Nonaktifkan tantangan login untuk siswa</p>
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Turn Off Challenge</h2>
+        <p class="text-gray-600 text-sm sm:text-base">Nonaktifkan tantangan login untuk siswa</p>
     </div>
 
     <!-- Tab Navigation -->
-    <div class="border-b border-gray-200">
-        <nav class="-mb-px flex space-x-8">
+    <div class="border-b border-gray-200 -mx-4 px-4 sm:mx-0 sm:px-0">
+        <nav class="-mb-px flex space-x-6 overflow-x-auto">
             <button onclick="switchTab('per-kelas')" 
                     id="tab-per-kelas"
-                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-primary text-primary">
+                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-primary text-primary whitespace-nowrap">
                 Per Kelas
             </button>
             <button onclick="switchTab('batch-nis')" 
                     id="tab-batch-nis"
-                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                    class="tab-button py-2 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
                 Batch NIS
             </button>
         </nav>
@@ -33,6 +33,7 @@
                             class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
                         <option value="">-- Pilih Kelas --</option>
                     </select>
+                    <p class="mt-1 text-xs text-gray-500">Pilih kelas untuk menampilkan daftar NIS.</p>
                 </div>
 
                 <div>
@@ -64,6 +65,7 @@
                               rows="8" 
                               class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
                               placeholder="234054&#10;234035&#10;234060&#10;..."></textarea>
+                    <p class="mt-1 text-xs text-gray-500">Tempel beberapa NIS, satu per baris.</p>
                 </div>
 
                 <button onclick="processBatchNIS()" 
@@ -153,6 +155,7 @@
     async function processPerKelas() {
         const kelas = document.getElementById('kelas-select').value;
         const nisList = document.getElementById('nis-list').value;
+        const btn = document.querySelector('#content-per-kelas button');
         
         if (!kelas || !nisList) {
             showAlert('Pilih kelas dan pastikan daftar NIS tersedia', 'warning');
@@ -161,12 +164,17 @@
         
         const nisArray = nisList.split('\n').filter(nis => nis.trim());
         
+        btn.disabled = true;
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
         await processTurnOff(nisArray);
+        btn.disabled = false;
+        btn.classList.remove('opacity-60', 'cursor-not-allowed');
     }
     
     // Process batch NIS
     async function processBatchNIS() {
         const nisInput = document.getElementById('batch-nis-input').value;
+        const btn = document.querySelector('#content-batch-nis button');
         
         if (!nisInput.trim()) {
             showAlert('Masukkan minimal satu NIS', 'warning');
@@ -174,8 +182,11 @@
         }
         
         const nisArray = nisInput.split('\n').filter(nis => nis.trim());
-        
+        btn.disabled = true;
+        btn.classList.add('opacity-60', 'cursor-not-allowed');
         await processTurnOff(nisArray);
+        btn.disabled = false;
+        btn.classList.remove('opacity-60', 'cursor-not-allowed');
     }
     
     // Process turn off challenge
