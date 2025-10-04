@@ -1,3974 +1,2928 @@
 [
-    {
-        "ID_GOOGLE": "100125055436454379306",
-        "NIS": "234054",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Abdul Latief"
-    },
-    {
-        "ID_GOOGLE": "104928168894714477684",
-        "NIS": "234035",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Ahmad Thoriq"
-    },
-    {
-        "ID_GOOGLE": "110068394687615026816",
-        "NIS": "234049",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Alba Rayyan"
-    },
-    {
-        "ID_GOOGLE": "105206882954937796478",
-        "NIS": "234060",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Arif Sanjaya Siregar"
-    },
-    {
-        "ID_GOOGLE": "115716032808332398980",
-        "NIS": "234070",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Asa Farid Ridwan"
-    },
-    {
-        "ID_GOOGLE": "111084688656361596345",
-        "NIS": "234059",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Moh Hafidz Luthfyansah"
-    },
-    {
-        "ID_GOOGLE": "117266396652307038004",
-        "NIS": "234043",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Mohammad Fauzan Tsani"
-    },
-    {
-        "ID_GOOGLE": "116528018987998799519",
-        "NIS": "234012",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhamad Tazkiatus Safrudin Rukhiyat"
-    },
-    {
-        "ID_GOOGLE": "103310317558629221751",
-        "NIS": "234051",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Al Fayyadh Dewantoro"
-    },
-    {
-        "ID_GOOGLE": "110864272979149679228",
-        "NIS": "234063",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Arif Nasution"
-    },
-    {
-        "ID_GOOGLE": "110039276684506149074",
-        "NIS": "234064",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Fadil"
-    },
-    {
-        "ID_GOOGLE": "114925157926128042917",
-        "NIS": "234015",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Faiz Azizy"
-    },
-    {
-        "ID_GOOGLE": "112689973945539122880",
-        "NIS": "234023",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Fakhri Fairus"
-    },
-    {
-        "ID_GOOGLE": "110602503597183466536",
-        "NIS": "234021",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Fathan El Rizky"
-    },
-    {
-        "ID_GOOGLE": "105507178784072284469",
-        "NIS": "234069",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Fauzan"
-    },
-    {
-        "ID_GOOGLE": "110822564851592321697",
-        "NIS": "234026",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Fauzan Kamil"
-    },
-    {
-        "ID_GOOGLE": "102281716405169861019",
-        "NIS": "234055",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Gofar Azis"
-    },
-    {
-        "ID_GOOGLE": "110932920580841438195",
-        "NIS": "234014",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Hafiz Zulfani"
-    },
-    {
-        "ID_GOOGLE": "107360577045268872768",
-        "NIS": "234008",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Muhammad Ishak"
-    },
-    {
-        "ID_GOOGLE": "109960038391013042991",
-        "NIS": "234019",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Nasution Zidan Naser"
-    },
-    {
-        "ID_GOOGLE": "113614621343179280657",
-        "NIS": "234005",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Renjha Rizqy Radifta"
-    },
-    {
-        "ID_GOOGLE": "108186243323497301575",
-        "NIS": "234027",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Taufiq Rahman"
-    },
-    {
-        "ID_GOOGLE": "106674073497721060008",
-        "NIS": "234037",
-        "KELAS": "3 Intensif A",
-        "NAMA": "Zlatan Ibrahim Zidan Al Banjo"
-    },
-    {
-        "ID_GOOGLE": "105118890508814666659",
-        "NIS": "234056",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Aisya Rahma Qurrotul Aini"
-    },
-    {
-        "ID_GOOGLE": "117682497273975625695",
-        "NIS": "234036",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Ananda Nayla Vilza Salsabila"
-    },
-    {
-        "ID_GOOGLE": "117049598353464881786",
-        "NIS": "234016",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Delima Zahra Hasibuan"
-    },
-    {
-        "ID_GOOGLE": "115893624375557536858",
-        "NIS": "234033",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Denia Mayla Putri"
-    },
-    {
-        "ID_GOOGLE": "115800261206174481628",
-        "NIS": "234042",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Fajriah Nurhasanah"
-    },
-    {
-        "ID_GOOGLE": "102375830891018736749",
-        "NIS": "234045",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Femilia Angelita"
-    },
-    {
-        "ID_GOOGLE": "101971631369203258076",
-        "NIS": "234058",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Idamatul Muflihah"
-    },
-    {
-        "ID_GOOGLE": "100562260278530305437",
-        "NIS": "234018",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Jivaka Kenesia"
-    },
-    {
-        "ID_GOOGLE": "111783701745524530942",
-        "NIS": "234032",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Kaisya Kamiliya Wafa"
-    },
-    {
-        "ID_GOOGLE": "103028220882588018224",
-        "NIS": "234024",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Kaysysa Karimah Maulidah"
-    },
-    {
-        "ID_GOOGLE": "112807315028179426589",
-        "NIS": "234029",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Liza Zahrani Putri"
-    },
-    {
-        "ID_GOOGLE": "118063793357474560099",
-        "NIS": "234040",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Nafisah"
-    },
-    {
-        "ID_GOOGLE": "114404051607651557941",
-        "NIS": "234020",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Najwa Luthfiyah"
-    },
-    {
-        "ID_GOOGLE": "112131560641465662949",
-        "NIS": "234013",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Putri Khumairah"
-    },
-    {
-        "ID_GOOGLE": "110993380627063702050",
-        "NIS": "234034",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Rismawati"
-    },
-    {
-        "ID_GOOGLE": "111253908788754514930",
-        "NIS": "234004",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Risty Putri Maharani"
-    },
-    {
-        "ID_GOOGLE": "108304771646112261272",
-        "NIS": "234057",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Safira Roisatu Aulia"
-    },
-    {
-        "ID_GOOGLE": "108480859271758315621",
-        "NIS": "234025",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Salwa Noor Azzahra"
-    },
-    {
-        "ID_GOOGLE": "102423487603046144655",
-        "NIS": "234061",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Siti Syirla Hendrawanti"
-    },
-    {
-        "ID_GOOGLE": "111109130485297042353",
-        "NIS": "234071",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Sitti Kamila Kaimuddin"
-    },
-    {
-        "ID_GOOGLE": "115003832998568547766",
-        "NIS": "234001",
-        "KELAS": "3 Intensif B",
-        "NAMA": "Syifa Lestari"
-    },
-    {
-        "ID_GOOGLE": "102047565614495342527",
-        "NIS": "226242",
-        "KELAS": "3 A (MTs)",
-        "NAMA": "Abuzar Ghiffari"
-    },
-    {
-        "ID_GOOGLE": "112485579223589783603",
-        "NIS": "226273",
-        "KELAS": "3 A (MTs)",
-        "NAMA": "Alif Rezky Perdana"
-    },
-    {
-        "ID_GOOGLE": "114203077434037134869",
-        "NIS": "226303",
-        "KELAS": "3 A (MTs)",
-        "NAMA": "Ihdan Bari Muntasir"
-    },
-    {
-        "ID_GOOGLE": "118364298302046187044",
-        "NIS": "226058",
-        "KELAS": "3 C (SMP)",
-        "NAMA": "Ariiq Atha Ramadhan"
-    },
-    {
-        "ID_GOOGLE": "101576756544820183919",
-        "NIS": "224083",
-        "KELAS": "3 C (SMP)",
-        "NAMA": "M. Fiqri Aqias Al Farizi"
-    },
-    {
-        "ID_GOOGLE": "117958531742683906112",
-        "NIS": "226107",
-        "KELAS": "3 D (SMP)",
-        "NAMA": "Alvaro Haidar Rachman"
-    },
-    {
-        "ID_GOOGLE": "117498915340201547107",
-        "NIS": "226037",
-        "KELAS": "3 D (SMP)",
-        "NAMA": "Bintang Virji Yupianur"
-    },
-    {
-        "ID_GOOGLE": "101909616154081782172",
-        "NIS": "226067",
-        "KELAS": "3 D (SMP)",
-        "NAMA": "Ikram Diwiarta Khairulloh"
-    },
-    {
-        "ID_GOOGLE": "117168732265341632184",
-        "NIS": "226161",
-        "KELAS": "3 D (SMP)",
-        "NAMA": "M. Subhan Haikal"
-    },
-    {
-        "ID_GOOGLE": "115183053226245384967",
-        "NIS": "226100",
-        "KELAS": "3 D (SMP)",
-        "NAMA": "Prabu Damar Patty"
-    },
-    {
-        "ID_GOOGLE": "116505783106130223448",
-        "NIS": "226224",
-        "KELAS": "3 E (MTs)",
-        "NAMA": "Fakhri Zaidan Muiz"
-    },
-    {
-        "ID_GOOGLE": "112336231405081127969",
-        "NIS": "226301",
-        "KELAS": "3 E (MTs)",
-        "NAMA": "Adkhilni Faradisa"
-    },
-    {
-        "ID_GOOGLE": "106696245904497119849",
-        "NIS": "226366",
-        "KELAS": "3 E (MTs)",
-        "NAMA": "Khansa Syifa Nurlia Hidayat"
-    },
-    {
-        "ID_GOOGLE": "105417261626021956382",
-        "NIS": "226327",
-        "KELAS": "3 E (MTs)",
-        "NAMA": "Nazwa Khoerunnisa"
-    },
-    {
-        "ID_GOOGLE": "105075437639429007795",
-        "NIS": "226383",
-        "KELAS": "3 F (MTs)",
-        "NAMA": "Bilqis Ayrira Alhaq Farly"
-    },
-    {
-        "ID_GOOGLE": "113508575627067723079",
-        "NIS": "226233",
-        "KELAS": "3 F (MTs)",
-        "NAMA": "Dinda Aprillya"
-    },
-    {
-        "ID_GOOGLE": "108313303883674569186",
-        "NIS": "226295",
-        "KELAS": "3 F (MTs)",
-        "NAMA": "Nathania Aurelia Ardiyansah"
-    },
-    {
-        "ID_GOOGLE": "114479709232200503059",
-        "NIS": "226181",
-        "KELAS": "3 F (MTs)",
-        "NAMA": "Nazwa Laillatul Syafitri"
-    },
-    {
-        "ID_GOOGLE": "100779764736441946482",
-        "NIS": "226349",
-        "KELAS": "3 G (MTs)",
-        "NAMA": "Muthia Hasanah"
-    },
-    {
-        "ID_GOOGLE": "103707431528906717109",
-        "NIS": "226275",
-        "KELAS": "3 G (MTs)",
-        "NAMA": "Safa Azzahra Solehudin"
-    },
-    {
-        "ID_GOOGLE": "112506994329133769827",
-        "NIS": "226292",
-        "KELAS": "3 G (MTs)",
-        "NAMA": "Septiyani Maulia"
-    },
-    {
-        "ID_GOOGLE": "114776637558988710765",
-        "NIS": "216064",
-        "KELAS": "4A",
-        "NAMA": "Ananda Diandra Adhiguna"
-    },
-    {
-        "ID_GOOGLE": "114615350210330430382",
-        "NIS": "216150",
-        "KELAS": "4A",
-        "NAMA": "Ayuda Akbar Nur Abdillah"
-    },
-    {
-        "ID_GOOGLE": "112364106981382296357",
-        "NIS": "216357",
-        "KELAS": "4A",
-        "NAMA": "Bagas Ramadoni"
-    },
-    {
-        "ID_GOOGLE": "115387719405438533653",
-        "NIS": "216219",
-        "KELAS": "4A",
-        "NAMA": "Caesario Fatan Wilianto"
-    },
-    {
-        "ID_GOOGLE": "110174308778392577985",
-        "NIS": "216345",
-        "KELAS": "4A",
-        "NAMA": "Candra Ardiansyah"
-    },
-    {
-        "ID_GOOGLE": "108287596466221165406",
-        "NIS": "216324",
-        "KELAS": "4A",
-        "NAMA": "Fajar Kusuma Putra"
-    },
-    {
-        "ID_GOOGLE": "116114195846813719754",
-        "NIS": "216012",
-        "KELAS": "4A",
-        "NAMA": "Fakhry Alfarisy"
-    },
-    {
-        "ID_GOOGLE": "102072495135001108091",
-        "NIS": "216051",
-        "KELAS": "4A",
-        "NAMA": "Fasha Nazela Nugraha"
-    },
-    {
-        "ID_GOOGLE": "105676376982247583699",
-        "NIS": "216066",
-        "KELAS": "4A",
-        "NAMA": "Fawwaz Qeyizan Adli"
-    },
-    {
-        "ID_GOOGLE": "110562037114558010428",
-        "NIS": "216383",
-        "KELAS": "4A",
-        "NAMA": "Firdaus Drajat Sampoerna"
-    },
-    {
-        "ID_GOOGLE": "100002354071669104126",
-        "NIS": "216140",
-        "KELAS": "4A",
-        "NAMA": "Hasbiansyah Wisnu Pratama"
-    },
-    {
-        "ID_GOOGLE": "108923088358571730155",
-        "NIS": "216023",
-        "KELAS": "4A",
-        "NAMA": "Ibrahim Hasan"
-    },
-    {
-        "ID_GOOGLE": "103918117108135001322",
-        "NIS": "216326",
-        "KELAS": "4A",
-        "NAMA": "Jao Hong Khai"
-    },
-    {
-        "ID_GOOGLE": "100673639743852138402",
-        "NIS": "216249",
-        "KELAS": "4A",
-        "NAMA": "Lukmanul Hakim"
-    },
-    {
-        "ID_GOOGLE": "116654450476629663256",
-        "NIS": "216188",
-        "KELAS": "4A",
-        "NAMA": "M. Mulia Hakim"
-    },
-    {
-        "ID_GOOGLE": "107157850246884889941",
-        "NIS": "216231",
-        "KELAS": "4A",
-        "NAMA": "M. Yusuf Danish"
-    },
-    {
-        "ID_GOOGLE": "111175815339281716562",
-        "NIS": "216127",
-        "KELAS": "4A",
-        "NAMA": "Muhamad Khairyan Erlangga"
-    },
-    {
-        "ID_GOOGLE": "113157200465914857364",
-        "NIS": "216261",
-        "KELAS": "4A",
-        "NAMA": "Muhamad Nabil Arrasyid"
-    },
-    {
-        "ID_GOOGLE": "111902386092067380580",
-        "NIS": "216392",
-        "KELAS": "4A",
-        "NAMA": "Muhamad Narasya Al Gifari"
-    },
-    {
-        "ID_GOOGLE": "106886335530955183819",
-        "NIS": "216061",
-        "KELAS": "4A",
-        "NAMA": "Muhamad Rasya Islami Pratama"
-    },
-    {
-        "ID_GOOGLE": "111727602168494794940",
-        "NIS": "216034",
-        "KELAS": "4A",
-        "NAMA": "Muhammad Fadhil"
-    },
-    {
-        "ID_GOOGLE": "113236436989567879563",
-        "NIS": "216287",
-        "KELAS": "4A",
-        "NAMA": "Muhammad Rifa Rifa'I"
-    },
-    {
-        "ID_GOOGLE": "113660764673115174623",
-        "NIS": "216323",
-        "KELAS": "4A",
-        "NAMA": "Muhammad Yasrin Mufarrij"
-    },
-    {
-        "ID_GOOGLE": "108504210763063773485",
-        "NIS": "216209",
-        "KELAS": "4A",
-        "NAMA": "Mulki Haidar Asyqar"
-    },
-    {
-        "ID_GOOGLE": "108393011214974551181",
-        "NIS": "216448",
-        "KELAS": "4A",
-        "NAMA": "Rabih Sabilillah"
-    },
-    {
-        "ID_GOOGLE": "118147782595215553056",
-        "NIS": "216238",
-        "KELAS": "4A",
-        "NAMA": "Rachmat Nuron"
-    },
-    {
-        "ID_GOOGLE": "109289211893678568635",
-        "NIS": "216424",
-        "KELAS": "4A",
-        "NAMA": "Ramadhan De Rona Siregar"
-    },
-    {
-        "ID_GOOGLE": "114917392515923324507",
-        "NIS": "216364",
-        "KELAS": "4A",
-        "NAMA": "Rasya Putra Saipul"
-    },
-    {
-        "ID_GOOGLE": "100867056662739074309",
-        "NIS": "216191",
-        "KELAS": "4A",
-        "NAMA": "Reval Ramadandi Putra"
-    },
-    {
-        "ID_GOOGLE": "114452104829995747445",
-        "NIS": "216418",
-        "KELAS": "4A",
-        "NAMA": "Rudi Riyan Nurdiansah"
-    },
-    {
-        "ID_GOOGLE": "108472160519927882388",
-        "NIS": "216225",
-        "KELAS": "4A",
-        "NAMA": "Sayyid Muhammad Dzikru"
-    },
-    {
-        "ID_GOOGLE": "110922481960299269432",
-        "NIS": "216404",
-        "KELAS": "4A",
-        "NAMA": "Tubagus Yusuf Abdul Jabbaar"
-    },
-    {
-        "ID_GOOGLE": "106890277088324973646",
-        "NIS": "216373",
-        "KELAS": "4B",
-        "NAMA": "Abdil Bar"
-    },
-    {
-        "ID_GOOGLE": "104150752198651785307",
-        "NIS": "216297",
-        "KELAS": "4B",
-        "NAMA": "Ardhi Ilyas Ramadhan"
-    },
-    {
-        "ID_GOOGLE": "111559728099071872762",
-        "NIS": "216237",
-        "KELAS": "4B",
-        "NAMA": "Ahmad Ardiansyah Putra"
-    },
-    {
-        "ID_GOOGLE": "109963651584068172660",
-        "NIS": "216227",
-        "KELAS": "4B",
-        "NAMA": "Ahmad Yasir Mubarak"
-    },
-    {
-        "ID_GOOGLE": "116220766990763098205",
-        "NIS": "216173",
-        "KELAS": "4B",
-        "NAMA": "Alvino Maulana Putra Yusuf"
-    },
-    {
-        "ID_GOOGLE": "111177739368335690484",
-        "NIS": "216229",
-        "KELAS": "4B",
-        "NAMA": "Aryo Febrianto"
-    },
-    {
-        "ID_GOOGLE": "105961963951064802767",
-        "NIS": "216145",
-        "KELAS": "4B",
-        "NAMA": "Dimas Fazari"
-    },
-    {
-        "ID_GOOGLE": "111378076530292718420",
-        "NIS": "216372",
-        "KELAS": "4B",
-        "NAMA": "Fabian Bintang Pratama"
-    },
-    {
-        "ID_GOOGLE": "115067739144941329731",
-        "NIS": "216217",
-        "KELAS": "4B",
-        "NAMA": "Fadjri Aznain Alfarobi"
-    },
-    {
-        "ID_GOOGLE": "111249586534748691266",
-        "NIS": "216071",
-        "KELAS": "4B",
-        "NAMA": "Ikhsan Nabil Fauzan"
-    },
-    {
-        "ID_GOOGLE": "113609066969021959421",
-        "NIS": "216197",
-        "KELAS": "4B",
-        "NAMA": "Iqram Safutra"
-    },
-    {
-        "ID_GOOGLE": "114795097306782333681",
-        "NIS": "216337",
-        "KELAS": "4B",
-        "NAMA": "Khalifah Dzikra Hakiki"
-    },
-    {
-        "ID_GOOGLE": "115499735950457779087",
-        "NIS": "216279",
-        "KELAS": "4B",
-        "NAMA": "Moch Ferdiansyah"
-    },
-    {
-        "ID_GOOGLE": "114649738112492567487",
-        "NIS": "216065",
-        "KELAS": "4B",
-        "NAMA": "Mohammad Rasya Azzaini"
-    },
-    {
-        "ID_GOOGLE": "109376296967490723961",
-        "NIS": "216342",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Aliifah"
-    },
-    {
-        "ID_GOOGLE": "107408000918262149076",
-        "NIS": "216246",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Azzaam M."
-    },
-    {
-        "ID_GOOGLE": "109326787347921089866",
-        "NIS": "216431",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Dirham Mandala"
-    },
-    {
-        "ID_GOOGLE": "118111899689686569714",
-        "NIS": "216285",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Dzimar Nurfikri"
-    },
-    {
-        "ID_GOOGLE": "113308231001645879232",
-        "NIS": "216172",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Harits Bisri"
-    },
-    {
-        "ID_GOOGLE": "101907995272993091446",
-        "NIS": "216375",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Manda Rizky"
-    },
-    {
-        "ID_GOOGLE": "110581484491503146883",
-        "NIS": "216267",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Rafiq Hariri"
-    },
-    {
-        "ID_GOOGLE": "115297056795198217160",
-        "NIS": "216315",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Rezky Athaillah"
-    },
-    {
-        "ID_GOOGLE": "117558850101084343210",
-        "NIS": "216353",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Rizki Satria"
-    },
-    {
-        "ID_GOOGLE": "101294320733827676891",
-        "NIS": "216153",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Wildan"
-    },
-    {
-        "ID_GOOGLE": "111314886739958267359",
-        "NIS": "216275",
-        "KELAS": "4B",
-        "NAMA": "Muhammad Zacky Aditya"
-    },
-    {
-        "ID_GOOGLE": "103037422866853814750",
-        "NIS": "216233",
-        "KELAS": "4B",
-        "NAMA": "Prabu Dzidni Al Falaq"
-    },
-    {
-        "ID_GOOGLE": "108806622003394784629",
-        "NIS": "216120",
-        "KELAS": "4B",
-        "NAMA": "Ramadhan Syah"
-    },
-    {
-        "ID_GOOGLE": "107957371109890526455",
-        "NIS": "216152",
-        "KELAS": "4B",
-        "NAMA": "Rizky Aditya Pohan"
-    },
-    {
-        "ID_GOOGLE": "102277521989059611835",
-        "NIS": "216032",
-        "KELAS": "4B",
-        "NAMA": "Syam Rifqi Nurijal"
-    },
-    {
-        "ID_GOOGLE": "116851266796270174310",
-        "NIS": "216100",
-        "KELAS": "4B",
-        "NAMA": "Muhamad Azka Abrory"
-    },
-    {
-        "ID_GOOGLE": "115541052963439809077",
-        "NIS": "216416",
-        "KELAS": "4C",
-        "NAMA": "Amarullah"
-    },
-    {
-        "ID_GOOGLE": "104425224453474946620",
-        "NIS": "216434",
-        "KELAS": "4C",
-        "NAMA": "Asrul Sallas Wahyudi"
-    },
-    {
-        "ID_GOOGLE": "108640280768861895690",
-        "NIS": "216111",
-        "KELAS": "4C",
-        "NAMA": "Husni Mubarok"
-    },
-    {
-        "ID_GOOGLE": "111139612293831868829",
-        "NIS": "216155",
-        "KELAS": "4C",
-        "NAMA": "Khoiri Rizky Rasyiddin"
-    },
-    {
-        "ID_GOOGLE": "113518461027773171475",
-        "NIS": "216125",
-        "KELAS": "4C",
-        "NAMA": "Khoirul Anwar"
-    },
-    {
-        "ID_GOOGLE": "100132137003492628695",
-        "NIS": "216359",
-        "KELAS": "4C",
-        "NAMA": "Muhamad Aldir Muharam Direz"
-    },
-    {
-        "ID_GOOGLE": "107705988509211345110",
-        "NIS": "216042",
-        "KELAS": "4C",
-        "NAMA": "Muhamad Naufal Ahnaf Zuhdisyihab"
-    },
-    {
-        "ID_GOOGLE": "110489571521952310969",
-        "NIS": "216019",
-        "KELAS": "4C",
-        "NAMA": "Muhammad Fakhri Rahman"
-    },
-    {
-        "ID_GOOGLE": "115009805741904772328",
-        "NIS": "216264",
-        "KELAS": "4C",
-        "NAMA": "Muhammad Fahmi Y."
-    },
-    {
-        "ID_GOOGLE": "104789181005326691277",
-        "NIS": "216335",
-        "KELAS": "4C",
-        "NAMA": "Muhammad Firly Andieka Putra"
-    },
-    {
-        "ID_GOOGLE": "111712776309638171484",
-        "NIS": "216021",
-        "KELAS": "4C",
-        "NAMA": "Muhammad Rayyan Alfathan"
-    },
-    {
-        "ID_GOOGLE": "115729294804418799722",
-        "NIS": "216409",
-        "KELAS": "4C",
-        "NAMA": "Muhammad Sahrul Hasan Al-Bana"
-    },
-    {
-        "ID_GOOGLE": "104771236229863280150",
-        "NIS": "216252",
-        "KELAS": "4C",
-        "NAMA": "Muhammad Wildan Gufroni"
-    },
-    {
-        "ID_GOOGLE": "110668351005714716675",
-        "NIS": "216099",
-        "KELAS": "4C",
-        "NAMA": "Sayyid Hamid Rasikh"
-    },
-    {
-        "ID_GOOGLE": "115969818884903857303",
-        "NIS": "216119",
-        "KELAS": "4C",
-        "NAMA": "Aqela Khalisha"
-    },
-    {
-        "ID_GOOGLE": "107797793381829151973",
-        "NIS": "216081",
-        "KELAS": "4C",
-        "NAMA": "Aqila Nur Qurrotu'Ain"
-    },
-    {
-        "ID_GOOGLE": "106244918874791552929",
-        "NIS": "216031",
-        "KELAS": "4C",
-        "NAMA": "Ashila Rahma"
-    },
-    {
-        "ID_GOOGLE": "110902443724304259772",
-        "NIS": "216134",
-        "KELAS": "4C",
-        "NAMA": "Bilqis Khanaya Nurlatifah"
-    },
-    {
-        "ID_GOOGLE": "109386623144070514638",
-        "NIS": "216205",
-        "KELAS": "4C",
-        "NAMA": "Faida Azmi"
-    },
-    {
-        "ID_GOOGLE": "115332112213203358647",
-        "NIS": "216295",
-        "KELAS": "4C",
-        "NAMA": "Fakhira Aulia Putri"
-    },
-    {
-        "ID_GOOGLE": "100381715223151574620",
-        "NIS": "216202",
-        "KELAS": "4C",
-        "NAMA": "Maulidina Humaira Mahdiyah"
-    },
-    {
-        "ID_GOOGLE": "108604648672304013383",
-        "NIS": "216386",
-        "KELAS": "4C",
-        "NAMA": "Nadhira Hasna Maulida"
-    },
-    {
-        "ID_GOOGLE": "113181793813870716438",
-        "NIS": "216282",
-        "KELAS": "4C",
-        "NAMA": "Nadya Yuliannisa"
-    },
-    {
-        "ID_GOOGLE": "111988384789746547787",
-        "NIS": "216180",
-        "KELAS": "4C",
-        "NAMA": "Naifa Rahma Salsabila"
-    },
-    {
-        "ID_GOOGLE": "114861043147435748774",
-        "NIS": "216207",
-        "KELAS": "4C",
-        "NAMA": "Nayzhima Rayzel Dildar"
-    },
-    {
-        "ID_GOOGLE": "100658458522337423954",
-        "NIS": "216018",
-        "KELAS": "4C",
-        "NAMA": "Ni'Maturramadhani"
-    },
-    {
-        "ID_GOOGLE": "100456880834352206765",
-        "NIS": "216268",
-        "KELAS": "4C",
-        "NAMA": "Noviana Nur Latifah"
-    },
-    {
-        "ID_GOOGLE": "111821407042457400889",
-        "NIS": "216256",
-        "KELAS": "4C",
-        "NAMA": "Nur Luthfi Kurnia"
-    },
-    {
-        "ID_GOOGLE": "108564916850432237153",
-        "NIS": "216308",
-        "KELAS": "4C",
-        "NAMA": "Nurossa'Adah"
-    },
-    {
-        "ID_GOOGLE": "111531759899182432580",
-        "NIS": "216187",
-        "KELAS": "4C",
-        "NAMA": "Q'Nanti Albira Magfirani"
-    },
-    {
-        "ID_GOOGLE": "106345614204538900720",
-        "NIS": "216436",
-        "KELAS": "4C",
-        "NAMA": "Raisa Alya Salsabila"
-    },
-    {
-        "ID_GOOGLE": "110647300957185377036",
-        "NIS": "216270",
-        "KELAS": "4C",
-        "NAMA": "Sabrina Novesia Putri"
-    },
-    {
-        "ID_GOOGLE": "100943703142367797318",
-        "NIS": "216003",
-        "KELAS": "4C",
-        "NAMA": "Sausani Athira Jinan"
-    },
-    {
-        "ID_GOOGLE": "107311719001305585364",
-        "NIS": "216030",
-        "KELAS": "4C",
-        "NAMA": "Shakira Alya Zaenal"
-    },
-    {
-        "ID_GOOGLE": "115513813385501570672",
-        "NIS": "216366",
-        "KELAS": "4C",
-        "NAMA": "Siti Ma'Rifah"
-    },
-    {
-        "ID_GOOGLE": "101600026786112981602",
-        "NIS": "216259",
-        "KELAS": "4C",
-        "NAMA": "Syahda Nuha Al Karomah"
-    },
-    {
-        "ID_GOOGLE": "115809328390318869282",
-        "NIS": "216304",
-        "KELAS": "4C",
-        "NAMA": "Tazkia Nurmaulida"
-    },
-    {
-        "ID_GOOGLE": "113989664763464182144",
-        "NIS": "216356",
-        "KELAS": "4C",
-        "NAMA": "Zalfa Afifatunnisa Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "101383617340914276128",
-        "NIS": "216011",
-        "KELAS": "4D",
-        "NAMA": "Aisyah Putri Bilqis"
-    },
-    {
-        "ID_GOOGLE": "116277263797787118239",
-        "NIS": "216013",
-        "KELAS": "4D",
-        "NAMA": "Alya Shabira Wirawan"
-    },
-    {
-        "ID_GOOGLE": "113783802842453314186",
-        "NIS": "216027",
-        "KELAS": "4D",
-        "NAMA": "Alyatul Husna Putri Dermawan"
-    },
-    {
-        "ID_GOOGLE": "102763700360970931372",
-        "NIS": "216417",
-        "KELAS": "4D",
-        "NAMA": "Andieni Syahla Ardiansyah"
-    },
-    {
-        "ID_GOOGLE": "102168083370529255749",
-        "NIS": "216001",
-        "KELAS": "4D",
-        "NAMA": "Anindya Bintang Arafah"
-    },
-    {
-        "ID_GOOGLE": "102251146832993891809",
-        "NIS": "216380",
-        "KELAS": "4D",
-        "NAMA": "Anindya Ghaniyya Irwansyah"
-    },
-    {
-        "ID_GOOGLE": "112211230249770580696",
-        "NIS": "216288",
-        "KELAS": "4D",
-        "NAMA": "Aurellya Zainova"
-    },
-    {
-        "ID_GOOGLE": "115003111126396451762",
-        "NIS": "216102",
-        "KELAS": "4D",
-        "NAMA": "Azra Arsyita Dinnastya"
-    },
-    {
-        "ID_GOOGLE": "104196176427352165110",
-        "NIS": "216053",
-        "KELAS": "4D",
-        "NAMA": "Clarisa Meira Zahra"
-    },
-    {
-        "ID_GOOGLE": "106789882142946281498",
-        "NIS": "216035",
-        "KELAS": "4D",
-        "NAMA": "Davinsha Cahaya Ramadhanty"
-    },
-    {
-        "ID_GOOGLE": "103368049957539420256",
-        "NIS": "216108",
-        "KELAS": "4D",
-        "NAMA": "Davira Cahaya Pandoyo"
-    },
-    {
-        "ID_GOOGLE": "104278604713182752081",
-        "NIS": "216174",
-        "KELAS": "4D",
-        "NAMA": "Dea Aurella Putri"
-    },
-    {
-        "ID_GOOGLE": "108306878116678713105",
-        "NIS": "216049",
-        "KELAS": "4D",
-        "NAMA": "Diana Nabila"
-    },
-    {
-        "ID_GOOGLE": "115772408871704813362",
-        "NIS": "216192",
-        "KELAS": "4D",
-        "NAMA": "Jahra Lutfia"
-    },
-    {
-        "ID_GOOGLE": "116863516256584903318",
-        "NIS": "216056",
-        "KELAS": "4D",
-        "NAMA": "Jesilina Fitria Pratiwi"
-    },
-    {
-        "ID_GOOGLE": "107262630344155762162",
-        "NIS": "216435",
-        "KELAS": "4D",
-        "NAMA": "Kayshah Fathiya Ramdhoni"
-    },
-    {
-        "ID_GOOGLE": "113666510137969456703",
-        "NIS": "216242",
-        "KELAS": "4D",
-        "NAMA": "Lubba Zahra Hidayat"
-    },
-    {
-        "ID_GOOGLE": "111949601250745906540",
-        "NIS": "216020",
-        "KELAS": "4D",
-        "NAMA": "Maira Anandia Laidha Putri"
-    },
-    {
-        "ID_GOOGLE": "109672281613988326365",
-        "NIS": "216332",
-        "KELAS": "4D",
-        "NAMA": "Meisya Nabila Putri"
-    },
-    {
-        "ID_GOOGLE": "105986672345552695013",
-        "NIS": "216110",
-        "KELAS": "4D",
-        "NAMA": "Naila Fitriyani"
-    },
-    {
-        "ID_GOOGLE": "111922973610932809260",
-        "NIS": "216094",
-        "KELAS": "4D",
-        "NAMA": "Najwa Salsabil"
-    },
-    {
-        "ID_GOOGLE": "114596251392101719679",
-        "NIS": "216025",
-        "KELAS": "4D",
-        "NAMA": "Noeni Rahmawati"
-    },
-    {
-        "ID_GOOGLE": "105778719970243385617",
-        "NIS": "216103",
-        "KELAS": "4D",
-        "NAMA": "Ronazeti Faidah Hasna"
-    },
-    {
-        "ID_GOOGLE": "111026197971569920119",
-        "NIS": "216459",
-        "KELAS": "4D",
-        "NAMA": "Salsabila"
-    },
-    {
-        "ID_GOOGLE": "107386614167759429927",
-        "NIS": "216235",
-        "KELAS": "4D",
-        "NAMA": "Shafira Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "105075525718066987733",
-        "NIS": "216281",
-        "KELAS": "4D",
-        "NAMA": "Siti Fitri Hairani"
-    },
-    {
-        "ID_GOOGLE": "110623640441366824220",
-        "NIS": "216144",
-        "KELAS": "4D",
-        "NAMA": "Siti Nur Padhilah"
-    },
-    {
-        "ID_GOOGLE": "113914605912104604573",
-        "NIS": "216341",
-        "KELAS": "4D",
-        "NAMA": "Sofwah Annida"
-    },
-    {
-        "ID_GOOGLE": "111487997928583924261",
-        "NIS": "216128",
-        "KELAS": "4D",
-        "NAMA": "Suci Rohaya Matondang"
-    },
-    {
-        "ID_GOOGLE": "105675167374142213026",
-        "NIS": "216226",
-        "KELAS": "4D",
-        "NAMA": "Taqiyah Rihhadatul 'Aisa"
-    },
-    {
-        "ID_GOOGLE": "113534721058696647895",
-        "NIS": "216277",
-        "KELAS": "4D",
-        "NAMA": "Tiara Desinta Dewi"
-    },
-    {
-        "ID_GOOGLE": "106831960477753297436",
-        "NIS": "216123",
-        "KELAS": "4D",
-        "NAMA": "Triani Pebriyanti"
-    },
-    {
-        "ID_GOOGLE": "117950308996050258138",
-        "NIS": "216443",
-        "KELAS": "4D",
-        "NAMA": "Viola Aura Zukhruf Supriatna"
-    },
-    {
-        "ID_GOOGLE": "101945625680854673121",
-        "NIS": "216215",
-        "KELAS": "4D",
-        "NAMA": "Wardah Yara Aprila"
-    },
-    {
-        "ID_GOOGLE": "102400013078124449008",
-        "NIS": "216057",
-        "KELAS": "4D",
-        "NAMA": "Zahra Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "103393371723844995791",
-        "NIS": "216263",
-        "KELAS": "4D",
-        "NAMA": "Zaskia Maulida"
-    },
-    {
-        "ID_GOOGLE": "103044460079965620804",
-        "NIS": "216112",
-        "KELAS": "4D",
-        "NAMA": "Zaskia Nandita"
-    },
-    {
-        "ID_GOOGLE": "103147516284865037954",
-        "NIS": "216048",
-        "KELAS": "4E",
-        "NAMA": "Adinda Mariyah Alqibtiyah"
-    },
-    {
-        "ID_GOOGLE": "100178447820986263300",
-        "NIS": "216245",
-        "KELAS": "4E",
-        "NAMA": "Afifa Maziyah Al Maliki"
-    },
-    {
-        "ID_GOOGLE": "112372015850970650861",
-        "NIS": "216168",
-        "KELAS": "4E",
-        "NAMA": "Alfathira Azkya Amran"
-    },
-    {
-        "ID_GOOGLE": "115471180741594942269",
-        "NIS": "216420",
-        "KELAS": "4E",
-        "NAMA": "Alifiah Renizwa Al-Azkia"
-    },
-    {
-        "ID_GOOGLE": "111361104386412685812",
-        "NIS": "216407",
-        "KELAS": "4E",
-        "NAMA": "Amira Najwa Khaeerin"
-    },
-    {
-        "ID_GOOGLE": "101243482082484234252",
-        "NIS": "216330",
-        "KELAS": "4E",
-        "NAMA": "Angelita Pramudia Putri"
-    },
-    {
-        "ID_GOOGLE": "106812389935481186428",
-        "NIS": "216055",
-        "KELAS": "4E",
-        "NAMA": "Anggita Nadhifa Putri"
-    },
-    {
-        "ID_GOOGLE": "102410318334389045710",
-        "NIS": "216352",
-        "KELAS": "4E",
-        "NAMA": "Anjelya Rossandy"
-    },
-    {
-        "ID_GOOGLE": "109275715528436093194",
-        "NIS": "216294",
-        "KELAS": "4E",
-        "NAMA": "Aurora Aifa Rheina"
-    },
-    {
-        "ID_GOOGLE": "100981240552662021929",
-        "NIS": "216298",
-        "KELAS": "4E",
-        "NAMA": "Azkha Azkhia"
-    },
-    {
-        "ID_GOOGLE": "104148018194263946515",
-        "NIS": "216033",
-        "KELAS": "4E",
-        "NAMA": "Dini Wulandari"
-    },
-    {
-        "ID_GOOGLE": "111284313814594070100",
-        "NIS": "216063",
-        "KELAS": "4E",
-        "NAMA": "Fairy Chanda A'Syafa"
-    },
-    {
-        "ID_GOOGLE": "101286902312457937010",
-        "NIS": "216091",
-        "KELAS": "4E",
-        "NAMA": "Faiza Zahira Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "116300480363915662881",
-        "NIS": "216228",
-        "KELAS": "4E",
-        "NAMA": "Finza Aulia"
-    },
-    {
-        "ID_GOOGLE": "110395202339932316048",
-        "NIS": "216241",
-        "KELAS": "4E",
-        "NAMA": "Fiska Aulia"
-    },
-    {
-        "ID_GOOGLE": "113223850976930280054",
-        "NIS": "216306",
-        "KELAS": "4E",
-        "NAMA": "Ghaitsaa Najwa Humaira"
-    },
-    {
-        "ID_GOOGLE": "112379650282764057026",
-        "NIS": "216043",
-        "KELAS": "4E",
-        "NAMA": "Indyra Ramadhani Azwar"
-    },
-    {
-        "ID_GOOGLE": "110915057450434946215",
-        "NIS": "216432",
-        "KELAS": "4E",
-        "NAMA": "Izzarahma Kamila Rahayaan"
-    },
-    {
-        "ID_GOOGLE": "117642903899925893218",
-        "NIS": "216354",
-        "KELAS": "4E",
-        "NAMA": "Kayla Azkya Yasin"
-    },
-    {
-        "ID_GOOGLE": "115127265689687742133",
-        "NIS": "216121",
-        "KELAS": "4E",
-        "NAMA": "Kezia Rahmani Putri"
-    },
-    {
-        "ID_GOOGLE": "113839930425268068257",
-        "NIS": "216428",
-        "KELAS": "4E",
-        "NAMA": "Khaerani Mesya Kamilah Haryono"
-    },
-    {
-        "ID_GOOGLE": "117160503658134391183",
-        "NIS": "216348",
-        "KELAS": "4E",
-        "NAMA": "Laelatussuada"
-    },
-    {
-        "ID_GOOGLE": "109384613570783506137",
-        "NIS": "216254",
-        "KELAS": "4E",
-        "NAMA": "Naira Fahmida Rizqin"
-    },
-    {
-        "ID_GOOGLE": "106725459591397230392",
-        "NIS": "216236",
-        "KELAS": "4E",
-        "NAMA": "Naurah Shafa Athira"
-    },
-    {
-        "ID_GOOGLE": "106855247808451341229",
-        "NIS": "216449",
-        "KELAS": "4E",
-        "NAMA": "Nayla Annisaa Faaza"
-    },
-    {
-        "ID_GOOGLE": "103928599328956372024",
-        "NIS": "216146",
-        "KELAS": "4E",
-        "NAMA": "Nazwa Fitriyana"
-    },
-    {
-        "ID_GOOGLE": "112016419595768700705",
-        "NIS": "216243",
-        "KELAS": "4E",
-        "NAMA": "Nesya Bilqis Maulida Yusuf"
-    },
-    {
-        "ID_GOOGLE": "115417784570778691751",
-        "NIS": "216385",
-        "KELAS": "4E",
-        "NAMA": "Rafeiva Asyila Mumtaza"
-    },
-    {
-        "ID_GOOGLE": "117691137195026877704",
-        "NIS": "216050",
-        "KELAS": "4E",
-        "NAMA": "Rara Aulia Azzahra"
-    },
-    {
-        "ID_GOOGLE": "107003492070425536845",
-        "NIS": "216154",
-        "KELAS": "4E",
-        "NAMA": "Rasyifa Silvia"
-    },
-    {
-        "ID_GOOGLE": "106350212059975984882",
-        "NIS": "216368",
-        "KELAS": "4E",
-        "NAMA": "Sabian Ali Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "110900051920007268080",
-        "NIS": "216458",
-        "KELAS": "4E",
-        "NAMA": "Sabilia Zahra"
-    },
-    {
-        "ID_GOOGLE": "111821144925265031290",
-        "NIS": "216044",
-        "KELAS": "4E",
-        "NAMA": "Safira Shafa Maulida"
-    },
-    {
-        "ID_GOOGLE": "109289404138648158640",
-        "NIS": "216401",
-        "KELAS": "4E",
-        "NAMA": "Sarah Ramadhaniah"
-    },
-    {
-        "ID_GOOGLE": "103488635403847324559",
-        "NIS": "244061",
-        "KELAS": "4E",
-        "NAMA": "Umaeroh Ulpa Dwiyanti"
-    },
-    {
-        "ID_GOOGLE": "115335415575782977730",
-        "NIS": "216453",
-        "KELAS": "4E",
-        "NAMA": "Zahwa Khaira Aulia"
-    },
-    {
-        "ID_GOOGLE": "114599982655563909990",
-        "NIS": "216369",
-        "KELAS": "4E",
-        "NAMA": "Zaidalana Tanisyah Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "115597255603845203694",
-        "NIS": "216266",
-        "KELAS": "4E",
-        "NAMA": "Zattin Lita Ghoini"
-    },
-    {
-        "ID_GOOGLE": "106374054927412051961",
-        "NIS": "206059",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Adiharja Pratama Wibawa"
-    },
-    {
-        "ID_GOOGLE": "107814442378936156245",
-        "NIS": "206230",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Al Fathir Fauzi"
-    },
-    {
-        "ID_GOOGLE": "117659794465294855509",
-        "NIS": "206392",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Alkhalibhi Zabrani Yusuf"
-    },
-    {
-        "ID_GOOGLE": "112792653569075278046",
-        "NIS": "224037",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Daffa Al Izzyan Bachrudin"
-    },
-    {
-        "ID_GOOGLE": "113696959059564214378",
-        "NIS": "206164",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Danar Rizky Priatna"
-    },
-    {
-        "ID_GOOGLE": "112100947429181509361",
-        "NIS": "206463",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Davi Saputra"
-    },
-    {
-        "ID_GOOGLE": "109209720353474824170",
-        "NIS": "206232",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Deris Anugrah Syahputra"
-    },
-    {
-        "ID_GOOGLE": "100100331431799729092",
-        "NIS": "224034",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Dias Rizky Sumbada"
-    },
-    {
-        "ID_GOOGLE": "108773233436391489514",
-        "NIS": "206359",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Diaz Aidil Fariz"
-    },
-    {
-        "ID_GOOGLE": "103975500866190927899",
-        "NIS": "206405",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Dimas Bayu Wiro Utomo"
-    },
-    {
-        "ID_GOOGLE": "108651931268143932296",
-        "NIS": "206466",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Fachri Pratama Algharizi"
-    },
-    {
-        "ID_GOOGLE": "100504612825039354766",
-        "NIS": "206264",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Fachri Rahmat Shohih"
-    },
-    {
-        "ID_GOOGLE": "106663569286932929558",
-        "NIS": "206469",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Fadhilah Abiyu Faiz"
-    },
-    {
-        "ID_GOOGLE": "113714074233536958215",
-        "NIS": "206058",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Fardhan Ghifari"
-    },
-    {
-        "ID_GOOGLE": "114988280449472163680",
-        "NIS": "224081",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Fariz Aulia Noor Riansyach"
-    },
-    {
-        "ID_GOOGLE": "113733773350818612467",
-        "NIS": "224057",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Fauzan Saepul Aziz"
-    },
-    {
-        "ID_GOOGLE": "118027203511023562900",
-        "NIS": "206428",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Fitwal Hasan Al Harobi"
-    },
-    {
-        "ID_GOOGLE": "101011211317038788096",
-        "NIS": "206472",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Haidar Abdurrachman"
-    },
-    {
-        "ID_GOOGLE": "103600072090365538926",
-        "NIS": "224054",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Hasbi Mayar Nurkamil"
-    },
-    {
-        "ID_GOOGLE": "103616271283444642147",
-        "NIS": "206483",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Ibnu Zaki Almufarrij"
-    },
-    {
-        "ID_GOOGLE": "101581168997741401622",
-        "NIS": "206251",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Ivan Rivandi"
-    },
-    {
-        "ID_GOOGLE": "111259726850747288330",
-        "NIS": "206304",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Keyndra Ainun Rodita"
-    },
-    {
-        "ID_GOOGLE": "101944629145419458887",
-        "NIS": "206468",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "M Azzro Abdullah"
-    },
-    {
-        "ID_GOOGLE": "102140129003171282752",
-        "NIS": "206019",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "M Elgi Fairuz"
-    },
-    {
-        "ID_GOOGLE": "100193190966897665524",
-        "NIS": "206506",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Mochamad Abi Van Rianzy"
-    },
-    {
-        "ID_GOOGLE": "102385653479676214229",
-        "NIS": "206477",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhamad Raditya Mahardika"
-    },
-    {
-        "ID_GOOGLE": "105350575870667358275",
-        "NIS": "206441",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Al-Ghifari Bahtiar"
-    },
-    {
-        "ID_GOOGLE": "103798020773177308107",
-        "NIS": "224045",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Awalludin Alviyan"
-    },
-    {
-        "ID_GOOGLE": "117197657694148157491",
-        "NIS": "206159",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Azka Syarief"
-    },
-    {
-        "ID_GOOGLE": "102956246981210809693",
-        "NIS": "206413",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Fadli Dermawan"
-    },
-    {
-        "ID_GOOGLE": "117277425218503562867",
-        "NIS": "206279",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Fahri Zada Romadhan"
-    },
-    {
-        "ID_GOOGLE": "103265572910121309249",
-        "NIS": "206199",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Fazry"
-    },
-    {
-        "ID_GOOGLE": "118319990135510611738",
-        "NIS": "206448",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Hafidz Al-Hady"
-    },
-    {
-        "ID_GOOGLE": "118365050272599267785",
-        "NIS": "206509",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Hasby Rahman"
-    },
-    {
-        "ID_GOOGLE": "100643316896512062080",
-        "NIS": "206166",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Muhammad Yusuf Arofah"
-    },
-    {
-        "ID_GOOGLE": "113913226871408511126",
-        "NIS": "224061",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Naryama Adli Prayata"
-    },
-    {
-        "ID_GOOGLE": "114825422525744506410",
-        "NIS": "206141",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Rahmad Al Sabil"
-    },
-    {
-        "ID_GOOGLE": "104842807713168098769",
-        "NIS": "206091",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Rayhan Kamil Ramadhan Lathif"
-    },
-    {
-        "ID_GOOGLE": "103360463914411742984",
-        "NIS": "206314",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Sultan Rakha Arkana"
-    },
-    {
-        "ID_GOOGLE": "103200081014000582160",
-        "NIS": "224039",
-        "KELAS": "5 A (MIA)",
-        "NAMA": "Syawal Muhammad Ikhsan"
-    },
-    {
-        "ID_GOOGLE": "107310825383025486862",
-        "NIS": "206005",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Annasa Putra Sihabuddin"
-    },
-    {
-        "ID_GOOGLE": "115454711661093658965",
-        "NIS": "206148",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Ardin Takia Ramadhan"
-    },
-    {
-        "ID_GOOGLE": "113115811545809482495",
-        "NIS": "206498",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Fawwaz Adnan Ajriya Amaly"
-    },
-    {
-        "ID_GOOGLE": "109265231377866441952",
-        "NIS": "224013",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Fariz Daffa Hariyadi"
-    },
-    {
-        "ID_GOOGLE": "111942419823545199852",
-        "NIS": "206268",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Harits Khusyu Abdillah"
-    },
-    {
-        "ID_GOOGLE": "112650433605818839064",
-        "NIS": "206415",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Khairul Rasyid"
-    },
-    {
-        "ID_GOOGLE": "100747090231621199769",
-        "NIS": "206103",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "M Rd Dendang Manua Rasya R"
-    },
-    {
-        "ID_GOOGLE": "106059780858418189153",
-        "NIS": "224089",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "M. Afif Murtaza"
-    },
-    {
-        "ID_GOOGLE": "106298013067006490545",
-        "NIS": "224071",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Maulana Yusup"
-    },
-    {
-        "ID_GOOGLE": "104165081185860258056",
-        "NIS": "206423",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Muhammad Kemal Fasha"
-    },
-    {
-        "ID_GOOGLE": "111295051510955337381",
-        "NIS": "206366",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Muhammad Raffi Akmal"
-    },
-    {
-        "ID_GOOGLE": "106002967310431177962",
-        "NIS": "206033",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Muhammad Riza Pratama"
-    },
-    {
-        "ID_GOOGLE": "101958506330909754009",
-        "NIS": "206306",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Muhammad Rizki Akbar"
-    },
-    {
-        "ID_GOOGLE": "109284825875596930231",
-        "NIS": "224038",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Afriza Rahma"
-    },
-    {
-        "ID_GOOGLE": "101044606143932076785",
-        "NIS": "206289",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Alisya Khairunnisa Qurrata Aini"
-    },
-    {
-        "ID_GOOGLE": "104490698205816304424",
-        "NIS": "224035",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Amalia Nurkamilah"
-    },
-    {
-        "ID_GOOGLE": "105683648218186095538",
-        "NIS": "224002",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Asri Azizah"
-    },
-    {
-        "ID_GOOGLE": "110464405693061640553",
-        "NIS": "224021",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Athiyya Syaqira Putri"
-    },
-    {
-        "ID_GOOGLE": "109651209465551675598",
-        "NIS": "206047",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Azizah Pratiwi Nuryanatudin"
-    },
-    {
-        "ID_GOOGLE": "100847883166384801041",
-        "NIS": "206063",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Cahya Ramadani"
-    },
-    {
-        "ID_GOOGLE": "114103500693476022591",
-        "NIS": "206299",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Farah Mutiara Puteri Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "108980405669309130326",
-        "NIS": "206487",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Farah Rizqiana"
-    },
-    {
-        "ID_GOOGLE": "109305253426054804825",
-        "NIS": "224014",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Gadiza Rieska Fathiya"
-    },
-    {
-        "ID_GOOGLE": "108027991293474918178",
-        "NIS": "206303",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Hanun Zhafira Kaltsum"
-    },
-    {
-        "ID_GOOGLE": "107111095662575896505",
-        "NIS": "224040",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Hazna Nurazizah"
-    },
-    {
-        "ID_GOOGLE": "105103208682517108478",
-        "NIS": "206038",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Ilma Aiy Nur Rahmat"
-    },
-    {
-        "ID_GOOGLE": "103256434301832574497",
-        "NIS": "206142",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Irma Yanti"
-    },
-    {
-        "ID_GOOGLE": "102884164188218742310",
-        "NIS": "206287",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Najwa Kayla Abdilah"
-    },
-    {
-        "ID_GOOGLE": "104548306327168858140",
-        "NIS": "206318",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Nurul Fatin Ismail"
-    },
-    {
-        "ID_GOOGLE": "107448710007539379217",
-        "NIS": "206035",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Renata Putri Diviola"
-    },
-    {
-        "ID_GOOGLE": "109240310045650919648",
-        "NIS": "206446",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Riska Asnila"
-    },
-    {
-        "ID_GOOGLE": "106946668853036935204",
-        "NIS": "206294",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Sabrina Sharly"
-    },
-    {
-        "ID_GOOGLE": "112600446265578160590",
-        "NIS": "224005",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Safira Asyifa"
-    },
-    {
-        "ID_GOOGLE": "108237247279011099115",
-        "NIS": "224080",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Silmy Fauziyah Sihabulmiliah"
-    },
-    {
-        "ID_GOOGLE": "118258515927181000632",
-        "NIS": "206307",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Wafda Nazila Alwafa"
-    },
-    {
-        "ID_GOOGLE": "110059035393697316158",
-        "NIS": "206053",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Wirda Hayati Namia"
-    },
-    {
-        "ID_GOOGLE": "113899907672275585390",
-        "NIS": "224004",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Zahra Amelia Afsari"
-    },
-    {
-        "ID_GOOGLE": "101223415179929384562",
-        "NIS": "206497",
-        "KELAS": "5 B (MIA)",
-        "NAMA": "Zalfa Ahiyah Putri"
-    },
-    {
-        "ID_GOOGLE": "115585588178414330537",
-        "NIS": "206476",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Adwina Siti Ramadianti"
-    },
-    {
-        "ID_GOOGLE": "114002707380069956030",
-        "NIS": "206316",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Adzro Ullaya Nafisa"
-    },
-    {
-        "ID_GOOGLE": "112030708278613040857",
-        "NIS": "206379",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Aesha Fathiyya Annida"
-    },
-    {
-        "ID_GOOGLE": "110431648415665572168",
-        "NIS": "206266",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Aisyah Putri Dwi Achmadi"
-    },
-    {
-        "ID_GOOGLE": "114118320443234143327",
-        "NIS": "206278",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Alifa Naysila Rahman"
-    },
-    {
-        "ID_GOOGLE": "111982279347764735143",
-        "NIS": "206160",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Amaliatusshufiyyah"
-    },
-    {
-        "ID_GOOGLE": "118202456840258708663",
-        "NIS": "206356",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Aulia Alilatul Bariza Batu Bara"
-    },
-    {
-        "ID_GOOGLE": "112486584398451981059",
-        "NIS": "206456",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Azka Fairuz"
-    },
-    {
-        "ID_GOOGLE": "113948369023808301605",
-        "NIS": "206084",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Azzahra Ainun Nizma"
-    },
-    {
-        "ID_GOOGLE": "117936030469741056108",
-        "NIS": "206450",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Diana Kusuma Rahmawati"
-    },
-    {
-        "ID_GOOGLE": "101562770679628927304",
-        "NIS": "206186",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Faridah Aprilia Lutfiah"
-    },
-    {
-        "ID_GOOGLE": "117857975934599577567",
-        "NIS": "206131",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Farisqi Putri Rahayu"
-    },
-    {
-        "ID_GOOGLE": "107348681113392052799",
-        "NIS": "206293",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Fayza Kamila Naura Nasrudin"
-    },
-    {
-        "ID_GOOGLE": "100647421080505364030",
-        "NIS": "206100",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Giany Naominabila"
-    },
-    {
-        "ID_GOOGLE": "107705135500982725626",
-        "NIS": "206123",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Goziyah Syauqi Wazdi"
-    },
-    {
-        "ID_GOOGLE": "115776632335776217428",
-        "NIS": "206184",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Hayla Azalia"
-    },
-    {
-        "ID_GOOGLE": "109055271914574415150",
-        "NIS": "206449",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Hilwa Sri Nur Adzkia"
-    },
-    {
-        "ID_GOOGLE": "106371948993009904195",
-        "NIS": "206165",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Ishbillah Maudina"
-    },
-    {
-        "ID_GOOGLE": "102723149577970285930",
-        "NIS": "206017",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Jessica Malva Nysa"
-    },
-    {
-        "ID_GOOGLE": "106739827571557804660",
-        "NIS": "206157",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Kanaya Makayla"
-    },
-    {
-        "ID_GOOGLE": "106759942038073599370",
-        "NIS": "206475",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Liza Wulan Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "105329177555510836509",
-        "NIS": "224079",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Mozza Syalsabilla"
-    },
-    {
-        "ID_GOOGLE": "109741128825694410890",
-        "NIS": "206149",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Muthiah Salsabilah Putri"
-    },
-    {
-        "ID_GOOGLE": "107531686189219953461",
-        "NIS": "206511",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Muti'Ah Nurlatifah"
-    },
-    {
-        "ID_GOOGLE": "100519238189000640345",
-        "NIS": "206016",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Nadjwa Putri Kusnaedi"
-    },
-    {
-        "ID_GOOGLE": "113860516523652093717",
-        "NIS": "206410",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Nayla Novitasari"
-    },
-    {
-        "ID_GOOGLE": "108388794556186708316",
-        "NIS": "206403",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Nazla Nurudina"
-    },
-    {
-        "ID_GOOGLE": "103123098720221363043",
-        "NIS": "206212",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Nur Nazmi Laela"
-    },
-    {
-        "ID_GOOGLE": "107798320834011593766",
-        "NIS": "206447",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Nurriza Amalia Rahmat"
-    },
-    {
-        "ID_GOOGLE": "102432334921667158143",
-        "NIS": "224012",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Nurul Azkiya"
-    },
-    {
-        "ID_GOOGLE": "112222293728605883981",
-        "NIS": "206374",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Rafa Shatara Chairani"
-    },
-    {
-        "ID_GOOGLE": "100333064916685017354",
-        "NIS": "206203",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Raisya Humaida Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "101353785539123465133",
-        "NIS": "206093",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Richsa Rahmania Dewi"
-    },
-    {
-        "ID_GOOGLE": "104140315700552538727",
-        "NIS": "206070",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Sakinah Mardani"
-    },
-    {
-        "ID_GOOGLE": "116096933610477836355",
-        "NIS": "206238",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Salsa Khoirunnisa"
-    },
-    {
-        "ID_GOOGLE": "108779649244791273962",
-        "NIS": "206305",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Sany Rahma Salim"
-    },
-    {
-        "ID_GOOGLE": "100458969159089952703",
-        "NIS": "206500",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Shafiyya Kirana Sandi"
-    },
-    {
-        "ID_GOOGLE": "111672770428873083823",
-        "NIS": "224046",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Siti Miftahurrohmah"
-    },
-    {
-        "ID_GOOGLE": "106107906978653033897",
-        "NIS": "206357",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Syaikah Zhafirah Sulaiman"
-    },
-    {
-        "ID_GOOGLE": "111179212426856144146",
-        "NIS": "206311",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Syfa Hafizhah Ramadhani Nur. R"
-    },
-    {
-        "ID_GOOGLE": "117082863967237330028",
-        "NIS": "224044",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Tifanny Sofyandita"
-    },
-    {
-        "ID_GOOGLE": "113712967447706641097",
-        "NIS": "206081",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Zahra Tussyta"
-    },
-    {
-        "ID_GOOGLE": "118155992845567547791",
-        "NIS": "224077",
-        "KELAS": "5 C (MIA)",
-        "NAMA": "Zalfa Ghazziyah"
-    },
-    {
-        "ID_GOOGLE": "106578787877304805043",
-        "NIS": "206181",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Abdul Aziiz"
-    },
-    {
-        "ID_GOOGLE": "104859084296846370327",
-        "NIS": "206355",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Abdul Wafi"
-    },
-    {
-        "ID_GOOGLE": "111095950171760809769",
-        "NIS": "206241",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Abdulloh Alawi"
-    },
-    {
-        "ID_GOOGLE": "115063936408710372097",
-        "NIS": "206351",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Ahmad Sabani"
-    },
-    {
-        "ID_GOOGLE": "104551327404247434445",
-        "NIS": "224028",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Ardin Nur Rafi"
-    },
-    {
-        "ID_GOOGLE": "112118547530098814190",
-        "NIS": "206210",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Atha Sahl Razan"
-    },
-    {
-        "ID_GOOGLE": "104574651578486605684",
-        "NIS": "206338",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Azka Hatta Maududi"
-    },
-    {
-        "ID_GOOGLE": "109351896082370842712",
-        "NIS": "206239",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Fadil Ahmad Fahrezi"
-    },
-    {
-        "ID_GOOGLE": "109781943292157739602",
-        "NIS": "206365",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Fathir Hafidzuddin"
-    },
-    {
-        "ID_GOOGLE": "111619285238676686041",
-        "NIS": "206320",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Fauzan Huwaidi"
-    },
-    {
-        "ID_GOOGLE": "107857136210933807166",
-        "NIS": "206326",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Galih Arif Suhendar"
-    },
-    {
-        "ID_GOOGLE": "105930939775821284781",
-        "NIS": "206360",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Micky Tegar Prasetio"
-    },
-    {
-        "ID_GOOGLE": "103611607635154727378",
-        "NIS": "206007",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Al Ghifahri"
-    },
-    {
-        "ID_GOOGLE": "100876302533988470016",
-        "NIS": "206417",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Azril Al Fathdry"
-    },
-    {
-        "ID_GOOGLE": "114174163309726341886",
-        "NIS": "224090",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Fachri Rasya Maulana"
-    },
-    {
-        "ID_GOOGLE": "117817607620639773145",
-        "NIS": "206173",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Irfan Zidny"
-    },
-    {
-        "ID_GOOGLE": "103068198056024569535",
-        "NIS": "224027",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Nino Albar"
-    },
-    {
-        "ID_GOOGLE": "102905491293824307227",
-        "NIS": "206422",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Rafi Nurwidiansyah"
-    },
-    {
-        "ID_GOOGLE": "106727244409638905022",
-        "NIS": "206485",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Rafli"
-    },
-    {
-        "ID_GOOGLE": "110702186550103640010",
-        "NIS": "224084",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Rizky Yf Farel"
-    },
-    {
-        "ID_GOOGLE": "113281412902538643858",
-        "NIS": "206460",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhamad Zahid Fauzan"
-    },
-    {
-        "ID_GOOGLE": "101144123413721357913",
-        "NIS": "224074",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Muhammad Zulfianur Nawal Hoir"
-    },
-    {
-        "ID_GOOGLE": "110252284273077309751",
-        "NIS": "206259",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Naviz Green Tamamsyah"
-    },
-    {
-        "ID_GOOGLE": "117419325957416134726",
-        "NIS": "206227",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Raffa Naufal Abdillah"
-    },
-    {
-        "ID_GOOGLE": "118094818275135088581",
-        "NIS": "206425",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Rakha Arrasyid"
-    },
-    {
-        "ID_GOOGLE": "103661092232272558097",
-        "NIS": "224019",
-        "KELAS": "5 D (IIS)",
-        "NAMA": "Randy Gustawa Putra"
-    },
-    {
-        "ID_GOOGLE": "101655341703280177608",
-        "NIS": "206113",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Abdi Hannan Fansuri"
-    },
-    {
-        "ID_GOOGLE": "116869938942865814040",
-        "NIS": "224047",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Aditya Fadhil Nugraha"
-    },
-    {
-        "ID_GOOGLE": "109689895914964361633",
-        "NIS": "224009",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Ahmad Ariq Athir"
-    },
-    {
-        "ID_GOOGLE": "104577370803303697712",
-        "NIS": "206243",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Ahmad Fatullah"
-    },
-    {
-        "ID_GOOGLE": "117792615857120065413",
-        "NIS": "224029",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Ahmad Hafizh Fadhilah"
-    },
-    {
-        "ID_GOOGLE": "106272637676529045695",
-        "NIS": "206578",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Ahmad Labib Ramdani"
-    },
-    {
-        "ID_GOOGLE": "118343056709496405220",
-        "NIS": "206402",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Ahsanu Amala"
-    },
-    {
-        "ID_GOOGLE": "106828863263695041167",
-        "NIS": "206481",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Akbar Ali Rasyad Situmorang"
-    },
-    {
-        "ID_GOOGLE": "101704776345545936278",
-        "NIS": "206040",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Akhmad Fakhri Nur Aziz"
-    },
-    {
-        "ID_GOOGLE": "108888910360657025780",
-        "NIS": "206274",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Faiz Aidil Akbar Fathurrahman"
-    },
-    {
-        "ID_GOOGLE": "113413800976219226565",
-        "NIS": "206140",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Gathfan Hisham Hafiz"
-    },
-    {
-        "ID_GOOGLE": "108511441266610515059",
-        "NIS": "206252",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Handhika Pratama"
-    },
-    {
-        "ID_GOOGLE": "100229315287216054867",
-        "NIS": "206283",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Muhammad Alvaro"
-    },
-    {
-        "ID_GOOGLE": "104372584256710596161",
-        "NIS": "206480",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Muhamad Bintang Ar Rizki"
-    },
-    {
-        "ID_GOOGLE": "101977018638300367535",
-        "NIS": "206169",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Muhamad Naufal Rafiif Mahmud"
-    },
-    {
-        "ID_GOOGLE": "114367052557626447092",
-        "NIS": "224010",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Muhammad Daffa Fikri"
-    },
-    {
-        "ID_GOOGLE": "101606920750878641852",
-        "NIS": "206153",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Muhammad Rofi Attaqi"
-    },
-    {
-        "ID_GOOGLE": "109611408544620609167",
-        "NIS": "224024",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Muhammad Syahmi Dawani"
-    },
-    {
-        "ID_GOOGLE": "113219152664435351310",
-        "NIS": "206457",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Muhammad Vialli Ridho"
-    },
-    {
-        "ID_GOOGLE": "115216470300501831378",
-        "NIS": "224056",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Rafa Aqeel Alif"
-    },
-    {
-        "ID_GOOGLE": "107577170032493710944",
-        "NIS": "224058",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Rahmad Yandika Romadhoni"
-    },
-    {
-        "ID_GOOGLE": "112784472839019976192",
-        "NIS": "206302",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Sulthan Rasyid Sidqi"
-    },
-    {
-        "ID_GOOGLE": "110287823776523828756",
-        "NIS": "224064",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Ujang Dasep Destyan Almutaqin"
-    },
-    {
-        "ID_GOOGLE": "105212210330811885141",
-        "NIS": "206074",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Wahyu Ramdhani Purnama"
-    },
-    {
-        "ID_GOOGLE": "103218780658084869704",
-        "NIS": "206330",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Wildan Fahmi Nugraha"
-    },
-    {
-        "ID_GOOGLE": "108060655501662163918",
-        "NIS": "206271",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Yusuf As Sudais Nasution"
-    },
-    {
-        "ID_GOOGLE": "102464985181146574233",
-        "NIS": "206108",
-        "KELAS": "5 E (IIS)",
-        "NAMA": "Zulfa Alkha Warizmi Hidayat"
-    },
-    {
-        "ID_GOOGLE": "106248075434488980787",
-        "NIS": "224066",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Adelia Septi Ramadani"
-    },
-    {
-        "ID_GOOGLE": "116251982274210143994",
-        "NIS": "206057",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Agni Nurfadilah"
-    },
-    {
-        "ID_GOOGLE": "107807658511040358301",
-        "NIS": "206269",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Ainaya Putri Budiansyah"
-    },
-    {
-        "ID_GOOGLE": "117557272708057749752",
-        "NIS": "206580",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Aliqa Nastiti Soleha"
-    },
-    {
-        "ID_GOOGLE": "114274916492007737733",
-        "NIS": "206280",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Alya Mutiah Rosmalia"
-    },
-    {
-        "ID_GOOGLE": "103810228562908741595",
-        "NIS": "206453",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Alya Putri Supriyatna"
-    },
-    {
-        "ID_GOOGLE": "107289922593368889386",
-        "NIS": "206028",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Alyaa Zulfaa Mudiyanti"
-    },
-    {
-        "ID_GOOGLE": "105115942547121354656",
-        "NIS": "206110",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Andine Agustia Sari"
-    },
-    {
-        "ID_GOOGLE": "114105008926231261118",
-        "NIS": "224001",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Aufa Ghaitsa Elvira"
-    },
-    {
-        "ID_GOOGLE": "114532485770960762976",
-        "NIS": "224087",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Bunga Siti Rahayu"
-    },
-    {
-        "ID_GOOGLE": "114188614628524780368",
-        "NIS": "224085",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Chyantia Siti Zulaikha"
-    },
-    {
-        "ID_GOOGLE": "102751090941738449349",
-        "NIS": "206219",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Dian Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "109752674074963937776",
-        "NIS": "206464",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Farihah Marzukiyah"
-    },
-    {
-        "ID_GOOGLE": "115405982784182305361",
-        "NIS": "206377",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Fatihaturrifqiyyah"
-    },
-    {
-        "ID_GOOGLE": "105435565853246532433",
-        "NIS": "206393",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Ghadiza Faridhatul Fatihah"
-    },
-    {
-        "ID_GOOGLE": "113092010201534785778",
-        "NIS": "224067",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Ika Miftahul Barkah"
-    },
-    {
-        "ID_GOOGLE": "114786812668545217634",
-        "NIS": "224033",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Khansa Fahira"
-    },
-    {
-        "ID_GOOGLE": "102352866232766040558",
-        "NIS": "224078",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Maulidina Setiannur Kholiza"
-    },
-    {
-        "ID_GOOGLE": "101491143670852870428",
-        "NIS": "224031",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Mita Puji Cahyani"
-    },
-    {
-        "ID_GOOGLE": "102277324181181560582",
-        "NIS": "206404",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Nadiva Alfi Zayana S"
-    },
-    {
-        "ID_GOOGLE": "101259729589751026955",
-        "NIS": "206301",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Najmatus Shofwah"
-    },
-    {
-        "ID_GOOGLE": "117525380964206318015",
-        "NIS": "224042",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Nazwa Millatina Abdillah"
-    },
-    {
-        "ID_GOOGLE": "117031175381667707253",
-        "NIS": "206041",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Nissa Nur Fadillah"
-    },
-    {
-        "ID_GOOGLE": "103892469300802960065",
-        "NIS": "224032",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Nurvina Aulia"
-    },
-    {
-        "ID_GOOGLE": "112045345212317856769",
-        "NIS": "206435",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Raina Fahmida Shaista Supeno"
-    },
-    {
-        "ID_GOOGLE": "113453224815902488472",
-        "NIS": "206284",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Raisha Juliani Permana"
-    },
-    {
-        "ID_GOOGLE": "107949885735782388812",
-        "NIS": "206424",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Rizma Nur Azizah"
-    },
-    {
-        "ID_GOOGLE": "111314416101256794689",
-        "NIS": "206198",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Salsabilla Syadida Rizkiana"
-    },
-    {
-        "ID_GOOGLE": "112396916256530877753",
-        "NIS": "206432",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Salwa Azzahra"
-    },
-    {
-        "ID_GOOGLE": "109730869944198281074",
-        "NIS": "206514",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Sherilda Elza Humayra"
-    },
-    {
-        "ID_GOOGLE": "113892947491219376677",
-        "NIS": "206329",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Siti Nur Azizah"
-    },
-    {
-        "ID_GOOGLE": "109163536896496312748",
-        "NIS": "206323",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Syeira Fitria Azzahra"
-    },
-    {
-        "ID_GOOGLE": "106007276779473368526",
-        "NIS": "206246",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Syifa Auliyatu Zahroh"
-    },
-    {
-        "ID_GOOGLE": "103075367102175976361",
-        "NIS": "224020",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Wafa Angelina"
-    },
-    {
-        "ID_GOOGLE": "107820135011439249447",
-        "NIS": "224049",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Zahra Adinda Nayla"
-    },
-    {
-        "ID_GOOGLE": "114587250456028668950",
-        "NIS": "206105",
-        "KELAS": "5 F (IIS)",
-        "NAMA": "Zahra Nabiilah Lubis"
-    },
-    {
-        "ID_GOOGLE": "117304765908783999961",
-        "NIS": "196038",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Ahmad Fauzan"
-    },
-    {
-        "ID_GOOGLE": "101157658604115115840",
-        "NIS": "196075",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Albentonur Putra Wijaya"
-    },
-    {
-        "ID_GOOGLE": "108495860008741076814",
-        "NIS": "196041",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Ali Usman Harahap"
-    },
-    {
-        "ID_GOOGLE": "116838847069011452867",
-        "NIS": "196042",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Angga Dwiza Adiyatna"
-    },
-    {
-        "ID_GOOGLE": "102029821530098339536",
-        "NIS": "196077",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Ardian Tri Apriyanto"
-    },
-    {
-        "ID_GOOGLE": "112618628642076172162",
-        "NIS": "196238",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Aryariza Dafa"
-    },
-    {
-        "ID_GOOGLE": "100794900004118325518",
-        "NIS": "196208",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Azka Zulfansah"
-    },
-    {
-        "ID_GOOGLE": "100703339260224962369",
-        "NIS": "196114",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Dzaki Fadhlur Rahman"
-    },
-    {
-        "ID_GOOGLE": "111817860713860609747",
-        "NIS": "196045",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Eko Slamet Winoto"
-    },
-    {
-        "ID_GOOGLE": "111808698786760296362",
-        "NIS": "196146",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Eqi Hidayat"
-    },
-    {
-        "ID_GOOGLE": "101087464052336716073",
-        "NIS": "196011",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Fajar Sidiq Almadani"
-    },
-    {
-        "ID_GOOGLE": "107256389989855566718",
-        "NIS": "196272",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Fariel Syauqi Hidayat"
-    },
-    {
-        "ID_GOOGLE": "114543174617322728186",
-        "NIS": "196147",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Fawwaz Alwi Ilhaamiy"
-    },
-    {
-        "ID_GOOGLE": "112548452313660389734",
-        "NIS": "196211",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Felda Pratama Abdullah"
-    },
-    {
-        "ID_GOOGLE": "111169886449004305774",
-        "NIS": "196048",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Fiky Nugroho"
-    },
-    {
-        "ID_GOOGLE": "114050726174485154624",
-        "NIS": "196118",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Genta Lantang Alkarimi Tarigan"
-    },
-    {
-        "ID_GOOGLE": "111685909782311611717",
-        "NIS": "196085",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Irsyad Badru Tammami"
-    },
-    {
-        "ID_GOOGLE": "107848421922372136849",
-        "NIS": "196184",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Kevin Januar"
-    },
-    {
-        "ID_GOOGLE": "106119409439937713317",
-        "NIS": "196016",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Luthfan Rozani"
-    },
-    {
-        "ID_GOOGLE": "111680195075166846485",
-        "NIS": "196216",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "M. Naufal Fawwaz Al Hady"
-    },
-    {
-        "ID_GOOGLE": "102786321869288229711",
-        "NIS": "196022",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhamad Rajif"
-    },
-    {
-        "ID_GOOGLE": "103616787220503696690",
-        "NIS": "196127",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Aidil Rizki Wijaya"
-    },
-    {
-        "ID_GOOGLE": "117064179365357909752",
-        "NIS": "196020",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Arya Putra Agassi"
-    },
-    {
-        "ID_GOOGLE": "105581611106371258890",
-        "NIS": "196192",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Fakhri Syihab"
-    },
-    {
-        "ID_GOOGLE": "116900816163712071669",
-        "NIS": "196225",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Jona Pakpahan"
-    },
-    {
-        "ID_GOOGLE": "102715717175268536958",
-        "NIS": "196132",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Khadafi"
-    },
-    {
-        "ID_GOOGLE": "102979063216393568351",
-        "NIS": "196257",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Naufal Kasyifie"
-    },
-    {
-        "ID_GOOGLE": "116632602988602539171",
-        "NIS": "196064",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Nur Ikhwan"
-    },
-    {
-        "ID_GOOGLE": "111575650812200976174",
-        "NIS": "196258",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Rayhan Syah"
-    },
-    {
-        "ID_GOOGLE": "115045173961358306930",
-        "NIS": "196057",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Rizki Syaputra"
-    },
-    {
-        "ID_GOOGLE": "110150366608851624906",
-        "NIS": "196197",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Surya Eka Jati"
-    },
-    {
-        "ID_GOOGLE": "111482899969371915461",
-        "NIS": "196259",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Muhammad Zaky Ramadhan"
-    },
-    {
-        "ID_GOOGLE": "103217853113181743771",
-        "NIS": "196066",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Mukhtar Ariq Ansyah"
-    },
-    {
-        "ID_GOOGLE": "114105002494533809424",
-        "NIS": "196199",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Raditya Wardana"
-    },
-    {
-        "ID_GOOGLE": "105669377713310435875",
-        "NIS": "196231",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Rasya Ananda Rizyuka"
-    },
-    {
-        "ID_GOOGLE": "111204060370350981199",
-        "NIS": "214059",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Rehan Hasdianur"
-    },
-    {
-        "ID_GOOGLE": "106415772704568970611",
-        "NIS": "196201",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Ridwan Sukmana"
-    },
-    {
-        "ID_GOOGLE": "100058537358531610416",
-        "NIS": "196071",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Zacky Zarkasy Ramli"
-    },
-    {
-        "ID_GOOGLE": "110759202232599364758",
-        "NIS": "196106",
-        "KELAS": "6 A (MIA)",
-        "NAMA": "Zul Ilmi Kamalul Bakri"
-    },
-    {
-        "ID_GOOGLE": "100699144759346034086",
-        "NIS": "196471",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Afifatun Najah Dwi Aryani"
-    },
-    {
-        "ID_GOOGLE": "110327190192573538222",
-        "NIS": "196472",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Alifa Gaza Palestina"
-    },
-    {
-        "ID_GOOGLE": "111409028365839273808",
-        "NIS": "196593",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Alya Putri Inayah"
-    },
-    {
-        "ID_GOOGLE": "100579060849473584009",
-        "NIS": "196473",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Alya Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "116802563195350139955",
-        "NIS": "214069",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Atika Humaida"
-    },
-    {
-        "ID_GOOGLE": "113433524313682366518",
-        "NIS": "214043",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Aulia Ratu Robiah"
-    },
-    {
-        "ID_GOOGLE": "118372483711251934449",
-        "NIS": "196623",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Aylla Putri Nuraeni"
-    },
-    {
-        "ID_GOOGLE": "113760587500396361018",
-        "NIS": "214058",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Azzahra Asmarani Putri Hardika"
-    },
-    {
-        "ID_GOOGLE": "104562581299258913602",
-        "NIS": "196624",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Bunga Kartini"
-    },
-    {
-        "ID_GOOGLE": "103294357249668079188",
-        "NIS": "196537",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Dhiya Fakhira Kusnadi"
-    },
-    {
-        "ID_GOOGLE": "107499133889900527501",
-        "NIS": "196478",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Fadhilatun Nisa"
-    },
-    {
-        "ID_GOOGLE": "104717329788031175100",
-        "NIS": "196509",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Gusti Ratu Kambang Adiningrat"
-    },
-    {
-        "ID_GOOGLE": "104230505666490757099",
-        "NIS": "196448",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Haizatussa'Adah"
-    },
-    {
-        "ID_GOOGLE": "103961045495943681232",
-        "NIS": "196481",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Hauraa Hanuun"
-    },
-    {
-        "ID_GOOGLE": "116179814018322339971",
-        "NIS": "196449",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Hilda Kastiya"
-    },
-    {
-        "ID_GOOGLE": "100176218656460372936",
-        "NIS": "196600",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Inggrit Destiana Nugraeni"
-    },
-    {
-        "ID_GOOGLE": "111378410762768130232",
-        "NIS": "196450",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Jasmin Maharani Mumtaaz"
-    },
-    {
-        "ID_GOOGLE": "106376421113760518708",
-        "NIS": "196512",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Joana Livia Susanto"
-    },
-    {
-        "ID_GOOGLE": "113723126642435174169",
-        "NIS": "196658",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Kesya Anastasya Putri"
-    },
-    {
-        "ID_GOOGLE": "106674068662728793226",
-        "NIS": "196545",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Meywarhani Sri Rejeki"
-    },
-    {
-        "ID_GOOGLE": "114886861477599688282",
-        "NIS": "196546",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Nabilla Amarta"
-    },
-    {
-        "ID_GOOGLE": "107488182315895701254",
-        "NIS": "196633",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Najwa Paras Swara"
-    },
-    {
-        "ID_GOOGLE": "114058212975898286069",
-        "NIS": "196489",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Nanda Elvina Tsaqif"
-    },
-    {
-        "ID_GOOGLE": "110067498786901665177",
-        "NIS": "214064",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Nandita Desna Puteri Suhendi"
-    },
-    {
-        "ID_GOOGLE": "108008919731580605848",
-        "NIS": "196457",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Nasywa Sri Meilawati"
-    },
-    {
-        "ID_GOOGLE": "107225267781760923790",
-        "NIS": "214047",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Naura Novri Intania Khaerunnisa"
-    },
-    {
-        "ID_GOOGLE": "118270564096918241042",
-        "NIS": "196635",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Ni'Matu Zahra Amran"
-    },
-    {
-        "ID_GOOGLE": "105814361246894552535",
-        "NIS": "196494",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Rahma Aliya Syifa"
-    },
-    {
-        "ID_GOOGLE": "112689415457994178478",
-        "NIS": "196554",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Raisah Fauziah Mudiyanti"
-    },
-    {
-        "ID_GOOGLE": "101578501753940644770",
-        "NIS": "196639",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Regita Putri Rusnia"
-    },
-    {
-        "ID_GOOGLE": "107122394749890474837",
-        "NIS": "196463",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Riana Novica Pratiwi"
-    },
-    {
-        "ID_GOOGLE": "101251488321494285290",
-        "NIS": "214106",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Salwa Mutiasari"
-    },
-    {
-        "ID_GOOGLE": "111554656857656464602",
-        "NIS": "196527",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Sausan Nabeel Athallah"
-    },
-    {
-        "ID_GOOGLE": "117190016875253459999",
-        "NIS": "196466",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Siti Aisyah"
-    },
-    {
-        "ID_GOOGLE": "101907446602516944428",
-        "NIS": "196673",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Siti Alinda Nuraini"
-    },
-    {
-        "ID_GOOGLE": "113210911595276778762",
-        "NIS": "196674",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Siti Nayla Putri Rustamaji"
-    },
-    {
-        "ID_GOOGLE": "117180557844045656098",
-        "NIS": "196646",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Siti Sarah Ananda"
-    },
-    {
-        "ID_GOOGLE": "113595903663196962007",
-        "NIS": "196675",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Siti Zahra Amira"
-    },
-    {
-        "ID_GOOGLE": "108804774582195466975",
-        "NIS": "214052",
-        "KELAS": "6 B (MIA)",
-        "NAMA": "Tadzkiyyah Khoirunnisa"
-    },
-    {
-        "ID_GOOGLE": "111787373234214368814",
-        "NIS": "214011",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Adnan Syaiban Ulya"
-    },
-    {
-        "ID_GOOGLE": "102033597108383997789",
-        "NIS": "196004",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Ahmad Nabil Rangkuti"
-    },
-    {
-        "ID_GOOGLE": "114727707162373807824",
-        "NIS": "196076",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Alif Nur Azzis"
-    },
-    {
-        "ID_GOOGLE": "100719791832135073680",
-        "NIS": "214034",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Faridh Faizal"
-    },
-    {
-        "ID_GOOGLE": "109654050289923890723",
-        "NIS": "214022",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Fauzan Ibnu Zaen Nasution"
-    },
-    {
-        "ID_GOOGLE": "117404892002054863089",
-        "NIS": "196242",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Fikar Fachmi Alghifari"
-    },
-    {
-        "ID_GOOGLE": "108087939112669726410",
-        "NIS": "196083",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Firly Dhany Theriansyah"
-    },
-    {
-        "ID_GOOGLE": "109842546146238151979",
-        "NIS": "196084",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Ibnu Faqih"
-    },
-    {
-        "ID_GOOGLE": "117152960885240763178",
-        "NIS": "196244",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Ihsan Adz Dzaky"
-    },
-    {
-        "ID_GOOGLE": "111509511880323408270",
-        "NIS": "196015",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Insan Kamil Al Farisy"
-    },
-    {
-        "ID_GOOGLE": "101338256205277066298",
-        "NIS": "196050",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Iqbal Maulana Widha Putra"
-    },
-    {
-        "ID_GOOGLE": "115513084175731157847",
-        "NIS": "196089",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhamad Alfie Fachrurozi"
-    },
-    {
-        "ID_GOOGLE": "101675690808879707484",
-        "NIS": "196023",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Alfath Aulia Hakim"
-    },
-    {
-        "ID_GOOGLE": "117614413111705478092",
-        "NIS": "196284",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Fabe Faridhan Muftie"
-    },
-    {
-        "ID_GOOGLE": "117716617317035514828",
-        "NIS": "196027",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Imtiyaz"
-    },
-    {
-        "ID_GOOGLE": "117044928497410193679",
-        "NIS": "196287",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Kaysan Abdurrahman"
-    },
-    {
-        "ID_GOOGLE": "106885010372231077671",
-        "NIS": "196133",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Rafif Zuhair"
-    },
-    {
-        "ID_GOOGLE": "112999748659379091810",
-        "NIS": "196029",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Rafli Aditya Rohman"
-    },
-    {
-        "ID_GOOGLE": "108342082434849221097",
-        "NIS": "214090",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Rizky Gunawan"
-    },
-    {
-        "ID_GOOGLE": "112482471637018640746",
-        "NIS": "196092",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Muhammad Son Haji Zianul Ihsan"
-    },
-    {
-        "ID_GOOGLE": "115230024710576063330",
-        "NIS": "196104",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Riski Edo Saprian Siregar"
-    },
-    {
-        "ID_GOOGLE": "109299046829382372903",
-        "NIS": "214046",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Riza Alizar Yazid"
-    },
-    {
-        "ID_GOOGLE": "103896991873256119798",
-        "NIS": "196592",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Aghitsna Efsia Wafa"
-    },
-    {
-        "ID_GOOGLE": "101019290195278697201",
-        "NIS": "196622",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Arlita Feriska Nugraha"
-    },
-    {
-        "ID_GOOGLE": "104627213102586604042",
-        "NIS": "196475",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Assyifa Nur Aulia"
-    },
-    {
-        "ID_GOOGLE": "111560754479251817802",
-        "NIS": "196652",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Azkiya Raihani Sofyan"
-    },
-    {
-        "ID_GOOGLE": "104813166893614665122",
-        "NIS": "196567",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Bilqis Ayu Sabrina"
-    },
-    {
-        "ID_GOOGLE": "103004836476698140132",
-        "NIS": "214077",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Choirunnisa"
-    },
-    {
-        "ID_GOOGLE": "117512906476274475244",
-        "NIS": "196447",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Firyal Ghaliyyah Anwari"
-    },
-    {
-        "ID_GOOGLE": "100214201684047678042",
-        "NIS": "196482",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Icha Khoerunisa"
-    },
-    {
-        "ID_GOOGLE": "110331809674019205933",
-        "NIS": "196548",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Najwa Alifiyah"
-    },
-    {
-        "ID_GOOGLE": "109460655432282593429",
-        "NIS": "196636",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Nurmutia Nuryanatudin"
-    },
-    {
-        "ID_GOOGLE": "106503284825287497231",
-        "NIS": "196665",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Nurul Ghina Syahirah"
-    },
-    {
-        "ID_GOOGLE": "100028300436103047125",
-        "NIS": "214101",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Qothrunnada Salsabila Sasgita"
-    },
-    {
-        "ID_GOOGLE": "106555334571048365127",
-        "NIS": "196668",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Rena Dyah Ayu Prasiwi"
-    },
-    {
-        "ID_GOOGLE": "106399490984752936236",
-        "NIS": "214004",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Safitri Handayani"
-    },
-    {
-        "ID_GOOGLE": "115299126848004433540",
-        "NIS": "214091",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Siti Fadila"
-    },
-    {
-        "ID_GOOGLE": "110838102822153825311",
-        "NIS": "196499",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Siti Fatimatuzzahro"
-    },
-    {
-        "ID_GOOGLE": "117429895424850529585",
-        "NIS": "196684",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Syifa Fathimatuz Zahra"
-    },
-    {
-        "ID_GOOGLE": "108508584165455742088",
-        "NIS": "196530",
-        "KELAS": "6 C (MIA)",
-        "NAMA": "Syifa Fuadah"
-    },
-    {
-        "ID_GOOGLE": "103751410222561357414",
-        "NIS": "196107",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Abu Hasan Bukhori"
-    },
-    {
-        "ID_GOOGLE": "111917974591918420684",
-        "NIS": "196173",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Adhitya Ramadhan"
-    },
-    {
-        "ID_GOOGLE": "104242943917016953243",
-        "NIS": "196003",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Ahmad Fadilah"
-    },
-    {
-        "ID_GOOGLE": "118158223251923216151",
-        "NIS": "196074",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Ahmad Rizal Majdi"
-    },
-    {
-        "ID_GOOGLE": "109788408024320849559",
-        "NIS": "196005",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Akbar Ahmadinejad Mk"
-    },
-    {
-        "ID_GOOGLE": "110628255489595468733",
-        "NIS": "196006",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Ali Farhan Munawar"
-    },
-    {
-        "ID_GOOGLE": "106772090963823601985",
-        "NIS": "196176",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Arya Adna Nugraha"
-    },
-    {
-        "ID_GOOGLE": "111173619807485748355",
-        "NIS": "196113",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Denis Hasyim Mahendra"
-    },
-    {
-        "ID_GOOGLE": "116631290137254914305",
-        "NIS": "196044",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Dimas Ahmad Ali Hasan"
-    },
-    {
-        "ID_GOOGLE": "103630062244115833638",
-        "NIS": "214102",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Fajar Maulana Yusuf"
-    },
-    {
-        "ID_GOOGLE": "115648072695847516166",
-        "NIS": "214078",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Hamdan Ali"
-    },
-    {
-        "ID_GOOGLE": "115006661398007148131",
-        "NIS": "196065",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "M. Raihan Pasha"
-    },
-    {
-        "ID_GOOGLE": "100699465987405288806",
-        "NIS": "214072",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Maulana Rizki Rakhmadi"
-    },
-    {
-        "ID_GOOGLE": "111955947134753162127",
-        "NIS": "196090",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhamad Dafa Adila"
-    },
-    {
-        "ID_GOOGLE": "109094458089436530752",
-        "NIS": "196250",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhamad Rayi Habibi"
-    },
-    {
-        "ID_GOOGLE": "113922928352093143926",
-        "NIS": "196189",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Abu Jafis Nasution"
-    },
-    {
-        "ID_GOOGLE": "111679765686676578971",
-        "NIS": "214110",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Aliefya Al Mawardhy"
-    },
-    {
-        "ID_GOOGLE": "107216763588325873618",
-        "NIS": "196157",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Alvin"
-    },
-    {
-        "ID_GOOGLE": "110679135475779162882",
-        "NIS": "196060",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Azmi Alauddin"
-    },
-    {
-        "ID_GOOGLE": "100445477933007634242",
-        "NIS": "196129",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Bintang Pratama"
-    },
-    {
-        "ID_GOOGLE": "100938154197590189602",
-        "NIS": "196026",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Fatih Riziq"
-    },
-    {
-        "ID_GOOGLE": "118115348329343613830",
-        "NIS": "196255",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Hafidz Ramdhani"
-    },
-    {
-        "ID_GOOGLE": "102700409701214566901",
-        "NIS": "216253",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Hafiz Fadhilah"
-    },
-    {
-        "ID_GOOGLE": "118124373176400155967",
-        "NIS": "196062",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Haikal Faqih"
-    },
-    {
-        "ID_GOOGLE": "110882260604022293864",
-        "NIS": "196194",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Husein Azka Rangkuti"
-    },
-    {
-        "ID_GOOGLE": "105851427910182415127",
-        "NIS": "196247",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Rafli Alfarizi"
-    },
-    {
-        "ID_GOOGLE": "118161245847577683728",
-        "NIS": "196122",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Rijal Jibran"
-    },
-    {
-        "ID_GOOGLE": "109695724436279755642",
-        "NIS": "196135",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Muhammad Syihabuddin"
-    },
-    {
-        "ID_GOOGLE": "105895786662502123551",
-        "NIS": "196032",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Naufal Mahfuzin Malma"
-    },
-    {
-        "ID_GOOGLE": "100079475217791108488",
-        "NIS": "196137",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Pasha Nur Rahman"
-    },
-    {
-        "ID_GOOGLE": "113738713124097246421",
-        "NIS": "196262",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Restu Naufal Pratama Azriel Meldy"
-    },
-    {
-        "ID_GOOGLE": "109487441850260826310",
-        "NIS": "196263",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Rio Al Birru Firmansyah"
-    },
-    {
-        "ID_GOOGLE": "115881345160648373242",
-        "NIS": "196294",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Rizky Ariyanto"
-    },
-    {
-        "ID_GOOGLE": "107142646168415473664",
-        "NIS": "196105",
-        "KELAS": "6 D (IIS)",
-        "NAMA": "Syahid Hakim Muammar"
-    },
-    {
-        "ID_GOOGLE": "103696303262106512420",
-        "NIS": "196441",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Alya Julia Nasution"
-    },
-    {
-        "ID_GOOGLE": "116181962090414507889",
-        "NIS": "214031",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Alya Ramadhani Saragih"
-    },
-    {
-        "ID_GOOGLE": "118303519019907605087",
-        "NIS": "196503",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Alya Sapitri"
-    },
-    {
-        "ID_GOOGLE": "117856512350471311780",
-        "NIS": "196442",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Anggun Rahayu"
-    },
-    {
-        "ID_GOOGLE": "102411257108151479546",
-        "NIS": "196565",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Anne Fania Nur Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "107285400785195252060",
-        "NIS": "196535",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Annisa Sri Rahayu"
-    },
-    {
-        "ID_GOOGLE": "103697969356274615311",
-        "NIS": "196595",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Aulia Zhidni Raida"
-    },
-    {
-        "ID_GOOGLE": "108497795439601180728",
-        "NIS": "196536",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Azzahra Saskiyah Putri"
-    },
-    {
-        "ID_GOOGLE": "111308108455512870706",
-        "NIS": "196444",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Bunga Melysa Setyawati"
-    },
-    {
-        "ID_GOOGLE": "106391912415434615479",
-        "NIS": "196445",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Dzakiyyah Ilma Amalia"
-    },
-    {
-        "ID_GOOGLE": "103105956739415206010",
-        "NIS": "196538",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Fadlah"
-    },
-    {
-        "ID_GOOGLE": "105021892824614457902",
-        "NIS": "196508",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Fina Nurza Fauziah"
-    },
-    {
-        "ID_GOOGLE": "108400135980804618837",
-        "NIS": "196599",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Fitria Ramadani"
-    },
-    {
-        "ID_GOOGLE": "116405033615152379524",
-        "NIS": "196572",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Kaila Bilqis Inayatuloh"
-    },
-    {
-        "ID_GOOGLE": "108767091216885339440",
-        "NIS": "196451",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Keysha Arshia Hasan"
-    },
-    {
-        "ID_GOOGLE": "107812143517267210047",
-        "NIS": "196486",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Nabila Febriani Nurul Husna"
-    },
-    {
-        "ID_GOOGLE": "113450397216344725530",
-        "NIS": "196516",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Nadya Khairani"
-    },
-    {
-        "ID_GOOGLE": "115826823955149343900",
-        "NIS": "214007",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Nataya Raffa Fathurahma"
-    },
-    {
-        "ID_GOOGLE": "117012296192982665075",
-        "NIS": "196577",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Nayfa Khairunnisa"
-    },
-    {
-        "ID_GOOGLE": "113201336961376546835",
-        "NIS": "214099",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Nova Aresta Putri"
-    },
-    {
-        "ID_GOOGLE": "107952748506002722913",
-        "NIS": "214025",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Nur Azizah"
-    },
-    {
-        "ID_GOOGLE": "101812188703776519192",
-        "NIS": "196521",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Nurul Aulia Safitri"
-    },
-    {
-        "ID_GOOGLE": "115570945364529993226",
-        "NIS": "196493",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Putri Alyana Pulungan"
-    },
-    {
-        "ID_GOOGLE": "103030399616085301814",
-        "NIS": "196553",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Putri Ramadani Rangkuti"
-    },
-    {
-        "ID_GOOGLE": "103653554786283018567",
-        "NIS": "196496",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Rindu Salwa Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "107412447380388094694",
-        "NIS": "196584",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Salsabila Eka Putri"
-    },
-    {
-        "ID_GOOGLE": "117096591113587285941",
-        "NIS": "196557",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Salsabilla Selvia Ramadhani"
-    },
-    {
-        "ID_GOOGLE": "108767280578309665590",
-        "NIS": "196500",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Siti Salsabila"
-    },
-    {
-        "ID_GOOGLE": "100512835908946720041",
-        "NIS": "196560",
-        "KELAS": "6 E (IIS)",
-        "NAMA": "Syakilah Khanza Yusmianda"
-    },
-    {
-        "ID_GOOGLE": "111577491418013413987",
-        "NIS": "196111",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Alif Zakwan Karim"
-    },
-    {
-        "ID_GOOGLE": "109555674643569651304",
-        "NIS": "196207",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Arya Nurhidayat"
-    },
-    {
-        "ID_GOOGLE": "110955461336010394674",
-        "NIS": "196143",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Aryan Nezar Apriansyah"
-    },
-    {
-        "ID_GOOGLE": "110931148291848512756",
-        "NIS": "196081",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Fakhri Rizki Maulana"
-    },
-    {
-        "ID_GOOGLE": "106834074807406505739",
-        "NIS": "214051",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Fathi Fadlul Rahman"
-    },
-    {
-        "ID_GOOGLE": "115576065214645049675",
-        "NIS": "214105",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Ibrahim Azhari"
-    },
-    {
-        "ID_GOOGLE": "115724594272771537195",
-        "NIS": "214049",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "M. Haris Fatah Nasrulloh"
-    },
-    {
-        "ID_GOOGLE": "102041992267012196309",
-        "NIS": "196152",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "M. Ikhsan Maulidi"
-    },
-    {
-        "ID_GOOGLE": "102148539584084303431",
-        "NIS": "196282",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Muhammad Alpariz"
-    },
-    {
-        "ID_GOOGLE": "108327881831810846838",
-        "NIS": "196086",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Muhammad Fatih Mumtaz"
-    },
-    {
-        "ID_GOOGLE": "118226426445002866112",
-        "NIS": "196224",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Muhammad Ghavin Atala Pramono"
-    },
-    {
-        "ID_GOOGLE": "106946616777626635019",
-        "NIS": "214100",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Renanda Mulya Rajib"
-    },
-    {
-        "ID_GOOGLE": "103512734144492068579",
-        "NIS": "196170",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Ridho Ilham"
-    },
-    {
-        "ID_GOOGLE": "102981299050407671636",
-        "NIS": "196232",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Rifki Irham Supriadi"
-    },
-    {
-        "ID_GOOGLE": "116116163410103958379",
-        "NIS": "196296",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Zilzan Ahmad Rivas"
-    },
-    {
-        "ID_GOOGLE": "106739133710516721414",
-        "NIS": "196440",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Alicia Ayu Friyangka"
-    },
-    {
-        "ID_GOOGLE": "104058770132175715826",
-        "NIS": "196594",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Annisa Nazwa Iskandar"
-    },
-    {
-        "ID_GOOGLE": "101055481678352554144",
-        "NIS": "196480",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Fitri Aisyah"
-    },
-    {
-        "ID_GOOGLE": "117148181934771927971",
-        "NIS": "214032",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Indriyani Nurfadilah"
-    },
-    {
-        "ID_GOOGLE": "102883491902687536408",
-        "NIS": "196629",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Kayla Qatrunnada"
-    },
-    {
-        "ID_GOOGLE": "117099491274415930785",
-        "NIS": "196453",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Mutiara Najla Zakiyah"
-    },
-    {
-        "ID_GOOGLE": "109569008853779032296",
-        "NIS": "214014",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Nadjwa Lusyana Azzahra"
-    },
-    {
-        "ID_GOOGLE": "107071937286219508058",
-        "NIS": "196487",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Nadya Hamidah"
-    },
-    {
-        "ID_GOOGLE": "109329329802117724084",
-        "NIS": "214074",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Nauli Ramadhani Siregar"
-    },
-    {
-        "ID_GOOGLE": "108996207592905755987",
-        "NIS": "196606",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Nayla Zafita"
-    },
-    {
-        "ID_GOOGLE": "101829999591674622504",
-        "NIS": "214088",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Nensi Sakharani"
-    },
-    {
-        "ID_GOOGLE": "114362009412652877247",
-        "NIS": "196582",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Rayhani Khanza Putri"
-    },
-    {
-        "ID_GOOGLE": "104633968009953806544",
-        "NIS": "196670",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Salwa Aulia Rahman"
-    },
-    {
-        "ID_GOOGLE": "115778084963210069376",
-        "NIS": "214067",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Siti Fadilah"
-    },
-    {
-        "ID_GOOGLE": "107269296924194821336",
-        "NIS": "196616",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Siti Fauziah Septiani"
-    },
-    {
-        "ID_GOOGLE": "109491790638496363313",
-        "NIS": "214037",
-        "KELAS": "6 F (IIS)",
-        "NAMA": "Zasqia Nur Rahma"
-    }
+  {
+    "ID_GOOGLE": "102031034443772615560",
+    "NIS": "244051",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Aditya Dzulqarnaen"},
+  {
+    "ID_GOOGLE": "102004040346873577284",
+    "NIS": "244062",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Ahmad Zein Zaky"},
+  {
+    "ID_GOOGLE": "114975362025240610611",
+    "NIS": "244023",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Azmil Alfajr Ibrahim"},
+  {
+    "ID_GOOGLE": "113441191998155655576",
+    "NIS": "244048",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Bahy Mubarok"},
+  {
+    "ID_GOOGLE": "107113201418288180689",
+    "NIS": "244038",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Daffa Vabiano Athorik"},
+  {
+    "ID_GOOGLE": "101887555537996282739",
+    "NIS": "244081",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Fahri Alfareza Yusuf"},
+  {
+    "ID_GOOGLE": "117475604610199461616",
+    "NIS": "244010",
+    "KELAS": "3 Intensif A",
+    "NAMA": "M Zidni Alfarizi"},
+  {
+    "ID_GOOGLE": "114144069656010423302",
+    "NIS": "244019",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Muhamad Fahreza "},
+  {
+    "ID_GOOGLE": "106177151179593427483",
+    "NIS": "244014",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Muhamad Rifal Abbilah"},
+  {
+    "ID_GOOGLE": "114648466293287639094",
+    "NIS": "244004",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Muhammad Fahri Ihsan Haidar"},
+  {
+    "ID_GOOGLE": "102030224991905855950",
+    "NIS": "244063",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Muhammad Fakhri Darmawan"},
+  {
+    "ID_GOOGLE": "118255477730459254737",
+    "NIS": "244027",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Tommy Al Raihan "},
+  {
+    "ID_GOOGLE": "112367567189561745932",
+    "NIS": "244024",
+    "KELAS": "3 Intensif A",
+    "NAMA": "Tubagus Ibnu Hafas Sirojudin"},
+  {
+    "ID_GOOGLE": "117532893617141620441",
+    "NIS": "244035",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Aira Tsania Miroji"},
+  {
+    "ID_GOOGLE": "104238450311735726587",
+    "NIS": "244001",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Aranti Maulida Ayu Fadhilah"},
+  {
+    "ID_GOOGLE": "116026848403007745238",
+    "NIS": "244002",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Arumi Kinanti "},
+  {
+    "ID_GOOGLE": "113093486188854543623",
+    "NIS": "244012",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Auliaul Izzati Hafidzoh"},
+  {
+    "ID_GOOGLE": "113382594717151699064",
+    "NIS": "254034",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Ayu Anggraini"},
+  {
+    "ID_GOOGLE": "114130836799780954158",
+    "NIS": "244011",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Azqya Baqiyatus Sholihah"},
+  {
+    "ID_GOOGLE": "117122513170634602137",
+    "NIS": "244018",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Bunga Destyana "},
+  {
+    "ID_GOOGLE": "100919999138976184134",
+    "NIS": "244060",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Dela Rahmadania"},
+  {
+    "ID_GOOGLE": "104159087067176840220",
+    "NIS": "244016",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Denia Nurul Zahra "},
+  {
+    "ID_GOOGLE": "113070378007538767838",
+    "NIS": "244025",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Dian Al Mahri Salsabila"},
+  {
+    "ID_GOOGLE": "105412614515972235968",
+    "NIS": "244007",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Haifa Lupita Hadi"},
+  {
+    "ID_GOOGLE": "101495826461954976396",
+    "NIS": "244041",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Haura Yumna Nurandri"},
+  {
+    "ID_GOOGLE": "111266430663134031303",
+    "NIS": "244039",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Julia Ambarini"},
+  {
+    "ID_GOOGLE": "106340300175638268171",
+    "NIS": "244009",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Lizza Salsabila Batubara"},
+  {
+    "ID_GOOGLE": "104931648994958840049",
+    "NIS": "244015",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Loubna Alby Haneesa"},
+  {
+    "ID_GOOGLE": "107948515245021211313",
+    "NIS": "244037",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Meilia Hanum Auliya Nabiilah"},
+  {
+    "ID_GOOGLE": "104815270499349467798",
+    "NIS": "244033",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Nayla Fatihati Mulyana"},
+  {
+    "ID_GOOGLE": "117654271476222840688",
+    "NIS": "244065",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Nousha Irdina Farrin "},
+  {
+    "ID_GOOGLE": "118257256289829701575",
+    "NIS": "244036",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Nurul Aidah"},
+  {
+    "ID_GOOGLE": "116217581853005916839",
+    "NIS": "244042",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Nurul Fatihah"},
+  {
+    "ID_GOOGLE": "108756867526523734169",
+    "NIS": "244043",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Nurul Mayfadila"},
+  {
+    "ID_GOOGLE": "101536314255000450819",
+    "NIS": "244022",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Putri Kulsum"},
+  {
+    "ID_GOOGLE": "112997130321727132243",
+    "NIS": "244020",
+    "KELAS": "3 Intensif B",
+    "NAMA": "R. Aulia Syarifah "},
+  {
+    "ID_GOOGLE": "102370780266236927282",
+    "NIS": "244066",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Ratu Sabrina Fauziah"},
+  {
+    "ID_GOOGLE": "118077040923588428153",
+    "NIS": "244055",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Rena Arianatasara "},
+  {
+    "ID_GOOGLE": "105941858345213023405",
+    "NIS": "244054",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Reni Arianinatasari"},
+  {
+    "ID_GOOGLE": "117627457273238489834",
+    "NIS": "244059",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Saskia Nafa Sevila Ramadani"},
+  {
+    "ID_GOOGLE": "114135044589865067097",
+    "NIS": "244053",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Shinesya Nourell Hidayat Nurdiana Putri"},
+  {
+    "ID_GOOGLE": "105363166147191413715",
+    "NIS": "244052",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Shinesyie Nourell Hidayat Nurdiana Putri"},
+  {
+    "ID_GOOGLE": "105685026342431042010",
+    "NIS": "244005",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Siti Zahra Atira"},
+  {
+    "ID_GOOGLE": "102982276773602214496",
+    "NIS": "244003",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Syifa Aulia Rahmah"},
+  {
+    "ID_GOOGLE": "102534814275040235240",
+    "NIS": "244030",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Talitha Assaphah"},
+  {
+    "ID_GOOGLE": "103077413745531894991",
+    "NIS": "244057",
+    "KELAS": "3 Intensif B",
+    "NAMA": "Yasmin Humairo"},
+  {
+    "ID_GOOGLE": "117036364994814312321",
+    "NIS": "226106",
+    "KELAS": "4 A TMI",
+    "NAMA": "Ahmad Hoerul Anwar"},
+  {
+    "ID_GOOGLE": "100346913810573714827",
+    "NIS": "226038",
+    "KELAS": "4 A TMI",
+    "NAMA": "Aryo Zhafis Fazrulli"},
+  {
+    "ID_GOOGLE": "117082934974965394089",
+    "NIS": "226009",
+    "KELAS": "4 A TMI",
+    "NAMA": "Azril Altafiansah"},
+  {
+    "ID_GOOGLE": "101461544048440888790",
+    "NIS": "226281",
+    "KELAS": "4 A TMI",
+    "NAMA": "Bahier Hannani"},
+  {
+    "ID_GOOGLE": "109679681225447152146",
+    "NIS": "226257",
+    "KELAS": "4 A TMI",
+    "NAMA": "Danish Maraville"},
+  {
+    "ID_GOOGLE": "102639045015307389933",
+    "NIS": "226212",
+    "KELAS": "4 A TMI",
+    "NAMA": "Faaris Pradhitya Maulana"},
+  {
+    "ID_GOOGLE": "116520453551113964376",
+    "NIS": "226379",
+    "KELAS": "4 A TMI",
+    "NAMA": "Fahrurrozi"},
+  {
+    "ID_GOOGLE": "116505783106130223448",
+    "NIS": "226224",
+    "KELAS": "4 A TMI",
+    "NAMA": "Fakhri Zaidan Muiz"},
+  {
+    "ID_GOOGLE": "107030850694583201932",
+    "NIS": "226300",
+    "KELAS": "4 A TMI",
+    "NAMA": "Fatih Muhammad Farrel"},
+  {
+    "ID_GOOGLE": "104198429458992567685",
+    "NIS": "226237",
+    "KELAS": "4 A TMI",
+    "NAMA": "Hafiz Firmansyah"},
+  {
+    "ID_GOOGLE": "115874518925112945607",
+    "NIS": "226244",
+    "KELAS": "4 A TMI",
+    "NAMA": "Ibnu Brilliant Qalbi"},
+  {
+    "ID_GOOGLE": "102441640180929475409",
+    "NIS": "226022",
+    "KELAS": "4 A TMI",
+    "NAMA": "Lintang Azriel Akbar"},
+  {
+    "ID_GOOGLE": "117098845922508127951",
+    "NIS": "226344",
+    "KELAS": "4 A TMI",
+    "NAMA": "Muhamad Daniel Fahad"},
+  {
+    "ID_GOOGLE": "115906412527707980865",
+    "NIS": "226023",
+    "KELAS": "4 A TMI",
+    "NAMA": "Muhamad Sena Saputra"},
+  {
+    "ID_GOOGLE": "117921437593889090868",
+    "NIS": "226287",
+    "KELAS": "4 A TMI",
+    "NAMA": "Muhammad Juan Arkana Pramudya"},
+  {
+    "ID_GOOGLE": "108474524223501995458",
+    "NIS": "226355",
+    "KELAS": "4 A TMI",
+    "NAMA": "Muhammad Naufal Dzaky"},
+  {
+    "ID_GOOGLE": "102983456917952399349",
+    "NIS": "226386",
+    "KELAS": "4 A TMI",
+    "NAMA": "Muhammad Nawawi Nasution"},
+  {
+    "ID_GOOGLE": "116272274273356685588",
+    "NIS": "226070",
+    "KELAS": "4 A TMI",
+    "NAMA": "Richvie Satya Ramadani"},
+  {
+    "ID_GOOGLE": "114743619487139947207",
+    "NIS": "226199",
+    "KELAS": "4 A TMI",
+    "NAMA": "Septian Yusuf Dwiyanto"},
+  {
+    "ID_GOOGLE": "102047565614495342527",
+    "NIS": "226242",
+    "KELAS": "4 B TMI",
+    "NAMA": "Abuzar Ghiffari"},
+  {
+    "ID_GOOGLE": "103414827166862341084",
+    "NIS": "226228",
+    "KELAS": "4 B TMI",
+    "NAMA": "Asadel Kenzie Khairullah Harly"},
+  {
+    "ID_GOOGLE": "106964774531813655774",
+    "NIS": "226225",
+    "KELAS": "4 B TMI",
+    "NAMA": "Dienul Haq Husein"},
+  {
+    "ID_GOOGLE": "109909795689921475951",
+    "NIS": "226279",
+    "KELAS": "4 B TMI",
+    "NAMA": "Dimas Salman Zahir"},
+  {
+    "ID_GOOGLE": "103996243240627782660",
+    "NIS": "226260",
+    "KELAS": "4 B TMI",
+    "NAMA": "Dzaky Fatih Kusnadi"},
+  {
+    "ID_GOOGLE": "100277037043977315860",
+    "NIS": "226030",
+    "KELAS": "4 B TMI",
+    "NAMA": "El Kahfi An Nidhomi"},
+  {
+    "ID_GOOGLE": "102930584385493653241",
+    "NIS": "226197",
+    "KELAS": "4 B TMI",
+    "NAMA": "Fadhil Haidar Alie"},
+  {
+    "ID_GOOGLE": "115408388596030810355",
+    "NIS": "226120",
+    "KELAS": "4 B TMI",
+    "NAMA": "Falih Tegar Putra Ahmad Juliansyah"},
+  {
+    "ID_GOOGLE": "113538925411026479885",
+    "NIS": "226094",
+    "KELAS": "4 B TMI",
+    "NAMA": "Hafizul Malik"},
+  {
+    "ID_GOOGLE": "101909616154081782172",
+    "NIS": "226067",
+    "KELAS": "4 B TMI",
+    "NAMA": "Ikram Diwiarta Khairulloh"},
+  {
+    "ID_GOOGLE": "108748133432832195753",
+    "NIS": "226234",
+    "KELAS": "4 B TMI",
+    "NAMA": "M. Ghonzan Lutfi Muzakki Bakri"},
+  {
+    "ID_GOOGLE": "110004891683741980663",
+    "NIS": "226054",
+    "KELAS": "4 B TMI",
+    "NAMA": "Moch. Fadhil Sazwana"},
+  {
+    "ID_GOOGLE": "101693802821850626277",
+    "NIS": "226265",
+    "KELAS": "4 B TMI",
+    "NAMA": "Moch. Raffi Van Ghattansyah"},
+  {
+    "ID_GOOGLE": "108479168266317915578",
+    "NIS": "226141",
+    "KELAS": "4 B TMI",
+    "NAMA": "Muhamad Fahri Ramdani"},
+  {
+    "ID_GOOGLE": "113309190603247547618",
+    "NIS": "226189",
+    "KELAS": "4 B TMI",
+    "NAMA": "Muhammad Fahri Musashi"},
+  {
+    "ID_GOOGLE": "102750684397503384954",
+    "NIS": "226002",
+    "KELAS": "4 B TMI",
+    "NAMA": "Muhammad Guntur Firmansyah"},
+  {
+    "ID_GOOGLE": "110384330842763858219",
+    "NIS": "226131",
+    "KELAS": "4 B TMI",
+    "NAMA": "Muhammad Kafa Abidzar"},
+  {
+    "ID_GOOGLE": "115811364523705136505",
+    "NIS": "226056",
+    "KELAS": "4 B TMI",
+    "NAMA": "Muhammad Mahesa Rajief"},
+  {
+    "ID_GOOGLE": "115934362062927868873",
+    "NIS": "226387",
+    "KELAS": "4 B TMI",
+    "NAMA": "Prisma Prawira Rasydi"},
+  {
+    "ID_GOOGLE": "104380913812746390247",
+    "NIS": "226294",
+    "KELAS": "4 B TMI",
+    "NAMA": "Rifqi Ilham Rangkuti"},
+  {
+    "ID_GOOGLE": "111940815728954852283",
+    "NIS": "226229",
+    "KELAS": "4 B TMI",
+    "NAMA": "Vateh Muhamad"},
+  {
+    "ID_GOOGLE": "102186188761917128129",
+    "NIS": "226245",
+    "KELAS": "4 C TMI",
+    "NAMA": "Ahmad Faisal Azri"},
+  {
+    "ID_GOOGLE": "112171456746451915667",
+    "NIS": "226176",
+    "KELAS": "4 C TMI",
+    "NAMA": "Ahmad Haadziq Wafa"},
+  {
+    "ID_GOOGLE": "117725230907958892760",
+    "NIS": "226246",
+    "KELAS": "4 C TMI",
+    "NAMA": "Alief Mawlana Ibrahim"},
+  {
+    "ID_GOOGLE": "118364298302046187044",
+    "NIS": "226058",
+    "KELAS": "4 C TMI",
+    "NAMA": "Ariiq Atha Ramadhan"},
+  {
+    "ID_GOOGLE": "113706030516888925579",
+    "NIS": "226204",
+    "KELAS": "4 C TMI",
+    "NAMA": "Azzam Rasydan"},
+  {
+    "ID_GOOGLE": "102879724498567297367",
+    "NIS": "226073",
+    "KELAS": "4 C TMI",
+    "NAMA": "David Aril Santoso"},
+  {
+    "ID_GOOGLE": "109103044078841046939",
+    "NIS": "226043",
+    "KELAS": "4 C TMI",
+    "NAMA": "Drajat Dewangga Ramadhan"},
+  {
+    "ID_GOOGLE": "113960952126775873483",
+    "NIS": "226177",
+    "KELAS": "4 C TMI",
+    "NAMA": "Ghibran Muhammad Ghaniyy El Imany"},
+  {
+    "ID_GOOGLE": "103957587690794242908",
+    "NIS": "226274",
+    "KELAS": "4 C TMI",
+    "NAMA": "Mochammad Reyhan Ramadhan"},
+  {
+    "ID_GOOGLE": "114659148519237989005",
+    "NIS": "226264",
+    "KELAS": "4 C TMI",
+    "NAMA": "Muhamad Fauzan Kamil"},
+  {
+    "ID_GOOGLE": "105655797251179422773",
+    "NIS": "226255",
+    "KELAS": "4 C TMI",
+    "NAMA": "Muhammad Azis Ridhoan"},
+  {
+    "ID_GOOGLE": "111655505425113830527",
+    "NIS": "226390",
+    "KELAS": "4 C TMI",
+    "NAMA": "Muhamad Dimas Surya"},
+  {
+    "ID_GOOGLE": "109632008486688623127",
+    "NIS": "226166",
+    "KELAS": "4 C TMI",
+    "NAMA": "Muhammad Javier Adi Prasetyo"},
+  {
+    "ID_GOOGLE": "114554768480889804405",
+    "NIS": "226280",
+    "KELAS": "4 C TMI",
+    "NAMA": "Nizham Azka Syamil"},
+  {
+    "ID_GOOGLE": "115183053226245384967",
+    "NIS": "226100",
+    "KELAS": "4 C TMI",
+    "NAMA": "Prabu Damar Patty"},
+  {
+    "ID_GOOGLE": "109724451006505181625",
+    "NIS": "226309",
+    "KELAS": "4 C TMI",
+    "NAMA": "Ruuhul Sharhan Arfendi"},
+  {
+    "ID_GOOGLE": "104626905786120361455",
+    "NIS": "226259",
+    "KELAS": "4 C TMI",
+    "NAMA": "Syahrul Mubarok Putra Ramadhan"},
+  {
+    "ID_GOOGLE": "113110472898511245839",
+    "NIS": "226253",
+    "KELAS": "4 C TMI",
+    "NAMA": "Thawaf Bhadrika Al-Hady"},
+  {
+    "ID_GOOGLE": "115935846892397078980",
+    "NIS": "226360",
+    "KELAS": "4 C TMI",
+    "NAMA": "William Henry Hidayat"},
+  {
+    "ID_GOOGLE": "118349673339840926911",
+    "NIS": "226304",
+    "KELAS": "4 D TMI",
+    "NAMA": "Aulianisa Buana Tunggadewi"},
+  {
+    "ID_GOOGLE": "114261737684862973281",
+    "NIS": "226027",
+    "KELAS": "4 D TMI",
+    "NAMA": "Ghaitsa Zahira Shofa"},
+  {
+    "ID_GOOGLE": "104931737192863122407",
+    "NIS": "226139",
+    "KELAS": "4 D TMI",
+    "NAMA": "Hana Humaira"},
+  {
+    "ID_GOOGLE": "102411102351877768517",
+    "NIS": "226016",
+    "KELAS": "4 D TMI",
+    "NAMA": "Humaira Anadia Zahwa"},
+  {
+    "ID_GOOGLE": "110093148467256449365",
+    "NIS": "226047",
+    "KELAS": "4 D TMI",
+    "NAMA": "Kayla Apriliani Putri Utomo"},
+  {
+    "ID_GOOGLE": "106696245904497119849",
+    "NIS": "226366",
+    "KELAS": "4 D TMI",
+    "NAMA": "Khansa Syifa Nurlia Hidayat"},
+  {
+    "ID_GOOGLE": "118084937991621806833",
+    "NIS": "226357",
+    "KELAS": "4 D TMI",
+    "NAMA": "Marisya Putri Arasyid"},
+  {
+    "ID_GOOGLE": "114174901728353111649",
+    "NIS": "226190",
+    "KELAS": "4 D TMI",
+    "NAMA": "Melati Mandasari"},
+  {
+    "ID_GOOGLE": "111324956396937551112",
+    "NIS": "226059",
+    "KELAS": "4 D TMI",
+    "NAMA": "Moethya Clearesta Suryana Tanjung"},
+  {
+    "ID_GOOGLE": "100779764736441946482",
+    "NIS": "226349",
+    "KELAS": "4 D TMI",
+    "NAMA": "Muthia Hasanah"},
+  {
+    "ID_GOOGLE": "112603363699981794553",
+    "NIS": "226351",
+    "KELAS": "4 D TMI",
+    "NAMA": "Mutiara Nuraini"},
+  {
+    "ID_GOOGLE": "109649258815579783869",
+    "NIS": "226323",
+    "KELAS": "4 D TMI",
+    "NAMA": "Nadira Maja Faiha"},
+  {
+    "ID_GOOGLE": "116784356023362105536",
+    "NIS": "226363",
+    "KELAS": "4 D TMI",
+    "NAMA": "Nailah Azhar Novianto"},
+  {
+    "ID_GOOGLE": "103697873751282228784",
+    "NIS": "226291",
+    "KELAS": "4 D TMI",
+    "NAMA": "Najla Zhaafira Ahmad"},
+  {
+    "ID_GOOGLE": "101394958321889560908",
+    "NIS": "226025",
+    "KELAS": "4 D TMI",
+    "NAMA": "Najwa Salsabila Putri"},
+  {
+    "ID_GOOGLE": "106999971082766268360",
+    "NIS": "226165",
+    "KELAS": "4 D TMI",
+    "NAMA": "Naura Alya Syahira"},
+  {
+    "ID_GOOGLE": "114726660438091782201",
+    "NIS": "226310",
+    "KELAS": "4 D TMI",
+    "NAMA": "Nazira Eliza"},
+  {
+    "ID_GOOGLE": "107542393284930227489",
+    "NIS": "226207",
+    "KELAS": "4 D TMI",
+    "NAMA": "Nazla Alya Jahsy"},
+  {
+    "ID_GOOGLE": "116357854778756796156",
+    "NIS": "226005",
+    "KELAS": "4 D TMI",
+    "NAMA": "Nurul Fajria"},
+  {
+    "ID_GOOGLE": "103548639618145914508",
+    "NIS": "226340",
+    "KELAS": "4 D TMI",
+    "NAMA": "Qadisya Qaimal Qist"},
+  {
+    "ID_GOOGLE": "105823763456835384496",
+    "NIS": "226012",
+    "KELAS": "4 D TMI",
+    "NAMA": "Queensha Maryam Azzura"},
+  {
+    "ID_GOOGLE": "105102382620452226730",
+    "NIS": "226249",
+    "KELAS": "4 D TMI",
+    "NAMA": "Shafa Salsabila Ananda Achmadi"},
+  {
+    "ID_GOOGLE": "111792515089286349750",
+    "NIS": "226289",
+    "KELAS": "4 D TMI",
+    "NAMA": "Shonia Urfa Ibrahim"},
+  {
+    "ID_GOOGLE": "116922280368171925984",
+    "NIS": "226263",
+    "KELAS": "4 D TMI",
+    "NAMA": "Siti Fawah Khoeriyah"},
+  {
+    "ID_GOOGLE": "102238856516678839835",
+    "NIS": "226101",
+    "KELAS": "4 E TMI",
+    "NAMA": "Adenia Burhani"},
+  {
+    "ID_GOOGLE": "107360936177615487840",
+    "NIS": "226152",
+    "KELAS": "4 E TMI",
+    "NAMA": "Adzkia Putri Wicaksono"},
+  {
+    "ID_GOOGLE": "101058080772484506473",
+    "NIS": "226376",
+    "KELAS": "4 E TMI",
+    "NAMA": "Aliza Aprilia Putri"},
+  {
+    "ID_GOOGLE": "106411484270703410930",
+    "NIS": "226175",
+    "KELAS": "4 E TMI",
+    "NAMA": "Alya Naura Zalfa"},
+  {
+    "ID_GOOGLE": "108223161609023894730",
+    "NIS": "226235",
+    "KELAS": "4 E TMI",
+    "NAMA": "Anabel Khanza Khuzaimah"},
+  {
+    "ID_GOOGLE": "102431472617351467608",
+    "NIS": "226092",
+    "KELAS": "4 E TMI",
+    "NAMA": "Audrey Zivana Riyadi"},
+  {
+    "ID_GOOGLE": "105107082453173752823",
+    "NIS": "226313",
+    "KELAS": "4 E TMI",
+    "NAMA": "Aufa Nareshwari Jelita"},
+  {
+    "ID_GOOGLE": "117639900041072326367",
+    "NIS": "226171",
+    "KELAS": "4 E TMI",
+    "NAMA": "Azkia Maysarah"},
+  {
+    "ID_GOOGLE": "106584497872497779110",
+    "NIS": "226159",
+    "KELAS": "4 E TMI",
+    "NAMA": "Azriya Goly Ayuna"},
+  {
+    "ID_GOOGLE": "105075437639429007795",
+    "NIS": "226383",
+    "KELAS": "4 E TMI",
+    "NAMA": "Bilqis Ayrira Alhaq Farly"},
+  {
+    "ID_GOOGLE": "103083331135602392481",
+    "NIS": "226137",
+    "KELAS": "4 E TMI",
+    "NAMA": "Bilqis Azzahra Aulia Dimas"},
+  {
+    "ID_GOOGLE": "106575648955747817016",
+    "NIS": "226098",
+    "KELAS": "4 E TMI",
+    "NAMA": "Cheryl Fakhira Murodi"},
+  {
+    "ID_GOOGLE": "113508575627067723079",
+    "NIS": "226233",
+    "KELAS": "4 E TMI",
+    "NAMA": "Dinda Aprillya"},
+  {
+    "ID_GOOGLE": "101868040628763689442",
+    "NIS": "216462",
+    "KELAS": "4 E TMI",
+    "NAMA": "Dyah Anindya Wiyati"},
+  {
+    "ID_GOOGLE": "100639911797245571517",
+    "NIS": "226158",
+    "KELAS": "4 E TMI",
+    "NAMA": "Faiqah Nur Azra"},
+  {
+    "ID_GOOGLE": "103803804634389038825",
+    "NIS": "226093",
+    "KELAS": "4 E TMI",
+    "NAMA": "Haura Salsabila"},
+  {
+    "ID_GOOGLE": "104357666534969546805",
+    "NIS": "226318",
+    "KELAS": "4 E TMI",
+    "NAMA": "Mawaddatul Maula Zain"},
+  {
+    "ID_GOOGLE": "107601189023175954553",
+    "NIS": "226014",
+    "KELAS": "4 E TMI",
+    "NAMA": "Nadin Alvisyah"},
+  {
+    "ID_GOOGLE": "116461147785881584631",
+    "NIS": "226286",
+    "KELAS": "4 E TMI",
+    "NAMA": "Natasya Putri Aulia"},
+  {
+    "ID_GOOGLE": "113775262037672307590",
+    "NIS": "226117",
+    "KELAS": "4 E TMI",
+    "NAMA": "Naura Dini Hafizhah"},
+  {
+    "ID_GOOGLE": "101623333538151853481",
+    "NIS": "226118",
+    "KELAS": "4 E TMI",
+    "NAMA": "Nazwa Ayra Makayla"},
+  {
+    "ID_GOOGLE": "105417261626021956382",
+    "NIS": "226327",
+    "KELAS": "4 E TMI",
+    "NAMA": "Nazwa Khoerunnisa"},
+  {
+    "ID_GOOGLE": "107390056215160739936",
+    "NIS": "226307",
+    "KELAS": "4 E TMI",
+    "NAMA": "Rahmi Azizah Nasution"},
+  {
+    "ID_GOOGLE": "111818517294983417229",
+    "NIS": "226208",
+    "KELAS": "4 E TMI",
+    "NAMA": "Raisya Fauziah Mumtaz"},
+  {
+    "ID_GOOGLE": "112240749959661174843",
+    "NIS": "226324",
+    "KELAS": "4 E TMI",
+    "NAMA": "Rifa Aulia Anjani"},
+  {
+    "ID_GOOGLE": "103707431528906717109",
+    "NIS": "226275",
+    "KELAS": "4 E TMI",
+    "NAMA": "Safa Azzahra Solehudin"},
+  {
+    "ID_GOOGLE": "112506994329133769827",
+    "NIS": "226292",
+    "KELAS": "4 E TMI",
+    "NAMA": "Septiyani Maulia"},
+  {
+    "ID_GOOGLE": "111289961764821517668",
+    "NIS": "226183",
+    "KELAS": "4 E TMI",
+    "NAMA": "Shafa Aulia Agustin"},
+  {
+    "ID_GOOGLE": "109520562666038239811",
+    "NIS": "226184",
+    "KELAS": "4 E TMI",
+    "NAMA": "Shifa Aulia Agustin"},
+  {
+    "ID_GOOGLE": "100198624914269594337",
+    "NIS": "226269",
+    "KELAS": "4 E TMI",
+    "NAMA": "Syahla Ayu Nida"},
+  {
+    "ID_GOOGLE": "101220599700769488378",
+    "NIS": "226138",
+    "KELAS": "4 F TMI",
+    "NAMA": "Ashley Keysha Putriani"},
+  {
+    "ID_GOOGLE": "108071374970464541935",
+    "NIS": "226385",
+    "KELAS": "4 F TMI",
+    "NAMA": "Dini Maptuhah"},
+  {
+    "ID_GOOGLE": "112307156746159942319",
+    "NIS": "226346",
+    "KELAS": "4 F TMI",
+    "NAMA": "Fildzah Liyani Fairuz"},
+  {
+    "ID_GOOGLE": "110112177869720899844",
+    "NIS": "226283",
+    "KELAS": "4 F TMI",
+    "NAMA": "Fitriani Sholihatun Miftahul Jannah"},
+  {
+    "ID_GOOGLE": "115790554639769052439",
+    "NIS": "226293",
+    "KELAS": "4 F TMI",
+    "NAMA": "Gathfany Azka Mahira"},
+  {
+    "ID_GOOGLE": "115963239604558158393",
+    "NIS": "226330",
+    "KELAS": "4 F TMI",
+    "NAMA": "Hanifatuzzahra Mukhtar"},
+  {
+    "ID_GOOGLE": "112712855841720858311",
+    "NIS": "226215",
+    "KELAS": "4 F TMI",
+    "NAMA": "Iffah Huriyyah"},
+  {
+    "ID_GOOGLE": "106655062960703828082",
+    "NIS": "226218",
+    "KELAS": "4 F TMI",
+    "NAMA": "Imania Putri Jaelani"},
+  {
+    "ID_GOOGLE": "109280830530486160137",
+    "NIS": "226230",
+    "KELAS": "4 F TMI",
+    "NAMA": "Imelda Putri Sabila"},
+  {
+    "ID_GOOGLE": "108350428215088625775",
+    "NIS": "226337",
+    "KELAS": "4 F TMI",
+    "NAMA": "Kaysah Zubdatunnisa"},
+  {
+    "ID_GOOGLE": "108087883380524728041",
+    "NIS": "226299",
+    "KELAS": "4 F TMI",
+    "NAMA": "Keyra Syafadilah Rohadi"},
+  {
+    "ID_GOOGLE": "105243624166681573342",
+    "NIS": "226187",
+    "KELAS": "4 F TMI",
+    "NAMA": "Khansa Fakhirah Setiawan"},
+  {
+    "ID_GOOGLE": "101394383999311260405",
+    "NIS": "226145",
+    "KELAS": "4 F TMI",
+    "NAMA": "Nuraini"},
+  {
+    "ID_GOOGLE": "109963165913167405282",
+    "NIS": "226062",
+    "KELAS": "4 F TMI",
+    "NAMA": "Nuranisa Ramadani"},
+  {
+    "ID_GOOGLE": "105824102379080354521",
+    "NIS": "226135",
+    "KELAS": "4 F TMI",
+    "NAMA": "Nurul Aulia Fadilah"},
+  {
+    "ID_GOOGLE": "106379395304857087722",
+    "NIS": "226017",
+    "KELAS": "4 F TMI",
+    "NAMA": "Rasya Diani"},
+  {
+    "ID_GOOGLE": "118374195093528390801",
+    "NIS": "226290",
+    "KELAS": "4 F TMI",
+    "NAMA": "Salwa Dinda Azmi"},
+  {
+    "ID_GOOGLE": "111225934620905435191",
+    "NIS": "226341",
+    "KELAS": "4 F TMI",
+    "NAMA": "Siti Alfi Alawiyah"},
+  {
+    "ID_GOOGLE": "100203487475557522092",
+    "NIS": "226132",
+    "KELAS": "4 F TMI",
+    "NAMA": "Sitti Azizah"},
+  {
+    "ID_GOOGLE": "114231128609554558358",
+    "NIS": "226288",
+    "KELAS": "4 F TMI",
+    "NAMA": "Syahla Ghaniyah Fazrina"},
+  {
+    "ID_GOOGLE": "107817891263969610753",
+    "NIS": "226078",
+    "KELAS": "4 F TMI",
+    "NAMA": "Syarifa Putria Anindi"},
+  {
+    "ID_GOOGLE": "101863678752965634523",
+    "NIS": "226239",
+    "KELAS": "4 F TMI",
+    "NAMA": "Syifa Aulia"},
+  {
+    "ID_GOOGLE": "110593647344854123566",
+    "NIS": "226317",
+    "KELAS": "4 F TMI",
+    "NAMA": "Tiyas Syahroni Wulandari"},
+  {
+    "ID_GOOGLE": "117692593567762462074",
+    "NIS": "226329",
+    "KELAS": "4 F TMI",
+    "NAMA": "Yasmine Putri Hapsari"},
+  {
+    "ID_GOOGLE": "109823190521337054419",
+    "NIS": "226180",
+    "KELAS": "4 F TMI",
+    "NAMA": "Zahra Fadhila Fasya"},
+  {
+    "ID_GOOGLE": "106890277088324973646",
+    "NIS": "216373",
+    "KELAS": "5 A MIA",
+    "NAMA": "Abdil Bar"},
+  {
+    "ID_GOOGLE": "104928168894714477684",
+    "NIS": "234035",
+    "KELAS": "5 A MIA",
+    "NAMA": "Ahmad Thoriq"},
+  {
+    "ID_GOOGLE": "110068394687615026816",
+    "NIS": "234049",
+    "KELAS": "5 A MIA",
+    "NAMA": "Alba Rayyan"},
+  {
+    "ID_GOOGLE": "105206882954937796478",
+    "NIS": "234060",
+    "KELAS": "5 A MIA",
+    "NAMA": "Arif Sanjaya Siregar"},
+  {
+    "ID_GOOGLE": "111177739368335690484",
+    "NIS": "216229",
+    "KELAS": "5 A MIA",
+    "NAMA": "Aryo Febrianto"},
+  {
+    "ID_GOOGLE": "115716032808332398980",
+    "NIS": "234070",
+    "KELAS": "5 A MIA",
+    "NAMA": "Asa Farid Ridwan"},
+  {
+    "ID_GOOGLE": "115067739144941329731",
+    "NIS": "216217",
+    "KELAS": "5 A MIA",
+    "NAMA": "Fadjri Aznain Alfarobi"},
+  {
+    "ID_GOOGLE": "114615350210330430382",
+    "NIS": "216150",
+    "KELAS": "5 A MIA",
+    "NAMA": "Ayuda Akbar Nur Abdillah"},
+  {
+    "ID_GOOGLE": "105676376982247583699",
+    "NIS": "216066",
+    "KELAS": "5 A MIA",
+    "NAMA": "Fawwaz Qeyizan Adli"},
+  {
+    "ID_GOOGLE": "110562037114558010428",
+    "NIS": "216383",
+    "KELAS": "5 A MIA",
+    "NAMA": "Firdaus Drajat Sampoerna"},
+  {
+    "ID_GOOGLE": "103918117108135001322",
+    "NIS": "216326",
+    "KELAS": "5 A MIA",
+    "NAMA": "Jao Hong Khai"},
+  {
+    "ID_GOOGLE": "114795097306782333681",
+    "NIS": "216337",
+    "KELAS": "5 A MIA",
+    "NAMA": "Khalifah Dzikra Hakiki"},
+  {
+    "ID_GOOGLE": "111139612293831868829",
+    "NIS": "216155",
+    "KELAS": "5 A MIA",
+    "NAMA": "Khoiri Rizky Rasyiddin"},
+  {
+    "ID_GOOGLE": "113518461027773171475",
+    "NIS": "216125",
+    "KELAS": "5 A MIA",
+    "NAMA": "Khoirul Anwar"},
+  {
+    "ID_GOOGLE": "115499735950457779087",
+    "NIS": "216279",
+    "KELAS": "5 A MIA",
+    "NAMA": "Moch Ferdiansyah"},
+  {
+    "ID_GOOGLE": "117266396652307038004",
+    "NIS": "234043",
+    "KELAS": "5 A MIA",
+    "NAMA": "Mohammad Fauzan Tsani"},
+  {
+    "ID_GOOGLE": "114649738112492567487",
+    "NIS": "216065",
+    "KELAS": "5 A MIA",
+    "NAMA": "Mohammad Rasya Azzaini"},
+  {
+    "ID_GOOGLE": "100132137003492628695",
+    "NIS": "216359",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhamad Aldir Muharam Direz"},
+  {
+    "ID_GOOGLE": "111175815339281716562",
+    "NIS": "216127",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhamad Khairyan Erlangga"},
+  {
+    "ID_GOOGLE": "113157200465914857364",
+    "NIS": "216261",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhamad Nabil Arrasyid"},
+  {
+    "ID_GOOGLE": "107705988509211345110",
+    "NIS": "216042",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhamad Naufal Ahnaf Zuhdisyihab"},
+  {
+    "ID_GOOGLE": "116528018987998799519",
+    "NIS": "234012",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhamad Tazkiatus Safrudin Rukhiyat"},
+  {
+    "ID_GOOGLE": "103310317558629221751",
+    "NIS": "234051",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Al Fayyadh Dewantoro"},
+  {
+    "ID_GOOGLE": "107408000918262149076",
+    "NIS": "216246",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Azzaam M."},
+  {
+    "ID_GOOGLE": "110039276684506149074",
+    "NIS": "234064",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Fadil"},
+  {
+    "ID_GOOGLE": "115009805741904772328",
+    "NIS": "216264",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Fahmi Y."},
+  {
+    "ID_GOOGLE": "112689973945539122880",
+    "NIS": "234023",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Fakhri Fairus"},
+  {
+    "ID_GOOGLE": "110489571521952310969",
+    "NIS": "216019",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Fakhri Rahman"},
+  {
+    "ID_GOOGLE": "110602503597183466536",
+    "NIS": "234021",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Fathan El Rizky "},
+  {
+    "ID_GOOGLE": "104789181005326691277",
+    "NIS": "216335",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Firly Andieka Putra"},
+  {
+    "ID_GOOGLE": "113308231001645879232",
+    "NIS": "216172",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Harits Bisri"},
+  {
+    "ID_GOOGLE": "101907995272993091446",
+    "NIS": "216375",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Manda Rizky"},
+  {
+    "ID_GOOGLE": "111712776309638171484",
+    "NIS": "216021",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Rayyan Alfathan"},
+  {
+    "ID_GOOGLE": "115297056795198217160",
+    "NIS": "216315",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Rezky  Athaillah"},
+  {
+    "ID_GOOGLE": "115729294804418799722",
+    "NIS": "216409",
+    "KELAS": "5 A MIA",
+    "NAMA": "Muhammad Sahrul Hasan Al-Bana"},
+  {
+    "ID_GOOGLE": "100867056662739074309",
+    "NIS": "216191",
+    "KELAS": "5 A MIA",
+    "NAMA": "Reval Ramadandi Putra"},
+  {
+    "ID_GOOGLE": "110668351005714716675",
+    "NIS": "216099",
+    "KELAS": "5 A MIA",
+    "NAMA": "Sayyid Hamid Rasikh"},
+  {
+    "ID_GOOGLE": "102277521989059611835",
+    "NIS": "216032",
+    "KELAS": "5 A MIA",
+    "NAMA": "Syam Rifqi Nurijal"},
+  {
+    "ID_GOOGLE": "108186243323497301575",
+    "NIS": "234027",
+    "KELAS": "5 A MIA",
+    "NAMA": "Taufiq Rahman"},
+  {
+    "ID_GOOGLE": "106674073497721060008",
+    "NIS": "234037",
+    "KELAS": "5 A MIA",
+    "NAMA": "Zlatan Ibrahim Zidan Al Banjo "},
+  {
+    "ID_GOOGLE": "105118890508814666659",
+    "NIS": "234056",
+    "KELAS": "5 B MIA",
+    "NAMA": "Aisya Rahma Qurrotul Aini"},
+  {
+    "ID_GOOGLE": "116277263797787118239",
+    "NIS": "216013",
+    "KELAS": "5 B MIA",
+    "NAMA": "Alya Shabira Wirawan"},
+  {
+    "ID_GOOGLE": "113783802842453314186",
+    "NIS": "216027",
+    "KELAS": "5 B MIA",
+    "NAMA": "Alyatul Husna Putri Dermawan"},
+  {
+    "ID_GOOGLE": "102763700360970931372",
+    "NIS": "216417",
+    "KELAS": "5 B MIA",
+    "NAMA": "Andieni Syahla Ardiansyah"},
+  {
+    "ID_GOOGLE": "102168083370529255749",
+    "NIS": "216001",
+    "KELAS": "5 B MIA",
+    "NAMA": "Anindya Bintang Arafah"},
+  {
+    "ID_GOOGLE": "102251146832993891809",
+    "NIS": "216380",
+    "KELAS": "5 B MIA",
+    "NAMA": "Anindya Ghaniyya Irwansyah"},
+  {
+    "ID_GOOGLE": "112211230249770580696",
+    "NIS": "216288",
+    "KELAS": "5 B MIA",
+    "NAMA": "Aurellya Zainova"},
+  {
+    "ID_GOOGLE": "100981240552662021929",
+    "NIS": "216298",
+    "KELAS": "5 B MIA",
+    "NAMA": "Azkha Azkhia"},
+  {
+    "ID_GOOGLE": "117049598353464881786",
+    "NIS": "234016",
+    "KELAS": "5 B MIA",
+    "NAMA": "Delima Zahra Hasibuan"},
+  {
+    "ID_GOOGLE": "115893624375557536858",
+    "NIS": "234033",
+    "KELAS": "5 B MIA",
+    "NAMA": "Denia Mayla Putri"},
+  {
+    "ID_GOOGLE": "101286902312457937010",
+    "NIS": "216091",
+    "KELAS": "5 B MIA",
+    "NAMA": "Faiza Zahira Ramadhani"},
+  {
+    "ID_GOOGLE": "115800261206174481628",
+    "NIS": "234042",
+    "KELAS": "5 B MIA",
+    "NAMA": "Fajriah Nurhasanah "},
+  {
+    "ID_GOOGLE": "116300480363915662881",
+    "NIS": "216228",
+    "KELAS": "5 B MIA",
+    "NAMA": "Finza Aulia"},
+  {
+    "ID_GOOGLE": "101971631369203258076",
+    "NIS": "234058",
+    "KELAS": "5 B MIA",
+    "NAMA": "Idamatul Muflihah"},
+  {
+    "ID_GOOGLE": "112379650282764057026",
+    "NIS": "216043",
+    "KELAS": "5 B MIA",
+    "NAMA": "Indyra Ramadhani Azwar"},
+  {
+    "ID_GOOGLE": "110915057450434946215",
+    "NIS": "216432",
+    "KELAS": "5 B MIA",
+    "NAMA": "Izzarahma Kamila Rahayaan"},
+  {
+    "ID_GOOGLE": "115127265689687742133",
+    "NIS": "216121",
+    "KELAS": "5 B MIA",
+    "NAMA": "Kezia Rahmani Putri"},
+  {
+    "ID_GOOGLE": "117160503658134391183",
+    "NIS": "216348",
+    "KELAS": "5 B MIA",
+    "NAMA": "Laelatussuada"},
+  {
+    "ID_GOOGLE": "100381715223151574620",
+    "NIS": "216202",
+    "KELAS": "5 B MIA",
+    "NAMA": "Maulidina Humaira Mahdiyah"},
+  {
+    "ID_GOOGLE": "108604648672304013383",
+    "NIS": "216386",
+    "KELAS": "5 B MIA",
+    "NAMA": "Nadhira Hasna Maulida"},
+  {
+    "ID_GOOGLE": "111988384789746547787",
+    "NIS": "216180",
+    "KELAS": "5 B MIA",
+    "NAMA": "Naifa Rahma Salsabila"},
+  {
+    "ID_GOOGLE": "109384613570783506137",
+    "NIS": "216254",
+    "KELAS": "5 B MIA",
+    "NAMA": "Naira Fahmida Rizqin"},
+  {
+    "ID_GOOGLE": "106725459591397230392",
+    "NIS": "216236",
+    "KELAS": "5 B MIA",
+    "NAMA": "Naurah Shafa Athira"},
+  {
+    "ID_GOOGLE": "106855247808451341229",
+    "NIS": "216449",
+    "KELAS": "5 B MIA",
+    "NAMA": "Nayla Annisaa Faaza"},
+  {
+    "ID_GOOGLE": "114861043147435748774",
+    "NIS": "216207",
+    "KELAS": "5 B MIA",
+    "NAMA": "Nayzhima Rayzel Dildar"},
+  {
+    "ID_GOOGLE": "100658458522337423954",
+    "NIS": "216018",
+    "KELAS": "5 B MIA",
+    "NAMA": "Ni'Maturramadhani"},
+  {
+    "ID_GOOGLE": "111821407042457400889",
+    "NIS": "216256",
+    "KELAS": "5 B MIA",
+    "NAMA": "Nur Luthfi Kurnia"},
+  {
+    "ID_GOOGLE": "108564916850432237153",
+    "NIS": "216308",
+    "KELAS": "5 B MIA",
+    "NAMA": "Nurossa'Adah"},
+  {
+    "ID_GOOGLE": "111531759899182432580",
+    "NIS": "216187",
+    "KELAS": "5 B MIA",
+    "NAMA": "Q'Nanti Albira Magfirani"},
+  {
+    "ID_GOOGLE": "106345614204538900720",
+    "NIS": "216436",
+    "KELAS": "5 B MIA",
+    "NAMA": "Raisa Alya Salsabila"},
+  {
+    "ID_GOOGLE": "107386614167759429927",
+    "NIS": "216235",
+    "KELAS": "5 B MIA",
+    "NAMA": "Shafira Ramadhani"},
+  {
+    "ID_GOOGLE": "110623640441366824220",
+    "NIS": "216144",
+    "KELAS": "5 B MIA",
+    "NAMA": "Siti Nur Padhilah"},
+  {
+    "ID_GOOGLE": "113914605912104604573",
+    "NIS": "216341",
+    "KELAS": "5 B MIA",
+    "NAMA": "Sofwah Annida"},
+  {
+    "ID_GOOGLE": "105675167374142213026",
+    "NIS": "216226",
+    "KELAS": "5 B MIA",
+    "NAMA": "Taqiyah Rihhadatul 'Aisa "},
+  {
+    "ID_GOOGLE": "106831960477753297436",
+    "NIS": "216123",
+    "KELAS": "5 B MIA",
+    "NAMA": "Triani Pebriyanti"},
+  {
+    "ID_GOOGLE": "117950308996050258138",
+    "NIS": "216443",
+    "KELAS": "5 B MIA",
+    "NAMA": "Viola Aura Zukhruf Supriatna"},
+  {
+    "ID_GOOGLE": "103044460079965620804",
+    "NIS": "216112",
+    "KELAS": "5 B MIA",
+    "NAMA": "Zaskia Nandita"},
+  {
+    "ID_GOOGLE": "115597255603845203694",
+    "NIS": "216266",
+    "KELAS": "5 B MIA",
+    "NAMA": "Zattin Lita Ghoini"},
+  {
+    "ID_GOOGLE": "100178447820986263300",
+    "NIS": "216245",
+    "KELAS": "5 C MIA",
+    "NAMA": "Afifa Maziyah Al Maliki"},
+  {
+    "ID_GOOGLE": "112372015850970650861",
+    "NIS": "216168",
+    "KELAS": "5 C MIA",
+    "NAMA": "Alfathira Azkya Amran"},
+  {
+    "ID_GOOGLE": "115471180741594942269",
+    "NIS": "216420",
+    "KELAS": "5 C MIA",
+    "NAMA": "Alifiah Renizwa Al-Azkia"},
+  {
+    "ID_GOOGLE": "111361104386412685812",
+    "NIS": "216407",
+    "KELAS": "5 C MIA",
+    "NAMA": "Amira Najwa Khaeerin"},
+  {
+    "ID_GOOGLE": "115969818884903857303",
+    "NIS": "216119",
+    "KELAS": "5 C MIA",
+    "NAMA": "Aqela Khalisha"},
+  {
+    "ID_GOOGLE": "107797793381829151973",
+    "NIS": "216081",
+    "KELAS": "5 C MIA",
+    "NAMA": "Aqila Nur Qurrotu'Ain"},
+  {
+    "ID_GOOGLE": "106244918874791552929",
+    "NIS": "216031",
+    "KELAS": "5 C MIA",
+    "NAMA": "Ashila Rahma"},
+  {
+    "ID_GOOGLE": "109275715528436093194",
+    "NIS": "216294",
+    "KELAS": "5 C MIA",
+    "NAMA": "Aurora Aifa Rheina"},
+  {
+    "ID_GOOGLE": "110902443724304259772",
+    "NIS": "216134",
+    "KELAS": "5 C MIA",
+    "NAMA": "Bilqis Khanaya Nurlatifah"},
+  {
+    "ID_GOOGLE": "104196176427352165110",
+    "NIS": "216053",
+    "KELAS": "5 C MIA",
+    "NAMA": "Clarisa Meira Zahra"},
+  {
+    "ID_GOOGLE": "106789882142946281498",
+    "NIS": "216035",
+    "KELAS": "5 C MIA",
+    "NAMA": "Davinsha Cahaya Ramadhanty"},
+  {
+    "ID_GOOGLE": "108306878116678713105",
+    "NIS": "216049",
+    "KELAS": "5 C MIA",
+    "NAMA": "Diana Nabila"},
+  {
+    "ID_GOOGLE": "109386623144070514638",
+    "NIS": "216205",
+    "KELAS": "5 C MIA",
+    "NAMA": "Faida Azmi"},
+  {
+    "ID_GOOGLE": "115332112213203358647",
+    "NIS": "216295",
+    "KELAS": "5 C MIA",
+    "NAMA": "Fakhira Aulia Putri"},
+  {
+    "ID_GOOGLE": "115772408871704813362",
+    "NIS": "216192",
+    "KELAS": "5 C MIA",
+    "NAMA": "Jahra Lutfia"},
+  {
+    "ID_GOOGLE": "111783701745524530942",
+    "NIS": "234032",
+    "KELAS": "5 C MIA",
+    "NAMA": "Kaisya Kamiliya Wafa"},
+  {
+    "ID_GOOGLE": "111949601250745906540",
+    "NIS": "216020",
+    "KELAS": "5 C MIA",
+    "NAMA": "Maira Anandia Laidha Putri"},
+  {
+    "ID_GOOGLE": "109672281613988326365",
+    "NIS": "216332",
+    "KELAS": "5 C MIA",
+    "NAMA": "Meisya Nabila Putri"},
+  {
+    "ID_GOOGLE": "111922973610932809260",
+    "NIS": "216094",
+    "KELAS": "5 C MIA",
+    "NAMA": "Najwa Salsabil"},
+  {
+    "ID_GOOGLE": "112016419595768700705",
+    "NIS": "216243",
+    "KELAS": "5 C MIA",
+    "NAMA": "Nesya Bilqis Maulida Yusuf"},
+  {
+    "ID_GOOGLE": "112131560641465662949",
+    "NIS": "234013",
+    "KELAS": "5 C MIA",
+    "NAMA": "Putri Khumairah"},
+  {
+    "ID_GOOGLE": "115417784570778691751",
+    "NIS": "216385",
+    "KELAS": "5 C MIA",
+    "NAMA": "Rafeiva Asyila Mumtaza"},
+  {
+    "ID_GOOGLE": "107003492070425536845",
+    "NIS": "216154",
+    "KELAS": "5 C MIA",
+    "NAMA": "Rasyifa Silvia"},
+  {
+    "ID_GOOGLE": "106350212059975984882",
+    "NIS": "216368",
+    "KELAS": "5 C MIA",
+    "NAMA": "Sabian Ali Ramadhani"},
+  {
+    "ID_GOOGLE": "110647300957185377036",
+    "NIS": "216270",
+    "KELAS": "5 C MIA",
+    "NAMA": "Sabrina Novesia Putri"},
+  {
+    "ID_GOOGLE": "111026197971569920119",
+    "NIS": "216459",
+    "KELAS": "5 C MIA",
+    "NAMA": "Salsabila"},
+  {
+    "ID_GOOGLE": "108480859271758315621",
+    "NIS": "234025",
+    "KELAS": "5 C MIA",
+    "NAMA": "Salwa Noor Azzahra"},
+  {
+    "ID_GOOGLE": "109289404138648158640",
+    "NIS": "216401",
+    "KELAS": "5 C MIA",
+    "NAMA": "Sarah Ramadhaniah"},
+  {
+    "ID_GOOGLE": "100943703142367797318",
+    "NIS": "216003",
+    "KELAS": "5 C MIA",
+    "NAMA": "Sausani Athira Jinan"},
+  {
+    "ID_GOOGLE": "107311719001305585364",
+    "NIS": "216030",
+    "KELAS": "5 C MIA",
+    "NAMA": "Shakira Alya Zaenal"},
+  {
+    "ID_GOOGLE": "115513813385501570672",
+    "NIS": "216366",
+    "KELAS": "5 C MIA",
+    "NAMA": "Siti Ma'Rifah"},
+  {
+    "ID_GOOGLE": "102423487603046144655",
+    "NIS": "234061",
+    "KELAS": "5 C MIA",
+    "NAMA": "Siti Syirla Hendrawanti"},
+  {
+    "ID_GOOGLE": "101600026786112981602",
+    "NIS": "216259",
+    "KELAS": "5 C MIA",
+    "NAMA": "Syahda Nuha Al Karomah"},
+  {
+    "ID_GOOGLE": "115003832998568547766",
+    "NIS": "234001",
+    "KELAS": "5 C MIA",
+    "NAMA": "Syifa Lestari"},
+  {
+    "ID_GOOGLE": "115809328390318869282",
+    "NIS": "216304",
+    "KELAS": "5 C MIA",
+    "NAMA": "Tazkia Nurmaulida"},
+  {
+    "ID_GOOGLE": "115335415575782977730",
+    "NIS": "216453",
+    "KELAS": "5 C MIA",
+    "NAMA": "Zahwa Khaira Aulia"},
+  {
+    "ID_GOOGLE": "113989664763464182144",
+    "NIS": "216356",
+    "KELAS": "5 C MIA",
+    "NAMA": "Zalfa Afifatunnisa Ramadhani"},
+  {
+    "ID_GOOGLE": "110174308778392577985",
+    "NIS": "216345",
+    "KELAS": "5 A MIA",
+    "NAMA": "Candra Ardiansyah"},
+  {
+    "ID_GOOGLE": "115541052963439809077",
+    "NIS": "216416",
+    "KELAS": "5 D IIS",
+    "NAMA": "Amarullah"},
+  {
+    "ID_GOOGLE": "104425224453474946620",
+    "NIS": "216434",
+    "KELAS": "5 D IIS",
+    "NAMA": "Asrul Sallas Wahyudi"},
+  {
+    "ID_GOOGLE": "112364106981382296357",
+    "NIS": "216357",
+    "KELAS": "5 D IIS",
+    "NAMA": "Bagas Ramadoni"},
+  {
+    "ID_GOOGLE": "115387719405438533653",
+    "NIS": "216219",
+    "KELAS": "5 D IIS",
+    "NAMA": "Caesario Fatan Wilianto"},
+  {
+    "ID_GOOGLE": "108287596466221165406",
+    "NIS": "216324",
+    "KELAS": "5 D IIS",
+    "NAMA": "Fajar Kusuma Putra"},
+  {
+    "ID_GOOGLE": "116114195846813719754",
+    "NIS": "216012",
+    "KELAS": "5 D IIS",
+    "NAMA": "Fakhry Alfarisy"},
+  {
+    "ID_GOOGLE": "102072495135001108091",
+    "NIS": "216051",
+    "KELAS": "5 D IIS",
+    "NAMA": "Fasha Nazela Nugraha"},
+  {
+    "ID_GOOGLE": "100002354071669104126",
+    "NIS": "216140",
+    "KELAS": "5 D IIS",
+    "NAMA": "Hasbiansyah Wisnu Pratama"},
+  {
+    "ID_GOOGLE": "108640280768861895690",
+    "NIS": "216111",
+    "KELAS": "5 D IIS",
+    "NAMA": "Husni Mubarok"},
+  {
+    "ID_GOOGLE": "108923088358571730155",
+    "NIS": "216023",
+    "KELAS": "5 D IIS",
+    "NAMA": "Ibrahim Hasan"},
+  {
+    "ID_GOOGLE": "100673639743852138402",
+    "NIS": "216249",
+    "KELAS": "5 D IIS",
+    "NAMA": "Lukmanul Hakim"},
+  {
+    "ID_GOOGLE": "116654450476629663256",
+    "NIS": "216188",
+    "KELAS": "5 D IIS",
+    "NAMA": "M. Mulia Hakim"},
+  {
+    "ID_GOOGLE": "109376296967490723961",
+    "NIS": "216342",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Aliifah"},
+  {
+    "ID_GOOGLE": "110864272979149679228",
+    "NIS": "234063",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Arif Nasution"},
+  {
+    "ID_GOOGLE": "109326787347921089866",
+    "NIS": "216431",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Dirham Mandala"},
+  {
+    "ID_GOOGLE": "118111899689686569714",
+    "NIS": "216285",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Dzimar Nurfikri"},
+  {
+    "ID_GOOGLE": "105507178784072284469",
+    "NIS": "234069",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Fauzan"},
+  {
+    "ID_GOOGLE": "110822564851592321697",
+    "NIS": "234026",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Fauzan Kamil"},
+  {
+    "ID_GOOGLE": "102281716405169861019",
+    "NIS": "234055",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Gofar Azis"},
+  {
+    "ID_GOOGLE": "117558850101084343210",
+    "NIS": "216353",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Rizki Satria"},
+  {
+    "ID_GOOGLE": "101294320733827676891",
+    "NIS": "216153",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Wildan"},
+  {
+    "ID_GOOGLE": "104771236229863280150",
+    "NIS": "216252",
+    "KELAS": "5 D IIS",
+    "NAMA": "Muhammad Wildan Gufroni"},
+  {
+    "ID_GOOGLE": "103037422866853814750",
+    "NIS": "216233",
+    "KELAS": "5 D IIS",
+    "NAMA": "Prabu Dzidni Al Falaq"},
+  {
+    "ID_GOOGLE": "107957371109890526455",
+    "NIS": "216152",
+    "KELAS": "5 D IIS",
+    "NAMA": "Rizky Aditya Pohan"},
+  {
+    "ID_GOOGLE": "111559728099071872762",
+    "NIS": "216237",
+    "KELAS": "5 E IIS",
+    "NAMA": "Ahmad Ardiansyah Putra"},
+  {
+    "ID_GOOGLE": "109963651584068172660",
+    "NIS": "216227",
+    "KELAS": "5 E IIS",
+    "NAMA": "Ahmad Yasir Mubarak"},
+  {
+    "ID_GOOGLE": "104150752198651785307",
+    "NIS": "216297",
+    "KELAS": "5 E IIS",
+    "NAMA": "Ardhi Ilyas Ramadhan"},
+  {
+    "ID_GOOGLE": "105961963951064802767",
+    "NIS": "216145",
+    "KELAS": "5 E IIS",
+    "NAMA": "Dimas Fazari"},
+  {
+    "ID_GOOGLE": "111378076530292718420",
+    "NIS": "216372",
+    "KELAS": "5 E IIS",
+    "NAMA": "Fabian Bintang Pratama"},
+  {
+    "ID_GOOGLE": "111249586534748691266",
+    "NIS": "216071",
+    "KELAS": "5 E IIS",
+    "NAMA": "Ikhsan Nabil Fauzan"},
+  {
+    "ID_GOOGLE": "113609066969021959421",
+    "NIS": "216197",
+    "KELAS": "5 E IIS",
+    "NAMA": "Iqram Safutra"},
+  {
+    "ID_GOOGLE": "107157850246884889941",
+    "NIS": "216231",
+    "KELAS": "5 E IIS",
+    "NAMA": "M. Yusuf Danish"},
+  {
+    "ID_GOOGLE": "111084688656361596345",
+    "NIS": "234059",
+    "KELAS": "5 E IIS",
+    "NAMA": "Mohammad  Hafidz  Luthfyansah"},
+  {
+    "ID_GOOGLE": "106886335530955183819",
+    "NIS": "216061",
+    "KELAS": "5 E IIS",
+    "NAMA": "Muhamad Rasya Islami Pratama"},
+  {
+    "ID_GOOGLE": "111727602168494794940",
+    "NIS": "216034",
+    "KELAS": "5 E IIS",
+    "NAMA": "Muhammad Fadhil"},
+  {
+    "ID_GOOGLE": "114925157926128042917",
+    "NIS": "234015",
+    "KELAS": "5 E IIS",
+    "NAMA": "Muhammad Faiz Azizy"},
+  {
+    "ID_GOOGLE": "110932920580841438195",
+    "NIS": "234014",
+    "KELAS": "5 E IIS",
+    "NAMA": "Muhammad Hafiz Zulfani"},
+  {
+    "ID_GOOGLE": "113236436989567879563",
+    "NIS": "216287",
+    "KELAS": "5 E IIS",
+    "NAMA": "Muhammad Rifa Rifa'I"},
+  {
+    "ID_GOOGLE": "113660764673115174623",
+    "NIS": "216323",
+    "KELAS": "5 E IIS",
+    "NAMA": "Muhammad Yasrin Mufarrij"},
+  {
+    "ID_GOOGLE": "108504210763063773485",
+    "NIS": "216209",
+    "KELAS": "5 E IIS",
+    "NAMA": "Mulki Haidar Asyqar"},
+  {
+    "ID_GOOGLE": "109960038391013042991",
+    "NIS": "234019",
+    "KELAS": "5 E IIS",
+    "NAMA": "Nasution Zidan Naser"},
+  {
+    "ID_GOOGLE": "108393011214974551181",
+    "NIS": "216448",
+    "KELAS": "5 E IIS",
+    "NAMA": "Rabih Sabilillah"},
+  {
+    "ID_GOOGLE": "118147782595215553056",
+    "NIS": "216238",
+    "KELAS": "5 E IIS",
+    "NAMA": "Rachmat Nuron"},
+  {
+    "ID_GOOGLE": "109289211893678568635",
+    "NIS": "216424",
+    "KELAS": "5 E IIS",
+    "NAMA": "Ramadhan De Rona Siregar"},
+  {
+    "ID_GOOGLE": "114917392515923324507",
+    "NIS": "216364",
+    "KELAS": "5 E IIS",
+    "NAMA": "Rasya Putra Saipul"},
+  {
+    "ID_GOOGLE": "113614621343179280657",
+    "NIS": "234005",
+    "KELAS": "5 E IIS",
+    "NAMA": "Renjha Rizqy Radifta"},
+  {
+    "ID_GOOGLE": "114452104829995747445",
+    "NIS": "216418",
+    "KELAS": "5 E IIS",
+    "NAMA": "Rudi Riyan Nurdiansah"},
+  {
+    "ID_GOOGLE": "108472160519927882388",
+    "NIS": "216225",
+    "KELAS": "5 E IIS",
+    "NAMA": "Sayyid Muhammad Dzikru"},
+  {
+    "ID_GOOGLE": "103147516284865037954",
+    "NIS": "216048",
+    "KELAS": "5 F IIS",
+    "NAMA": "Adinda Mariyah Alqibtiyah"},
+  {
+    "ID_GOOGLE": "101383617340914276128",
+    "NIS": "216011",
+    "KELAS": "5 F IIS",
+    "NAMA": "Aisyah Putri Bilqis"},
+  {
+    "ID_GOOGLE": "117682497273975625695",
+    "NIS": "234036",
+    "KELAS": "5 F IIS",
+    "NAMA": "Ananda Nayla Vilza Salsabila"},
+  {
+    "ID_GOOGLE": "101243482082484234252",
+    "NIS": "216330",
+    "KELAS": "5 F IIS",
+    "NAMA": "Angelita Pramudia Putri"},
+  {
+    "ID_GOOGLE": "106812389935481186428",
+    "NIS": "216055",
+    "KELAS": "5 F IIS",
+    "NAMA": "Anggita Nadhifa Putri"},
+  {
+    "ID_GOOGLE": "102410318334389045710",
+    "NIS": "216352",
+    "KELAS": "5 F IIS",
+    "NAMA": "Anjelya Rossandy"},
+  {
+    "ID_GOOGLE": "115003111126396451762",
+    "NIS": "216102",
+    "KELAS": "5 F IIS",
+    "NAMA": "Azra Arsyita Dinnastya"},
+  {
+    "ID_GOOGLE": "104278604713182752081",
+    "NIS": "216174",
+    "KELAS": "5 F IIS",
+    "NAMA": "Dea Aurella Putri"},
+  {
+    "ID_GOOGLE": "104148018194263946515",
+    "NIS": "216033",
+    "KELAS": "5 F IIS",
+    "NAMA": "Dini Wulandari"},
+  {
+    "ID_GOOGLE": "111284313814594070100",
+    "NIS": "216063",
+    "KELAS": "5 F IIS",
+    "NAMA": "Fairy Chanda A'Syafa"},
+  {
+    "ID_GOOGLE": "102375830891018736749",
+    "NIS": "234045",
+    "KELAS": "5 F IIS",
+    "NAMA": "Femilia Angelita"},
+  {
+    "ID_GOOGLE": "110395202339932316048",
+    "NIS": "216241",
+    "KELAS": "5 F IIS",
+    "NAMA": "Fiska Aulia"},
+  {
+    "ID_GOOGLE": "113223850976930280054",
+    "NIS": "216306",
+    "KELAS": "5 F IIS",
+    "NAMA": "Ghaitsaa Najwa Humaira"},
+  {
+    "ID_GOOGLE": "116863516256584903318",
+    "NIS": "216056",
+    "KELAS": "5 F IIS",
+    "NAMA": "Jesilina Fitria Pratiwi"},
+  {
+    "ID_GOOGLE": "117642903899925893218",
+    "NIS": "216354",
+    "KELAS": "5 F IIS",
+    "NAMA": "Kayla Azkya Yasin"},
+  {
+    "ID_GOOGLE": "107262630344155762162",
+    "NIS": "216435",
+    "KELAS": "5 F IIS",
+    "NAMA": "Kayshah Fathiya Ramdhoni"},
+  {
+    "ID_GOOGLE": "103028220882588018224",
+    "NIS": "234024",
+    "KELAS": "5 F IIS",
+    "NAMA": "Kaysya Karimah Maulidah"},
+  {
+    "ID_GOOGLE": "113839930425268068257",
+    "NIS": "216428",
+    "KELAS": "5 F IIS",
+    "NAMA": "Khaerani Mesya Kamilah Haryono"},
+  {
+    "ID_GOOGLE": "113666510137969456703",
+    "NIS": "216242",
+    "KELAS": "5 F IIS",
+    "NAMA": "Lubba Zahra Hidayat"},
+  {
+    "ID_GOOGLE": "118063793357474560099",
+    "NIS": "234040",
+    "KELAS": "5 F IIS",
+    "NAMA": "Nafisah"},
+  {
+    "ID_GOOGLE": "105986672345552695013",
+    "NIS": "216110",
+    "KELAS": "5 F IIS",
+    "NAMA": "Naila Fitriyani"},
+  {
+    "ID_GOOGLE": "114404051607651557941",
+    "NIS": "234020",
+    "KELAS": "5 F IIS",
+    "NAMA": "Najwa Luthfiyah"},
+  {
+    "ID_GOOGLE": "114596251392101719679",
+    "NIS": "216025",
+    "KELAS": "5 F IIS",
+    "NAMA": "Noeni Rahmawati"},
+  {
+    "ID_GOOGLE": "100456880834352206765",
+    "NIS": "216268",
+    "KELAS": "5 F IIS",
+    "NAMA": "Noviana Nur Latifah"},
+  {
+    "ID_GOOGLE": "117691137195026877704",
+    "NIS": "216050",
+    "KELAS": "5 F IIS",
+    "NAMA": "Rara Aulia Azzahra"},
+  {
+    "ID_GOOGLE": "110993380627063702050",
+    "NIS": "234034",
+    "KELAS": "5 F IIS",
+    "NAMA": "Rismawati"},
+  {
+    "ID_GOOGLE": "111253908788754514930",
+    "NIS": "234004",
+    "KELAS": "5 F IIS",
+    "NAMA": "Risty Putri Maharani"},
+  {
+    "ID_GOOGLE": "105778719970243385617",
+    "NIS": "216103",
+    "KELAS": "5 F IIS",
+    "NAMA": "Ronazeti Faidah Hasna"},
+  {
+    "ID_GOOGLE": "110900051920007268080",
+    "NIS": "216458",
+    "KELAS": "5 F IIS",
+    "NAMA": "Sabilia Zahra"},
+  {
+    "ID_GOOGLE": "108304771646112261272",
+    "NIS": "234057",
+    "KELAS": "5 F IIS",
+    "NAMA": "Safira Roisatu Aulia"},
+  {
+    "ID_GOOGLE": "111821144925265031290",
+    "NIS": "216044",
+    "KELAS": "5 F IIS",
+    "NAMA": "Safira Shafa Maulida"},
+  {
+    "ID_GOOGLE": "105075525718066987733",
+    "NIS": "216281",
+    "KELAS": "5 F IIS",
+    "NAMA": "Siti Fitri Hairani"},
+  {
+    "ID_GOOGLE": "111109130485297042353",
+    "NIS": "234071",
+    "KELAS": "5 F IIS",
+    "NAMA": "Sitti Kamila Kaimuddin"},
+  {
+    "ID_GOOGLE": "111487997928583924261",
+    "NIS": "216128",
+    "KELAS": "5 F IIS",
+    "NAMA": "Suci Rohaya Matondang"},
+  {
+    "ID_GOOGLE": "113534721058696647895",
+    "NIS": "216277",
+    "KELAS": "5 F IIS",
+    "NAMA": "Tiara Desinta Dewi"},
+  {
+    "ID_GOOGLE": "103488635403847324559",
+    "NIS": "244061",
+    "KELAS": "5 F IIS",
+    "NAMA": "Umaeroh Ulpa Dwiyanti"},
+  {
+    "ID_GOOGLE": "101945625680854673121",
+    "NIS": "216215",
+    "KELAS": "5 F IIS",
+    "NAMA": "Wardah Yara Aprila"},
+  {
+    "ID_GOOGLE": "102400013078124449008",
+    "NIS": "216057",
+    "KELAS": "5 F IIS",
+    "NAMA": "Zahra Ramadhani"},
+  {
+    "ID_GOOGLE": "114599982655563909990",
+    "NIS": "216369",
+    "KELAS": "5 F IIS",
+    "NAMA": "Zaidalana Tanisyah Ramadhani"},
+  {
+    "ID_GOOGLE": "103393371723844995791",
+    "NIS": "216263",
+    "KELAS": "5 F IIS",
+    "NAMA": "Zaskia Maulida Lubis"},
+  {
+    "ID_GOOGLE": "106374054927412051961",
+    "NIS": "206059",
+    "KELAS": "6 A MIA",
+    "NAMA": "Adiharja Pratama Wibawa"},
+  {
+    "ID_GOOGLE": "117659794465294855509",
+    "NIS": "206392",
+    "KELAS": "6 A MIA",
+    "NAMA": "Alkhalibhi  Zabrani Yusuf"},
+  {
+    "ID_GOOGLE": "112792653569075278046",
+    "NIS": "224037",
+    "KELAS": "6 A MIA",
+    "NAMA": "Daffa Al Izzyan Bachrudin"},
+  {
+    "ID_GOOGLE": "112100947429181509361",
+    "NIS": "206463",
+    "KELAS": "6 A MIA",
+    "NAMA": "Davi Saputra"},
+  {
+    "ID_GOOGLE": "109209720353474824170",
+    "NIS": "206232",
+    "KELAS": "6 A MIA",
+    "NAMA": "Deris Anugrah Syahputra"},
+  {
+    "ID_GOOGLE": "100100331431799729092",
+    "NIS": "224034",
+    "KELAS": "6 A MIA",
+    "NAMA": "Dias Rizky Sumbada"},
+  {
+    "ID_GOOGLE": "108773233436391489514",
+    "NIS": "206359",
+    "KELAS": "6 A MIA",
+    "NAMA": "Diaz Aidil Fariz"},
+  {
+    "ID_GOOGLE": "103975500866190927899",
+    "NIS": "206405",
+    "KELAS": "6 A MIA",
+    "NAMA": "Dimas Bayu Wiro Utomo"},
+  {
+    "ID_GOOGLE": "100504612825039354766",
+    "NIS": "206264",
+    "KELAS": "6 A MIA",
+    "NAMA": "Fachri Rahmat Shohih"},
+  {
+    "ID_GOOGLE": "106663569286932929558",
+    "NIS": "206469",
+    "KELAS": "6 A MIA",
+    "NAMA": "Fadhilah Abiyu Faiz"},
+  {
+    "ID_GOOGLE": "113714074233536958215",
+    "NIS": "206058",
+    "KELAS": "6 A MIA",
+    "NAMA": "Fardhan Ghifari "},
+  {
+    "ID_GOOGLE": "114988280449472163680",
+    "NIS": "224081",
+    "KELAS": "6 A MIA",
+    "NAMA": "Fariz Aulia Noor Riansyach"},
+  {
+    "ID_GOOGLE": "113733773350818612467",
+    "NIS": "224057",
+    "KELAS": "6 A MIA",
+    "NAMA": "Fauzan Saepul Aziz"},
+  {
+    "ID_GOOGLE": "118027203511023562900",
+    "NIS": "206428",
+    "KELAS": "6 A MIA",
+    "NAMA": "Fitwal Hasan Al Harobi"},
+  {
+    "ID_GOOGLE": "103600072090365538926",
+    "NIS": "224054",
+    "KELAS": "6 A MIA",
+    "NAMA": "Hasbi Mayar Nurkamil"},
+  {
+    "ID_GOOGLE": "103616271283444642147",
+    "NIS": "206483",
+    "KELAS": "6 A MIA",
+    "NAMA": "Ibnu Zaki Almufarrij"},
+  {
+    "ID_GOOGLE": "101581168997741401622",
+    "NIS": "206251",
+    "KELAS": "6 A MIA",
+    "NAMA": "Ivan Rivandi"},
+  {
+    "ID_GOOGLE": "111259726850747288330",
+    "NIS": "206304",
+    "KELAS": "6 A MIA",
+    "NAMA": "Keyndra Ainun Rodita"},
+  {
+    "ID_GOOGLE": "100747090231621199769",
+    "NIS": "206103",
+    "KELAS": "6 A MIA",
+    "NAMA": "M Rd Dendang Manua Rasya R"},
+  {
+    "ID_GOOGLE": "106059780858418189153",
+    "NIS": "224089",
+    "KELAS": "6 A MIA",
+    "NAMA": "M. Afif Murtaza"},
+  {
+    "ID_GOOGLE": "106298013067006490545",
+    "NIS": "224071",
+    "KELAS": "6 A MIA",
+    "NAMA": "Maulana Yusup"},
+  {
+    "ID_GOOGLE": "104165081185860258056",
+    "NIS": "206423",
+    "KELAS": "6 A MIA",
+    "NAMA": "Muhammad Kemal Fasha"},
+  {
+    "ID_GOOGLE": "111295051510955337381",
+    "NIS": "206366",
+    "KELAS": "6 A MIA",
+    "NAMA": "Muhammad Raffi Akmal"},
+  {
+    "ID_GOOGLE": "106002967310431177962",
+    "NIS": "206033",
+    "KELAS": "6 A MIA",
+    "NAMA": "Muhammad Riza Pratama"},
+  {
+    "ID_GOOGLE": "101958506330909754009",
+    "NIS": "206306",
+    "KELAS": "6 A MIA",
+    "NAMA": "Muhammad Rizki Akbar"},
+  {
+    "ID_GOOGLE": "107310825383025486862",
+    "NIS": "206005",
+    "KELAS": "6 B MIA",
+    "NAMA": "Annasa Putra Sihabuddin"},
+  {
+    "ID_GOOGLE": "115454711661093658965",
+    "NIS": "206148",
+    "KELAS": "6 B MIA",
+    "NAMA": "Ardin Takia Ramadhan"},
+  {
+    "ID_GOOGLE": "109265231377866441952",
+    "NIS": "224013",
+    "KELAS": "6 B MIA",
+    "NAMA": "Fariz Daffa Hariyadi"},
+  {
+    "ID_GOOGLE": "113115811545809482495",
+    "NIS": "206498",
+    "KELAS": "6 B MIA",
+    "NAMA": "Fawwaz Adnan Ajriya Amaly"},
+  {
+    "ID_GOOGLE": "111942419823545199852",
+    "NIS": "206268",
+    "KELAS": "6 B MIA",
+    "NAMA": "Harits Khusyu Abdillah "},
+  {
+    "ID_GOOGLE": "112650433605818839064",
+    "NIS": "206415",
+    "KELAS": "6 B MIA",
+    "NAMA": "Khairul  Rasyid"},
+  {
+    "ID_GOOGLE": "101944629145419458887",
+    "NIS": "206468",
+    "KELAS": "6 B MIA",
+    "NAMA": "M Azzro Abdullah"},
+  {
+    "ID_GOOGLE": "102140129003171282752",
+    "NIS": "206019",
+    "KELAS": "6 B MIA",
+    "NAMA": "M Elgi Fairuz"},
+  {
+    "ID_GOOGLE": "100193190966897665524",
+    "NIS": "206506",
+    "KELAS": "6 B MIA",
+    "NAMA": "Mochamad Abi Van Rianzy"},
+  {
+    "ID_GOOGLE": "102385653479676214229",
+    "NIS": "206477",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhamad Raditya Mahardika"},
+  {
+    "ID_GOOGLE": "105350575870667358275",
+    "NIS": "206441",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Al-Ghifari Bahtiar"},
+  {
+    "ID_GOOGLE": "103798020773177308107",
+    "NIS": "224045",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Awalludin Alviyan"},
+  {
+    "ID_GOOGLE": "117197657694148157491",
+    "NIS": "206159",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Azka Syarief"},
+  {
+    "ID_GOOGLE": "102956246981210809693",
+    "NIS": "206413",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Fadli Dermawan"},
+  {
+    "ID_GOOGLE": "117277425218503562867",
+    "NIS": "206279",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Fahri Zada Romadhan "},
+  {
+    "ID_GOOGLE": "103265572910121309249",
+    "NIS": "206199",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Fazry"},
+  {
+    "ID_GOOGLE": "118319990135510611738",
+    "NIS": "206448",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Hafidz Al-Hady"},
+  {
+    "ID_GOOGLE": "118365050272599267785",
+    "NIS": "206509",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Hasby Rahman"},
+  {
+    "ID_GOOGLE": "100643316896512062080",
+    "NIS": "206166",
+    "KELAS": "6 B MIA",
+    "NAMA": "Muhammad Yusuf Arofah"},
+  {
+    "ID_GOOGLE": "113913226871408511126",
+    "NIS": "224061",
+    "KELAS": "6 B MIA",
+    "NAMA": "Naryama Adli Prayata"},
+  {
+    "ID_GOOGLE": "114825422525744506410",
+    "NIS": "206141",
+    "KELAS": "6 B MIA",
+    "NAMA": "Rahmad Al Sabil"},
+  {
+    "ID_GOOGLE": "104842807713168098769",
+    "NIS": "206091",
+    "KELAS": "6 B MIA",
+    "NAMA": "Rayhan Kamil Ramadhan Lathif"},
+  {
+    "ID_GOOGLE": "103360463914411742984",
+    "NIS": "206314",
+    "KELAS": "6 B MIA",
+    "NAMA": "Sultan Rakha Arkana"},
+  {
+    "ID_GOOGLE": "103200081014000582160",
+    "NIS": "224039",
+    "KELAS": "6 B MIA",
+    "NAMA": "Syawal Muhammad Ikhsan"},
+  {
+    "ID_GOOGLE": "115585588178414330537",
+    "NIS": "206476",
+    "KELAS": "6 C MIA",
+    "NAMA": "Adwina Siti Ramadianti"},
+  {
+    "ID_GOOGLE": "114002707380069956030",
+    "NIS": "206316",
+    "KELAS": "6 C MIA",
+    "NAMA": "Adzro Ullaya Nafisa"},
+  {
+    "ID_GOOGLE": "112030708278613040857",
+    "NIS": "206379",
+    "KELAS": "6 C MIA",
+    "NAMA": "Aesha Fathiyya Annida"},
+  {
+    "ID_GOOGLE": "110431648415665572168",
+    "NIS": "206266",
+    "KELAS": "6 C MIA",
+    "NAMA": "Aisyah Putri Dwi Achmadi"},
+  {
+    "ID_GOOGLE": "114118320443234143327",
+    "NIS": "206278",
+    "KELAS": "6 C MIA",
+    "NAMA": "Alifa Naysila Rahman"},
+  {
+    "ID_GOOGLE": "111982279347764735143",
+    "NIS": "206160",
+    "KELAS": "6 C MIA",
+    "NAMA": "Amaliatusshufiyyah"},
+  {
+    "ID_GOOGLE": "118202456840258708663",
+    "NIS": "206356",
+    "KELAS": "6 C MIA",
+    "NAMA": "Aulia Alilatul Bariza Batu Bara "},
+  {
+    "ID_GOOGLE": "112486584398451981059",
+    "NIS": "206456",
+    "KELAS": "6 C MIA",
+    "NAMA": "Azka Fairuz"},
+  {
+    "ID_GOOGLE": "113948369023808301605",
+    "NIS": "206084",
+    "KELAS": "6 C MIA",
+    "NAMA": "Azzahra Ainun Nizma"},
+  {
+    "ID_GOOGLE": "117936030469741056108",
+    "NIS": "206450",
+    "KELAS": "6 C MIA",
+    "NAMA": "Diana Kusuma Rahmawati"},
+  {
+    "ID_GOOGLE": "101562770679628927304",
+    "NIS": "206186",
+    "KELAS": "6 C MIA",
+    "NAMA": "Faridah Aprilia Lutfiah "},
+  {
+    "ID_GOOGLE": "117857975934599577567",
+    "NIS": "206131",
+    "KELAS": "6 C MIA",
+    "NAMA": "Farisqi Putri Rahayu "},
+  {
+    "ID_GOOGLE": "107348681113392052799",
+    "NIS": "206293",
+    "KELAS": "6 C MIA",
+    "NAMA": "Fayza Kamila Naura Nasrudin"},
+  {
+    "ID_GOOGLE": "100647421080505364030",
+    "NIS": "206100",
+    "KELAS": "6 C MIA",
+    "NAMA": "Giany Naominabila "},
+  {
+    "ID_GOOGLE": "107705135500982725626",
+    "NIS": "206123",
+    "KELAS": "6 C MIA",
+    "NAMA": "Goziyah Syauqi Wazdi "},
+  {
+    "ID_GOOGLE": "115776632335776217428",
+    "NIS": "206184",
+    "KELAS": "6 C MIA",
+    "NAMA": "Hayla Azalia "},
+  {
+    "ID_GOOGLE": "109055271914574415150",
+    "NIS": "206449",
+    "KELAS": "6 C MIA",
+    "NAMA": "Hilwa Sri Nur Adzkia"},
+  {
+    "ID_GOOGLE": "105103208682517108478",
+    "NIS": "206038",
+    "KELAS": "6 C MIA",
+    "NAMA": "Ilma Aiy Nur Rahmat"},
+  {
+    "ID_GOOGLE": "103256434301832574497",
+    "NIS": "206142",
+    "KELAS": "6 C MIA",
+    "NAMA": "Irma Yanti"},
+  {
+    "ID_GOOGLE": "106371948993009904195",
+    "NIS": "206165",
+    "KELAS": "6 C MIA",
+    "NAMA": "Ishbillah Maudina"},
+  {
+    "ID_GOOGLE": "102723149577970285930",
+    "NIS": "206017",
+    "KELAS": "6 C MIA",
+    "NAMA": "Jessica Malva Nysa "},
+  {
+    "ID_GOOGLE": "106739827571557804660",
+    "NIS": "206157",
+    "KELAS": "6 C MIA",
+    "NAMA": "Kanaya Makayla"},
+  {
+    "ID_GOOGLE": "106759942038073599370",
+    "NIS": "206475",
+    "KELAS": "6 C MIA",
+    "NAMA": "Liza Wulan Ramadhani"},
+  {
+    "ID_GOOGLE": "102884164188218742310",
+    "NIS": "206287",
+    "KELAS": "6 C MIA",
+    "NAMA": "Najwa Kayla Abdilah "},
+  {
+    "ID_GOOGLE": "104548306327168858140",
+    "NIS": "206318",
+    "KELAS": "6 C MIA",
+    "NAMA": "Nurul Fatin Ismail"},
+  {
+    "ID_GOOGLE": "107448710007539379217",
+    "NIS": "206035",
+    "KELAS": "6 C MIA",
+    "NAMA": "Renata Putri Diviola"},
+  {
+    "ID_GOOGLE": "109240310045650919648",
+    "NIS": "206446",
+    "KELAS": "6 C MIA",
+    "NAMA": "Riska Asnila"},
+  {
+    "ID_GOOGLE": "106946668853036935204",
+    "NIS": "206294",
+    "KELAS": "6 C MIA",
+    "NAMA": "Sabrina Sharly"},
+  {
+    "ID_GOOGLE": "112600446265578160590",
+    "NIS": "224005",
+    "KELAS": "6 C MIA",
+    "NAMA": "Safira Asyifa"},
+  {
+    "ID_GOOGLE": "108237247279011099115",
+    "NIS": "224080",
+    "KELAS": "6 C MIA",
+    "NAMA": "Silmy Fauziyah Sihabulmiliah"},
+  {
+    "ID_GOOGLE": "118258515927181000632",
+    "NIS": "206307",
+    "KELAS": "6 C MIA",
+    "NAMA": "Wafda Nazila Alwafa"},
+  {
+    "ID_GOOGLE": "110059035393697316158",
+    "NIS": "206053",
+    "KELAS": "6 C MIA",
+    "NAMA": "Wirda Hayati Namia"},
+  {
+    "ID_GOOGLE": "113899907672275585390",
+    "NIS": "224004",
+    "KELAS": "6 C MIA",
+    "NAMA": "Zahra Amelia Afsari"},
+  {
+    "ID_GOOGLE": "101223415179929384562",
+    "NIS": "206497",
+    "KELAS": "6 C MIA",
+    "NAMA": "Zalfa Ahiyah Putri"},
+  {
+    "ID_GOOGLE": "109284825875596930231",
+    "NIS": "224038",
+    "KELAS": "6 D MIA",
+    "NAMA": "Afriza Rahma"},
+  {
+    "ID_GOOGLE": "101044606143932076785",
+    "NIS": "206289",
+    "KELAS": "6 D MIA",
+    "NAMA": "Alisya Khairunnisa Qurrata Aini"},
+  {
+    "ID_GOOGLE": "104490698205816304424",
+    "NIS": "224035",
+    "KELAS": "6 D MIA",
+    "NAMA": "Amalia Nurkamilah"},
+  {
+    "ID_GOOGLE": "105683648218186095538",
+    "NIS": "224002",
+    "KELAS": "6 D MIA",
+    "NAMA": "Asri Azizah"},
+  {
+    "ID_GOOGLE": "109651209465551675598",
+    "NIS": "206047",
+    "KELAS": "6 D MIA",
+    "NAMA": "Azizah Pratiwi Nuryanatudin "},
+  {
+    "ID_GOOGLE": "100847883166384801041",
+    "NIS": "206063",
+    "KELAS": "6 D MIA",
+    "NAMA": "Cahya  Ramadani"},
+  {
+    "ID_GOOGLE": "114103500693476022591",
+    "NIS": "206299",
+    "KELAS": "6 D MIA",
+    "NAMA": "Farah Mutiara Puteri Ramadhani"},
+  {
+    "ID_GOOGLE": "108980405669309130326",
+    "NIS": "206487",
+    "KELAS": "6 D MIA",
+    "NAMA": "Farah Rizqiana"},
+  {
+    "ID_GOOGLE": "109305253426054804825",
+    "NIS": "224014",
+    "KELAS": "6 D MIA",
+    "NAMA": "Gadiza Rieska Fathiya"},
+  {
+    "ID_GOOGLE": "108027991293474918178",
+    "NIS": "206303",
+    "KELAS": "6 D MIA",
+    "NAMA": "Hanun Zhafira Kaltsum"},
+  {
+    "ID_GOOGLE": "107111095662575896505",
+    "NIS": "224040",
+    "KELAS": "6 D MIA",
+    "NAMA": "Hazna Nurazizah"},
+  {
+    "ID_GOOGLE": "105329177555510836509",
+    "NIS": "224079",
+    "KELAS": "6 D MIA",
+    "NAMA": "Mozza Syalsabilla"},
+  {
+    "ID_GOOGLE": "109741128825694410890",
+    "NIS": "206149",
+    "KELAS": "6 D MIA",
+    "NAMA": "Muthiah Salsabilah Putri"},
+  {
+    "ID_GOOGLE": "107531686189219953461",
+    "NIS": "206511",
+    "KELAS": "6 D MIA",
+    "NAMA": "Muti'Ah Nurlatifah"},
+  {
+    "ID_GOOGLE": "100519238189000640345",
+    "NIS": "206016",
+    "KELAS": "6 D MIA",
+    "NAMA": "Nadjwa Putri Kusnaedi"},
+  {
+    "ID_GOOGLE": "113860516523652093717",
+    "NIS": "206410",
+    "KELAS": "6 D MIA",
+    "NAMA": "Nayla Novitasari"},
+  {
+    "ID_GOOGLE": "108388794556186708316",
+    "NIS": "206403",
+    "KELAS": "6 D MIA",
+    "NAMA": "Nazla Nurudina "},
+  {
+    "ID_GOOGLE": "103123098720221363043",
+    "NIS": "206212",
+    "KELAS": "6 D MIA",
+    "NAMA": "Nur Nazmi Laela"},
+  {
+    "ID_GOOGLE": "107798320834011593766",
+    "NIS": "206447",
+    "KELAS": "6 D MIA",
+    "NAMA": "Nurriza Amalia Rahmat"},
+  {
+    "ID_GOOGLE": "102432334921667158143",
+    "NIS": "224012",
+    "KELAS": "6 D MIA",
+    "NAMA": "Nurul Azkiya"},
+  {
+    "ID_GOOGLE": "112222293728605883981",
+    "NIS": "206374",
+    "KELAS": "6 D MIA",
+    "NAMA": "Rafa Shatara Chairani"},
+  {
+    "ID_GOOGLE": "100333064916685017354",
+    "NIS": "206203",
+    "KELAS": "6 D MIA",
+    "NAMA": "Raisya Humaida Ramadhani"},
+  {
+    "ID_GOOGLE": "101353785539123465133",
+    "NIS": "206093",
+    "KELAS": "6 D MIA",
+    "NAMA": "Richsa Rahmania Dewi"},
+  {
+    "ID_GOOGLE": "104140315700552538727",
+    "NIS": "206070",
+    "KELAS": "6 D MIA",
+    "NAMA": "Sakinah Mardani"},
+  {
+    "ID_GOOGLE": "116096933610477836355",
+    "NIS": "206238",
+    "KELAS": "6 D MIA",
+    "NAMA": "Salsa Khoirunnisa"},
+  {
+    "ID_GOOGLE": "108779649244791273962",
+    "NIS": "206305",
+    "KELAS": "6 D MIA",
+    "NAMA": "Sany Rahma Salim"},
+  {
+    "ID_GOOGLE": "100458969159089952703",
+    "NIS": "206500",
+    "KELAS": "6 D MIA",
+    "NAMA": "Shafiyya Kirana Sandi"},
+  {
+    "ID_GOOGLE": "111672770428873083823",
+    "NIS": "224046",
+    "KELAS": "6 D MIA",
+    "NAMA": "Siti Miftahurrohmah"},
+  {
+    "ID_GOOGLE": "106107906978653033897",
+    "NIS": "206357",
+    "KELAS": "6 D MIA",
+    "NAMA": "Syaikah Zhafirah Sulaiman "},
+  {
+    "ID_GOOGLE": "111179212426856144146",
+    "NIS": "206311",
+    "KELAS": "6 D MIA",
+    "NAMA": "Syfa Hafizhah Ramadhani Nur Rachmad"},
+  {
+    "ID_GOOGLE": "117082863967237330028",
+    "NIS": "224044",
+    "KELAS": "6 D MIA",
+    "NAMA": "Tifanny Sofyandita"},
+  {
+    "ID_GOOGLE": "113712967447706641097",
+    "NIS": "206081",
+    "KELAS": "6 D MIA",
+    "NAMA": "Zahra Tussyta"},
+  {
+    "ID_GOOGLE": "118155992845567547791",
+    "NIS": "224077",
+    "KELAS": "6 D MIA",
+    "NAMA": "Zalfa Ghazziyah"},
+  {
+    "ID_GOOGLE": "106578787877304805043",
+    "NIS": "206181",
+    "KELAS": "6 E IIS",
+    "NAMA": "Abdul Aziiz"},
+  {
+    "ID_GOOGLE": "104859084296846370327",
+    "NIS": "206355",
+    "KELAS": "6 E IIS",
+    "NAMA": "Abdul Wafi"},
+  {
+    "ID_GOOGLE": "111095950171760809769",
+    "NIS": "206241",
+    "KELAS": "6 E IIS",
+    "NAMA": "Abdulloh Alawi"},
+  {
+    "ID_GOOGLE": "115063936408710372097",
+    "NIS": "206351",
+    "KELAS": "6 E IIS",
+    "NAMA": "Ahmad Sabani"},
+  {
+    "ID_GOOGLE": "104551327404247434445",
+    "NIS": "224028",
+    "KELAS": "6 E IIS",
+    "NAMA": "Ardin Nur Rafi"},
+  {
+    "ID_GOOGLE": "112118547530098814190",
+    "NIS": "206210",
+    "KELAS": "6 E IIS",
+    "NAMA": "Atha Sahl Razan"},
+  {
+    "ID_GOOGLE": "104574651578486605684",
+    "NIS": "206338",
+    "KELAS": "6 E IIS",
+    "NAMA": "Azka Hatta Maududi"},
+  {
+    "ID_GOOGLE": "109351896082370842712",
+    "NIS": "206239",
+    "KELAS": "6 E IIS",
+    "NAMA": "Fadil Ahmad Fahrezi"},
+  {
+    "ID_GOOGLE": "109781943292157739602",
+    "NIS": "206365",
+    "KELAS": "6 E IIS",
+    "NAMA": "Fathir Hafidzuddin"},
+  {
+    "ID_GOOGLE": "111619285238676686041",
+    "NIS": "206320",
+    "KELAS": "6 E IIS",
+    "NAMA": "Fauzan Huwaidi "},
+  {
+    "ID_GOOGLE": "107857136210933807166",
+    "NIS": "206326",
+    "KELAS": "6 E IIS",
+    "NAMA": "Galih Arif Suhendar"},
+  {
+    "ID_GOOGLE": "104372584256710596161",
+    "NIS": "206480",
+    "KELAS": "6 E IIS",
+    "NAMA": "Muhamad Bintang Ar Rizki "},
+  {
+    "ID_GOOGLE": "101977018638300367535",
+    "NIS": "206169",
+    "KELAS": "6 E IIS",
+    "NAMA": "Muhamad Naufal Rafiif Mahmud"},
+  {
+    "ID_GOOGLE": "113281412902538643858",
+    "NIS": "206460",
+    "KELAS": "6 E IIS",
+    "NAMA": "Muhamad Zahid Fauzan"},
+  {
+    "ID_GOOGLE": "114367052557626447092",
+    "NIS": "224010",
+    "KELAS": "6 E IIS",
+    "NAMA": "Muhammad Daffa Fikri"},
+  {
+    "ID_GOOGLE": "101606920750878641852",
+    "NIS": "206153",
+    "KELAS": "6 E IIS",
+    "NAMA": "Muhammad Rofi Attaqi"},
+  {
+    "ID_GOOGLE": "109611408544620609167",
+    "NIS": "224024",
+    "KELAS": "6 E IIS",
+    "NAMA": "Muhammad Syahmi Dawani"},
+  {
+    "ID_GOOGLE": "113219152664435351310",
+    "NIS": "206457",
+    "KELAS": "6 E IIS",
+    "NAMA": "Muhammad Vialli Ridho"},
+  {
+    "ID_GOOGLE": "115216470300501831378",
+    "NIS": "224056",
+    "KELAS": "6 E IIS",
+    "NAMA": "Rafa Aqeel Alif"},
+  {
+    "ID_GOOGLE": "107577170032493710944",
+    "NIS": "224058",
+    "KELAS": "6 E IIS",
+    "NAMA": "Rahmad Yandika Romadhoni"},
+  {
+    "ID_GOOGLE": "112784472839019976192",
+    "NIS": "206302",
+    "KELAS": "6 E IIS",
+    "NAMA": "Sulthan Rasyid Sidqi"},
+  {
+    "ID_GOOGLE": "110287823776523828756",
+    "NIS": "224064",
+    "KELAS": "6 E IIS",
+    "NAMA": "Ujang Dasep Destyan Almutaqin"},
+  {
+    "ID_GOOGLE": "105212210330811885141",
+    "NIS": "206074",
+    "KELAS": "6 E IIS",
+    "NAMA": "Wahyu Ramdhani Purnama"},
+  {
+    "ID_GOOGLE": "103218780658084869704",
+    "NIS": "206330",
+    "KELAS": "6 E IIS",
+    "NAMA": "Wildan Fahmi Nugraha"},
+  {
+    "ID_GOOGLE": "102464985181146574233",
+    "NIS": "206108",
+    "KELAS": "6 E IIS",
+    "NAMA": "Zulfa Alkha Warizmi Hidayat"},
+  {
+    "ID_GOOGLE": "101655341703280177608",
+    "NIS": "206113",
+    "KELAS": "6 F IIS",
+    "NAMA": "Abdi Hannan Fansuri"},
+  {
+    "ID_GOOGLE": "116869938942865814040",
+    "NIS": "224047",
+    "KELAS": "6 F IIS",
+    "NAMA": "Aditya Fadhil Nugraha"},
+  {
+    "ID_GOOGLE": "109689895914964361633",
+    "NIS": "224009",
+    "KELAS": "6 F IIS",
+    "NAMA": "Ahmad Ariq Athir"},
+  {
+    "ID_GOOGLE": "104577370803303697712",
+    "NIS": "206243",
+    "KELAS": "6 F IIS",
+    "NAMA": "Ahmad Fatullah"},
+  {
+    "ID_GOOGLE": "117792615857120065413",
+    "NIS": "224029",
+    "KELAS": "6 F IIS",
+    "NAMA": "Ahmad Hafizh Fadhilah"},
+  {
+    "ID_GOOGLE": "118343056709496405220",
+    "NIS": "206402",
+    "KELAS": "6 F IIS",
+    "NAMA": "Ahsanu Amala "},
+  {
+    "ID_GOOGLE": "106828863263695041167",
+    "NIS": "206481",
+    "KELAS": "6 F IIS",
+    "NAMA": "Akbar Ali Rasyad Situmorang"},
+  {
+    "ID_GOOGLE": "101704776345545936278",
+    "NIS": "206040",
+    "KELAS": "6 F IIS",
+    "NAMA": "Akhmad Fakhri Nur Aziz"},
+  {
+    "ID_GOOGLE": "108888910360657025780",
+    "NIS": "206274",
+    "KELAS": "6 F IIS",
+    "NAMA": "Faiz  Aidil Akbar  Fathurrahman"},
+  {
+    "ID_GOOGLE": "113413800976219226565",
+    "NIS": "206140",
+    "KELAS": "6 F IIS",
+    "NAMA": "Gathfan Hisham Hafiz"},
+  {
+    "ID_GOOGLE": "108511441266610515059",
+    "NIS": "206252",
+    "KELAS": "6 F IIS",
+    "NAMA": "Handhika Pratama"},
+  {
+    "ID_GOOGLE": "105930939775821284781",
+    "NIS": "206360",
+    "KELAS": "6 F IIS",
+    "NAMA": "Micky Tegar Prasetio"},
+  {
+    "ID_GOOGLE": "100229315287216054867",
+    "NIS": "206283",
+    "KELAS": "6 F IIS",
+    "NAMA": "Muhammad Alvaro"},
+  {
+    "ID_GOOGLE": "114174163309726341886",
+    "NIS": "224090",
+    "KELAS": "6 F IIS",
+    "NAMA": "Muhammad Fachri Raysa Maulana"},
+  {
+    "ID_GOOGLE": "117817607620639773145",
+    "NIS": "206173",
+    "KELAS": "6 F IIS",
+    "NAMA": "Muhammad Irfan Zidny"},
+  {
+    "ID_GOOGLE": "103068198056024569535",
+    "NIS": "224027",
+    "KELAS": "6 F IIS",
+    "NAMA": "Muhammad Nino Albar"},
+  {
+    "ID_GOOGLE": "102905491293824307227",
+    "NIS": "206422",
+    "KELAS": "6 F IIS",
+    "NAMA": "Muhammad Rafi Nurwidiansyah"},
+  {
+    "ID_GOOGLE": "101144123413721357913",
+    "NIS": "224074",
+    "KELAS": "6 F IIS",
+    "NAMA": "Muhammad Zulfianur Nawal Hoir"},
+  {
+    "ID_GOOGLE": "110252284273077309751",
+    "NIS": "206259",
+    "KELAS": "6 F IIS",
+    "NAMA": "Naviz Green Tamamsyah "},
+  {
+    "ID_GOOGLE": "117419325957416134726",
+    "NIS": "206227",
+    "KELAS": "6 F IIS",
+    "NAMA": "Raffa Naufal Abdillah"},
+  {
+    "ID_GOOGLE": "118094818275135088581",
+    "NIS": "206425",
+    "KELAS": "6 F IIS",
+    "NAMA": "Rakha Arrasyid"},
+  {
+    "ID_GOOGLE": "103661092232272558097",
+    "NIS": "224019",
+    "KELAS": "6 F IIS",
+    "NAMA": "Randy Gustawa Putra"},
+  {
+    "ID_GOOGLE": "106248075434488980787",
+    "NIS": "224066",
+    "KELAS": "6 G IIS",
+    "NAMA": "Adelia Septi Ramadani"},
+  {
+    "ID_GOOGLE": "116251982274210143994",
+    "NIS": "206057",
+    "KELAS": "6 G IIS",
+    "NAMA": "Agni Nurfadilah"},
+  {
+    "ID_GOOGLE": "107807658511040358301",
+    "NIS": "206269",
+    "KELAS": "6 G IIS",
+    "NAMA": "Ainaya Putri Budiansyah"},
+  {
+    "ID_GOOGLE": "117557272708057749752",
+    "NIS": "206580",
+    "KELAS": "6 G IIS",
+    "NAMA": "Aliqa Nastiti Soleha"},
+  {
+    "ID_GOOGLE": "114274916492007737733",
+    "NIS": "206280",
+    "KELAS": "6 G IIS",
+    "NAMA": "Alya Mutiah Rosmalia"},
+  {
+    "ID_GOOGLE": "103810228562908741595",
+    "NIS": "206453",
+    "KELAS": "6 G IIS",
+    "NAMA": "Alya Putri Supriyatna"},
+  {
+    "ID_GOOGLE": "107289922593368889386",
+    "NIS": "206028",
+    "KELAS": "6 G IIS",
+    "NAMA": "Alyaa Zulfaa Mudiyanti"},
+  {
+    "ID_GOOGLE": "105115942547121354656",
+    "NIS": "206110",
+    "KELAS": "6 G IIS",
+    "NAMA": "Andine Agustia Sari "},
+  {
+    "ID_GOOGLE": "114105008926231261118",
+    "NIS": "224001",
+    "KELAS": "6 G IIS",
+    "NAMA": "Aufa Ghaitsa Elvira"},
+  {
+    "ID_GOOGLE": "114532485770960762976",
+    "NIS": "224087",
+    "KELAS": "6 G IIS",
+    "NAMA": "Bunga Siti Rahayu"},
+  {
+    "ID_GOOGLE": "102751090941738449349",
+    "NIS": "206219",
+    "KELAS": "6 G IIS",
+    "NAMA": "Dian Ramadhani"},
+  {
+    "ID_GOOGLE": "109752674074963937776",
+    "NIS": "206464",
+    "KELAS": "6 G IIS",
+    "NAMA": "Farihah Marzukiyah "},
+  {
+    "ID_GOOGLE": "115405982784182305361",
+    "NIS": "206377",
+    "KELAS": "6 G IIS",
+    "NAMA": "Fatihaturrifqiyyah"},
+  {
+    "ID_GOOGLE": "105435565853246532433",
+    "NIS": "206393",
+    "KELAS": "6 G IIS",
+    "NAMA": "Ghadiza  Faridhatul Fatihah"},
+  {
+    "ID_GOOGLE": "114786812668545217634",
+    "NIS": "224033",
+    "KELAS": "6 G IIS",
+    "NAMA": "Khansa Fahira "},
+  {
+    "ID_GOOGLE": "102352866232766040558",
+    "NIS": "224078",
+    "KELAS": "6 G IIS",
+    "NAMA": "Maulidina Setiannur Kholiza"},
+  {
+    "ID_GOOGLE": "101491143670852870428",
+    "NIS": "224031",
+    "KELAS": "6 G IIS",
+    "NAMA": "Mita Puji Cahyani"},
+  {
+    "ID_GOOGLE": "102277324181181560582",
+    "NIS": "206404",
+    "KELAS": "6 G IIS",
+    "NAMA": "Nadiva Alfi Zayana S"},
+  {
+    "ID_GOOGLE": "101259729589751026955",
+    "NIS": "206301",
+    "KELAS": "6 G IIS",
+    "NAMA": "Najmatus Shofwah"},
+  {
+    "ID_GOOGLE": "117525380964206318015",
+    "NIS": "224042",
+    "KELAS": "6 G IIS",
+    "NAMA": "Nazwa Millatina Abdillah"},
+  {
+    "ID_GOOGLE": "117031175381667707253",
+    "NIS": "206041",
+    "KELAS": "6 G IIS",
+    "NAMA": "Nissa Nur Fadillah"},
+  {
+    "ID_GOOGLE": "103892469300802960065",
+    "NIS": "224032",
+    "KELAS": "6 G IIS",
+    "NAMA": "Nurvina Aulia"},
+  {
+    "ID_GOOGLE": "112045345212317856769",
+    "NIS": "206435",
+    "KELAS": "6 G IIS",
+    "NAMA": "Raina Fahmida Shaista Supeno"},
+  {
+    "ID_GOOGLE": "113453224815902488472",
+    "NIS": "206284",
+    "KELAS": "6 G IIS",
+    "NAMA": "Raisha Juliani Permana"},
+  {
+    "ID_GOOGLE": "107949885735782388812",
+    "NIS": "206424",
+    "KELAS": "6 G IIS",
+    "NAMA": "Rizma Nur Azizah"},
+  {
+    "ID_GOOGLE": "111314416101256794689",
+    "NIS": "206198",
+    "KELAS": "6 G IIS",
+    "NAMA": "Salsabila Syadida Rizkiana"},
+  {
+    "ID_GOOGLE": "112396916256530877753",
+    "NIS": "206432",
+    "KELAS": "6 G IIS",
+    "NAMA": "Salwa Azzahra"},
+  {
+    "ID_GOOGLE": "109730869944198281074",
+    "NIS": "206514",
+    "KELAS": "6 G IIS",
+    "NAMA": "Sherilda Elza Humayra"},
+  {
+    "ID_GOOGLE": "113892947491219376677",
+    "NIS": "206329",
+    "KELAS": "6 G IIS",
+    "NAMA": "Siti Nur Azizah"},
+  {
+    "ID_GOOGLE": "109163536896496312748",
+    "NIS": "206323",
+    "KELAS": "6 G IIS",
+    "NAMA": "Syeira Fitria Azzahra"},
+  {
+    "ID_GOOGLE": "106007276779473368526",
+    "NIS": "206246",
+    "KELAS": "6 G IIS",
+    "NAMA": "Syifa Auliyatu Zahroh"},
+  {
+    "ID_GOOGLE": "103075367102175976361",
+    "NIS": "224020",
+    "KELAS": "6 G IIS",
+    "NAMA": "Wafa Angelina"},
+  {
+    "ID_GOOGLE": "107820135011439249447",
+    "NIS": "224049",
+    "KELAS": "6 G IIS",
+    "NAMA": "Zahra Adinda Nayla"},
+  {
+    "ID_GOOGLE": "114587250456028668950",
+    "NIS": "206105",
+    "KELAS": "6 G IIS",
+    "NAMA": "Zahra Nabiilah Lubis"
+  }
 ]
