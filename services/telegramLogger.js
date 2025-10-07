@@ -5,6 +5,7 @@ class TelegramLogger {
     constructor() {
         this.bot = null;
         this.chatId = process.env.TELEGRAM_CHAT_ID;
+        this.messageThreadId = process.env.TELEGRAM_MESSAGE_THREAD_ID || null;
         this.botToken = process.env.TELEGRAM_BOT_TOKEN;
         this.enabled = !!(this.botToken && this.chatId);
 
@@ -40,6 +41,7 @@ class TelegramLogger {
 
         try {
             await this.bot.sendMessage(this.chatId, message, {
+                message_thread_id: this.messageThreadId,
                 parse_mode: 'HTML',
                 disable_web_page_preview: true
             });
