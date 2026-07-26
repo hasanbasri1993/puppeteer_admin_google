@@ -1,0 +1,129 @@
+<div class="space-y-6">
+    <div class="border-b border-gray-200">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Kelola Admin</h2>
+        <p class="text-gray-600 text-sm sm:text-base">Tambah atau hapus akun yang memiliki akses admin (Reset Password, Upload Data, Kelola Admin)</p>
+    </div>
+
+    <div class="space-y-4">
+        <div class="flex flex-col sm:flex-row gap-2">
+            <input type="email"
+                   id="new-admin-email"
+                   autocomplete="off"
+                   class="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                   placeholder="email@daarululuumlido.com">
+            <button onclick="addAdmin()"
+                    class="bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out whitespace-nowrap">
+                Tambah Admin
+            </button>
+        </div>
+
+        <div>
+            <h3 class="text-sm font-medium text-gray-700 mb-2">Daftar Admin</h3>
+            <ul id="admin-list" class="divide-y divide-gray-200 border border-gray-200 rounded-md">
+                <li class="px-4 py-3 text-sm text-gray-500">Memuat...</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function loadAdminList() {
+        const list = document.getElementById('admin-list');
+        list.innerHTML = '<li class="px-4 py-3 text-sm text-gray-500">Memuat...</li>';
+
+        try {
+            const response = await fetch('/api/admin/list');
+            const result = await response.json();
+
+            if (!result.success || !Array.isArray(result.admins) || result.admins.length === 0) {
+                list.innerHTML = '<li class="px-4 py-3 text-sm text-gray-500">Belum ada admin</li>';
+                return;
+            }
+
+            list.innerHTML = '';
+            result.admins.forEach(email => {
+                const li = document.createElement('li');
+                li.className = 'px-4 py-3 flex items-center justify-between text-sm';
+
+                const span = document.createElement('span');
+                span.className = 'text-gray-800';
+                span.textContent = email;
+
+                const button = document.createElement('button');
+                button.className = 'text-red-500 hover:text-red-700 font-medium';
+                button.textContent = 'Hapus';
+                button.addEventListener('click', () => removeAdmin(email));
+
+                li.appendChild(span);
+                li.appendChild(button);
+                list.appendChild(li);
+            });
+        } catch (error) {
+            console.error('Error loading admin list:', error);
+            list.innerHTML = '<li class="px-4 py-3 text-sm text-red-500">Gagal memuat daftar admin</li>';
+        }
+    }
+
+    async function addAdmin() {
+        const input = document.getElementById('new-admin-email');
+        const email = input.value.trim();
+
+        if (!email) {
+            showAlert('Masukkan email admin', 'warning');
+            return;
+        }
+
+        showLoading();
+        try {
+            const response = await fetch('/api/admin/add', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email})
+            });
+            const result = await response.json();
+
+            if (result.success) {
+                showAlert('Admin berhasil ditambahkan', 'success');
+                input.value = '';
+                loadAdminList();
+            } else {
+                showAlert(result.error || 'Gagal menambahkan admin', 'error');
+            }
+        } catch (error) {
+            console.error('Error adding admin:', error);
+            showAlert('Gagal menambahkan admin', 'error');
+        } finally {
+            hideLoading();
+        }
+    }
+
+    async function removeAdmin(email) {
+        if (!confirm(`Hapus akses admin untuk ${email}?`)) {
+            return;
+        }
+
+        showLoading();
+        try {
+            const response = await fetch('/api/admin/remove', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email})
+            });
+            const result = await response.json();
+
+            if (result.success) {
+                showAlert('Admin berhasil dihapus', 'success');
+                loadAdminList();
+            } else {
+                showAlert(result.error || 'Gagal menghapus admin', 'error');
+            }
+        } catch (error) {
+            console.error('Error removing admin:', error);
+            showAlert('Gagal menghapus admin', 'error');
+        } finally {
+            hideLoading();
+        }
+    }
+
+    loadAdminList();
+</script>

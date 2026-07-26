@@ -18,12 +18,15 @@ router.get(
         // Map short aliases to actual partial filenames
         const aliasMap = {
             'turn-off': 'turn-off-challenge',
-            'reset-password': 'reset-password'
+            'reset-password': 'reset-password',
+            'manage-admin': 'manage-admin',
+            'upload-ids': 'upload-ids'
         };
 
         req.requestedPartial = aliasMap[rawPage] || rawPage;
 
-        if (req.requestedPartial === 'reset-password') {
+        const adminOnlyPartials = ['reset-password', 'manage-admin', 'upload-ids'];
+        if (adminOnlyPartials.includes(req.requestedPartial)) {
             return isAuthorizedForReset(req, res, next);
         }
 

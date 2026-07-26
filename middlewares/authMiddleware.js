@@ -1,7 +1,4 @@
-// List of authorized emails for reset password functionality (loaded from env)
-const AUTHORIZED_EMAILS = process.env.AUTHORIZED_EMAILS
-    ? process.env.AUTHORIZED_EMAILS.split(',').map(e => e.trim()).filter(Boolean)
-    : [process.env.AUTHORIZED_EMAIL_1, process.env.AUTHORIZED_EMAIL_2].filter(Boolean);
+const adminService = require('../services/adminService');
 
 // Helper to check if a given user object is authorized for reset password
 const isUserAuthorizedForReset = (user) => {
@@ -9,7 +6,7 @@ const isUserAuthorizedForReset = (user) => {
         return false;
     }
     const userEmail = user.emails[0].value;
-    return AUTHORIZED_EMAILS.includes(userEmail);
+    return adminService.isAdmin(userEmail);
 };
 
 // Middleware to check if user is authenticated
@@ -20,12 +17,12 @@ const isAuthenticated = (req, res, next) => {
     res.redirect('/');
 };
 
-// Middleware to check if user is authorized for reset password
+// Middleware to check if user is an authorized admin (reset password, admin management, ids.json upload)
 const isAuthorizedForReset = (req, res, next) => {
     if (req.isAuthenticated() && req.user && req.user.emails) {
         const userEmail = req.user.emails[0].value;
 
-        if (AUTHORIZED_EMAILS.includes(userEmail)) {
+        if (adminService.isAdmin(userEmail)) {
             return next();
         }
     }

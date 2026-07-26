@@ -1,11 +1,26 @@
 const express = require('express');
+const multer = require('multer');
 const router = express.Router();
 const {turnOffChallenge} = require('../controllers/turnOff.js'); // Ambil fungsi dari objek
 const {resetPassword} = require('../controllers/resetPassword.js'); // Ambil fungsi dari objek
+const adminController = require('../controllers/adminController');
 const {instance} = require('../services/browserInstance');
 const {isAuthenticated, isAuthorizedForReset} = require('../middlewares/authMiddleware');
 
+const uploadIdsFile = multer({
+    storage: multer.memoryStorage(),
+    limits: {fileSize: 20 * 1024 * 1024} // 20MB
+});
+
 router.post('/reset_password', isAuthenticated, isAuthorizedForReset, resetPassword);
+
+// Admin management (add/remove authorized admin emails)
+router.get('/admin/list', isAuthenticated, isAuthorizedForReset, adminController.listAdmins);
+router.post('/admin/add', isAuthenticated, isAuthorizedForReset, adminController.addAdmin);
+router.post('/admin/remove', isAuthenticated, isAuthorizedForReset, adminController.removeAdmin);
+
+// Replace ids.json with an uploaded file
+router.post('/admin/upload-ids', isAuthenticated, isAuthorizedForReset, uploadIdsFile.single('file'), adminController.uploadIds);
 router.get('/hai', (req, res) => {
     res.send('Hello World');
 });
@@ -26,68 +41,6 @@ router.post('/relogin', async (req, res) => {
         }
     } catch (error) {
         res.status(500).json({success: false, error: error.message});
-    }
-});
-
-// Turn off challenge endpoint
-router.post('/turn-off-challenge', (req, res) => {
-    try {
-        const {nis} = req.body;
-
-        if (!nis || !Array.isArray(nis)) {
-            return res.status(400).json({
-                status: 'error',
-                message: 'NIS array is required'
-            });
-        }
-
-        // Log the received NIS for now
-        console.log('Received NIS for turn off challenge:', nis);
-
-        res.json({
-            status: 'sukses',
-            message: `Challenge untuk ${nis.length} siswa telah dimatikan.`
-        });
-    } catch (error) {
-        console.error('Error in turn-off-challenge:', error);
-        res.status(500).json({
-            status: 'error',
-            message: 'Terjadi kesalahan saat memproses permintaan'
-        });
-    }
-});
-
-// Reset password endpoint
-router.post('/reset-password', isAuthenticated, isAuthorizedForReset, (req, res) => {
-    try {
-        const {nis, batch_ids} = req.body;
-
-        if (nis) {
-            // Single NIS reset
-            console.log(`Mereset password untuk NIS: ${nis} menjadi 'Dulido@240696'.`);
-            res.json({
-                status: 'sukses',
-                message: 'Password berhasil direset.'
-            });
-        } else if (batch_ids && Array.isArray(batch_ids)) {
-            // Batch reset
-            console.log(`Mereset password untuk ID batch: ${batch_ids.join(', ')}.`);
-            res.json({
-                status: 'sukses',
-                message: 'Password berhasil direset.'
-            });
-        } else {
-            res.status(400).json({
-                status: 'error',
-                message: 'NIS atau batch_ids diperlukan'
-            });
-        }
-    } catch (error) {
-        console.error('Error in reset-password:', error);
-        res.status(500).json({
-            status: 'error',
-            message: 'Terjadi kesalahan saat memproses permintaan'
-        });
     }
 });
 

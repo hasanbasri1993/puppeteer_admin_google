@@ -1,5 +1,15 @@
+const fs = require('fs');
+const path = require('path');
 const {resetUserPassword, resetMultiplePasswords} = require('../services/googleApiService.js');
 const logger = require('pino')();
+
+const STUDENT_EMAIL_PATTERN = /^(\d+)@daarululuumlido\.com$/;
+const IDS_PATH = path.join(process.cwd(), 'ids.json');
+
+function isKnownNis(nis) {
+    const idsData = JSON.parse(fs.readFileSync(IDS_PATH, 'utf8'));
+    return idsData.some(item => item.NIS === nis);
+}
 
 module.exports = {
     resetPassword: async (req, res) => {
@@ -8,6 +18,16 @@ module.exports = {
 
             // Handle single user reset
             if (email && password) {
+                // Student emails (nis@daarululuumlido.com) must map to a real NIS in ids.json
+                const studentMatch = email.match(STUDENT_EMAIL_PATTERN);
+                if (studentMatch && !isKnownNis(studentMatch[1])) {
+                    logger.error(`Password reset rejected: NIS ${studentMatch[1]} not found in ids.json`);
+                    return res.status(400).json({
+                        success: false,
+                        error: `NIS ${studentMatch[1]} tidak ditemukan di data siswa (ids.json)`
+                    });
+                }
+
                 logger.info(`Resetting password for single user: ${email}`);
                 const result = await resetUserPassword(email, password);
 
