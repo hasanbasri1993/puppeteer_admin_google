@@ -6,6 +6,7 @@ const {instance, close} = require('./services/browserInstance');
 const memoryMonitor = require('./utils/memoryMonitor');
 const telegramLoggingMiddleware = require('./middlewares/telegramLogging');
 const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 const passport = require('passport');
 const userRoutes = require('./routes/index.js')
 const pagesRoutes = require('./routes/pages.js')
@@ -27,11 +28,17 @@ app.set('views', path.join(__dirname, 'views'));
 // Session configuration
 app.use(session({
     secret: process.env.SESSION_SECRET || 'your-secret-key',
+    store: new FileStore({
+        path: path.join(__dirname, '.sessions'),
+        ttl: 24 * 60 * 60,
+        retries: 0
+    }),
     resave: false,
     saveUninitialized: false,
     cookie: {
         secure: (process.env.NODE_ENV === 'production'),
         sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000
     }
 }));
