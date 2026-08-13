@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="dark">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +14,12 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script>
+        (function () {
+            const savedTheme = localStorage.getItem('dulido-theme');
+            const theme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.classList.add(theme);
+        })();
+
         tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -120,6 +126,19 @@
         .glow-cyan-sm {
             box-shadow: 0 0 15px -2px rgba(6, 182, 212, 0.3);
         }
+        html.light body { background: #f1f5f9; color: #0f172a; }
+        html.light .glass-panel { background: rgba(255, 255, 255, 0.84); border-color: rgba(148, 163, 184, 0.35); }
+        html.light .glass-nav { background: rgba(255, 255, 255, 0.9); border-color: rgba(148, 163, 184, 0.3); }
+        html.light .bg-darkBg, html.light .bg-slate-950 { background-color: #f1f5f9 !important; }
+        html.light .bg-slate-900, html.light .bg-slate-900\/90, html.light .bg-slate-900\/70 { background-color: #ffffff !important; }
+        html.light .bg-slate-900\/80, html.light .bg-slate-950\/80, html.light .bg-slate-950\/40 { background-color: #f8fafc !important; }
+        html.light .bg-slate-800, html.light .bg-slate-800\/80 { background-color: #e2e8f0 !important; }
+        html.light .border-slate-800, html.light .border-slate-700, html.light .border-slate-700\/80 { border-color: #cbd5e1 !important; }
+        html.light .divide-slate-800 > :not([hidden]) ~ :not([hidden]) { border-color: #e2e8f0 !important; }
+        html.light .text-white, html.light .text-slate-100, html.light .text-slate-200, html.light .text-slate-300 { color: #0f172a !important; }
+        html.light .text-slate-400, html.light .text-slate-500, html.light .text-slate-600 { color: #475569 !important; }
+        html.light .hover\:bg-slate-800:hover, html.light .hover\:bg-slate-800\/60:hover, html.light .hover\:bg-slate-700:hover { background-color: #e2e8f0 !important; }
+        html.light input, html.light textarea, html.light select { color: #0f172a !important; }
     </style>
 </head>
 <body class="bg-darkBg text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
@@ -159,6 +178,13 @@
                     </div>
 
                     <!-- Trigger Manual Relogin Button -->
+                    <button id="theme-toggle" onclick="toggleTheme()"
+                            title="Ganti tema"
+                            class="p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 text-slate-300 transition">
+                        <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c.132 0 .263.003.393.009A9 9 0 1021 12.607 7 7 0 0112 3z" /></svg>
+                    </button>
+
                     <button onclick="triggerManualRelogin()" 
                             title="Segarkan Sesi Google Admin"
                             class="px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 text-xs font-semibold text-slate-300 hover:text-white transition flex items-center space-x-1.5">
@@ -412,6 +438,7 @@
 
         // Auto Load Initial Tab on Load
         document.addEventListener('DOMContentLoaded', () => {
+            syncThemeIcon();
             const firstNavBtn = document.querySelector('#nav-menu .nav-link');
             if (firstNavBtn) {
                 loadContent('turn-off', firstNavBtn);
@@ -436,6 +463,21 @@
             } else {
                 sidebar.classList.add('-translate-x-full');
             }
+        }
+
+        function toggleTheme() {
+            const root = document.documentElement;
+            const nextTheme = root.classList.contains('dark') ? 'light' : 'dark';
+            root.classList.remove('dark', 'light');
+            root.classList.add(nextTheme);
+            localStorage.setItem('dulido-theme', nextTheme);
+            syncThemeIcon();
+        }
+
+        function syncThemeIcon() {
+            const isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('theme-icon-sun')?.classList.toggle('hidden', !isDark);
+            document.getElementById('theme-icon-moon')?.classList.toggle('hidden', isDark);
         }
     </script>
 </body>

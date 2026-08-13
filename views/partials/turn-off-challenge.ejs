@@ -241,7 +241,7 @@
             const result = await response.json();
             
             if (result.success) {
-                renderTurnOffStudents(result.students || nisArray.map(nis => ({nis})));
+                applyFinalTurnOffResults(result.results || []);
                 const hasFailure = result.summary.failed > 0;
                 finishTurnOffProgress(`Selesai. Sukses: ${result.summary.successful}, gagal: ${result.summary.failed} dari ${result.summary.total} NIS.`, hasFailure);
                 showAlert(`Selesai! Sukses: ${result.summary.successful}, Gagal: ${result.summary.failed} dari ${result.summary.total} NIS`, hasFailure ? 'warning' : 'success');
@@ -328,6 +328,28 @@
         document.getElementById('turn-off-progress-footer').classList.remove('hidden');
         if (activeProgressState?.closeTimer) clearTimeout(activeProgressState.closeTimer);
         activeProgressState.closeTimer = setTimeout(closeTurnOffProgressModal, 3000);
+    }
+
+    function applyFinalTurnOffResults(results) {
+        results.forEach(result => {
+            const nis = result.nis || result.id?.NIS || result.id;
+            if (!nis || typeof nis === 'object') return;
+            const key = String(nis);
+            const row = document.getElementById(`turn-off-row-${CSS.escape(key)}`);
+            if (!row || activeProgressState.completedNis.has(key)) return;
+
+            activeProgressState.completedNis.add(key);
+            activeProgressState.completed++;
+            activeProgressState[result.status === 'success' ? 'success' : 'failed']++;
+            row.lastElementChild.textContent = result.status === 'success' ? 'Berhasil' : 'Gagal';
+            row.lastElementChild.className = result.status === 'success' ? 'text-emerald-400 font-semibold' : 'text-rose-400 font-semibold';
+        });
+
+        const state = activeProgressState;
+        const percent = state.total ? Math.round((state.completed / state.total) * 100) : 0;
+        document.getElementById('turn-off-progress-count').textContent = `${state.completed} / ${state.total}`;
+        document.getElementById('turn-off-progress-bar').style.width = `${percent}%`;
+        document.getElementById('turn-off-progress-percent').textContent = `${percent}%`;
     }
 
     function closeTurnOffProgressModal() {
