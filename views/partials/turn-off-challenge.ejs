@@ -92,28 +92,42 @@
     </div>
 </div>
 
+<div id="turn-off-progress-modal" class="hidden fixed inset-0 z-50 p-4 sm:p-8 bg-slate-950/80 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="turn-off-progress-title">
+    <div class="min-h-full flex items-center justify-center">
+        <section class="w-full max-w-2xl rounded-2xl border border-cyan-500/20 bg-slate-900 shadow-2xl shadow-cyan-950/40 overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-slate-800 flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-400">Proses aktif</p>
+                    <h3 id="turn-off-progress-title" class="mt-1 text-lg font-heading font-bold text-white">Menonaktifkan login challenge</h3>
+                </div>
+                <span id="turn-off-progress-count" class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">0 / 0</span>
+            </div>
+            <div class="p-5 sm:p-6 space-y-4">
+                <div>
+                    <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
+                        <div id="turn-off-progress-bar" class="h-full w-0 bg-gradient-to-r from-cyan-400 to-indigo-500 transition-all duration-300"></div>
+                    </div>
+                    <div class="mt-2 flex justify-between text-xs">
+                        <span id="turn-off-progress-summary" class="text-slate-400">Menghubungkan ke Google Admin...</span>
+                        <span id="turn-off-progress-percent" class="font-mono text-cyan-300">0%</span>
+                    </div>
+                </div>
+                <div id="turn-off-progress-list" class="max-h-[50vh] overflow-y-auto rounded-xl border border-slate-800 divide-y divide-slate-800 bg-slate-950/40"></div>
+                <div id="turn-off-progress-footer" class="hidden pt-1 flex justify-end">
+                    <button onclick="closeTurnOffProgressModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition">Tutup</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
 <script src="https://js.pusher.com/8.4.0/pusher.min.js"></script>
 <script>
-    // Initialize Pusher Subscription
     const pusherKey = '<%= pusherId %>';
-    if (pusherKey && typeof Pusher !== 'undefined') {
-        const pusher = new Pusher(pusherKey, { cluster: 'ap1' });
-        const channel = pusher.subscribe('turn_off');
-        
-        channel.bind('status-update', function(data) {
-            console.log('Pusher update:', data);
-            const isError = data.message && (data.message.toLowerCase().includes('failed') || data.message.toLowerCase().includes('error') || data.message.toLowerCase().includes('gagal') || data.message.toLowerCase().includes('relogin'));
-            const msgType = isError ? 'error' : 'success';
-            
-            // Show toast notification
-            showAlert(`[${data.id}] ${data.message}`, msgType);
-            
-            // Stream log to Signature Console HUD in dashboard
-            if (typeof appendConsoleLog === 'function') {
-                appendConsoleLog(`[${data.id}] ${data.message}`, msgType);
-            }
-        });
-    }
+    const pusher = pusherKey && typeof Pusher !== 'undefined' ? new Pusher(pusherKey, { cluster: 'ap1' }) : null;
+    let activeProgressChannel = null;
+    let activeProgressRequestId = null;
+    let activeProgressState = null;
 
     function updateNisCount() {
         const val = document.getElementById('batch-nis-input').value;
@@ -197,7 +211,22 @@
     }
     
     async function processTurnOff(nisArray) {
-        showLoading();
+        const requestId = createTurnOffRequestId();
+        activeProgressRequestId = requestId;
+        activeProgressState = {total: nisArray.length, completed: 0, success: 0, failed: 0, completedNis: new Set()};
+        openTurnOffProgressModal(nisArray);
+
+        if (!pusher) {
+            finishTurnOffProgress('Pusher tidak tersedia; progres real-time tidak dapat ditampilkan.', true);
+            return;
+        }
+
+        activeProgressChannel = pusher.subscribe(`turn_off_${requestId}`);
+        activeProgressChannel.bind('status-update', (data) => {
+            if (data.requestId !== activeProgressRequestId) return;
+            updateTurnOffProgress(data);
+        });
+
         if (typeof appendConsoleLog === 'function') {
             appendConsoleLog(`Mengirim batch ${nisArray.length} NIS ke server...`, 'info');
         }
@@ -206,31 +235,94 @@
             const response = await fetch('/api/turn_off', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ nis: nisArray })
+                body: JSON.stringify({nis: nisArray, requestId})
             });
             
             const result = await response.json();
             
             if (result.success) {
-                showAlert(`Selesai! Sukses: ${result.summary.successful}, Gagal: ${result.summary.failed} dari ${result.summary.total} NIS`, 'success');
+                const hasFailure = result.summary.failed > 0;
+                finishTurnOffProgress(`Selesai. Sukses: ${result.summary.successful}, gagal: ${result.summary.failed} dari ${result.summary.total} NIS.`, hasFailure);
+                showAlert(`Selesai! Sukses: ${result.summary.successful}, Gagal: ${result.summary.failed} dari ${result.summary.total} NIS`, hasFailure ? 'warning' : 'success');
                 if (typeof appendConsoleLog === 'function') {
                     appendConsoleLog(`Batch Selesai! Total: ${result.summary.total}, Sukses: ${result.summary.successful}, Gagal: ${result.summary.failed}`, 'success');
                 }
             } else {
+                finishTurnOffProgress(result.message || result.error || 'Terjadi kesalahan', true);
                 showAlert(result.message || result.error || 'Terjadi kesalahan', 'error');
                 if (typeof appendConsoleLog === 'function') {
                     appendConsoleLog(`Gagal memproses batch: ${result.message || result.error}`, 'error');
                 }
             }
         } catch (error) {
+            finishTurnOffProgress(`Server/Network Error: ${error.message}`, true);
             console.error('Error processing turn off:', error);
             showAlert('Gagal memproses permintaan', 'error');
             if (typeof appendConsoleLog === 'function') {
                 appendConsoleLog(`Server/Network Error: ${error.message}`, 'error');
             }
         } finally {
-            hideLoading();
+            if (activeProgressChannel) {
+                pusher.unsubscribe(activeProgressChannel.name);
+                activeProgressChannel = null;
+            }
         }
+    }
+
+    function createTurnOffRequestId() {
+        if (window.crypto?.randomUUID) return window.crypto.randomUUID().replace(/-/g, '');
+        return `${Date.now()}${Math.random().toString(36).slice(2)}`;
+    }
+
+    function openTurnOffProgressModal(nisArray) {
+        const modal = document.getElementById('turn-off-progress-modal');
+        const list = document.getElementById('turn-off-progress-list');
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+        document.getElementById('turn-off-progress-count').textContent = `0 / ${nisArray.length}`;
+        document.getElementById('turn-off-progress-bar').style.width = '0%';
+        document.getElementById('turn-off-progress-percent').textContent = '0%';
+        document.getElementById('turn-off-progress-summary').textContent = 'Menghubungkan ke Google Admin...';
+        document.getElementById('turn-off-progress-footer').classList.add('hidden');
+        list.innerHTML = nisArray.map(nis => `<div id="turn-off-row-${CSS.escape(String(nis))}" class="px-4 py-3 flex items-center justify-between gap-3 text-xs"><span class="font-mono text-slate-300">${escapeTurnOffHtml(nis)}</span><span class="text-slate-500">Menunggu</span></div>`).join('');
+    }
+
+    function updateTurnOffProgress(data) {
+        const state = activeProgressState;
+        const isUserResult = data.nis && !state.completedNis.has(String(data.nis));
+        if (isUserResult) {
+            state.completedNis.add(String(data.nis));
+            state.completed++;
+            state[data.status === 'success' ? 'success' : 'failed']++;
+            const row = document.getElementById(`turn-off-row-${CSS.escape(String(data.nis))}`);
+            if (row) {
+                row.lastElementChild.textContent = data.status === 'success' ? 'Berhasil' : 'Gagal';
+                row.lastElementChild.className = data.status === 'success' ? 'text-emerald-400 font-semibold' : 'text-rose-400 font-semibold';
+            }
+        }
+        const percent = state.total ? Math.round((state.completed / state.total) * 100) : 0;
+        document.getElementById('turn-off-progress-count').textContent = `${state.completed} / ${state.total}`;
+        document.getElementById('turn-off-progress-bar').style.width = `${percent}%`;
+        document.getElementById('turn-off-progress-percent').textContent = `${percent}%`;
+        document.getElementById('turn-off-progress-summary').textContent = data.id === 'System' ? data.message : `${state.success} berhasil · ${state.failed} gagal`;
+        if (data.id !== 'System' && typeof appendConsoleLog === 'function') appendConsoleLog(`[${data.id}] ${data.message}`, data.status === 'success' ? 'success' : 'error');
+    }
+
+    function finishTurnOffProgress(message, isError) {
+        document.getElementById('turn-off-progress-summary').textContent = message;
+        document.getElementById('turn-off-progress-summary').className = isError ? 'text-rose-400' : 'text-emerald-400';
+        document.getElementById('turn-off-progress-footer').classList.remove('hidden');
+    }
+
+    function closeTurnOffProgressModal() {
+        document.getElementById('turn-off-progress-modal').classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    function escapeTurnOffHtml(value) {
+        const element = document.createElement('div');
+        element.textContent = value;
+        return element.innerHTML;
     }
 </script>
 

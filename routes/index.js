@@ -18,6 +18,8 @@ router.post('/reset_password', isAuthenticated, isAuthorizedForReset, resetPassw
 router.get('/admin/list', isAuthenticated, isAuthorizedForReset, adminController.listAdmins);
 router.post('/admin/add', isAuthenticated, isAuthorizedForReset, adminController.addAdmin);
 router.post('/admin/remove', isAuthenticated, isAuthorizedForReset, adminController.removeAdmin);
+router.get('/admin/diagnostics', isAuthenticated, isAuthorizedForReset, adminController.getBrowserDiagnostics);
+router.post('/admin/browser-screenshot', isAuthenticated, isAuthorizedForReset, adminController.captureBrowserScreenshot);
 
 // Replace ids.json with an uploaded file
 router.post('/admin/upload-ids', isAuthenticated, isAuthorizedForReset, uploadIdsFile.single('file'), adminController.uploadIds);

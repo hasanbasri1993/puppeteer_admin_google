@@ -1,0 +1,86 @@
+<div class="space-y-6">
+    <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div>
+            <h2 class="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight">Diagnostik Browser</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">Screenshot halaman Google Admin aktif dan error Puppeteer terbaru.</p>
+        </div>
+        <button onclick="refreshDiagnostics()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition">Muat Ulang</button>
+    </div>
+
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        <section class="rounded-xl border border-slate-800 bg-slate-900/70 overflow-hidden">
+            <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between gap-3">
+                <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Halaman Aktif</h3>
+                <button onclick="captureBrowserScreenshot()" class="px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/20 text-xs font-semibold text-cyan-300 transition">Ambil Screenshot</button>
+            </div>
+            <div id="browser-shot-empty" class="p-8 text-center text-xs text-slate-500">Screenshot belum diambil.</div>
+            <div id="browser-shot-wrap" class="hidden">
+                <p id="browser-shot-url" class="px-4 py-2 text-[11px] font-mono text-slate-400 break-all border-b border-slate-800"></p>
+                <img id="browser-shot-image" alt="Screenshot halaman Google Admin" class="w-full bg-white" />
+            </div>
+        </section>
+
+        <section class="rounded-xl border border-slate-800 bg-slate-900/70 overflow-hidden">
+            <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between gap-3">
+                <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Error & Fatal Terbaru</h3>
+                <span id="diagnostics-status" class="text-[11px] font-mono text-slate-500">Memuat...</span>
+            </div>
+            <div id="browser-errors" class="max-h-[420px] overflow-y-auto divide-y divide-slate-800">
+                <p class="p-4 text-xs text-slate-500 animate-pulse">Memuat log...</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+    function escapeDiagnosticsHtml(value) {
+        const element = document.createElement('div');
+        element.textContent = value || '';
+        return element.innerHTML;
+    }
+
+    async function refreshDiagnostics() {
+        const list = document.getElementById('browser-errors');
+        try {
+            const response = await fetch('/api/admin/diagnostics');
+            const result = await response.json();
+            if (!result.success) throw new Error(result.error || 'Gagal memuat diagnostik');
+            document.getElementById('diagnostics-status').textContent = result.status.message || result.status.status;
+            if (!result.errors.length) {
+                list.innerHTML = '<p class="p-4 text-xs text-emerald-400">Belum ada error browser pada proses ini.</p>';
+                return;
+            }
+            list.innerHTML = result.errors.map(entry => `
+                <article class="p-4">
+                    <div class="flex items-center justify-between gap-3 text-[11px] font-mono">
+                        <span class="text-rose-400">${escapeDiagnosticsHtml(entry.scope)}</span>
+                        <time class="text-slate-500">${new Date(entry.at).toLocaleString('id-ID')}</time>
+                    </div>
+                    <p class="mt-2 text-xs leading-relaxed text-slate-300 break-words">${escapeDiagnosticsHtml(entry.message)}</p>
+                </article>`).join('');
+        } catch (error) {
+            list.innerHTML = `<p class="p-4 text-xs text-rose-400">${escapeDiagnosticsHtml(error.message)}</p>`;
+        }
+    }
+
+    async function captureBrowserScreenshot() {
+        const empty = document.getElementById('browser-shot-empty');
+        const wrap = document.getElementById('browser-shot-wrap');
+        empty.textContent = 'Mengambil screenshot...';
+        empty.classList.remove('hidden');
+        try {
+            const response = await fetch('/api/admin/browser-screenshot', {method: 'POST'});
+            const result = await response.json();
+            if (!result.success) throw new Error(result.error || 'Screenshot gagal diambil');
+            document.getElementById('browser-shot-image').src = result.image;
+            document.getElementById('browser-shot-url').textContent = result.url;
+            empty.classList.add('hidden');
+            wrap.classList.remove('hidden');
+        } catch (error) {
+            wrap.classList.add('hidden');
+            empty.textContent = `Tidak bisa mengambil screenshot: ${error.message}`;
+        }
+    }
+
+    refreshDiagnostics();
+</script>

@@ -18,8 +18,17 @@ module.exports = {
             : [];
         const ids = (idsFromArray.length > 0 ? idsFromArray : idsFromCsv);
         const uniqueIds = [...new Set(ids)];
+        const requestId = typeof req.body.requestId === 'string' ? req.body.requestId : '';
+        if (!/^[A-Za-z0-9_-]{8,80}$/.test(requestId)) {
+            return res.status(400).json({success: false, error: 'requestId tidak valid'});
+        }
+        const progressChannel = `turn_off_${requestId}`;
+        const publishProgress = (payload) => Pusher.trigger(progressChannel, 'status-update', {
+            requestId,
+            ...payload
+        });
 
-        logger.info(`Processing ${uniqueIds.length} unique IDs`);
+        logger.info(`Processing ${uniqueIds.length} unique IDs for request ${requestId}`);
 
         // Read the JSON file
         const filePath = path.join(process.cwd(), 'ids.json');
@@ -37,9 +46,10 @@ module.exports = {
 
         const results = [];
         if (notFoundIds.length > 0) {
-            await Pusher.trigger("turn_off", "status-update", {
-                id: 0,
-                message: "Not found this NIS, " + notFoundIds.join(', ')
+            await publishProgress({
+                id: 'System',
+                status: 'failed',
+                message: "NIS tidak ditemukan: " + notFoundIds.join(', ')
             });
             logger.error('Not found this NIS, ' + notFoundIds.join(', '));
         }
@@ -58,8 +68,9 @@ module.exports = {
                 if (!instance.isInitialized) {
                     const statusInfo = instance.getStatus();
                     logger.warn(`⚠️ Browser tidak aktif (${statusInfo.message}), menghentikan eksekusi sisa batch.`);
-                    await Pusher.trigger("turn_off", "status-update", {
+                    await publishProgress({
                         id: "System",
+                        status: 'failed',
                         message: `Proses dihentikan: ${statusInfo.message}. Harap tunggu pemulihan browser dan coba lagi.`
                     });
                     
@@ -88,15 +99,19 @@ module.exports = {
                         try {
                             await instance.handleSecurityChallenge(id.ID_GOOGLE);
                             logger.info('Turn off for 10 mins success for: ' + id.NAMA);
-                            await Pusher.trigger("turn_off", "status-update", {
+                            await publishProgress({
                                 id: id.NAMA,
+                                nis: id.NIS,
+                                status: 'success',
                                 message: "Success email: " + id.NIS + "@daarululuumlido.com"
                             });
                             return {id, status: 'success'};
                         } catch (error) {
                             logger.error('Turn off for 10 mins failed for: ' + id.NAMA);
-                            await Pusher.trigger("turn_off", "status-update", {
+                            await publishProgress({
                                 id: id.NAMA,
+                                nis: id.NIS,
+                                status: 'failed',
                                 message: error.message
                             });
                             return {id, status: 'failed', error: error.message};

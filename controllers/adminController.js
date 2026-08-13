@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('pino')();
 const adminService = require('../services/adminService');
+const {instance} = require('../services/browserInstance');
 
 const IDS_PATH = path.join(process.cwd(), 'ids.json');
 const IDS_BACKUP_PATH = path.join(process.cwd(), 'ids.backup.json');
@@ -84,6 +85,28 @@ module.exports = {
         } catch (error) {
             logger.error('Error uploading ids.json:', error.message);
             res.status(400).json({success: false, error: error.message});
+        }
+    },
+
+    getBrowserDiagnostics: (req, res) => {
+        res.json({
+            success: true,
+            status: instance.getStatus(),
+            errors: instance.getRecentErrors()
+        });
+    },
+
+    captureBrowserScreenshot: async (req, res) => {
+        try {
+            const screenshot = await instance.captureCurrentPage();
+            res.json({
+                success: true,
+                url: screenshot.url,
+                image: `data:image/png;base64,${screenshot.image}`
+            });
+        } catch (error) {
+            logger.error('Failed to capture browser screenshot:', error.message);
+            res.status(503).json({success: false, error: error.message});
         }
     }
 };

@@ -30,6 +30,7 @@ class BrowserService {
         this.userDataDir = process.env.PUPPETEER_USER_DATA_DIR || path.join(__dirname, '..', '.puppeteer-profile');
         this.isClosing = false;
         this.recoveryPromise = null;
+        this.recentErrors = [];
     }
 
     get isInitialized() {
@@ -55,6 +56,45 @@ class BrowserService {
             return { status: 'relogging', isInitialized: false, isInitializing: false, message: 'Sedang Relogin...' };
         }
         return { status: 'offline', isInitialized: false, isInitializing: false, message: 'Browser Offline' };
+    }
+
+    recordError(scope, error) {
+        const message = error instanceof Error ? error.message : String(error || 'Unknown error');
+        this.recentErrors.unshift({at: new Date().toISOString(), scope, message});
+        this.recentErrors = this.recentErrors.slice(0, 100);
+    }
+
+    getRecentErrors() {
+        return this.recentErrors;
+    }
+
+    async captureCurrentPage() {
+        if (!this.browser || !this.browser.isConnected()) {
+            throw new Error('Browser tidak sedang terhubung');
+        }
+        const pages = await this.browser.pages();
+        let page = [...this.activePages].find(candidate => !candidate.isClosed()) ||
+            pages.find(candidate => !candidate.isClosed() && candidate.url() !== 'about:blank');
+        let temporaryPage = false;
+
+        try {
+            if (!page) {
+                // Operations close their pages when idle. Open a short-lived
+                // diagnostic tab so the dashboard can still show the live admin session.
+                page = await this.createOptimizedPage();
+                temporaryPage = true;
+                await page.goto('https://admin.google.com', {
+                    waitUntil: 'domcontentloaded',
+                    timeout: this.pageTimeout
+                });
+            }
+            const image = await page.screenshot({type: 'png'});
+            return {url: page.url(), image: image.toString('base64')};
+        } finally {
+            if (temporaryPage) {
+                await this.closePage(page);
+            }
+        }
     }
 
     async initialize(username, password) {
@@ -115,6 +155,7 @@ class BrowserService {
                     return;
                 }
                 logger.error('Browser disconnected unexpectedly!');
+                this.recordError('browser-disconnected', 'Browser disconnected unexpectedly');
                 void this.handleBrowserCrash();
             });
 
@@ -142,6 +183,7 @@ class BrowserService {
             // Log to Telegram
             await telegramLogger.logSystemEvent('Browser Initialized', 'Successfully logged in to Google Admin Console');
         } catch (error) {
+            this.recordError('initialize', error);
             logger.error('Failed to initialize browser: ' + error);
             await this.close();
             throw error;
@@ -332,6 +374,7 @@ class BrowserService {
                 logger.debug(`Browser health check passed. Version: ${version}`);
 
             } catch (error) {
+                this.recordError('browser-health', error);
                 logger.error('Browser health check failed:', error.message);
                 this.handleBrowserCrash();
             }
@@ -408,6 +451,7 @@ class BrowserService {
             this.crashRecoveryAttempts = 0; // Reset counter on successful recovery
 
         } catch (error) {
+            this.recordError('browser-recovery', error);
             logger.error(`Browser recovery attempt ${this.crashRecoveryAttempts} failed:`, error.message);
 
             // Schedule next recovery attempt
@@ -577,6 +621,7 @@ class BrowserService {
 
             return {status: 'success'};
         } catch (error) {
+            this.recordError(`security-challenge:${id}`, error);
             logger.error(`Error handling security challenge for user ${id}:`, error.message);
             throw error;
         } finally {
