@@ -1,45 +1,60 @@
 <div class="space-y-6">
-    <div class="border-b border-gray-200">
-        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Upload Data Siswa</h2>
-        <p class="text-gray-600 text-sm sm:text-base">Ganti data <code>ids.json</code> dengan file baru</p>
+    <div class="border-b border-slate-800 pb-4">
+        <h2 class="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight flex items-center space-x-2">
+            <span class="text-emerald-400">Upload Data Siswa</span>
+        </h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">
+            Ganti database <code>ids.json</code> lokal dengan file JSON data siswa terbaru.
+        </p>
     </div>
 
-    <div class="rounded-md bg-blue-50 border border-blue-200 p-4">
-        <p class="text-sm text-blue-800">
-            Gunakan Google Sheet berikut untuk menyusun/generate <code>ids.json</code> sebelum diunggah:
-        </p>
+    <!-- Google Sheet Info Box -->
+    <div class="rounded-xl bg-cyan-950/40 border border-cyan-500/30 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+            <p class="text-xs font-semibold text-cyan-300">
+                Template Data Siswa (Google Sheets)
+            </p>
+            <p class="text-xs text-slate-400 mt-0.5">
+                Gunakan sheet berikut untuk menyusun dan mengekspor <code>ids.json</code>.
+            </p>
+        </div>
         <a href="https://docs.google.com/spreadsheets/d/1ondYs7OO2RF-2B65QoBa2Qt0srQn4CyFi0tnvugUxXs/edit?gid=0#gid=0"
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center mt-2 text-sm font-medium text-primary hover:text-secondary underline">
-            Buka Google Sheet Data Siswa
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+           class="inline-flex items-center justify-center px-3.5 py-2 text-xs font-semibold text-white bg-cyan-600/30 hover:bg-cyan-600/50 border border-cyan-500/40 rounded-lg transition shrink-0">
+            <span>Buka Google Sheet</span>
+            <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>
         </a>
     </div>
 
-    <div class="rounded-md bg-yellow-50 border border-yellow-200 p-4">
-        <p class="text-sm text-yellow-800">
-            <strong>Perhatian:</strong> Mengunggah file baru akan <strong>menggantikan seluruh data siswa yang ada saat ini</strong>.
-            Pastikan file berupa JSON array berisi objek dengan field <code>ID_GOOGLE</code>, <code>NIS</code>, <code>KELAS</code>, dan <code>NAMA</code>.
+    <!-- Warning Callout -->
+    <div class="rounded-xl bg-amber-950/40 border border-amber-500/30 p-4">
+        <p class="text-xs text-amber-300">
+            <strong>⚠️ Perhatian:</strong> Mengunggah file baru akan <strong>menggantikan seluruh data siswa yang ada saat ini</strong>.
+            Pastikan file berupa JSON array dengan field: <code>ID_GOOGLE</code>, <code>NIS</code>, <code>KELAS</code>, dan <code>NAMA</code>.
         </p>
     </div>
 
+    <!-- File Upload Form -->
     <div class="space-y-4">
         <div>
-            <label for="ids-file-input" class="block text-sm font-medium text-gray-700 mb-2">
-                File ids.json
+            <label for="ids-file-input" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+                Pilih File JSON (ids.json)
             </label>
             <input type="file"
                    id="ids-file-input"
                    accept="application/json,.json"
-                   class="w-full text-sm text-gray-700 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-primary file:text-white file:text-sm file:font-medium hover:file:bg-secondary">
+                   class="w-full text-xs text-slate-300 border border-slate-700/80 rounded-xl bg-slate-900/90 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:bg-emerald-500/20 file:text-emerald-400 file:font-semibold hover:file:bg-emerald-500/30 cursor-pointer">
         </div>
 
         <button onclick="uploadIds()"
-                class="w-full bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out">
-            Upload &amp; Ganti Data
+                class="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-semibold py-3 px-4 rounded-xl shadow-lg shadow-emerald-500/20 transition duration-150 ease-in-out flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+            </svg>
+            <span>Upload &amp; Ganti Data Siswa</span>
         </button>
     </div>
 </div>
@@ -62,6 +77,10 @@
         formData.append('file', file);
 
         showLoading();
+        if (typeof appendConsoleLog === 'function') {
+            appendConsoleLog(`Mengunggah file data siswa baru (${file.name})...`, 'info');
+        }
+
         try {
             const response = await fetch('/api/admin/upload-ids', {
                 method: 'POST',
@@ -71,15 +90,25 @@
 
             if (result.success) {
                 showAlert(result.message || 'Data berhasil diperbarui', 'success');
+                if (typeof appendConsoleLog === 'function') {
+                    appendConsoleLog(`✅ Data siswa berhasil diperbarui!`, 'success');
+                }
                 fileInput.value = '';
             } else {
                 showAlert(result.error || 'Gagal mengunggah data', 'error');
+                if (typeof appendConsoleLog === 'function') {
+                    appendConsoleLog(`❌ Gagal upload data siswa: ${result.error}`, 'error');
+                }
             }
         } catch (error) {
             console.error('Error uploading ids.json:', error);
             showAlert('Gagal mengunggah data', 'error');
+            if (typeof appendConsoleLog === 'function') {
+                appendConsoleLog(`Error upload: ${error.message}`, 'error');
+            }
         } finally {
             hideLoading();
         }
     }
 </script>
+

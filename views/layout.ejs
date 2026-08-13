@@ -1,58 +1,136 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= typeof title !== 'undefined' ? title : 'Admin Panel' %></title>
+    <title><%= typeof title !== 'undefined' ? title : 'Dulido Admin Console' %></title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Outfit"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
                     colors: {
-                        primary: '#3B82F6',
-                        secondary: '#1E40AF',
-                        accent: '#F59E0B'
+                        darkBg: '#0B0F17',
+                        surface: '#161E2E',
+                        surfaceLight: '#1F293D',
+                        primary: '#06B6D4',
+                        secondary: '#6366F1',
+                        accent: '#10B981',
+                        roseAcc: '#F43F5E',
                     }
                 }
             }
         }
     </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B0F17;
+            color: #F8FAFC;
+        }
+        .glass-panel {
+            background: rgba(22, 30, 46, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.35);
+        }
+        .glow-indigo {
+            box-shadow: 0 0 20px -3px rgba(99, 102, 241, 0.35);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2D3748;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4A5568;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-darkBg text-slate-100 min-h-screen selection:bg-cyan-500 selection:text-black">
     <%- body %>
     
     <script>
-        // Global JavaScript functions
+        // Global Toast Notification Helper
         function showAlert(message, type = 'info') {
-            const className =
-                type === 'success' ? 'bg-green-500 text-white' :
-                type === 'error' ? 'bg-red-500 text-white' :
-                type === 'warning' ? 'bg-yellow-500 text-white' :
-                'bg-blue-500 text-white'
-            ;
+            let bgGradient = "linear-gradient(135deg, #0284C7 0%, #06B6D4 100%)";
+            let iconSvg = "ℹ️";
+            
+            if (type === 'success') {
+                bgGradient = "linear-gradient(135deg, #059669 0%, #10B981 100%)";
+                iconSvg = "✅";
+            } else if (type === 'error') {
+                bgGradient = "linear-gradient(135deg, #E11D48 0%, #F43F5E 100%)";
+                iconSvg = "⚠️";
+            } else if (type === 'warning') {
+                bgGradient = "linear-gradient(135deg, #D97706 0%, #F59E0B 100%)";
+                iconSvg = "⚡";
+            }
+
             Toastify({
-                text: message,
-                className: className,
+                text: `${iconSvg} ${message}`,
+                duration: 4000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
                 style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    background: bgGradient,
+                    borderRadius: "10px",
+                    boxShadow: "0 10px 25px -5px rgba(0,0,0,0.5)",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: "500",
+                    fontSize: "0.875rem",
+                    padding: "12px 18px",
                 }
             }).showToast();
         }
         
+        // Global Glassmorphic Loading Overlay
         function showLoading() {
+            if (document.getElementById('loading')) return;
             const loadingDiv = document.createElement('div');
             loadingDiv.id = 'loading';
-            loadingDiv.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            loadingDiv.className = 'fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 transition-opacity duration-300';
             loadingDiv.innerHTML = `
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center space-x-3">
-                        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
-                        <span>Memproses...</span>
+                <div class="glass-panel p-6 rounded-2xl shadow-2xl flex flex-col items-center space-y-4 border border-cyan-500/20 max-w-xs w-full">
+                    <div class="relative flex items-center justify-center">
+                        <div class="w-12 h-12 rounded-full border-2 border-cyan-500/20 border-t-cyan-400 animate-spin"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-indigo-500/20 border-b-indigo-400 animate-spin absolute" style="animation-direction: reverse; animation-duration: 0.8s;"></div>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-heading font-semibold text-white tracking-wide text-sm">Memproses Perintah...</p>
+                        <p class="text-xs text-slate-400 mt-1">Menghubungkan ke Google Admin</p>
                     </div>
                 </div>
             `;
@@ -62,9 +140,11 @@
         function hideLoading() {
             const loading = document.getElementById('loading');
             if (loading) {
-                loading.remove();
+                loading.classList.add('opacity-0');
+                setTimeout(() => loading.remove(), 200);
             }
         }
     </script>
 </body>
 </html>
+

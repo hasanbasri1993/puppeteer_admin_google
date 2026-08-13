@@ -54,12 +54,37 @@ module.exports = {
             logger.info(`Processing ${filteredIds.length} users in ${batches.length} batches of ${BATCH_SIZE}`);
 
             for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
+                // Check browser health & initialization before running batch
+                if (!instance.isInitialized) {
+                    const statusInfo = instance.getStatus();
+                    logger.warn(`⚠️ Browser tidak aktif (${statusInfo.message}), menghentikan eksekusi sisa batch.`);
+                    await Pusher.trigger("turn_off", "status-update", {
+                        id: "System",
+                        message: `Proses dihentikan: ${statusInfo.message}. Harap tunggu pemulihan browser dan coba lagi.`
+                    });
+                    
+                    // Mark remaining unprocessed items as failed with clear error message
+                    for (let j = batchIndex; j < batches.length; j++) {
+                        batches[j].forEach(id => {
+                            results.push({
+                                id,
+                                status: 'failed',
+                                error: statusInfo.message
+                            });
+                        });
+                    }
+                    break;
+                }
+
                 const batch = batches[batchIndex];
                 logger.info(`Processing batch ${batchIndex + 1}/${batches.length} with ${batch.length} users`);
 
-                // Process batch concurrently but limit concurrency
+                // Process batch concurrently with a tiny staggered delay (200ms) to avoid CDP protocol spikes
                 const batchResults = await Promise.allSettled(
-                    batch.map(async (id) => {
+                    batch.map(async (id, idx) => {
+                        if (idx > 0) {
+                            await new Promise(resolve => setTimeout(resolve, idx * 200));
+                        }
                         try {
                             await instance.handleSecurityChallenge(id.ID_GOOGLE);
                             logger.info('Turn off for 10 mins success for: ' + id.NAMA);

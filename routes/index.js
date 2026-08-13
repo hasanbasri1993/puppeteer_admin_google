@@ -24,6 +24,12 @@ router.post('/admin/upload-ids', isAuthenticated, isAuthorizedForReset, uploadId
 router.get('/hai', (req, res) => {
     res.send('Hello World');
 });
+
+// Browser status endpoint
+router.get('/status', (req, res) => {
+    res.json(instance.getStatus());
+});
+
 router.post('/turn_off', turnOffChallenge);
 
 // Manual relogin endpoint

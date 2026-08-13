@@ -25,8 +25,11 @@ const telegramLoggingMiddleware = (req, res, next) => {
     res.on('finish', async () => {
         const responseTime = Date.now() - startTime;
 
-        // Only log API requests (not static files)
-        if (req.originalUrl.startsWith('/api/')) {
+        // Skip frequent dashboard polling so it does not flood Telegram.
+        const isBrowserStatusPoll = req.method === 'GET' && req.path === '/status';
+
+        // Only log API requests (not static files or status polling)
+        if (req.originalUrl.startsWith('/api/') && !isBrowserStatusPoll) {
             try {
                 await telegramLogger.logApiRequest(req, res, responseTime);
             } catch (error) {

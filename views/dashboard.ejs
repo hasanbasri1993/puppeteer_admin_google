@@ -1,238 +1,435 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Admin Panel</title>
+    <title>Dashboard - Dulido Admin Console</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>    <script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Outfit"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
                     colors: {
-                        primary: '#3B82F6',
-                        secondary: '#1E40AF',
-                        accent: '#F59E0B'
+                        darkBg: '#0B0F17',
+                        surface: '#161E2E',
+                        surfaceLight: '#1F293D',
+                        primary: '#06B6D4',
+                        secondary: '#6366F1',
+                        accent: '#10B981',
+                        roseAcc: '#F43F5E',
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Alert and Loading Scripts -->
     <script>
-        // Show alert function
+        // Global Helper Functions
         function showAlert(message, type = 'info') {
-            // const alertDiv = document.createElement('div');
-            const className =
-                type === 'success' ? 'bg-green-500 text-white' :
-                    type === 'error' ? 'bg-red-500 text-white' :
-                        type === 'warning' ? 'bg-yellow-500 text-white' :
-                            'bg-blue-500 text-white'
-            ;
-            // alertDiv.textContent = message;
-            // document.body.appendChild(alertDiv);
-            //
-            // setTimeout(() => {
-            //     alertDiv.remove();
-            // }, 5000);
+            let bgGradient = "linear-gradient(135deg, #0284C7 0%, #06B6D4 100%)";
+            let iconSvg = "ℹ️";
+            
+            if (type === 'success') {
+                bgGradient = "linear-gradient(135deg, #059669 0%, #10B981 100%)";
+                iconSvg = "✅";
+            } else if (type === 'error') {
+                bgGradient = "linear-gradient(135deg, #E11D48 0%, #F43F5E 100%)";
+                iconSvg = "⚠️";
+            } else if (type === 'warning') {
+                bgGradient = "linear-gradient(135deg, #D97706 0%, #F59E0B 100%)";
+                iconSvg = "⚡";
+            }
 
-            Toastify({
-                text: message,
-                className: className,
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                }
-            }).showToast();
+            if (typeof Toastify !== 'undefined') {
+                Toastify({
+                    text: `${iconSvg} ${message}`,
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background: bgGradient,
+                        borderRadius: "10px",
+                        boxShadow: "0 10px 25px -5px rgba(0,0,0,0.5)",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontWeight: "500",
+                        fontSize: "0.875rem",
+                        padding: "12px 18px",
+                    }
+                }).showToast();
+            } else {
+                alert(message);
+            }
         }
         
-        // Show loading function
         function showLoading() {
+            if (document.getElementById('loading')) return;
             const loadingDiv = document.createElement('div');
-            loadingDiv.id = 'loading-overlay';
-            loadingDiv.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            loadingDiv.id = 'loading';
+            loadingDiv.className = 'fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 transition-opacity duration-300';
             loadingDiv.innerHTML = `
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="flex items-center space-x-3">
-                        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary"></div>
-                        <span class="text-gray-700">Memproses...</span>
+                <div class="glass-panel p-6 rounded-2xl shadow-2xl flex flex-col items-center space-y-4 border border-cyan-500/20 max-w-xs w-full">
+                    <div class="relative flex items-center justify-center">
+                        <div class="w-12 h-12 rounded-full border-2 border-cyan-500/20 border-t-cyan-400 animate-spin"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-indigo-500/20 border-b-indigo-400 animate-spin absolute" style="animation-direction: reverse; animation-duration: 0.8s;"></div>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-heading font-semibold text-white tracking-wide text-sm">Memproses Perintah...</p>
+                        <p class="text-xs text-slate-400 mt-1">Menghubungkan ke Google Admin</p>
                     </div>
                 </div>
             `;
-            
             document.body.appendChild(loadingDiv);
         }
         
-        // Hide loading function
         function hideLoading() {
-            const loadingDiv = document.getElementById('loading-overlay');
-            if (loadingDiv && loadingDiv.parentNode) {
-                loadingDiv.parentNode.removeChild(loadingDiv);
+            const loading = document.getElementById('loading');
+            if (loading) {
+                loading.classList.add('opacity-0');
+                setTimeout(() => loading.remove(), 200);
             }
         }
     </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0B0F17; color: #F8FAFC; }
+        .glass-panel {
+            background: rgba(22, 30, 46, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 15, 23, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan-sm {
+            box-shadow: 0 0 15px -2px rgba(6, 182, 212, 0.3);
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-<div class="min-h-screen bg-gray-50">
+<body class="bg-darkBg text-slate-100 min-h-screen flex flex-col selection:bg-cyan-500 selection:text-black">
     <!-- Navbar -->
-    <nav class="bg-white shadow-sm border-b">
+    <header class="sticky top-0 z-40 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <button id="sidebar-toggle" class="mr-3 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary sm:hidden" aria-label="Toggle sidebar">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <div class="flex justify-between items-center h-16">
+                <!-- Mobile Toggle & Brand -->
+                <div class="flex items-center space-x-3">
+                    <button id="sidebar-toggle" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none sm:hidden">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
-                    <h1 class="text-xl font-semibold text-gray-900">Admin Panel</h1>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-heading font-bold text-lg text-white tracking-tight">Dulido Admin</span>
+                            <span class="ml-2 px-2 py-0.5 text-[10px] font-mono font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full">v1.0</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center space-x-3">
-                    <span class="text-sm text-gray-700">
-                        Selamat datang, <span class="font-medium"><%= user.displayName || user.name.givenName %></span>
-                    </span>
-                    <a href="/auth/logout" 
-                       class="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out">
-                        Logout
-                    </a>
+
+                <!-- System Status Indicator & User Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dynamic Status Badge -->
+                    <div id="browser-status-badge" class="hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-medium text-cyan-400">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                        </span>
+                        <span id="browser-status-text">Memeriksa Status...</span>
+                    </div>
+
+                    <!-- Trigger Manual Relogin Button -->
+                    <button onclick="triggerManualRelogin()" 
+                            title="Segarkan Sesi Google Admin"
+                            class="px-3 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 text-xs font-semibold text-slate-300 hover:text-white transition flex items-center space-x-1.5">
+                        <svg class="w-3.5 h-3.5 text-cyan-400 animate-spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                        <span class="hidden sm:inline">Relogin</span>
+                    </button>
+
+                    <!-- User Profile & Logout -->
+                    <div class="flex items-center space-x-3 border-l border-slate-800 pl-4">
+                        <span class="text-xs text-slate-300 hidden lg:inline">
+                            <span class="text-slate-500">Admin:</span> <span class="font-semibold text-white"><%= user.displayName || user.name.givenName %></span>
+                        </span>
+                        <a href="/logout" 
+                           class="bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/20 px-3 py-1.5 rounded-xl text-xs font-semibold transition flex items-center space-x-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                            </svg>
+                            <span>Keluar</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <div class="flex">
+    <!-- Main Container -->
+    <div class="flex-1 flex max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 gap-6">
         <!-- Sidebar -->
-        <div id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 transform -translate-x-full sm:translate-x-0 sm:static sm:inset-auto sm:transform-none sm:sticky sm:top-16 bg-white shadow-sm min-h-screen transition-transform duration-200 ease-in-out">
-            <div class="p-4">
-                <nav class="space-y-2">
-                    <a href="#" 
-                       onclick="loadContent('turn-off')" 
-                       class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out">
-                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 w-64 transform -translate-x-full sm:translate-x-0 sm:static sm:z-0 glass-panel rounded-2xl p-4 transition-transform duration-200 ease-in-out flex flex-col justify-between shrink-0 h-[calc(100vh-6rem)] sticky top-20">
+            <div class="space-y-6">
+                <div class="px-3 text-xs font-mono font-semibold text-slate-500 tracking-wider uppercase">Menu Operasi</div>
+                <nav class="space-y-1.5" id="nav-menu">
+                    <button onclick="loadContent('turn-off', this)" 
+                            class="nav-link w-full flex items-center px-4 py-3 text-sm font-semibold text-slate-300 rounded-xl hover:bg-slate-800/60 hover:text-white transition group border border-transparent">
+                        <svg class="w-5 h-5 mr-3 text-cyan-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                         </svg>
-                        Turn Off Challenge
-                    </a>
+                        <span>Turn Off Challenge</span>
+                    </button>
+
                     <% if (typeof canResetPassword !== 'undefined' && canResetPassword) { %>
-                    <a href="#"
-                       onclick="loadContent('reset-password')"
-                       class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out">
-                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button onclick="loadContent('reset-password', this)" 
+                            class="nav-link w-full flex items-center px-4 py-3 text-sm font-semibold text-slate-300 rounded-xl hover:bg-slate-800/60 hover:text-white transition group border border-transparent">
+                        <svg class="w-5 h-5 mr-3 text-indigo-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
                         </svg>
-                        Reset Password
-                    </a>
-                    <a href="#"
-                       onclick="loadContent('upload-ids')"
-                       class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out">
-                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span>Reset Password</span>
+                    </button>
+
+                    <button onclick="loadContent('upload-ids', this)" 
+                            class="nav-link w-full flex items-center px-4 py-3 text-sm font-semibold text-slate-300 rounded-xl hover:bg-slate-800/60 hover:text-white transition group border border-transparent">
+                        <svg class="w-5 h-5 mr-3 text-emerald-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M12 12v9m0-9l-3 3m3-3l3 3"></path>
                         </svg>
-                        Upload Data Siswa
-                    </a>
-                    <a href="#"
-                       onclick="loadContent('manage-admin')"
-                       class="flex items-center px-4 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out">
-                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span>Upload Data Siswa</span>
+                    </button>
+
+                    <button onclick="loadContent('manage-admin', this)" 
+                            class="nav-link w-full flex items-center px-4 py-3 text-sm font-semibold text-slate-300 rounded-xl hover:bg-slate-800/60 hover:text-white transition group border border-transparent">
+                        <svg class="w-5 h-5 mr-3 text-rose-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
-                        Kelola Admin
-                    </a>
+                        <span>Kelola Admin</span>
+                    </button>
                     <% } %>
                 </nav>
             </div>
-        </div>
 
-        <!-- Main Content Area -->
-        <div class="flex-1 p-4 sm:p-8">
-            <div id="content-area" class="bg-white rounded-lg shadow-sm p-4 sm:p-6 max-w-5xl mx-auto">
-                <div class="text-center text-gray-500">
-                    <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                    <h3 class="mt-2 text-sm font-medium text-gray-900">Pilih menu di sidebar</h3>
-                    <p class="mt-1 text-sm text-gray-500">Klik salah satu menu di sidebar untuk memulai.</p>
+            <!-- Pesantren Information Pill -->
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 rounded-full bg-cyan-400"></div>
+                    <p class="text-xs font-semibold text-slate-300">Daarul Uluum Lido</p>
+                </div>
+                <p class="text-[11px] text-slate-500 mt-1">Google Admin Automation</p>
+            </div>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="flex-1 flex flex-col space-y-6 min-w-0">
+            <!-- Dynamic Form Content Container -->
+            <div id="content-area" class="glass-panel rounded-2xl p-6 sm:p-8 min-h-[380px] relative transition-all duration-300">
+                <div class="flex flex-col items-center justify-center h-64 text-slate-400 space-y-3">
+                    <div class="w-10 h-10 border-2 border-cyan-500/20 border-t-cyan-400 rounded-full animate-spin"></div>
+                    <p class="text-sm font-medium">Memuat antarmuka...</p>
                 </div>
             </div>
-        </div>
+
+            <!-- Signature Element: Live Execution Terminal HUD -->
+            <div class="glass-panel rounded-2xl p-4 sm:p-5 flex flex-col space-y-3 border-cyan-500/10">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                        <span class="font-heading font-semibold text-xs text-slate-200 tracking-wider uppercase">Live Activity Stream (Pusher Event Log)</span>
+                    </div>
+                    <button onclick="clearConsoleLog()" class="text-[11px] font-mono text-slate-400 hover:text-cyan-400 transition">
+                        Clear Feed
+                    </button>
+                </div>
+                <!-- Console Log Box -->
+                <div id="console-stream" class="bg-black/80 rounded-xl p-3.5 h-36 overflow-y-auto font-mono text-xs space-y-1.5 border border-slate-800/80">
+                    <div class="text-slate-500 italic">[System] Siap menerima status otomatis dari Google Admin...</div>
+                </div>
+            </div>
+        </main>
     </div>
-</div>
 
-<script>
-    // Function to load content dynamically
-    async function loadContent(page) {
-        showLoading();
-        
-        try {
-            const response = await fetch(`/pages/load-content/${page}`);
-            const html = await response.text();
+    <script>
+        // Signature Element: Console Feed Handler
+        function appendConsoleLog(message, type = 'info') {
+            const stream = document.getElementById('console-stream');
+            if (!stream) return;
 
-            const container = document.getElementById('content-area');
-            container.innerHTML = html;
+            const timeStr = new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const item = document.createElement('div');
+            item.className = 'flex items-start space-x-2 leading-relaxed animate-fade-in';
+            
+            let colorClass = 'text-slate-300';
+            let badge = '[INFO]';
+            if (type === 'success') { colorClass = 'text-emerald-400'; badge = '[OK]'; }
+            else if (type === 'error') { colorClass = 'text-rose-400'; badge = '[FAIL]'; }
+            else if (type === 'warn') { colorClass = 'text-amber-400'; badge = '[WARN]'; }
 
-            // Execute any scripts from the loaded HTML in order
-            const scripts = Array.from(container.querySelectorAll('script'));
-            for (const oldScript of scripts) {
-                await new Promise((resolve) => {
-                    const newScript = document.createElement('script');
-                    if (oldScript.src) {
-                        newScript.src = oldScript.src;
-                        newScript.onload = resolve;
-                        newScript.onerror = resolve;
-                        document.body.appendChild(newScript);
-                    } else {
-                        newScript.textContent = oldScript.textContent;
-                        document.body.appendChild(newScript);
-                        resolve();
-                    }
-                    oldScript.remove();
+            item.innerHTML = `<span class="text-slate-600 shrink-0">${timeStr}</span> <span class="font-bold shrink-0 ${colorClass}">${badge}</span> <span class="${colorClass}">${escapeHtml(message)}</span>`;
+            stream.appendChild(item);
+            stream.scrollTop = stream.scrollHeight;
+        }
+
+        function clearConsoleLog() {
+            const stream = document.getElementById('console-stream');
+            if (stream) stream.innerHTML = `<div class="text-slate-500 italic">[System] Log dibersihkan. Siap menerima status otomatis...</div>`;
+        }
+
+        function escapeHtml(text) {
+            return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // Manual Relogin Action
+        async function triggerManualRelogin() {
+            showLoading();
+            appendConsoleLog('Memulai relogin manual ke Google Admin Console...', 'warn');
+            try {
+                const response = await fetch('/relogin', { method: 'POST' });
+                const result = await response.json();
+                if (result.success) {
+                    showAlert(result.message || 'Relogin berhasil dilakukan', 'success');
+                    appendConsoleLog('✅ Relogin manual berhasil diselesaikan', 'success');
+                } else {
+                    showAlert(result.error || result.message || 'Relogin gagal', 'error');
+                    appendConsoleLog(`❌ Relogin gagal: ${result.error || result.message}`, 'error');
+                }
+            } catch (err) {
+                showAlert('Gagal menghubungi server', 'error');
+                appendConsoleLog(`❌ Error server: ${err.message}`, 'error');
+            } finally {
+                hideLoading();
+            }
+        }
+
+        // Dynamic Page Loader
+        async function loadContent(page, btnElement) {
+            showLoading();
+            try {
+                const response = await fetch(`/pages/load-content/${page}`);
+                if (!response.ok) throw new Error('Halaman tidak ditemukan');
+                const html = await response.text();
+
+                const container = document.getElementById('content-area');
+                container.innerHTML = html;
+
+                // Re-execute loaded scripts sequentially
+                const scripts = Array.from(container.querySelectorAll('script'));
+                for (const oldScript of scripts) {
+                    await new Promise((resolve) => {
+                        const newScript = document.createElement('script');
+                        if (oldScript.src) {
+                            newScript.src = oldScript.src;
+                            newScript.onload = resolve;
+                            newScript.onerror = resolve;
+                            document.body.appendChild(newScript);
+                        } else {
+                            newScript.textContent = oldScript.textContent;
+                            document.body.appendChild(newScript);
+                            resolve();
+                        }
+                        oldScript.remove();
+                    });
+                }
+                
+                // Update active state styling in navigation
+                document.querySelectorAll('#nav-menu .nav-link').forEach(link => {
+                    link.classList.remove('bg-gradient-to-r', 'from-cyan-500/20', 'to-indigo-500/20', 'border-cyan-500/40', 'text-white', 'glow-cyan-sm');
+                    link.classList.add('text-slate-300', 'border-transparent');
                 });
+                
+                if (btnElement) {
+                    btnElement.classList.add('bg-gradient-to-r', 'from-cyan-500/20', 'to-indigo-500/20', 'border-cyan-500/40', 'text-white', 'glow-cyan-sm');
+                    btnElement.classList.remove('text-slate-300', 'border-transparent');
+                }
+
+                // Close mobile drawer
+                if (window.innerWidth < 640) toggleSidebar(false);
+
+            } catch (error) {
+                console.error('Error loading content:', error);
+                showAlert('Gagal memuat konten', 'error');
+                appendConsoleLog(`Gagal memuat konten ${page}: ${error.message}`, 'error');
+            } finally {
+                hideLoading();
             }
-            
-            // Update active sidebar item
-            document.querySelectorAll('#sidebar nav a').forEach(link => {
-                link.classList.remove('bg-primary', 'text-white');
-                link.classList.add('text-gray-700');
-            });
-            
-            if (event && event.target) {
-                event.target.classList.add('bg-primary', 'text-white');
-                event.target.classList.remove('text-gray-700');
-            }
-            
-            // Close sidebar on mobile after selection
-            if (window.innerWidth < 640) {
-                toggleSidebar(false);
-            }
-        } catch (error) {
-            console.error('Error loading content:', error);
-            showAlert('Gagal memuat konten', 'error');
-        } finally {
-            hideLoading();
         }
-    }
 
-    // Auto-load first menu on page load
-    document.addEventListener('DOMContentLoaded', () => {
-        // Optionally load default content, e.g., turn-off page
-        // loadContent('turn-off');
+        // Real-time Browser Status Poller
+        async function checkBrowserStatus() {
+            try {
+                const response = await fetch('/api/status');
+                if (!response.ok) return;
+                const data = await response.json();
+                
+                const badge = document.getElementById('browser-status-badge');
+                const text = document.getElementById('browser-status-text');
+                if (!badge || !text) return;
 
-        // Sidebar toggle behavior
-        const toggleButton = document.getElementById('sidebar-toggle');
-        toggleButton.addEventListener('click', () => toggleSidebar());
-    });
-
-    function toggleSidebar(forceOpen) {
-        const sidebar = document.getElementById('sidebar');
-        const isOpen = !sidebar.classList.contains('-translate-x-full');
-        const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !isOpen;
-        if (shouldOpen) {
-            sidebar.classList.remove('-translate-x-full');
-        } else {
-            sidebar.classList.add('-translate-x-full');
+                if (data.status === 'ready') {
+                    badge.className = 'hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400';
+                    text.textContent = 'Session Active';
+                } else if (data.status === 'initializing') {
+                    badge.className = 'hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-medium text-cyan-400 animate-pulse';
+                    text.textContent = data.message;
+                } else if (data.status === 'relogging') {
+                    badge.className = 'hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-medium text-amber-400 animate-pulse';
+                    text.textContent = data.message;
+                } else {
+                    badge.className = 'hidden md:flex items-center space-x-2 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-xs font-medium text-rose-400';
+                    text.textContent = 'Browser Offline';
+                }
+            } catch (err) {
+                console.error('Status check error:', err);
+            }
         }
-    }
-</script>
+
+        // Auto Load Initial Tab on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstNavBtn = document.querySelector('#nav-menu .nav-link');
+            if (firstNavBtn) {
+                loadContent('turn-off', firstNavBtn);
+            }
+
+            const toggleButton = document.getElementById('sidebar-toggle');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => toggleSidebar());
+            }
+
+            // Start status polling
+            checkBrowserStatus();
+            setInterval(checkBrowserStatus, 5000);
+        });
+
+        function toggleSidebar(forceOpen) {
+            const sidebar = document.getElementById('sidebar');
+            const isOpen = !sidebar.classList.contains('-translate-x-full');
+            const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !isOpen;
+            if (shouldOpen) {
+                sidebar.classList.remove('-translate-x-full');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+            }
+        }
+    </script>
 </body>
 </html>
+

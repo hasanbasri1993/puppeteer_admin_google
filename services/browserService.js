@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const path = require('path');
 const authService = require('./authService');
 const cron = require('node-cron');
 const logger = require('pino')();
@@ -20,13 +21,45 @@ class BrowserService {
         this.crashRecoveryAttempts = 0;
         this.maxCrashRecoveryAttempts = 3;
         this.lastHealthCheck = Date.now();
+        this.isRelogging = false;
+        this.activeOperations = 0;
+        this.isInitializing = false;
+        this.initStartTime = null;
+        // Keep Chrome's Google session across nodemon restarts/hot reloads.
+        // This directory is intentionally outside the source tree's tracked files.
+        this.userDataDir = process.env.PUPPETEER_USER_DATA_DIR || path.join(__dirname, '..', '.puppeteer-profile');
+        this.isClosing = false;
+        this.recoveryPromise = null;
     }
 
     get isInitialized() {
         return this._isInitialized;
     }
 
+    getStatus() {
+        if (this._isInitialized && this.browser && this.browser.isConnected()) {
+            return { status: 'ready', isInitialized: true, isInitializing: false, message: 'Session Active' };
+        }
+        if (this.isInitializing) {
+            const elapsedSec = Math.floor((Date.now() - (this.initStartTime || Date.now())) / 1000);
+            return {
+                status: 'initializing',
+                isInitialized: false,
+                isInitializing: true,
+                elapsedSec,
+                estRemainingSec: null,
+                message: `Inisialisasi Browser (${elapsedSec}s)`
+            };
+        }
+        if (this.isRelogging) {
+            return { status: 'relogging', isInitialized: false, isInitializing: false, message: 'Sedang Relogin...' };
+        }
+        return { status: 'offline', isInitialized: false, isInitializing: false, message: 'Browser Offline' };
+    }
+
     async initialize(username, password) {
+        this.isInitializing = true;
+        this.initStartTime = Date.now();
         try {
             const isHeadeless = process.env.HEADLESS !== 'false';
             logger.info('Initializing browser and logging in...');
@@ -34,6 +67,7 @@ class BrowserService {
             // Enhanced browser launch options for memory optimization and stability
             this.browser = await puppeteer.launch({
                 headless: isHeadeless,
+                userDataDir: this.userDataDir,
                 args: [
                     '--no-sandbox',
                     '--disable-setuid-sandbox',
@@ -45,7 +79,9 @@ class BrowserService {
                     '--disable-background-timer-throttling',
                     '--disable-backgrounding-occluded-windows',
                     '--disable-renderer-backgrounding',
-                    '--disable-features=TranslateUI',
+                    // Prevent Chromium/Windows from freezing background tabs
+                    // while a headed batch uses multiple reusable workers.
+                    '--disable-features=TranslateUI,CalculateNativeWinOcclusion,VizDisplayCompositor',
                     '--disable-ipc-flooding-protection',
                     '--memory-pressure-off',
                     '--max_old_space_size=4096',
@@ -64,8 +100,7 @@ class BrowserService {
                     '--disable-client-side-phishing-detection',
                     '--disable-hang-monitor',
                     '--disable-prompt-on-repost',
-                    '--disable-domain-reliability',
-                    '--disable-features=VizDisplayCompositor'
+                    '--disable-domain-reliability'
                 ],
                 ignoreDefaultArgs: ['--disable-extensions'],
                 handleSIGINT: false,
@@ -75,9 +110,12 @@ class BrowserService {
 
             // Add browser event listeners for crash detection
             this.browser.on('disconnected', () => {
+                if (this.isClosing) {
+                    logger.info('Browser disconnected during intentional shutdown');
+                    return;
+                }
                 logger.error('Browser disconnected unexpectedly!');
-                this._isInitialized = false;
-                this.handleBrowserCrash();
+                void this.handleBrowserCrash();
             });
 
             this.browser.on('targetcreated', (target) => {
@@ -91,7 +129,6 @@ class BrowserService {
             const page = await this.browser.newPage();
 
             // Configure page for memory optimization
-            await page.setCacheEnabled(false);
             await page.setJavaScriptEnabled(true);
 
             await authService.performLoginWithTOTP(page, username, password);
@@ -108,6 +145,8 @@ class BrowserService {
             logger.error('Failed to initialize browser: ' + error);
             await this.close();
             throw error;
+        } finally {
+            this.isInitializing = false;
         }
     }
 
@@ -144,7 +183,21 @@ class BrowserService {
     }
 
     async relogin(username, password) {
+        if (this.isRelogging) {
+            logger.warn('⚠️ Relogin sudah sedang berjalan, mengabaikan permintaan relogin baru.');
+            return;
+        }
+
+        this.isRelogging = true;
         try {
+            // Tunggu jika ada operasi (misal: handleSecurityChallenge) yang sedang berjalan (maksimal 30 detik)
+            let waitTime = 0;
+            while (this.activeOperations > 0 && waitTime < 30000) {
+                if (waitTime === 0) logger.info('⏳ Menunda relogin, menunggu operasi yang sedang berjalan selesai...');
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                waitTime += 2000;
+            }
+
             logger.info('🔄 Starting relogin process...');
 
             // Check if browser is still healthy before relogin
@@ -153,15 +206,25 @@ class BrowserService {
                 return;
             }
 
+            // Keep the persisted profile session whenever it is still valid.
+            // Logging out every 40 minutes defeats cookie persistence and forces
+            // Google to challenge the account again.
+            if (await this.checkLoginStatus()) {
+                logger.info('✅ Existing Google session is still valid; relogin skipped');
+                this.crashRecoveryAttempts = 0;
+                return;
+            }
+
             const page = await this.createOptimizedPage();
-
-            // Perform logout-then-login
-            await authService.performLoginWithTOTP(page, username, password, {
-                logout: true,
-                debug: process.env.DEBUG === 'true'
-            });
-
-            await this.closePage(page);
+            try {
+                // If Google requires reauthentication, let it present the
+                // profile-aware password/TOTP flow instead of forcing logout.
+                await authService.performLoginWithTOTP(page, username, password, {
+                    debug: process.env.DEBUG === 'true'
+                });
+            } finally {
+                await this.closePage(page);
+            }
             logger.info('✅ Relogin completed successfully');
 
             // Reset crash recovery counter on successful relogin
@@ -170,6 +233,8 @@ class BrowserService {
         } catch (error) {
             logger.error('❌ Relogin failed:', error.message);
             throw error;
+        } finally {
+            this.isRelogging = false;
         }
     }
 
@@ -230,6 +295,9 @@ class BrowserService {
 
     // Manual relogin trigger (for API endpoints)
     async triggerManualRelogin(username, password) {
+        if (this.isRelogging) {
+            return {success: false, message: 'Sistem sedang memuat ulang sesi (relogin). Harap tunggu.'};
+        }
         try {
             logger.info('🔄 Manual relogin triggered');
             await this.relogin(username, password);
@@ -271,6 +339,23 @@ class BrowserService {
     }
 
     async handleBrowserCrash() {
+        if (this.isClosing) {
+            return;
+        }
+        if (this.recoveryPromise) {
+            logger.warn('Browser recovery already running, skipping duplicate request');
+            return this.recoveryPromise;
+        }
+
+        this.recoveryPromise = this.recoverBrowser();
+        try {
+            return await this.recoveryPromise;
+        } finally {
+            this.recoveryPromise = null;
+        }
+    }
+
+    async recoverBrowser() {
         logger.error('Handling browser crash...');
 
         if (this.crashRecoveryAttempts >= this.maxCrashRecoveryAttempts) {
@@ -285,9 +370,12 @@ class BrowserService {
             // Clean up current browser instance
             if (this.browser) {
                 try {
+                    this.isClosing = true;
                     await this.browser.close();
                 } catch (e) {
                     logger.warn('Error closing crashed browser:', e.message);
+                } finally {
+                    this.isClosing = false;
                 }
                 this.browser = null;
             }
@@ -365,19 +453,25 @@ class BrowserService {
         const page = await this.browser.newPage();
         this.activePages.add(page);
 
-        // Configure page for optimal memory usage
-        await page.setCacheEnabled(false);
-        await page.setRequestInterception(true);
-
-        // Block unnecessary resources to save memory
-        page.on('request', (request) => {
-            const resourceType = request.resourceType();
-            if (['image', 'stylesheet', 'font', 'media'].includes(resourceType)) {
-                request.abort();
-            } else {
-                request.continue();
-            }
-        });
+        // Configure page for memory efficiency without breaking SPA JS/CSS
+        try {
+            await page.setRequestInterception(true);
+            page.on('request', (request) => {
+                try {
+                    const resourceType = request.resourceType();
+                    // Block only images, fonts, and media to save bandwidth while keeping CSS/JS stable
+                    if (['image', 'font', 'media'].includes(resourceType)) {
+                        request.abort().catch(() => {});
+                    } else {
+                        request.continue().catch(() => {});
+                    }
+                } catch (e) {
+                    // Ignore already handled request error
+                }
+            });
+        } catch (e) {
+            logger.warn('Failed to set request interception:', e.message);
+        }
 
         // Set timeout
         page.setDefaultTimeout(this.pageTimeout);
@@ -389,10 +483,11 @@ class BrowserService {
         try {
             if (page && !page.isClosed()) {
                 await page.close();
-                this.activePages.delete(page);
             }
         } catch (error) {
             logger.error('Error closing page:', error.message);
+        } finally {
+            this.activePages.delete(page);
         }
     }
 
@@ -417,13 +512,29 @@ class BrowserService {
     }
 
     async handleSecurityChallenge(id) {
-        // Check browser health before operation
-        await this.checkBrowserHealth();
+        if (!this._isInitialized) {
+            if (this.isInitializing) {
+                const elapsedSec = Math.floor((Date.now() - (this.initStartTime || Date.now())) / 1000);
+                throw new Error(`Browser sedang diinisialisasi (${elapsedSec} detik). Harap tunggu.`);
+            }
+            throw new Error('Browser belum terinisialisasi. Sesi Google Admin belum siap.');
+        }
 
-        logger.info('Creating optimized page to handle security challenge...');
-        const page = await this.createOptimizedPage();
+        if (this.isRelogging) {
+            logger.warn(`⚠️ Menolak permintaan security challenge untuk ${id} karena sedang relogin.`);
+            throw new Error('Sistem sedang memuat ulang sesi (relogin otomatis). Harap tunggu beberapa saat dan coba lagi.');
+        }
 
+        this.activeOperations++;
+        let page = null;
+        
         try {
+            // Check browser health before operation
+            await this.checkBrowserHealth();
+
+            logger.info('Creating optimized page to handle security challenge...');
+            page = await this.createOptimizedPage();
+
             logger.info('Opening security page for user:' + id);
             logger.info(`Goto: https://admin.google.com/ac/users/${id}/security`);
 
@@ -469,11 +580,15 @@ class BrowserService {
             logger.error(`Error handling security challenge for user ${id}:`, error.message);
             throw error;
         } finally {
-            await this.closePage(page);
+            this.activeOperations--;
+            if (page) {
+                await this.closePage(page);
+            }
         }
     }
 
     async close() {
+        this.isClosing = true;
         try {
             // Clear all intervals
             if (this.memoryCleanupInterval) {
@@ -515,6 +630,8 @@ class BrowserService {
             }
         } catch (error) {
             logger.error('Error during browser cleanup:', error.message);
+        } finally {
+            this.isClosing = false;
         }
     }
 }

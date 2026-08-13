@@ -39,15 +39,39 @@ module.exports = {
                     await page.goto(ADMIN_LOGIN, {waitUntil: 'networkidle2'});
                 } else {
                     if (debug) console.log("🌐 Navigating to admin URL...");
-                    await page.goto(ADMIN_URL, {waitUntil: 'networkidle2'});
+                    await page.goto(ADMIN_URL, {waitUntil: 'domcontentloaded'});
+
+                    // A persisted Chrome profile may already have a valid Google
+                    // session. Do not wait for network-idle or submit credentials
+                    // again in that case.
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    const currentUrl = page.url();
+                    if (currentUrl.includes('admin.google.com') &&
+                        !currentUrl.includes('signin') &&
+                        !currentUrl.includes('challenge')) {
+                        if (debug) console.log("✅ Existing Google session is still valid");
+                        return true;
+                    }
                 }
 
-                // Username input
-                if (debug) console.log("👤 Entering username...");
-                await page.waitForSelector('#identifierId', {visible: true, timeout: 15000});
-                await page.evaluate(() => document.querySelector('#identifierId').value = '');
-                await page.type('#identifierId', username, {delay: 50});
-                await page.click('#identifierNext');
+                // A persisted Chrome profile can show either the email form or
+                // Google's "verify it's you" password-only form.
+                await page.waitForSelector('#identifierId, input[type="password"]', {
+                    visible: true,
+                    timeout: 15000
+                });
+
+                const isIdentifierVisible = await page.$eval('#identifierId', el => (
+                    el.offsetParent !== null && !el.disabled
+                )).catch(() => false);
+                if (isIdentifierVisible) {
+                    if (debug) console.log("👤 Entering username...");
+                    await page.evaluate(() => document.querySelector('#identifierId').value = '');
+                    await page.type('#identifierId', username, {delay: 50});
+                    await page.click('#identifierNext');
+                } else if (debug) {
+                    console.log("🔐 Google requested password-only reauthentication...");
+                }
 
                 // Password input
                 if (debug) console.log("🔐 Entering password...");
@@ -77,79 +101,54 @@ module.exports = {
 
                 // Helper function to check if OTP input is required
                 const checkIfOTPRequired = async () => {
-                    // First check URL to see if we're still on a challenge page
                     const currentUrl = page.url();
                     if (debug) console.log("🔍 Current URL:", currentUrl);
                     
+                    // If we've reached admin.google.com main console, login is complete
+                    if (currentUrl.includes('admin.google.com') && !currentUrl.includes('signin') && !currentUrl.includes('challenge')) {
+                        return false;
+                    }
+
                     const isOnChallengePage = currentUrl.includes('accounts.google.com/challenge') || 
                                              currentUrl.includes('accounts.google.com/signin/challenge') ||
                                              currentUrl.includes('challenge');
                     
-                    // Check for text indicating 2-Step Verification
-                    const has2StepVerificationText = await page.evaluate(() => {
-                        const text = document.body.innerText || document.body.textContent || '';
-                        return text.includes('2-Step Verification') || 
-                               text.includes('verification code') ||
-                               text.includes('Google Authenticator');
-                    });
-
-                    if (debug) {
-                        console.log("🔍 Is on challenge page:", isOnChallengePage);
-                        console.log("🔍 Has 2-Step Verification text:", has2StepVerificationText);
-                    }
-                    
-                    if (!isOnChallengePage && !currentUrl.includes('accounts.google.com/signin') && !has2StepVerificationText) {
-                        // We're not on a challenge page anymore, likely logged in
+                    if (!isOnChallengePage && !currentUrl.includes('accounts.google.com/signin')) {
                         return false;
                     }
                     
-                    // Then check for OTP input fields
-                    const hasOTPInput = await page.evaluate(() => {
+                    // Check if an active, visible, enabled OTP input field actually exists
+                    const hasActiveOTPInput = await page.evaluate(() => {
                         try {
                             const selectors = [
-                                'input[type="tel"]',           // Phone verification
-                                '#totpPin',                    // TOTP input
-                                '[data-challenge-type]',       // Challenge page
-                                'div[jsname="XIvz0b"]',       // Google's internal verification div
+                                'input[type="tel"]',
+                                '#totpPin',
+                                'input[autocomplete="one-time-code"]',
                                 'input[aria-label*="verification"]',
                                 'input[aria-label*="code"]',
-                                'input[placeholder*="code"]',
-                                'input[name*="totp"]',
-                                'input[id*="totp"]',
-                                'input[autocomplete="one-time-code"]'
+                                'input[placeholder*="code"]'
                             ];
 
-                            // Check if any selector matches a visible input
                             for (const selector of selectors) {
-                                try {
-                                    const elements = document.querySelectorAll(selector);
-                                    for (const element of elements) {
-                                        if (element && 
-                                            element.offsetParent !== null &&
-                                            element.style.display !== 'none' &&
-                                            element.style.visibility !== 'hidden' &&
-                                            !element.disabled) {
-                                            // Check if input is empty or has placeholder text indicating it needs input
-                                            const isEmpty = !element.value || element.value.length === 0;
-                                            if (isEmpty) {
-                                                return true;
-                                            }
-                                        }
+                                const elements = document.querySelectorAll(selector);
+                                for (const el of elements) {
+                                    if (el && 
+                                        el.offsetParent !== null &&
+                                        el.style.display !== 'none' &&
+                                        el.style.visibility !== 'hidden' &&
+                                        !el.disabled) {
+                                        return true;
                                     }
-                                } catch (e) {
-                                    // Continue to next selector
                                 }
                             }
                             return false;
-                        } catch (error) {
+                        } catch (e) {
                             return false;
                         }
                     });
 
-                    if (debug) console.log("🔍 Has OTP input field:", hasOTPInput);
-                    
-                    // Return true if we're on challenge page OR have 2-step verification text OR have OTP input
-                    return isOnChallengePage || has2StepVerificationText || hasOTPInput;
+                    if (debug) console.log("🔍 Has active OTP input field:", hasActiveOTPInput);
+                    return hasActiveOTPInput;
                 };
 
                 // Helper function to fill and submit OTP

@@ -78,38 +78,42 @@ app.get('/logout', (req, res) => {
 // In the initializeApp function:
 const initializeApp = async () => {
     try {
-        logger.info('Initialize browser instance...')
-
-        // Start memory monitoring
+        logger.info('Starting memory monitoring...');
         memoryMonitor.startMonitoring(30000); // Check every 30 seconds
 
-        // Log initial memory usage
         const initialMemory = memoryMonitor.getMemoryUsage();
         logger.info(`Initial memory usage: ${JSON.stringify(initialMemory)}`);
 
-        await instance.initialize(
-          process.env.GOOGLE_ADMIN_USERNAME,
-          process.env.GOOGLE_ADMIN_PASSWORD
-        );
-        logger.info('Initialized browser instance successfully')
-        await instance.performRelogin(
-          process.env.GOOGLE_ADMIN_USERNAME,
-          process.env.GOOGLE_ADMIN_PASSWORD
-        );
-        logger.info('Initialized relogin instance successfully')
-
+        // 1. Jalankan web server langsung agar port 7123 dan fitur non-browser langsung bisa diakses!
         app.listen(port, () => {
             console.log(`Server running on port ${port}`);
             logger.info(`Server started successfully on port ${port}`);
         });
+
+        // 2. Inisialisasi browser Puppeteer di latar belakang secara asinkron
+        logger.info('Initializing browser instance in background...');
+        instance.initialize(
+          process.env.GOOGLE_ADMIN_USERNAME,
+          process.env.GOOGLE_ADMIN_PASSWORD
+        ).then(async () => {
+            logger.info('Initialized browser instance successfully');
+            await instance.performRelogin(
+              process.env.GOOGLE_ADMIN_USERNAME,
+              process.env.GOOGLE_ADMIN_PASSWORD
+            );
+            logger.info('Initialized relogin instance successfully');
+        }).catch(err => {
+            logger.error('Failed to initialize browser instance in background:', err.message);
+        });
+
     } catch (error) {
-        console.error('Failed to initialize:', error);
-        logger.error('Failed to initialize:', error);
+        console.error('Failed to start server:', error);
+        logger.error('Failed to start server:', error);
         process.exit(1);
     }
 };
 
-initializeApp().then(r => logger.info('App initialized successfully'));
+initializeApp().then(r => logger.info('App bootstrap initiated successfully'));
 
 // Graceful shutdown
 process.on('SIGINT', async () => {

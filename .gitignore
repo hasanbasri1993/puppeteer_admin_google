@@ -208,5 +208,6 @@ bun.lockb
 
 token.json
 credentials.json
+.puppeteer-profile/
 .idea/
 .well-known/
