@@ -43,6 +43,7 @@ module.exports = {
 
         // Filter jsonData to only include ID_GOOGLE values that match the provided ids
         const filteredIds = jsonData.filter(item => uniqueIds.includes(item.NIS));
+        const studentDetails = filteredIds.map(({NIS, NAMA, KELAS}) => ({nis: NIS, name: NAMA, className: KELAS}));
 
         const results = [];
         if (notFoundIds.length > 0) {
@@ -55,6 +56,13 @@ module.exports = {
         }
 
         try {
+            await publishProgress({
+                id: 'System',
+                status: 'started',
+                students: studentDetails,
+                message: `Memproses ${filteredIds.length} data siswa...`
+            });
+
             // Process users in batches to prevent memory overload
             const batches = [];
             for (let i = 0; i < filteredIds.length; i += BATCH_SIZE) {
@@ -147,6 +155,7 @@ module.exports = {
                 success: true,
                 results,
                 notFoundIds,
+                students: studentDetails,
                 summary: {
                     total: results.length,
                     successful: successCount,

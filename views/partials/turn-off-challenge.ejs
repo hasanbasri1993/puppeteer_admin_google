@@ -213,7 +213,7 @@
     async function processTurnOff(nisArray) {
         const requestId = createTurnOffRequestId();
         activeProgressRequestId = requestId;
-        activeProgressState = {total: nisArray.length, completed: 0, success: 0, failed: 0, completedNis: new Set()};
+        activeProgressState = {total: nisArray.length, completed: 0, success: 0, failed: 0, completedNis: new Set(), closeTimer: null};
         openTurnOffProgressModal(nisArray);
 
         if (!pusher) {
@@ -241,6 +241,7 @@
             const result = await response.json();
             
             if (result.success) {
+                renderTurnOffStudents(result.students || nisArray.map(nis => ({nis})));
                 const hasFailure = result.summary.failed > 0;
                 finishTurnOffProgress(`Selesai. Sukses: ${result.summary.successful}, gagal: ${result.summary.failed} dari ${result.summary.total} NIS.`, hasFailure);
                 showAlert(`Selesai! Sukses: ${result.summary.successful}, Gagal: ${result.summary.failed} dari ${result.summary.total} NIS`, hasFailure ? 'warning' : 'success');
@@ -287,8 +288,21 @@
         list.innerHTML = nisArray.map(nis => `<div id="turn-off-row-${CSS.escape(String(nis))}" class="px-4 py-3 flex items-center justify-between gap-3 text-xs"><span class="font-mono text-slate-300">${escapeTurnOffHtml(nis)}</span><span class="text-slate-500">Menunggu</span></div>`).join('');
     }
 
+    function renderTurnOffStudents(students) {
+        const list = document.getElementById('turn-off-progress-list');
+        list.innerHTML = students.map(student => `
+            <div id="turn-off-row-${CSS.escape(String(student.nis))}" class="px-4 py-3 flex items-center justify-between gap-3 text-xs">
+                <div class="min-w-0">
+                    <p class="font-semibold text-slate-200 truncate">${escapeTurnOffHtml(student.name || 'Data siswa')}</p>
+                    <p class="mt-0.5 font-mono text-[11px] text-slate-500">NIS ${escapeTurnOffHtml(student.nis)}${student.className ? ` · Kelas ${escapeTurnOffHtml(student.className)}` : ''}</p>
+                </div>
+                <span class="shrink-0 text-slate-500">Menunggu</span>
+            </div>`).join('');
+    }
+
     function updateTurnOffProgress(data) {
         const state = activeProgressState;
+        if (Array.isArray(data.students)) renderTurnOffStudents(data.students);
         const isUserResult = data.nis && !state.completedNis.has(String(data.nis));
         if (isUserResult) {
             state.completedNis.add(String(data.nis));
@@ -312,9 +326,12 @@
         document.getElementById('turn-off-progress-summary').textContent = message;
         document.getElementById('turn-off-progress-summary').className = isError ? 'text-rose-400' : 'text-emerald-400';
         document.getElementById('turn-off-progress-footer').classList.remove('hidden');
+        if (activeProgressState?.closeTimer) clearTimeout(activeProgressState.closeTimer);
+        activeProgressState.closeTimer = setTimeout(closeTurnOffProgressModal, 3000);
     }
 
     function closeTurnOffProgressModal() {
+        if (activeProgressState?.closeTimer) clearTimeout(activeProgressState.closeTimer);
         document.getElementById('turn-off-progress-modal').classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
     }
