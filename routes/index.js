@@ -20,6 +20,7 @@ router.post('/admin/add', isAuthenticated, isAuthorizedForReset, adminController
 router.post('/admin/remove', isAuthenticated, isAuthorizedForReset, adminController.removeAdmin);
 router.get('/admin/diagnostics', isAuthenticated, isAuthorizedForReset, adminController.getBrowserDiagnostics);
 router.post('/admin/browser-screenshot', isAuthenticated, isAuthorizedForReset, adminController.captureBrowserScreenshot);
+router.get('/admin/browser-screenshot/:fileName', isAuthenticated, isAuthorizedForReset, adminController.getBrowserScreenshotFile);
 
 // Replace ids.json with an uploaded file
 router.post('/admin/upload-ids', isAuthenticated, isAuthorizedForReset, uploadIdsFile.single('file'), adminController.uploadIds);

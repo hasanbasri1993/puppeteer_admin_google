@@ -72,7 +72,7 @@
             const response = await fetch('/api/admin/browser-screenshot', {method: 'POST'});
             const result = await response.json();
             if (!result.success) throw new Error(result.error || 'Screenshot gagal diambil');
-            document.getElementById('browser-shot-image').src = result.image;
+            document.getElementById('browser-shot-image').src = result.imageUrl;
             document.getElementById('browser-shot-url').textContent = result.url;
             empty.classList.add('hidden');
             wrap.classList.remove('hidden');

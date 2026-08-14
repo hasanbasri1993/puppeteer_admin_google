@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
+const fs = require('fs');
 const authService = require('./authService');
 const cron = require('node-cron');
 const logger = require('pino')();
@@ -31,6 +32,8 @@ class BrowserService {
         this.isClosing = false;
         this.recoveryPromise = null;
         this.recentErrors = [];
+        this.lastFailureScreenshot = null;
+        this.screenshotDir = path.join(__dirname, '..', 'screenshots');
     }
 
     get isInitialized() {
@@ -78,6 +81,9 @@ class BrowserService {
         let temporaryPage = false;
 
         try {
+            if (!page && this.lastFailureScreenshot) {
+                return this.lastFailureScreenshot;
+            }
             if (!page) {
                 // Operations close their pages when idle. Open a short-lived
                 // diagnostic tab so the dashboard can still show the live admin session.
@@ -88,12 +94,41 @@ class BrowserService {
                     timeout: this.pageTimeout
                 });
             }
-            const image = await page.screenshot({type: 'png'});
-            return {url: page.url(), image: image.toString('base64')};
+            return this.saveScreenshot(page);
         } finally {
             if (temporaryPage) {
                 await this.closePage(page);
             }
+        }
+    }
+
+    async captureFailureScreenshot(page) {
+        if (!page || page.isClosed()) return;
+        try {
+            this.lastFailureScreenshot = await this.saveScreenshot(page, 'failure');
+        } catch (error) {
+            logger.warn('Failed to capture browser failure screenshot:', error.message);
+        }
+    }
+
+    async saveScreenshot(page, label = 'manual') {
+        fs.mkdirSync(this.screenshotDir, {recursive: true});
+        const fileName = `${label}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.png`;
+        const filePath = path.join(this.screenshotDir, fileName);
+        await page.screenshot({path: filePath, type: 'png'});
+        this.cleanupScreenshots();
+        return {url: page.url(), fileName};
+    }
+
+    cleanupScreenshots() {
+        try {
+            const files = fs.readdirSync(this.screenshotDir)
+                .filter(file => file.endsWith('.png'))
+                .map(file => ({file, time: fs.statSync(path.join(this.screenshotDir, file)).mtimeMs}))
+                .sort((a, b) => b.time - a.time);
+            files.slice(20).forEach(({file}) => fs.unlinkSync(path.join(this.screenshotDir, file)));
+        } catch (error) {
+            logger.warn('Failed to clean up screenshots:', error.message);
         }
     }
 
@@ -621,6 +656,7 @@ class BrowserService {
 
             return {status: 'success'};
         } catch (error) {
+            await this.captureFailureScreenshot(page);
             this.recordError(`security-challenge:${id}`, error);
             logger.error(`Error handling security challenge for user ${id}:`, error.message);
             throw error;

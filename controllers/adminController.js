@@ -102,11 +102,23 @@ module.exports = {
             res.json({
                 success: true,
                 url: screenshot.url,
-                image: `data:image/png;base64,${screenshot.image}`
+                imageUrl: `/api/admin/browser-screenshot/${encodeURIComponent(screenshot.fileName)}`
             });
         } catch (error) {
             logger.error('Failed to capture browser screenshot:', error.message);
             res.status(503).json({success: false, error: error.message});
         }
+    },
+
+    getBrowserScreenshotFile: (req, res) => {
+        const fileName = path.basename(req.params.fileName || '');
+        if (!/^[-a-z0-9]+\.png$/i.test(fileName)) {
+            return res.status(400).json({success: false, error: 'Nama file screenshot tidak valid'});
+        }
+        const filePath = path.join(process.cwd(), 'screenshots', fileName);
+        if (!fs.existsSync(filePath)) {
+            return res.status(404).json({success: false, error: 'File screenshot tidak ditemukan'});
+        }
+        res.sendFile(filePath);
     }
 };
