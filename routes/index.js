@@ -33,7 +33,7 @@ router.get('/status', (req, res) => {
     res.json(instance.getStatus());
 });
 
-router.post('/turn_off', turnOffChallenge);
+router.post('/turn_off', isAuthenticated, turnOffChallenge);
 
 // Manual relogin endpoint
 router.post('/relogin', async (req, res) => {

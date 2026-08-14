@@ -1,11 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const logger = require('pino')();
+const logger = require('../utils/logger');
 const adminService = require('../services/adminService');
 const {instance} = require('../services/browserInstance');
 
 const IDS_PATH = path.join(process.cwd(), 'ids.json');
 const IDS_BACKUP_PATH = path.join(process.cwd(), 'ids.backup.json');
+const SCREENSHOT_DIR = path.join(__dirname, '..', 'screenshots');
 const REQUIRED_FIELDS = ['ID_GOOGLE', 'NIS', 'KELAS', 'NAMA'];
 
 function validateIdsData(data) {
@@ -92,7 +93,13 @@ module.exports = {
         res.json({
             success: true,
             status: instance.getStatus(),
-            errors: instance.getRecentErrors()
+            errors: instance.getRecentErrors().map(entry => ({
+                ...entry,
+                screenshot: entry.screenshot ? {
+                    url: entry.screenshot.url,
+                    imageUrl: `/api/admin/browser-screenshot/${encodeURIComponent(entry.screenshot.fileName)}`
+                } : null
+            }))
         });
     },
 
@@ -115,7 +122,7 @@ module.exports = {
         if (!/^[-a-z0-9]+\.png$/i.test(fileName)) {
             return res.status(400).json({success: false, error: 'Nama file screenshot tidak valid'});
         }
-        const filePath = path.join(process.cwd(), 'screenshots', fileName);
+        const filePath = path.join(SCREENSHOT_DIR, fileName);
         if (!fs.existsSync(filePath)) {
             return res.status(404).json({success: false, error: 'File screenshot tidak ditemukan'});
         }

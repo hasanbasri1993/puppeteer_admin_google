@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
-const logger = require('pino')();
+const logger = require('../utils/logger');
 
 class TelegramLogger {
     constructor() {

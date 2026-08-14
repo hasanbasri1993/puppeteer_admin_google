@@ -1,5 +1,5 @@
 const {ADMIN_URL, ADMIN_LOGIN, ADMIN_LOGOUT} = require('../config/constants');
-const logger = require('pino')()
+const logger = require('../utils/logger')
 const speakeasy = require('speakeasy');
 
 module.exports = {

@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const authService = require('./authService');
 const cron = require('node-cron');
-const logger = require('pino')();
+const logger = require('../utils/logger');
 const telegramLogger = require('./telegramLogger');
 
 const {XPATH_LOGIN_CHALLENGE, XPATH_TURN_OFF} = require('../config/constants');
@@ -24,6 +24,7 @@ class BrowserService {
         this.lastHealthCheck = Date.now();
         this.isRelogging = false;
         this.activeOperations = 0;
+        this.operationWaiters = [];
         this.isInitializing = false;
         this.initStartTime = null;
         // Keep Chrome's Google session across nodemon restarts/hot reloads.
@@ -61,14 +62,43 @@ class BrowserService {
         return { status: 'offline', isInitialized: false, isInitializing: false, message: 'Browser Offline' };
     }
 
-    recordError(scope, error) {
+    async acquireOperationSlot() {
+        while (this.activeOperations >= this.maxConcurrentPages) {
+            await new Promise(resolve => this.operationWaiters.push(resolve));
+        }
+        this.activeOperations++;
+    }
+
+    releaseOperationSlot() {
+        this.activeOperations = Math.max(0, this.activeOperations - 1);
+        this.operationWaiters.shift()?.();
+    }
+
+    recordError(scope, error, screenshot = null) {
         const message = error instanceof Error ? error.message : String(error || 'Unknown error');
-        this.recentErrors.unshift({at: new Date().toISOString(), scope, message});
+        this.recentErrors.unshift({at: new Date().toISOString(), scope, message, screenshot});
         this.recentErrors = this.recentErrors.slice(0, 100);
     }
 
     getRecentErrors() {
         return this.recentErrors;
+    }
+
+    async waitUntilReady(timeoutMs = 120000) {
+        const deadline = Date.now() + timeoutMs;
+        let recoveryRequested = false;
+
+        while (Date.now() < deadline) {
+            if (this._isInitialized && this.browser?.isConnected()) return true;
+
+            if (!recoveryRequested && !this.recoveryPromise && !this.isInitializing && !this.isClosing) {
+                recoveryRequested = true;
+                void this.handleBrowserCrash();
+            }
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+
+        return this._isInitialized && this.browser?.isConnected();
     }
 
     async captureCurrentPage() {
@@ -103,11 +133,14 @@ class BrowserService {
     }
 
     async captureFailureScreenshot(page) {
-        if (!page || page.isClosed()) return;
+        if (!page || page.isClosed()) return null;
         try {
-            this.lastFailureScreenshot = await this.saveScreenshot(page, 'failure');
+            const screenshot = await this.saveScreenshot(page, 'failure');
+            this.lastFailureScreenshot = screenshot;
+            return screenshot;
         } catch (error) {
             logger.warn('Failed to capture browser failure screenshot:', error.message);
+            return null;
         }
     }
 
@@ -190,6 +223,7 @@ class BrowserService {
                     return;
                 }
                 logger.error('Browser disconnected unexpectedly!');
+                this._isInitialized = false;
                 this.recordError('browser-disconnected', 'Browser disconnected unexpectedly');
                 void this.handleBrowserCrash();
             });
@@ -604,7 +638,7 @@ class BrowserService {
             throw new Error('Sistem sedang memuat ulang sesi (relogin otomatis). Harap tunggu beberapa saat dan coba lagi.');
         }
 
-        this.activeOperations++;
+        await this.acquireOperationSlot();
         let page = null;
         
         try {
@@ -645,6 +679,7 @@ class BrowserService {
                 if (turnOffElements.length > 0) {
                     await turnOffElements[0].click();
                     logger.info('Clicking on: Turn off for 10 mins');
+                    await new Promise(resolve => setTimeout(resolve, 300));
                 } else {
                     logger.error("Turn off for 10 mins span not found");
                     throw new Error("'Turn off for 10 mins' span not found");
@@ -656,12 +691,12 @@ class BrowserService {
 
             return {status: 'success'};
         } catch (error) {
-            await this.captureFailureScreenshot(page);
-            this.recordError(`security-challenge:${id}`, error);
+            const screenshot = await this.captureFailureScreenshot(page);
+            this.recordError(`security-challenge:${id}`, error, screenshot);
             logger.error(`Error handling security challenge for user ${id}:`, error.message);
             throw error;
         } finally {
-            this.activeOperations--;
+            this.releaseOperationSlot();
             if (page) {
                 await this.closePage(page);
             }

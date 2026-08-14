@@ -1,9 +1,10 @@
 require('dotenv').config(); // Harus ada sebelum menggunakan process.env
 const express = require('express')
 const path = require('path')
-const logger = require('pino')()
+const logger = require('./utils/logger')
 const {instance, close} = require('./services/browserInstance');
 const memoryMonitor = require('./utils/memoryMonitor');
+const browserJobQueue = require('./services/browserJobQueue');
 const telegramLoggingMiddleware = require('./middlewares/telegramLogging');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
@@ -126,6 +127,7 @@ initializeApp().then(r => logger.info('App bootstrap initiated successfully'));
 process.on('SIGINT', async () => {
     logger.info('Received SIGINT, shutting down gracefully...');
     memoryMonitor.stopMonitoring();
+    await browserJobQueue.close();
     await close();
     process.exit();
 });

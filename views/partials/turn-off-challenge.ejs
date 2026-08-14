@@ -92,29 +92,30 @@
     </div>
 </div>
 
-<div id="turn-off-progress-modal" class="hidden fixed inset-0 z-50 p-4 sm:p-8 bg-slate-950/80 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="turn-off-progress-title">
+<div id="turn-off-progress-modal" class="hidden fixed inset-0 z-50 p-2 sm:p-4 bg-slate-950/80 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="turn-off-progress-title">
     <div class="min-h-full flex items-center justify-center">
-        <section class="w-full max-w-2xl rounded-2xl border border-cyan-500/20 bg-slate-900 shadow-2xl shadow-cyan-950/40 overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-slate-800 flex items-start justify-between gap-4">
+        <section class="w-full max-w-3xl max-h-[calc(100dvh-1rem)] rounded-2xl border border-cyan-500/20 bg-slate-900 shadow-2xl shadow-cyan-950/40 overflow-hidden">
+            <div class="px-4 sm:px-5 py-3 border-b border-slate-800 flex items-center justify-between gap-4">
                 <div>
                     <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-cyan-400">Proses aktif</p>
-                    <h3 id="turn-off-progress-title" class="mt-1 text-lg font-heading font-bold text-white">Menonaktifkan login challenge</h3>
+                    <h3 id="turn-off-progress-title" class="mt-0.5 text-base sm:text-lg font-heading font-bold text-white">Menonaktifkan login challenge</h3>
                 </div>
-                <span id="turn-off-progress-count" class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">0 / 0</span>
+                <span id="turn-off-progress-count" class="shrink-0 px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300">0 / 0</span>
             </div>
-            <div class="p-5 sm:p-6 space-y-4">
+            <div class="p-3 sm:p-4 space-y-3">
                 <div>
-                    <div class="h-2 rounded-full bg-slate-800 overflow-hidden">
+                    <div class="h-1.5 rounded-full bg-slate-800 overflow-hidden">
                         <div id="turn-off-progress-bar" class="h-full w-0 bg-gradient-to-r from-cyan-400 to-indigo-500 transition-all duration-300"></div>
                     </div>
-                    <div class="mt-2 flex justify-between text-xs">
+                    <div class="mt-1.5 flex justify-between gap-3 text-[11px] sm:text-xs">
                         <span id="turn-off-progress-summary" class="text-slate-400">Menghubungkan ke Google Admin...</span>
                         <span id="turn-off-progress-percent" class="font-mono text-cyan-300">0%</span>
                     </div>
                 </div>
-                <div id="turn-off-progress-list" class="max-h-[50vh] overflow-y-auto rounded-xl border border-slate-800 divide-y divide-slate-800 bg-slate-950/40"></div>
-                <div id="turn-off-progress-footer" class="hidden pt-1 flex justify-end">
-                    <button onclick="closeTurnOffProgressModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition">Tutup</button>
+                <div id="turn-off-progress-list" class="grid grid-cols-1 sm:grid-cols-2 max-h-[calc(100dvh-10.5rem)] overflow-y-auto rounded-xl border border-slate-800 bg-slate-950/40"></div>
+                <div id="turn-off-progress-footer" class="hidden pt-1 flex justify-end gap-2">
+                    <button id="turn-off-retry-failed" onclick="retryFailedTurnOff()" class="hidden px-4 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-xs font-semibold text-rose-300 transition">Ulangi yang gagal</button>
+                    <button onclick="closeTurnOffProgressModal()" class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition">Tutup</button>
                 </div>
             </div>
         </section>
@@ -213,7 +214,7 @@
     async function processTurnOff(nisArray) {
         const requestId = createTurnOffRequestId();
         activeProgressRequestId = requestId;
-        activeProgressState = {total: nisArray.length, completed: 0, success: 0, failed: 0, completedNis: new Set(), closeTimer: null};
+        activeProgressState = {total: nisArray.length, completed: 0, success: 0, failed: 0, completedNis: new Set(), failedNis: new Set(), closeTimer: null};
         openTurnOffProgressModal(nisArray);
 
         if (!pusher) {
@@ -228,7 +229,7 @@
         });
 
         if (typeof appendConsoleLog === 'function') {
-            appendConsoleLog(`Mengirim batch ${nisArray.length} NIS ke server...`, 'info');
+            appendConsoleLog(`Mengirim antrean ${nisArray.length} NIS ke server...`, 'info');
         }
         
         try {
@@ -285,18 +286,19 @@
         document.getElementById('turn-off-progress-percent').textContent = '0%';
         document.getElementById('turn-off-progress-summary').textContent = 'Menghubungkan ke Google Admin...';
         document.getElementById('turn-off-progress-footer').classList.add('hidden');
-        list.innerHTML = nisArray.map(nis => `<div id="turn-off-row-${CSS.escape(String(nis))}" class="px-4 py-3 flex items-center justify-between gap-3 text-xs"><span class="font-mono text-slate-300">${escapeTurnOffHtml(nis)}</span><span class="text-slate-500">Menunggu</span></div>`).join('');
+        document.getElementById('turn-off-retry-failed').classList.add('hidden');
+        list.innerHTML = nisArray.map(nis => `<div id="turn-off-row-${CSS.escape(String(nis))}" class="px-3.5 py-2 flex items-center justify-between gap-3 text-xs border-b border-slate-800 sm:odd:border-r"><span class="font-mono text-slate-300">${escapeTurnOffHtml(nis)}</span><span class="text-[11px] text-slate-500">Menunggu</span></div>`).join('');
     }
 
     function renderTurnOffStudents(students) {
         const list = document.getElementById('turn-off-progress-list');
         list.innerHTML = students.map(student => `
-            <div id="turn-off-row-${CSS.escape(String(student.nis))}" class="px-4 py-3 flex items-center justify-between gap-3 text-xs">
+            <div id="turn-off-row-${CSS.escape(String(student.nis))}" class="px-3.5 py-2 flex items-center justify-between gap-3 text-xs border-b border-slate-800 sm:odd:border-r">
                 <div class="min-w-0">
-                    <p class="font-semibold text-slate-200 truncate">${escapeTurnOffHtml(student.name || 'Data siswa')}</p>
-                    <p class="mt-0.5 font-mono text-[11px] text-slate-500">NIS ${escapeTurnOffHtml(student.nis)}${student.className ? ` · Kelas ${escapeTurnOffHtml(student.className)}` : ''}</p>
+                    <p class="text-[12px] leading-4 font-semibold text-slate-200 truncate">${escapeTurnOffHtml(student.name || 'Data siswa')}</p>
+                    <p class="font-mono text-[10px] leading-4 text-slate-500">NIS ${escapeTurnOffHtml(student.nis)}${student.className ? ` · Kelas ${escapeTurnOffHtml(student.className)}` : ''}</p>
                 </div>
-                <span class="shrink-0 text-slate-500">Menunggu</span>
+                <span class="shrink-0 text-[11px] text-slate-500">Menunggu</span>
             </div>`).join('');
     }
 
@@ -308,6 +310,7 @@
             state.completedNis.add(String(data.nis));
             state.completed++;
             state[data.status === 'success' ? 'success' : 'failed']++;
+            if (data.status === 'failed') state.failedNis.add(String(data.nis));
             const row = document.getElementById(`turn-off-row-${CSS.escape(String(data.nis))}`);
             if (row) {
                 row.lastElementChild.textContent = data.status === 'success' ? 'Berhasil' : 'Gagal';
@@ -327,7 +330,11 @@
         document.getElementById('turn-off-progress-summary').className = isError ? 'text-rose-400' : 'text-emerald-400';
         document.getElementById('turn-off-progress-footer').classList.remove('hidden');
         if (activeProgressState?.closeTimer) clearTimeout(activeProgressState.closeTimer);
-        activeProgressState.closeTimer = setTimeout(closeTurnOffProgressModal, 3000);
+        const retryButton = document.getElementById('turn-off-retry-failed');
+        const canRetry = isError && activeProgressState?.failedNis.size > 0;
+        retryButton.classList.toggle('hidden', !canRetry);
+        if (canRetry) retryButton.textContent = `Ulangi ${activeProgressState.failedNis.size} yang gagal`;
+        if (!isError) activeProgressState.closeTimer = setTimeout(closeTurnOffProgressModal, 3000);
     }
 
     function applyFinalTurnOffResults(results) {
@@ -341,6 +348,7 @@
             activeProgressState.completedNis.add(key);
             activeProgressState.completed++;
             activeProgressState[result.status === 'success' ? 'success' : 'failed']++;
+            if (result.status === 'failed') activeProgressState.failedNis.add(key);
             row.lastElementChild.textContent = result.status === 'success' ? 'Berhasil' : 'Gagal';
             row.lastElementChild.className = result.status === 'success' ? 'text-emerald-400 font-semibold' : 'text-rose-400 font-semibold';
         });
@@ -350,6 +358,12 @@
         document.getElementById('turn-off-progress-count').textContent = `${state.completed} / ${state.total}`;
         document.getElementById('turn-off-progress-bar').style.width = `${percent}%`;
         document.getElementById('turn-off-progress-percent').textContent = `${percent}%`;
+    }
+
+    async function retryFailedTurnOff() {
+        const failedNis = [...(activeProgressState?.failedNis || [])];
+        if (!failedNis.length) return;
+        await processTurnOff(failedNis);
     }
 
     function closeTurnOffProgressModal() {

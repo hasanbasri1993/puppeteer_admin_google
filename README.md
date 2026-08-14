@@ -83,7 +83,7 @@ Recent updates:
 ### POST `/api/turn_off`
 - Main endpoint for turning off security challenges
 - Accepts body: `{ "nis": ["234054", "234035", ...] }`
-- Processes multiple users concurrently in batches (env: `BATCH_SIZE`, `BATCH_DELAY`)
+- Processes requests through a single FIFO browser queue; each request processes `BATCH_SIZE` students in parallel while `MAX_CONCURRENT_PAGES` limits active Puppeteer pages globally. Redis at `127.0.0.1:6379` is used when available, with an automatic in-memory fallback when unavailable
 - Returns detailed results and a summary object
 
 ## Technical Stack
@@ -94,7 +94,7 @@ Recent updates:
 - **Google APIs** - Google Workspace integration
 - **Pusher** - Real-time communication
 - **Speakeasy** - TOTP generation
-- **Pino** - Logging
+- **Node.js console** - Application logging
 - **CORS** - Cross-origin resource sharing
 - **Node-cron** - Scheduled tasks
 
@@ -184,7 +184,6 @@ The browser initialization code is currently commented out in `app.js`, suggesti
   "express": "^4.21.2",
   "googleapis": "105",
   "node-cron": "^3.0.3",
-  "pino": "^9.6.0",
   "puppeteer": "24.1.0",
   "pusher": "^5.2.0",
   "qrcode": "^1.5.4",

@@ -1,5 +1,5 @@
 const telegramLogger = require('../services/telegramLogger');
-const logger = require('pino')();
+const logger = require('../utils/logger');
 
 // Middleware to log API requests to Telegram
 const telegramLoggingMiddleware = (req, res, next) => {

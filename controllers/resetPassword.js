@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const {resetUserPassword, resetMultiplePasswords} = require('../services/googleApiService.js');
-const logger = require('pino')();
+const logger = require('../utils/logger');
 
 const STUDENT_EMAIL_PATTERN = /^(\d+)@daarululuumlido\.com$/;
 const IDS_PATH = path.join(process.cwd(), 'ids.json');
