@@ -32,6 +32,7 @@ class BrowserService {
         this.userDataDir = process.env.PUPPETEER_USER_DATA_DIR || path.join(__dirname, '..', '.puppeteer-profile');
         this.isClosing = false;
         this.recoveryPromise = null;
+        this.reauthenticationPromise = null;
         this.recentErrors = [];
         this.lastFailureScreenshot = null;
         this.screenshotDir = path.join(__dirname, '..', 'screenshots');
@@ -624,6 +625,27 @@ class BrowserService {
         }
     }
 
+    async requiresPasswordReauthentication(page) {
+        return page.$eval('input[type="password"]', input => (
+            input.offsetParent !== null && !input.disabled
+        )).catch(() => false);
+    }
+
+    async reauthenticateWithPassword(page) {
+        if (!this.reauthenticationPromise) {
+            logger.info('Google meminta verifikasi password; memperbarui sesi Admin...');
+            this.reauthenticationPromise = authService.performLoginWithTOTP(
+                page,
+                process.env.GOOGLE_ADMIN_USERNAME,
+                process.env.GOOGLE_ADMIN_PASSWORD,
+                {maxRetries: 1, debug: process.env.DEBUG === 'true'}
+            ).finally(() => {
+                this.reauthenticationPromise = null;
+            });
+        }
+        return this.reauthenticationPromise;
+    }
+
     async handleSecurityChallenge(id) {
         if (!this._isInitialized) {
             if (this.isInitializing) {
@@ -649,12 +671,21 @@ class BrowserService {
             page = await this.createOptimizedPage();
 
             logger.info('Opening security page for user:' + id);
-            logger.info(`Goto: https://admin.google.com/ac/users/${id}/security`);
+            const securityUrl = `https://admin.google.com/ac/users/${id}/security`;
+            logger.info(`Goto: ${securityUrl}`);
 
-            await page.goto(`https://admin.google.com/ac/users/${id}/security`, {
+            await page.goto(securityUrl, {
                 waitUntil: 'domcontentloaded', // Changed from networkidle2 to save memory
                 timeout: this.pageTimeout
             });
+
+            if (await this.requiresPasswordReauthentication(page)) {
+                await this.reauthenticateWithPassword(page);
+                await page.goto(securityUrl, {
+                    waitUntil: 'domcontentloaded',
+                    timeout: this.pageTimeout
+                });
+            }
 
             // Wait for the element with the text 'Login Challenge' to be visible
             logger.info('Waiting for login challenge element...');
