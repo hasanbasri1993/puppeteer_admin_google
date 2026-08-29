@@ -1,0 +1,54 @@
+<div class="space-y-6">
+    <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        <div>
+            <h2 class="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight">Log Server</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">Log proses PM2, dirotasi harian.</p>
+        </div>
+        <div class="flex items-center gap-2">
+            <select id="log-type" onchange="refreshServerLogs()" class="px-3 py-2 rounded-xl bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-200">
+                <option value="out">Output</option>
+                <option value="error">Error</option>
+            </select>
+            <button onclick="refreshServerLogs()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-semibold text-slate-200 transition">Muat Ulang</button>
+        </div>
+    </div>
+
+    <section class="rounded-xl border border-slate-800 bg-slate-900/70 overflow-hidden">
+        <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between gap-3">
+            <p id="log-path" class="text-[11px] font-mono text-slate-500 break-all"></p>
+            <span id="log-status" class="text-[11px] font-mono text-slate-500 shrink-0">Memuat...</span>
+        </div>
+        <pre id="log-content" class="p-4 text-[11px] leading-relaxed text-slate-300 max-h-[560px] overflow-y-auto whitespace-pre-wrap break-words font-mono"></pre>
+    </section>
+</div>
+
+<script>
+    function escapeServerLogHtml(value) {
+        const element = document.createElement('div');
+        element.textContent = value || '';
+        return element.innerHTML;
+    }
+
+    async function refreshServerLogs() {
+        const type = document.getElementById('log-type').value;
+        const status = document.getElementById('log-status');
+        const content = document.getElementById('log-content');
+        status.textContent = 'Memuat...';
+        try {
+            const response = await fetch(`/api/admin/server-logs?type=${type}&lines=300`);
+            const result = await response.json();
+            if (!result.success) throw new Error(result.error || 'Gagal memuat log');
+            document.getElementById('log-path').textContent = result.path;
+            content.innerHTML = result.lines.length
+                ? result.lines.map(escapeServerLogHtml).join('\n')
+                : '<span class="text-slate-500">Log kosong.</span>';
+            content.scrollTop = content.scrollHeight;
+            status.textContent = `${result.lines.length} baris - ${new Date().toLocaleTimeString('id-ID')}`;
+        } catch (error) {
+            status.textContent = 'Gagal';
+            content.innerHTML = `<span class="text-rose-400">${escapeServerLogHtml(error.message)}</span>`;
+        }
+    }
+
+    refreshServerLogs();
+</script>

@@ -19,6 +19,7 @@ router.get('/admin/list', isAuthenticated, isAuthorizedForReset, adminController
 router.post('/admin/add', isAuthenticated, isAuthorizedForReset, adminController.addAdmin);
 router.post('/admin/remove', isAuthenticated, isAuthorizedForReset, adminController.removeAdmin);
 router.get('/admin/diagnostics', isAuthenticated, isAuthorizedForReset, adminController.getBrowserDiagnostics);
+router.get('/admin/server-logs', isAuthenticated, isAuthorizedForReset, adminController.getServerLogs);
 router.post('/admin/browser-screenshot', isAuthenticated, isAuthorizedForReset, adminController.captureBrowserScreenshot);
 router.get('/admin/browser-screenshot/:fileName', isAuthenticated, isAuthorizedForReset, adminController.getBrowserScreenshotFile);
 

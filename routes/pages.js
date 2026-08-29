@@ -21,12 +21,13 @@ router.get(
             'reset-password': 'reset-password',
             'manage-admin': 'manage-admin',
             'upload-ids': 'upload-ids',
-            'browser-diagnostics': 'browser-diagnostics'
+            'browser-diagnostics': 'browser-diagnostics',
+            'server-logs': 'server-logs'
         };
 
         req.requestedPartial = aliasMap[rawPage] || rawPage;
 
-        const adminOnlyPartials = ['reset-password', 'manage-admin', 'upload-ids', 'browser-diagnostics'];
+        const adminOnlyPartials = ['reset-password', 'manage-admin', 'upload-ids', 'browser-diagnostics', 'server-logs'];
         if (adminOnlyPartials.includes(req.requestedPartial)) {
             return isAuthorizedForReset(req, res, next);
         }

@@ -3,6 +3,7 @@ const path = require('path');
 const logger = require('../utils/logger');
 const adminService = require('../services/adminService');
 const {instance} = require('../services/browserInstance');
+const pm2LogService = require('../services/pm2LogService');
 
 const IDS_PATH = path.join(process.cwd(), 'ids.json');
 const IDS_BACKUP_PATH = path.join(process.cwd(), 'ids.backup.json');
@@ -114,6 +115,19 @@ module.exports = {
         } catch (error) {
             logger.error('Failed to capture browser screenshot:', error.message);
             res.status(503).json({success: false, error: error.message});
+        }
+    },
+
+    getServerLogs: async (req, res) => {
+        try {
+            const type = req.query.type === 'error' ? 'error' : 'out';
+            const requestedLines = parseInt(req.query.lines, 10);
+            const maxLines = Number.isFinite(requestedLines) ? Math.min(Math.max(requestedLines, 1), 1000) : 200;
+            const result = await pm2LogService.getLogs(type, maxLines);
+            res.json({success: true, path: result.path, lines: result.lines});
+        } catch (error) {
+            logger.error('Error reading server logs:', error.message);
+            res.status(500).json({success: false, error: error.message});
         }
     },
 
