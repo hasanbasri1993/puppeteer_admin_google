@@ -20,7 +20,9 @@ module.exports = {
             logout = false,
             totpSecret = process.env.GOOGLE_TOTP_SECRET,
             maxRetries = 3,
-            debug = process.env.DEBUG
+            debug = process.env.DEBUG,
+            maxWaitMs = 90000,
+            unknownStateDelayMs = 1000
         } = options;
 
         if (!totpSecret) {
@@ -54,102 +56,40 @@ module.exports = {
                     }
                 }
 
-                // A persisted Chrome profile can show either the email form or
-                // Google's "verify it's you" password-only form.
-                await page.waitForSelector('#identifierId, input[type="password"]', {
-                    visible: true,
-                    timeout: 15000
-                });
-
-                const isIdentifierVisible = await page.$eval('#identifierId', el => (
-                    el.offsetParent !== null && !el.disabled
-                )).catch(() => false);
-                if (isIdentifierVisible) {
-                    if (debug) console.log("👤 Entering username...");
-                    await page.evaluate(() => document.querySelector('#identifierId').value = '');
-                    await page.type('#identifierId', username, {delay: 50});
-                    await page.click('#identifierNext');
-                } else if (debug) {
-                    console.log("🔐 Google requested password-only reauthentication...");
-                }
-
-                // Password input
-                if (debug) console.log("🔐 Entering password...");
-                await page.waitForSelector('input[type="password"]', {visible: true, timeout: 15000});
-                await page.evaluate(() => {
-                    const passwordInput = document.querySelector('input[type="password"]');
-                    if (passwordInput) passwordInput.value = '';
-                });
-                await page.type('input[type="password"]', password, {delay: 50});
-                await page.click('#passwordNext');
-
-                // Wait for navigation after password submission
-                if (debug) console.log("⏳ Waiting for page navigation after password...");
-                try {
-                    await page.waitForNavigation({
-                        waitUntil: 'networkidle0',
-                        timeout: 15000
-                    });
-                } catch (e) {
-                    // If navigation timeout, wait a bit more
-                    if (debug) console.log("⏳ Navigation timeout, waiting additional time...");
-                    await new Promise(resolve => setTimeout(resolve, 5000));
-                }
-
-                // Wait a bit more for page to fully load
-                await new Promise(resolve => setTimeout(resolve, 3000));
-
-                // Helper function to check if OTP input is required
-                const checkIfOTPRequired = async () => {
-                    const currentUrl = page.url();
-                    if (debug) console.log("🔍 Current URL:", currentUrl);
-                    
-                    // If we've reached admin.google.com main console, login is complete
-                    if (currentUrl.includes('admin.google.com') && !currentUrl.includes('signin') && !currentUrl.includes('challenge')) {
-                        return false;
-                    }
-
-                    const isOnChallengePage = currentUrl.includes('accounts.google.com/challenge') || 
-                                             currentUrl.includes('accounts.google.com/signin/challenge') ||
-                                             currentUrl.includes('challenge');
-                    
-                    if (!isOnChallengePage && !currentUrl.includes('accounts.google.com/signin')) {
-                        return false;
-                    }
-                    
-                    // Check if an active, visible, enabled OTP input field actually exists
-                    const hasActiveOTPInput = await page.evaluate(() => {
-                        try {
-                            const selectors = [
-                                'input[type="tel"]',
-                                '#totpPin',
-                                'input[autocomplete="one-time-code"]',
-                                'input[aria-label*="verification"]',
-                                'input[aria-label*="code"]',
-                                'input[placeholder*="code"]'
-                            ];
-
-                            for (const selector of selectors) {
-                                const elements = document.querySelectorAll(selector);
-                                for (const el of elements) {
-                                    if (el && 
-                                        el.offsetParent !== null &&
-                                        el.style.display !== 'none' &&
-                                        el.style.visibility !== 'hidden' &&
-                                        !el.disabled) {
-                                        return true;
-                                    }
-                                }
-                            }
-                            return false;
-                        } catch (e) {
-                            return false;
+                // Click any visible button/div/span whose text matches one of
+                // `texts` (case-insensitive, trimmed). Returns true if clicked.
+                // Google's account-chooser "Verify it's you" re-auth screen has
+                // no stable id/attribute to target - just a plain "Next" label.
+                const clickByVisibleText = (texts) => page.evaluate((texts) => {
+                    const wanted = texts.map(t => t.toLowerCase());
+                    const candidates = document.querySelectorAll('button, [role="button"], a, span');
+                    for (const el of candidates) {
+                        const label = (el.innerText || el.textContent || '').trim().toLowerCase();
+                        if (wanted.includes(label) && el.offsetParent !== null) {
+                            (el.closest('button, [role="button"], a') || el).click();
+                            return true;
                         }
-                    });
+                    }
+                    return false;
+                }, texts);
 
-                    if (debug) console.log("🔍 Has active OTP input field:", hasActiveOTPInput);
-                    return hasActiveOTPInput;
-                };
+                // Check if an active, visible, enabled OTP input field actually exists
+                const hasActiveOTPInput = () => page.evaluate(() => {
+                    const selectors = [
+                        'input[type="tel"]',
+                        '#totpPin',
+                        'input[autocomplete="one-time-code"]',
+                        'input[aria-label*="verification"]',
+                        'input[aria-label*="code"]',
+                        'input[placeholder*="code"]'
+                    ];
+                    for (const selector of selectors) {
+                        for (const el of document.querySelectorAll(selector)) {
+                            if (el && el.offsetParent !== null && !el.disabled) return true;
+                        }
+                    }
+                    return false;
+                }).catch(() => false);
 
                 // Helper function to fill and submit OTP
                 const fillAndSubmitOTP = async () => {
@@ -311,60 +251,86 @@ module.exports = {
                     await new Promise(resolve => setTimeout(resolve, 3000));
                 };
 
-                // Handle multiple OTP requests (Google sometimes asks for a second code)
-                let maxOTPAttempts = 5; // Increased to handle multiple requests
-                let otpAttempts = 0;
-                
-                // First check immediately after password submission
-                let needsOTP = await checkIfOTPRequired();
-                
-                while (otpAttempts < maxOTPAttempts) {
-                    if (needsOTP) {
-                        otpAttempts++;
-                        if (debug) console.log(`🔢 2-Step Verification detected (attempt ${otpAttempts}/${maxOTPAttempts}), generating TOTP...`);
-                        
+                // On every loop tick, look at whatever screen is currently up
+                // and act on it - Google can show these in any order/combination
+                // (account-chooser "Next", username, password, OTP), so re-check
+                // state after each action instead of assuming a fixed sequence.
+                const detectAndActOnCurrentScreen = async () => {
+                    const currentUrl = page.url();
+                    if (currentUrl.includes('admin.google.com') &&
+                        !currentUrl.includes('signin') &&
+                        !currentUrl.includes('challenge')) {
+                        return 'logged_in';
+                    }
+
+                    if (await hasActiveOTPInput()) {
+                        if (debug) console.log("🔢 OTP input detected, generating TOTP...");
                         await fillAndSubmitOTP();
-                        
-                        // Wait longer after submission to see if Google asks for another code
-                        await new Promise(resolve => setTimeout(resolve, 5000));
-                        
-                        // Check again if another OTP is needed
-                        needsOTP = await checkIfOTPRequired();
-                    } else {
-                        // No more OTP required, break out of loop
-                        if (debug && otpAttempts > 0) console.log("✅ No more OTP required, proceeding...");
-                        break;
+                        return 'otp';
+                    }
+
+                    const hasPassword = await page.$eval('input[type="password"]', el => (
+                        el.offsetParent !== null && !el.disabled
+                    )).catch(() => false);
+                    if (hasPassword) {
+                        if (debug) console.log("🔐 Entering password...");
+                        await page.evaluate(() => {
+                            const el = document.querySelector('input[type="password"]');
+                            if (el) el.value = '';
+                        });
+                        await page.type('input[type="password"]', password, {delay: 50});
+                        await page.click('#passwordNext');
+                        await page.waitForNavigation({waitUntil: 'networkidle0', timeout: 15000}).catch(() => {});
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        return 'password';
+                    }
+
+                    const hasUsername = await page.$eval('#identifierId', el => (
+                        el.offsetParent !== null && !el.disabled
+                    )).catch(() => false);
+                    if (hasUsername) {
+                        if (debug) console.log("👤 Entering username...");
+                        await page.evaluate(() => { document.querySelector('#identifierId').value = ''; });
+                        await page.type('#identifierId', username, {delay: 50});
+                        await page.click('#identifierNext');
+                        await page.waitForNavigation({waitUntil: 'networkidle0', timeout: 15000}).catch(() => {});
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        return 'username';
+                    }
+
+                    // No known input field: likely the account-chooser "Verify
+                    // it's you" confirmation screen, just a "Next" button.
+                    if (await clickByVisibleText(['Next', 'Berikutnya'])) {
+                        if (debug) console.log("🔘 Clicked 'Next' on confirmation screen...");
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        return 'next';
+                    }
+
+                    return 'unknown';
+                };
+
+                const overallDeadline = Date.now() + maxWaitMs;
+                const maxSteps = 20;
+                let state = 'unknown';
+                for (let step = 0; step < maxSteps && Date.now() < overallDeadline; step++) {
+                    state = await detectAndActOnCurrentScreen();
+                    if (state === 'logged_in') break;
+                    if (state === 'unknown') await new Promise(resolve => setTimeout(resolve, unknownStateDelayMs));
+                }
+
+                if (state !== 'logged_in') {
+                    // Give the last action a moment to settle, then re-check the URL.
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    const currentUrl = page.url();
+                    const isLoggedIn = !currentUrl.includes('accounts.google.com/signin') &&
+                        !currentUrl.includes('accounts.google.com/challenge');
+                    if (!isLoggedIn) {
+                        throw new Error(`Login gagal - masih di halaman: ${currentUrl}`);
                     }
                 }
-                
-                if (otpAttempts >= maxOTPAttempts && needsOTP) {
-                    throw new Error(`Maximum OTP attempts (${maxOTPAttempts}) reached but OTP is still required`);
-                }
-                
-                if (otpAttempts === 0 && needsOTP) {
-                    if (debug) console.log("⚠️ OTP was required but not detected properly");
-                }
 
-                // Wait for final navigation
-                await page.waitForNavigation({
-                    waitUntil: 'networkidle2',
-                    timeout: 30000
-                }).catch(() => {
-                    // Sometimes navigation doesn't trigger, check URL instead
-                });
-
-                // Verify login success
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                const currentUrl = page.url();
-                const isLoggedIn = !currentUrl.includes('accounts.google.com/signin') &&
-                    !currentUrl.includes('accounts.google.com/challenge');
-
-                if (isLoggedIn) {
-                    if (debug) console.log("✅ Login berhasil!");
-                    return true; // Exit the function successfully
-                } else {
-                    throw new Error(`Login gagal - masih di halaman: ${currentUrl}`);
-                }
+                if (debug) console.log("✅ Login berhasil!");
+                return true;
 
             } catch (error) {
                 retryCount++;

@@ -638,7 +638,15 @@ class BrowserService {
                 page,
                 process.env.GOOGLE_ADMIN_USERNAME,
                 process.env.GOOGLE_ADMIN_PASSWORD,
-                {maxRetries: 1, debug: process.env.DEBUG === 'true'}
+                {
+                    maxRetries: 1,
+                    debug: process.env.DEBUG === 'true',
+                    // Mid-session step-up reauth is just a password prompt, not
+                    // a cold login - keep handleSecurityChallenge fast, don't
+                    // let it wander through a full 90s login budget.
+                    maxWaitMs: 20000,
+                    unknownStateDelayMs: 300
+                }
             ).finally(() => {
                 this.reauthenticationPromise = null;
             });
