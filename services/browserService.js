@@ -214,7 +214,11 @@ class BrowserService {
                 ignoreDefaultArgs: ['--disable-extensions'],
                 handleSIGINT: false,
                 handleSIGTERM: false,
-                handleSIGHUP: false
+                handleSIGHUP: false,
+                // Default 180s means a stuck CDP call (e.g. blocked by an
+                // unhandled dialog) hangs the whole batch that long before
+                // failing. Fail faster so recovery/retry kicks in sooner.
+                protocolTimeout: 60000
             });
 
             // Add browser event listeners for crash detection
@@ -589,6 +593,11 @@ class BrowserService {
 
         // Set timeout
         page.setDefaultTimeout(this.pageTimeout);
+
+        // An unhandled native dialog (alert/confirm/beforeunload) blocks the
+        // renderer thread, so any CDP call (page.type/$eval/click) hangs
+        // until protocolTimeout (~180s) instead of failing fast.
+        page.on('dialog', (dialog) => dialog.dismiss().catch(() => {}));
 
         return page;
     }
