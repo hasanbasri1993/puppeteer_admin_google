@@ -362,7 +362,7 @@ class BrowserService {
             });
 
             // Wait a moment for any redirects
-            await page.waitForTimeout(2000);
+            await new Promise(resolve => setTimeout(resolve, 2000));
 
             const currentUrl = page.url();
             logger.info(`Current URL after navigation: ${currentUrl}`);
